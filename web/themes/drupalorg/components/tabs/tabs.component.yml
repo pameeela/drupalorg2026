@@ -1,0 +1,17 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Tabs
+description: A tabbed content section. Place Tab components in the Tabs slot; one panel shows at a time.
+group: Layout
+props:
+  type: object
+  properties: {}
+slots:
+  header:
+    title: Header
+    description: Optional badge and heading shown above the tab bar.
+  tabs:
+    title: Tabs
+    description: Place Tab components here. Each becomes a tab with its own panel.
+libraryOverrides:
+  js:
+    tabs.js: { attributes: { type: module } }

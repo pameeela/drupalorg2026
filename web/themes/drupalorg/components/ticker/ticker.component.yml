@@ -1,0 +1,31 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Ticker
+description: A header and an auto-scrolling row of items (e.g. logos) that slows on hover.
+group: Layout
+props:
+  type: object
+  properties:
+    columns:
+      type: string
+      title: Columns
+      description: Number of items visible across the row on desktop.
+      enum:
+        - "3"
+        - "4"
+        - "5"
+        - "6"
+      meta:enum:
+        "3": 3 columns
+        "4": 4 columns
+        "5": 5 columns
+        "6": 6 columns
+      default: "6"
+      examples:
+        - "6"
+slots:
+  header:
+    title: Header
+    description: Heading shown above the ticker.
+  items:
+    title: Items
+    description: Items to scroll, e.g. Logo cards.

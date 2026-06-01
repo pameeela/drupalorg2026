@@ -1,57 +1,28 @@
 "$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
-name: Image card
+name: Card
 group: Card
 props:
   type: object
   required:
     - heading_text
-    - orientation
     - style
   properties:
-    background:
-      type: string
-      title: Background
-      enum:
-        - default
-        - accent
-        - primary
-        - inverted
-        - background
-      meta:enum:
-        default: Default
-        accent: Accent
-        primary: Primary
-        inverted: Inverted
-        background: Background
-      examples:
-        - default
     style:
       type: string
       title: Style
       enum:
-        - framed
-        - full
+        - classic
+        - featured
       meta:enum:
-        framed: Framed
-        full: Full width
+        classic: Classic
+        featured: Featured
       examples:
-        - framed
-    orientation:
-      type: string
-      title: Orientation
-      enum:
-        - vertical
-        - horizontal
-      meta:enum:
-        vertical: Vertical
-        horizontal: Horizontal
-      examples:
-        - vertical
+        - classic
     heading_text:
       type: string
       title: Heading
       examples:
-        - "This is your card title"
+        - "The best CMS for agents to use"
     level:
       type: number
       title: Heading level
@@ -62,10 +33,12 @@ props:
       default: 3
       examples:
         - 3
-    url:
+    text:
       type: string
-      title: Link
-      format: uri-reference
+      title: Description
+      pattern: "(.|\\r?\\n)*"
+      examples:
+        - "Any MCP-compatible agent connects to Drupal directly — reading content models, creating pages, managing media, respecting permissions. No Drupal knowledge required. Every action queued for human review."
     media:
       $ref: json-schema-definitions://canvas.module/image
       title: Image
@@ -75,14 +48,12 @@ props:
           width: 1200
           height: 900
           alt: "Photo by jjying: https://unsplash.com/photos/purple-and-blue-light-digital-wallpaper-8bghKxNU1j0"
-    text:
+    url:
       type: string
-      title: Description
-      pattern: "(.|\\r?\\n)*"
+      title: Button link
+      format: uri-reference
+    cta_text:
+      type: string
+      title: Button label
       examples:
-        - "Quaerat laborum rerum dolores dolores dolor qui."
-    is_text_centered:
-      type: boolean
-      title: Center text
-      examples:
-        - false
+        - "Drupal for AI Builders"

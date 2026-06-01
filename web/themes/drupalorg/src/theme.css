@@ -1,34 +1,78 @@
 /**
  * @file theme.css
- * shadcn/ui-compatible theme variables for Drupalorg.
+ * Color foundation and theme variables for Drupalorg.
  *
- * You can customize these values without rebuilding the compiled CSS.
- * Tools like https://tweakcn.com can help generate these values. Copy this
+ * Structure:
+ *   1. Primitive palette — the raw brand colors from the Figma design system.
+ *      These are the canonical "new variable names" and can be referenced
+ *      directly in components (e.g. bg-brand-blue-300, text-dark-grey-400).
+ *   2. Semantic tokens — shadcn/ui-compatible roles (background, foreground,
+ *      primary, card, ...) re-based onto the primitives. Existing components
+ *      keep using these (bg-primary, text-foreground, ...) and migrate to
+ *      primitive names gradually.
+ *
+ * You can customize these values without rebuilding the compiled CSS. Copy this
  * file to your web root, so it sits next to index.php, and clear Drupal's
  * cache. Then, any changes you make in this file should be reflected right away.
  */
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.13 0.043 265.132);
-  --card: oklch(0.967 0.003 264.542);
-  --card-foreground: oklch(0.21 0.032 264.665);
-  --primary: oklch(0.547 0.246 262.866);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.9219 0 0);
-  --secondary-foreground: oklch(0.28 0.041 260.329);
-  --muted: oklch(0.967 0.003 264.542);
-  --muted-foreground: oklch(0.13 0.043 265.132);
-  --accent: oklch(0.932 0.032 255.585);
-  --accent-foreground: var(--foreground);
+  /* ===== Primitive palette (Figma) ===== */
+
+  /* Brand Blue */
+  --brand-blue-100: #e0f4fb;
+  --brand-blue-200: #66c8ef;
+  --brand-blue-300: #009cde; /* Base */
+  --brand-blue-400: #0077aa;
+  --brand-blue-500: #005580;
+  --brand-blue-600: #003557;
+  --brand-blue-700: #001e36;
+  --brand-blue-800: #000d1f;
+
+  /* Light Grey */
+  --light-grey-100: #f5f9fc;
+  --light-grey-200: #e8f2f8;
+  --light-grey-300: #d0e8f2;
+  --light-grey-400: #b8d8e8;
+
+  /* Soft Grey */
+  --soft-grey-100: #f7f8f9;
+  --soft-grey-200: #eceef0;
+  --soft-grey-300: #d8dbde;
+  --soft-grey-400: #c0c6cc;
+
+  /* Dark Grey */
+  --dark-grey-100: #6b7c86;
+  --dark-grey-200: #4a5c66;
+  --dark-grey-300: #2e3f48;
+  --dark-grey-400: #1e2d35; /* Font */
+  --dark-grey-500: #1a252c;
+
+  /* Neutral */
+  --white: #ffffff;
+
+  /* ===== Semantic tokens (re-based on primitives) ===== */
+  --background: var(--white);
+  --foreground: var(--dark-grey-400);
+  --card: var(--white);
+  --card-foreground: var(--dark-grey-400);
+  --primary: var(--brand-blue-300);
+  --primary-foreground: var(--white);
+  --secondary: var(--soft-grey-200);
+  --secondary-foreground: var(--dark-grey-400);
+  --muted-foreground: var(--soft-grey-100);
+  --muted: var(--dark-grey-300);
+  --accent-foreground: var(--brand-blue-100);
+  --accent: var(--dark-grey-400);
+  /* No red in the brand palette yet; keep a sensible destructive color. */
   --destructive: oklch(0.6368 0.2078 25.3313);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.872 0.009 258.338);
-  --input: oklch(0.872 0.009 258.338);
-  --font-sans: "Outfit", "Helvetica Neue", Arial, Helvetica, sans-serif;
-  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --destructive-foreground: var(--white);
+  --border: var(--soft-grey-300);
+  --input: var(--soft-grey-300);
+
+  --font-heading: "ZTGatha", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  --font-sans: "Noto Sans", Arial, Helvetica, sans-serif;
   --font-mono: "Fira Mono", "Menlo", "Consolas", "Liberation Mono", monospace;
-  --font-body: "Inter", Arial, Helvetica, sans-serif;
   --radius: 0.5rem;
   --shadow-x: 0;
   --shadow-y: 1px;
@@ -53,41 +97,4 @@
   @media (min-width: 768px) {
     --navbar-height: calc(var(--spacing) * 18);
   }
-}
-
-.dark {
-  --background: oklch(0.13 0.043 265.132);
-  --foreground: oklch(1 0 89.876);
-  --card: oklch(0.208 0.042 266.359);
-  --card-foreground: var(--foreground);
-  --primary: oklch(0.547 0.246 262.866);
-  --primary-foreground: var(--foreground);
-  --secondary: oklch(0.704 0.04 256.993);
-  --secondary-foreground: oklch(0.13 0.043 265.132);
-  --muted: oklch(0.28 0.041 260.329);
-  --muted-foreground: oklch(0.967 0.003 264.542);
-  --accent: oklch(0.932 0.032 255.585);
-  --accent-foreground: oklch(0.13 0.043 265.132);
-  --destructive: oklch(0.6368 0.2078 25.3313);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.373 0.031 259.733);
-  --input: oklch(0.373 0.031 259.733);
-  --font-sans: "Outfit", "Helvetica Neue", Arial, Helvetica, sans-serif;
-  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono: "Fira Mono", "Menlo", "Consolas", "Liberation Mono", monospace;
-  --radius: 0.5rem;
-  --shadow-x: 0;
-  --shadow-y: 1px;
-  --shadow-blur: 3px;
-  --shadow-spread: 0px;
-  --shadow-opacity: 0.1;
-  --shadow-color: oklch(0 0 0);
-  --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-  --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-  --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-  --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-  --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
-  --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
-  --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
-  --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 12px 14px -1px hsl(0 0% 0% / 0.1);
 }

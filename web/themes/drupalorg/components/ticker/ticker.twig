@@ -1,0 +1,48 @@
+{% set ticker_columns = columns|default('6') %}
+
+{# Each item is sized to a fraction of the viewport (container query units) so
+   `columns` are visible at once. Spacing comes from each item's own padding —
+   no flex `gap`, which would break the translateX(-50%) seamless loop. #}
+{% set track =
+  html_cva(
+    base: ['ticker__track flex w-max items-center [&>*]:shrink-0'],
+    variants: {
+      columns: {
+        '3': '[&>*]:basis-[calc(100cqw/2)] md:[&>*]:basis-[calc(100cqw/3)]',
+        '4': '[&>*]:basis-[calc(100cqw/2)] md:[&>*]:basis-[calc(100cqw/3)] lg:[&>*]:basis-[calc(100cqw/4)]',
+        '5': '[&>*]:basis-[calc(100cqw/2)] md:[&>*]:basis-[calc(100cqw/3)] lg:[&>*]:basis-[calc(100cqw/5)]',
+        '6': '[&>*]:basis-[calc(100cqw/2)] md:[&>*]:basis-[calc(100cqw/4)] lg:[&>*]:basis-[calc(100cqw/6)]'
+      }
+    }
+  )
+%}
+
+<section class="ticker flex flex-col gap-6">
+  {% if block('header') is defined %}
+    <div class="ticker__header text-center">
+      {% block header %}
+        <h2>Proud to power top global brands.</h2>
+      {% endblock %}
+    </div>
+  {% endif %}
+
+  <div class="ticker__viewport @container overflow-hidden md:mx-auto md:w-4/5">
+    <div
+      class="{{
+      track.apply({
+        columns: ticker_columns
+      })
+      }}"
+    >
+      {% block items %}
+        {% for label in ['UNICEF', 'NASA', 'Harvard', 'The Economist', 'Pfizer', 'NBC'] %}
+          <div class="flex items-center justify-center px-6 py-4">
+            <span class="text-2xl font-bold text-soft-grey-400">{{ label }}</span>
+          </div>
+        {% endfor %}
+      {% endblock %}
+    </div>
+  </div>
+
+  {{ attach_library('drupalorg/motion') }}
+</section>

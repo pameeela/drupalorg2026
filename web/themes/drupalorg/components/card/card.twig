@@ -1,59 +1,17 @@
-{% set card_orientation = orientation|default('vertical') %}
-{% set card_style = style|default('framed') %}
-{% set card_background = background|default('noColor') %}
-{% set is_text_centered = is_text_centered|default(false) ? 'yes' : 'no' %}
-{% set is_clickable = url is not empty ? 'yes' : 'no' %}
+{% set card_style = style|default('classic') %}
+{% set heading_level = level|default(3) %}
+{% set has_media = media.src is not empty %}
+{% set has_text = text is not empty %}
+{% set has_cta = url is not empty and cta_text is not empty %}
+{% set is_featured = card_style == 'featured' %}
 
 {% set card =
   html_cva(
-    base: ['group relative flex rounded-xl shadow-2xl transition duration-300 in-[.views-row]:h-full'],
+    base: ['group relative flex flex-col overflow-clip in-[.views-row]:h-full'],
     variants: {
-      orientation: {
-        vertical: 'flex-col',
-        horizontal: 'md:flex-row'
-      },
-      isTextCentered: {
-        yes: 'text-center',
-        no: 'text-left'
-      },
-      clickable: {
-        yes: 'cursor-pointer hover:scale-103',
-        no: ''
-      },
       style: {
-        framed: 'gap-4 p-4 lg:gap-4 lg:p-6',
-        full: ''
-      },
-      backgroundColor: {
-        default: 'bg-card text-card-foreground hover:bg-card/90 hover:text-card-foreground/90',
-        background: 'bg-background text-foreground hover:bg-background/90 hover:text-foreground/90',
-        accent: 'bg-accent text-accent-foreground hover:bg-accent/80 hover:text-accent-foreground/80',
-        primary: 'bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground/90',
-        inverted: 'bg-foreground text-background hover:bg-foreground/90 hover:text-background/90',
-        noColor: 'shadow-none hover:text-foreground/90'
-      }
-    },
-    compound_variants: [
-      {
-        style: ['framed'],
-        backgroundColor: ['noColor'],
-        class: 'border border-secondary hover:border-secondary/80'
-      }
-    ]
-  )
-%}
-
-{% set card_media =
-  html_cva(
-    base: 'aspect-video overflow-hidden',
-    variants: {
-      orientation: {
-        vertical: '',
-        horizontal: 'md:aspect-auto md:flex-[0_1_50%]'
-      },
-      style: {
-        framed: 'rounded-lg',
-        full: 'rounded-xl'
+        classic: 'rounded-lg bg-card text-card-foreground',
+        featured: 'min-h-[480px] justify-end rounded-2xl bg-dark-grey-500 text-white'
       }
     }
   )
@@ -61,41 +19,25 @@
 
 {% set card_content =
   html_cva(
-    base: 'flex w-full flex-col items-baseline',
+    base: 'relative flex flex-col',
     variants: {
-      orientation: {
-        vertical: '',
-        horizontal: 'md:flex-[0_1_50%]'
-      },
       style: {
-        framed: '',
-        full: 'rounded-b p-4 lg:p-6'
+        classic: 'flex-1 justify-between p-8',
+        featured: 'p-8 bg-gradient-to-t from-dark-grey-500 via-dark-grey-500/85 to-transparent'
       }
-    },
-    compound_variants: [
-      {
-        orientation: ['horizontal'],
-        style: ['full'],
-        class: 'p-4 lg:p-6'
-      },
-      {
-        orientation: ['horizontal'],
-        style: ['framed'],
-        class: ''
-      },
-      {
-        orientation: ['vertical'],
-        backgroundColor: ['noColor'],
-        style: ['full'],
-        class: 'px-0!'
-      },
-      {
-        orientation: ['horizontal'],
-        backgroundColor: ['noColor'],
-        style: ['full'],
-        class: 'py-0!'
+    }
+  )
+%}
+
+{% set card_text =
+  html_cva(
+    base: 'flex flex-col gap-3',
+    variants: {
+      hasCta: {
+        yes: 'pb-8',
+        no: ''
       }
-    ]
+    }
   )
 %}
 
@@ -103,59 +45,85 @@
   class="{{
   card.apply(
     {
-      orientation: card_orientation,
-      isTextCentered: is_text_centered,
-      clickable: is_clickable,
-      style: card_style,
-      backgroundColor: card_background
+      style: card_style
     },
     card_classes|default('')
   )
   }}"
 >
-  {% if media.src is not empty %}
-    <div
-      class="{{
-      card_media.apply({
-        orientation: card_orientation,
-        style: card_style,
-        backgroundColor: card_background
-      })
-      }}"
-    >
-      {% block media %}
+  {% if is_featured %}
+    {# Full-bleed background image with a dark gradient scrim for text legibility. #}
+    {% if has_media %}
+      <div class="absolute inset-0">
         {% include 'canvas:image' ignore missing with {
           src: media.src,
           alt: media.alt,
-          class: 'object-cover w-full h-full',
+          class: 'size-full object-cover transition duration-300 ease-in-out group-hover:scale-110',
           width: media.width,
           height: media.height,
-          sizes: card_orientation == 'stacked' ? 'auto, 100vw' : '50vw'
+          sizes: '100vw'
         } only %}
-      {% endblock %}
+      </div>
+    {% endif %}
+  {% elseif has_media %}
+    {# Framed image sitting above the content. #}
+    <div class="w-full px-1 pt-1">
+      <div class="aspect-[1619/971] w-full overflow-hidden rounded-sm bg-muted">
+        {% include 'canvas:image' ignore missing with {
+          src: media.src,
+          alt: media.alt,
+          class: 'object-cover w-full h-full transition duration-300 ease-in-out group-hover:scale-110',
+          width: media.width,
+          height: media.height,
+          sizes: '100vw'
+        } only %}
+      </div>
     </div>
   {% endif %}
 
   <div
     class="{{
     card_content.apply({
-      orientation: card_orientation,
-      style: card_style,
-      backgroundColor: card_background
+      style: card_style
     })
     }}"
   >
-    <div class="@container flex w-full flex-col gap-1 md:gap-2">
-      <h3 class="text-xl font-semibold @sm:text-2xl @2xl:text-3xl">
-        {% if is_clickable %}
-          <a href="{{ url }}" class="after:absolute after:inset-0 after:content-['']">{{ heading_text }}</a>
-        {% endif %}
-      </h3>
-      {% if text is not empty %}
-        <p class="mb-0 font-body text-md @sm:text-lg @2xl:text-xl">
+    <div
+      class="{{
+      card_text.apply({
+        hasCta: has_cta ? 'yes' : 'no'
+      })
+      }}"
+    >
+      {% if heading_level == 2 %}
+        <h2 class="text-xl font-medium">{{ heading_text }}</h2>
+      {% elseif heading_level == 4 %}
+        <h4 class="text-xl font-medium">{{ heading_text }}</h4>
+      {% else %}
+        <h3 class="text-xl font-medium">{{ heading_text }}</h3>
+      {% endif %}
+
+      {% if has_text %}
+        <p class="mb-0 font-body text-base font-light">
           {{ text }}
         </p>
       {% endif %}
     </div>
+
+    {% if has_cta %}
+      {{
+        include(
+          '@drupalorg/components/button/button.twig',
+          {
+            label: cta_text,
+            href: url,
+            variant: 'primary',
+            icon: 'arrow-right',
+            btn_classes: ['group-hover:bg-primary/85']
+          },
+          with_context: false
+        )
+      }}
+    {% endif %}
   </div>
 </div>

@@ -10,34 +10,21 @@ props:
   properties:
     label:
       type: string
-      title: Link text
+      title: Label
       examples:
-        - Badge text
-    url:
-      type: string
-      title: Link
-      format: uri-reference
+        - "Built for your whole team"
     style:
       type: string
       title: Style
       enum:
-        - primary
-        - secondary
+        - transparent
+        - transparent-inverse
+        - white
+        - dark
       meta:enum:
-        primary: Primary
-        secondary: Secondary
+        transparent: Transparent
+        transparent-inverse: Transparent (on dark)
+        white: White
+        dark: Dark
       examples:
-        - primary
-    icon:
-      type: string
-      title: Icon name
-      description: 'The ID of an icon from the <a href="https://phosphoricons.com/" target="_blank">Phosphor Icons</a> library.'
-      default: "rocket"
-      examples:
-        - "rocket"
-    icon_first:
-      type: boolean
-      title: Icon first
-      default: true
-      examples:
-        - true
+        - transparent

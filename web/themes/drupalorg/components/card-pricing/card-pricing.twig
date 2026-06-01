@@ -1,5 +1,5 @@
 {% set is_promoted = promote|default(false) ? 'yes' : 'no' %}
-{% set button_variant = promote|default(false) ? 'primary-inverted' : 'primary' %}
+{% set button_variant = promote|default(false) ? 'white' : 'primary' %}
 
 {% set card =
   html_cva(
@@ -96,7 +96,6 @@
           href: button_url|default(''),
           label: button_label,
           variant: button_variant,
-          size: 'medium',
           btn_classes: ['before:absolute', "before:content-['']", 'before:inset-0']
         },
         with_context: false

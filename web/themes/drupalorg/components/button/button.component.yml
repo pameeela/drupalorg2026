@@ -6,21 +6,16 @@ props:
   type: object
   required:
     - variant
-    - size
   properties:
     variant:
       type: string
-      title: Style
+      title: Colour
       enum:
         - primary
-        - secondary
-        - primary-inverted
-        - secondary-inverted
+        - white
       meta:enum:
-        primary: Primary
-        secondary: Secondary
-        primary-inverted: Primary inverted
-        secondary-inverted: Secondary inverted
+        primary: Brand Blue
+        white: White
       examples:
         - primary
     label:
@@ -28,24 +23,11 @@ props:
       title: Label
       default: "Button label"
       examples:
-        - "Button label"
+        - "Drupal for Marketers"
     href:
       type: string
       title: Link
       format: uri-reference
-    size:
-      type: string
-      title: Button size
-      enum:
-        - small
-        - medium
-        - large
-      meta:enum:
-        small: Small
-        medium: Medium
-        large: Large
-      examples:
-        - medium
     icon:
       type: string
       title: Icon
@@ -65,16 +47,6 @@ props:
         user-plus: User plus
       examples:
         - arrow-right
-    mobile_width:
-      type: boolean
-      title: Full width on mobile
-      default: false
-    icon_first:
-      type: boolean
-      title: Display icon first
-      default: false
-      examples:
-        - false
     disabled:
       type: boolean
       title: Disabled

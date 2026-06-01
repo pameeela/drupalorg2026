@@ -1,0 +1,39 @@
+{% set tab_icon = icon|default('') %}
+
+<div class="tab [&_.cq-full]:mx-0 [&_.cq-full]:w-full">
+  <button
+    type="button"
+    class="tab__nav -mb-px hidden flex cursor-pointer items-center gap-2 border-b-2 border-transparent pb-4 text-base font-medium text-dark-grey-400/60 hover:text-dark-grey-400 aria-selected:border-primary aria-selected:text-dark-grey-400"
+  >
+    {% if tab_icon is not empty %}
+      {{
+        include(
+          '@drupalorg/components/icon/icon.twig',
+          {
+            icon: tab_icon,
+            icon_size: 'medium'
+          },
+          with_context: false
+        )
+      }}
+    {% endif %}
+    <span>{{ title }}</span>
+  </button>
+
+  {# Panel. #}
+  <div class="tab__panel">
+    <div class="grid gap-8 md:grid-cols-[5fr_7fr] lg:gap-12">
+      <div class="tab__content flex flex-col items-start justify-center gap-4">
+        {% block content %}
+          {# Slot: supporting text and CTAs. #}
+        {% endblock %}
+      </div>
+
+      <div class="tab__media">
+        {% block media %}
+          {# Slot: image, video, or other media. #}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>
