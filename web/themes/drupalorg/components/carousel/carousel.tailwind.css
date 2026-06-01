@@ -1,0 +1,19 @@
+/* Feature nav row built by carousel.js from each slide's nav markup. */
+.carousel__nav {
+  @apply flex flex-wrap justify-center gap-8 md:gap-16;
+}
+
+/* Each feature button. Title/description/icon inside inherit this colour, so the
+   active toggle works without per-element colours. */
+.carousel__feature {
+  @apply flex max-w-xs cursor-pointer flex-col items-center gap-2 text-center text-dark-grey-400/50 transition duration-300;
+}
+
+.carousel__feature.is-active {
+  @apply text-dark-grey-400;
+}
+
+/* Slide width drives the peek: narrower than the viewport, centered by Swiper. */
+.carousel .swiper-slide {
+  @apply w-[90%] md:w-[85%];
+}

@@ -1,0 +1,47 @@
+{% set slide_icon = icon|default('') %}
+{% set has_media = media.src is not empty %}
+
+<div class="swiper-slide slide h-auto">
+  {# Nav metadata, hoisted into the carousel's feature row by carousel.js.
+     No explicit text colour — it inherits the feature button's active/muted state. #}
+  <div class="slide__nav hidden">
+    {% if slide_icon is not empty %}
+      {{
+        include(
+          '@drupalorg/components/icon/icon.twig',
+          {
+            icon: slide_icon,
+            icon_size: 'medium'
+          },
+          with_context: false
+        )
+      }}
+    {% endif %}
+    <span class="block text-xl font-medium">{{ title }}</span>
+    {% if description is not empty %}
+      <span class="block font-body text-sm font-light">{{ description }}</span>
+    {% endif %}
+  </div>
+
+  <div class="slide__body relative flex min-h-[480px] flex-col items-center justify-end overflow-clip rounded-lg bg-soft-grey-300 p-8 text-dark-grey-400">
+    {% if has_media %}
+      <div class="slide__media absolute inset-0">
+        {% block media %}
+          {% include 'canvas:image' ignore missing with {
+            src: media.src,
+            alt: media.alt,
+            width: media.width,
+            height: media.height,
+            class: 'size-full object-cover'
+          } only %}
+        {% endblock %}
+      </div>
+    {% endif %}
+
+    <div class="slide__content relative flex flex-wrap items-center justify-center gap-6">
+      {% block content %}
+        {# Slot: CTAs. #}
+      {% endblock %}
+    </div>
+  </div>
+</div>

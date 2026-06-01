@@ -1,0 +1,34 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Slide
+description: A single carousel slide. Place inside a Carousel component.
+group: Layout
+props:
+  type: object
+  required:
+    - title
+  properties:
+    title:
+      type: string
+      title: Title
+      description: Used as the slide's feature-nav label.
+      examples:
+        - "One-click site templates"
+    icon:
+      type: string
+      title: Icon
+      description: 'The ID of an icon from the Phosphor Icons library.'
+      default: "squares-four"
+      examples:
+        - "squares-four"
+    description:
+      type: string
+      title: Description
+      examples:
+        - "Choose a template, launch, and customise. Professional sites in hours."
+slots:
+  media:
+    title: Media
+    description: Large visual filling the slide.
+  content:
+    title: Content
+    description: Calls to action shown at the bottom of the slide.
