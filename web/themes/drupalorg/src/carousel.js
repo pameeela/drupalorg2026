@@ -26,8 +26,14 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
 
   // Hoist each original slide's nav (icon + title + description) into the
   // feature nav row as a button.
+  // Captured per original slide so the mobile detail region (below the carousel)
+  // can show the active slide's feature info + CTAs.
+  const featureHTML = [];
+  const ctaHTML = [];
+
   const navButtons = originalSlides.map((slide) => {
     const slideNav = slide.querySelector(".slide__nav");
+    const slideContent = slide.querySelector(".slide__content");
     const button = document.createElement("button");
     button.type = "button";
     button.className = "carousel__feature";
@@ -37,11 +43,15 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
       slideNav.remove();
     }
 
+    featureHTML.push(button.innerHTML);
+    ctaHTML.push(slideContent ? slideContent.innerHTML : "");
+
     nav.appendChild(button);
     return button;
   });
 
   const slideCount = navButtons.length;
+  const detail = carousel.querySelector(".carousel__detail");
 
   // Duplicate the slide set when there are too few for a smooth both-sides peek.
   // Clones are decorative (aria-hidden) and removed from the tab order; the
@@ -85,6 +95,18 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
         button.removeAttribute("aria-current");
       }
     });
+
+    // Mobile-only detail below the carousel: the active slide's feature info +
+    // CTAs (CSS hides this on desktop, where the nav row + in-slide CTAs apply).
+    if (detail) {
+      detail.innerHTML =
+        '<div class="carousel__detail-feature">' +
+        featureHTML[activeFeature] +
+        "</div>" +
+        '<div class="carousel__detail-cta">' +
+        ctaHTML[activeFeature] +
+        "</div>";
+    }
   };
 
   navButtons.forEach((button, index) => {

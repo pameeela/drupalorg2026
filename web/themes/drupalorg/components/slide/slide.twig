@@ -22,14 +22,15 @@
     {% endif %}
   </div>
 
-  <div class="slide__body relative flex min-h-[480px] flex-col items-center justify-end overflow-clip rounded-lg bg-soft-grey-300 p-8 text-dark-grey-400">
+  <div class="slide__body relative flex min-h-[184px] flex-col items-center justify-end overflow-clip rounded-lg bg-soft-grey-300 p-8 text-dark-grey-400 md:min-h-[480px]">
     <div class="slide__media absolute inset-0 [&_img]:size-full [&_img]:object-cover">
       {% block media %}
         {# Slot: large visual (image, video, etc.). #}
       {% endblock %}
     </div>
 
-    <div class="slide__content relative flex flex-wrap items-center justify-center gap-6">
+    {# On mobile the CTAs render in the carousel's detail region instead. #}
+    <div class="slide__content relative flex max-md:hidden flex-wrap items-center justify-center gap-6">
       {% block content %}
         {# Slot: CTAs. #}
       {% endblock %}

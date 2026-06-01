@@ -12,21 +12,6 @@ props:
       default: true
       examples:
         - true
-    slides_per_view:
-      type: string
-      title: Slides per view
-      description: How many slides are visible across the carousel (the active one is centered, with the rest peeking).
-      enum:
-        - "1"
-        - "2"
-        - "3"
-      meta:enum:
-        "1": "1 (centered with peek)"
-        "2": "2"
-        "3": "3"
-      default: "1"
-      examples:
-        - "1"
 slots:
   header:
     title: Header
