@@ -27,9 +27,9 @@ motion:
   dependencies:
     - core/once
 
-carousel:
+carousel-tabs:
   css:
     theme:
-      build/carousel.css: { minified: true }
+      build/carousel-tabs.css: { minified: true }
   js:
-    build/carousel.js: { minified: true }
+    build/carousel-tabs.js: { minified: true }

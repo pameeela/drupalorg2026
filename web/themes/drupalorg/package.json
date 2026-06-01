@@ -5,13 +5,13 @@
   "license": "GPL-2.0-or-later",
   "type": "module",
   "scripts": {
-    "dev": "$npm_execpath run s:tailwindcss && $npm_execpath run s:carousel && $npm_execpath run s:motion -- --watch",
-    "build": "$npm_execpath run s:tailwindcss && $npm_execpath run s:motion && $npm_execpath run s:carousel",
+    "dev": "$npm_execpath run s:tailwindcss && $npm_execpath run s:carousel-tabs && $npm_execpath run s:motion -- --watch",
+    "build": "$npm_execpath run s:tailwindcss && $npm_execpath run s:motion && $npm_execpath run s:carousel-tabs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "s:tailwindcss": "tailwindcss --input ./src/main.css --minify --output ./build/main.min.css",
     "s:motion": "esbuild ./src/motion.js --bundle --minify --format=iife --outfile=./build/motion.js",
-    "s:carousel": "esbuild ./src/carousel.js --bundle --minify --format=iife --outfile=./build/carousel.js"
+    "s:carousel-tabs": "esbuild ./src/carousel-tabs.js --bundle --minify --format=iife --outfile=./build/carousel-tabs.js"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.18",
