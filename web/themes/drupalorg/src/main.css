@@ -352,7 +352,7 @@
 
   /* Set a fixed width on the main content container. */
   .region-content {
-    @apply container mx-auto px-4 pb-8;
+    @apply container mx-auto px-4;
   }
 
   /* Alter the logo in the footer manually for the dark background. */
