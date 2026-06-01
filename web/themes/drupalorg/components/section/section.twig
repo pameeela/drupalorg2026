@@ -17,42 +17,27 @@
       },
       marginBlockStart: {
         '0': 'mt-0',
-        '8': 'mt-2',
-        '20': 'mt-5',
-        '32': 'mt-6 md:mt-7 xl:mt-8',
-        '48': 'mt-8 md:mt-10 xl:mt-12',
-        '64': 'mt-10 md:mt-13 xl:mt-16',
-        '96': 'mt-16 md:mt-20 xl:mt-24',
-        '128': 'mt-20 md:mt-24 xl:mt-32'
+        'small': 'mt-10',
+        'default': 'mt-20',
+        'large': 'mt-32'
       },
       marginBlockEnd: {
         '0': 'mb-0',
-        '8': 'mb-2',
-        '20': 'mb-5',
-        '32': 'mb-6 md:mb-7 xl:mb-8',
-        '48': 'mb-8 md:mb-10 xl:mb-12',
-        '64': 'mb-10 md:mb-13 xl:mb-16',
-        '96': 'mb-16 md:mb-20 xl:mb-24',
-        '128': 'mb-20 md:mb-24 xl:mb-32'
+        'small': 'mb-10',
+        'default': 'mb-20',
+        'large': 'mb-32'
       },
       paddingBlockStart: {
         '0': 'pt-0',
-        '16': 'pt-4',
-        '32': 'pt-6 md:pt-7 xl:pt-8',
-        '64': 'pt-10 md:pt-13 xl:pt-16'
+        'small': 'pt-10',
+        'default': 'pt-20',
+        'large': 'pt-32'
       },
       paddingBlockEnd: {
         '0': 'pb-0',
-        '16': 'pb-4',
-        '32': 'pb-6 md:pb-7 xl:pb-8',
-        '64': 'pb-10 md:pb-13 xl:pb-16'
-      },
-      backgroundColor: {
-        primary: 'text-primary-foreground',
-        secondary: 'text-secondary-foreground',
-        accent: 'text-accent-foreground',
-        muted: 'text-muted-foreground',
-        noColor: 'text-foreground'
+        'small': 'pb-10',
+        'default': 'pb-20',
+        'large': 'pb-32'
       }
     }
   )
@@ -79,10 +64,10 @@
     base: ['absolute', 'inset-0', 'z-[-1]'],
     variants: {
       backgroundColor: {
-        primary: 'bg-primary',
-        secondary: 'bg-secondary',
-        accent: 'bg-accent',
-        muted: 'bg-muted',
+        dark: 'bg-brand-blue-800',
+        'light-grey': 'bg-light-grey-100',
+        'light-blue': 'bg-brand-blue-100',
+        'dark-grey': 'bg-dark-blue-500',
         noColor: 'bg-none'
       },
       backgroundImage: {

@@ -35,7 +35,7 @@
 
 {% set overlay_variants =
   html_cva(
-    base: ['absolute inset-0'],
+    base: ['absolute inset-0 rounded-lg'],
     variants: {
       opacity: {
         '0%': 'bg-black/0',
@@ -50,7 +50,7 @@
 
 {% set image_variants =
   html_cva(
-    base: ['h-full w-full object-cover'],
+    base: ['h-full w-full object-cover rounded-lg'],
     variants: {
       position: {
         top: 'object-top',

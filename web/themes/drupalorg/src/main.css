@@ -2,7 +2,6 @@
 
 @import "../components/navbar/navbar.tailwind.css";
 @import "../components/anchor/anchor.tailwind.css";
-@import "../components/carousel/carousel.tailwind.css";
 
 @theme inline {
   /* Primitive palette (Figma) — bg-brand-blue-300, text-dark-grey-400, etc. */
@@ -353,7 +352,7 @@
 
   /* Set a fixed width on the main content container. */
   .region-content {
-    @apply container mx-auto px-4 pb-8;
+    @apply container mx-auto px-4;
   }
 
   /* Alter the logo in the footer manually for the dark background. */
