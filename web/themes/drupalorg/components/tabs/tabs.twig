@@ -13,15 +13,20 @@
 
   {# Populated by tabs.js: each Tab's nav button is hoisted in here. Hidden
      until JS runs so the no-JS / Canvas-editor fallback shows stacked panels. #}
-  <div class="tabs__tablist hidden flex flex-wrap gap-x-12 gap-y-2 border-b border-border" role="tablist"></div>
+  <div class="tabs__tablist flex hidden flex-wrap gap-x-12 gap-y-2 border-b border-border" role="tablist"></div>
 
   <div class="tabs__panels flex flex-col gap-8">
     {% block tabs %}
-      {% embed 'drupalorg:tab' with { title: 'One-click site templates', icon: 'squares-four' } %}
+      {% embed 'drupalorg:tab'
+        with {
+          title: 'One-click site templates',
+          icon: 'squares-four'
+        }
+      %}
         {% block content %}
           <p class="font-body text-base font-light text-dark-grey-300">
-            Start with a one-click site template. Customise it with intuitive visual building tools. Go live with industry-specific best practices baked
-            in and a suite of AI agents working alongside you from day one.
+            Start with a one-click site template. Customise it with intuitive visual building tools. Go live with industry-specific best practices
+            baked in and a suite of AI agents working alongside you from day one.
           </p>
           <div class="flex flex-wrap items-center gap-6">
             {% include '@drupalorg/components/button/button.twig' with {
@@ -38,10 +43,16 @@
         {% endblock %}
       {% endembed %}
 
-      {% embed 'drupalorg:tab' with { title: 'AI agents from day one', icon: 'sparkle' } %}
+      {% embed 'drupalorg:tab'
+        with {
+          title: 'AI agents from day one',
+          icon: 'sparkle'
+        }
+      %}
         {% block content %}
           <p class="font-body text-base font-light text-dark-grey-300">
-            A suite of AI agents works alongside you from the very first day, helping you build, edit, and manage your site through natural conversation.
+            A suite of AI agents works alongside you from the very first day, helping you build, edit, and manage your site through natural
+            conversation.
           </p>
           <div class="flex flex-wrap items-center gap-6">
             {% include '@drupalorg/components/button/button.twig' with {
@@ -58,7 +69,12 @@
         {% endblock %}
       {% endembed %}
 
-      {% embed 'drupalorg:tab' with { title: 'No ceiling', icon: 'infinity' } %}
+      {% embed 'drupalorg:tab'
+        with {
+          title: 'No ceiling',
+          icon: 'infinity'
+        }
+      %}
         {% block content %}
           <p class="font-body text-base font-light text-dark-grey-300">
             Start simple and scale without limits. Drupal grows with you — from a first site to the most ambitious digital platforms in the world.

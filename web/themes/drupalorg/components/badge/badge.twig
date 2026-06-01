@@ -6,10 +6,7 @@
 
 {% set badge =
   html_cva(
-    base: [
-      'rounded-sm border px-3 py-1.5',
-      'text-center text-[11px] leading-normal font-medium tracking-[0.55px] whitespace-nowrap uppercase'
-    ],
+    base: ['rounded-sm border px-3 py-1.5', 'text-center text-[11px] leading-normal font-medium tracking-[0.55px] whitespace-nowrap uppercase'],
     variants: {
       style: {
         transparent: 'border-soft-grey-400 text-dark-grey-400',
@@ -30,4 +27,6 @@
     additional_classes
   )
   }}"
->{{ label }}</span>
+>
+  {{ label }}
+</span>

@@ -1,16 +1,16 @@
 {% set pager_page =
   html_cva(
     base: [
-    'flex h-10 min-h-10 w-10 min-w-10 shrink-0 items-center justify-center rounded',
-    'text-sm font-semibold tabular-nums md:text-base',
-    'transition-colors duration-300'
-  ],
+      'flex h-10 min-h-10 w-10 min-w-10 shrink-0 items-center justify-center rounded',
+      'text-sm font-semibold tabular-nums md:text-base',
+      'transition-colors duration-300'
+    ],
     variants: {
-    isCurrent: {
-      yes: 'bg-foreground font-bold text-white',
-      no: 'hover:bg-muted'
+      isCurrent: {
+        yes: 'bg-foreground font-bold text-white',
+        no: 'hover:bg-muted'
+      }
     }
-  }
   )
 %}
 {% set list_classes = ['pager__items', 'js-pager__items', 'flex list-none items-center justify-center gap-1'] %}
@@ -52,13 +52,13 @@
               <div class="flex gap-1">
                 <span class="{{ pager_icon_link_classes }} translate-y-0.5" aria-hidden="true">
                   {{
-                  include(
-                    'mercury:icon',
-                    {
-                      icon: 'caret-double-left',
-                      icon_size: 'extra-small'
-                    }
-                  )
+                    include(
+                      'mercury:icon',
+                      {
+                        icon: 'caret-double-left',
+                        icon_size: 'extra-small'
+                      }
+                    )
                   }}
                 </span>
               </div>
@@ -79,13 +79,13 @@
             <span class="sr-only">{{ 'Previous page'|t }}</span>
             <span class="{{ pager_icon_link_classes }}" aria-hidden="true">
               {{
-              include(
-                'mercury:icon',
-                {
-                  icon: 'caret-left',
-                  icon_size: 'extra-small'
-                }
-              )
+                include(
+                  'mercury:icon',
+                  {
+                    icon: 'caret-left',
+                    icon_size: 'extra-small'
+                  }
+                )
               }}
             </span>
           </a>
@@ -98,13 +98,13 @@
           <span class="{{ ellipsis_container_classes|join(' ') }}" role="presentation">
             <span class="{{ pager_icon_ellipsis_classes }}" aria-hidden="true">
               {{
-              include(
-                'mercury:icon',
-                {
-                  icon: 'dots-three',
-                  icon_size: 'extra-small'
-                }
-              )
+                include(
+                  'mercury:icon',
+                  {
+                    icon: 'dots-three',
+                    icon_size: 'extra-small'
+                  }
+                )
               }}
             </span>
           </span>
@@ -134,13 +134,13 @@
           <span class="{{ ellipsis_container_classes|join(' ') }}" role="presentation">
             <span class="{{ pager_icon_ellipsis_classes }}" aria-hidden="true">
               {{
-              include(
-                'mercury:icon',
-                {
-                  icon: 'dots-three',
-                  icon_size: 'extra-small'
-                }
-              )
+                include(
+                  'mercury:icon',
+                  {
+                    icon: 'dots-three',
+                    icon_size: 'extra-small'
+                  }
+                )
               }}
             </span>
           </span>
@@ -159,13 +159,13 @@
             <span class="sr-only">{{ 'Next page'|t }}</span>
             <span class="{{ pager_icon_link_classes }}" aria-hidden="true">
               {{
-              include(
-                'mercury:icon',
-                {
-                  icon: 'caret-right',
-                  icon_size: 'extra-small'
-                }
-              )
+                include(
+                  'mercury:icon',
+                  {
+                    icon: 'caret-right',
+                    icon_size: 'extra-small'
+                  }
+                )
               }}
             </span>
           </a>
@@ -184,13 +184,13 @@
               <div class="flex gap-1">
                 <span class="{{ pager_icon_link_classes }} translate-y-0.5" aria-hidden="true">
                   {{
-                  include(
-                    'mercury:icon',
-                    {
-                      icon: 'caret-double-right',
-                      icon_size: 'extra-small'
-                    }
-                  )
+                    include(
+                      'mercury:icon',
+                      {
+                        icon: 'caret-double-right',
+                        icon_size: 'extra-small'
+                      }
+                    )
                   }}
                 </span>
               </div>
