@@ -26,4 +26,3 @@ build/
 public/components
 CLAUDE.md
 .claude/*
-!build/
