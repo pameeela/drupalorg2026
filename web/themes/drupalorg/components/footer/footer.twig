@@ -10,7 +10,7 @@
   html_cva(base: ['flex w-full flex-col justify-between gap-6 py-12 md:grid md:grid-cols-2 md:gap-6 [&_li]:text-lg', 'border-t border-brand-blue-600'])
 %}
 
-{% set footer_first_col_variants = html_cva(base: ['flex', 'flex-col', 'gap-6', '[&_.branding]:h-10']) %}
+{% set footer_first_col_variants = html_cva(base: ['flex', 'flex-col', 'gap-6', '[&_.branding]:h-10 md:[&_.branding]:h-14']) %}
 
 {% set footer_last_col_variants =
   html_cva(base: ['flex flex-col gap-2 md:mx-0 md:ms-auto md:w-xs lg:w-md', '[&_form]:flex [&_form]:flex-row [&_form]:gap-2 md:[&_form]:items-end'])

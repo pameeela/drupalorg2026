@@ -37,10 +37,10 @@
 .navbar--logo,
 .navbar--modal-logo {
   .branding {
-    @apply h-8 md:h-10;
+    @apply h-10 md:h-12;
     svg,
     img[src$=".svg"] {
-      @apply h-auto! max-h-full;
+      @apply max-h-full;
     }
   }
 }
