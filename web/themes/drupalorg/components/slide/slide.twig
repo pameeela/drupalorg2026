@@ -1,0 +1,40 @@
+{% set slide_icon = icon|default('') %}
+
+<div class="swiper-slide slide h-auto">
+  {# Nav metadata, hoisted into the carousel's feature row by carousel-tabs.js. #}
+  <div class="slide__nav hidden">
+    {% if slide_icon is not empty %}
+      {{
+        include(
+          '@drupalorg/components/icon/icon.twig',
+          {
+            icon: slide_icon,
+            icon_size: 'medium'
+          },
+          with_context: false
+        )
+      }}
+    {% endif %}
+    <span class="block text-xl font-medium">{{ title }}</span>
+    {% if description is not empty %}
+      <span class="block font-body text-sm font-light">{{ description }}</span>
+    {% endif %}
+  </div>
+
+  <div
+    class="slide__body relative flex min-h-[184px] flex-col items-center justify-end overflow-clip rounded-lg bg-soft-grey-300 p-8 text-dark-grey-400 sm:min-h-[250px] md:min-h-[480px]"
+  >
+    <div class="slide__media absolute inset-0 [&_img]:size-full [&_img]:object-cover">
+      {% block media %}
+
+      {% endblock %}
+    </div>
+
+    {# On mobile the CTAs render in the carousel's detail region instead. #}
+    <div class="slide__content relative flex flex-wrap items-center justify-center gap-6 max-md:hidden">
+      {% block content %}
+
+      {% endblock %}
+    </div>
+  </div>
+</div>

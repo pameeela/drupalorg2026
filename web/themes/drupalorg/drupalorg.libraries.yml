@@ -26,3 +26,10 @@ motion:
     build/motion.js: { minified: true }
   dependencies:
     - core/once
+
+carousel-tabs:
+  css:
+    theme:
+      build/carousel-tabs.css: { minified: true }
+  js:
+    build/carousel-tabs.js: { minified: true }

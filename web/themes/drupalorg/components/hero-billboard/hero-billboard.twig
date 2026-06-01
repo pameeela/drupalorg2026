@@ -50,7 +50,7 @@
 
 {% set image_variants =
   html_cva(
-    base: ['h-full w-full object-cover rounded-lg'],
+    base: ['h-full w-full rounded-lg object-cover'],
     variants: {
       position: {
         top: 'object-top',
@@ -116,7 +116,7 @@
       {% endblock %}
     </div>
   {% endif %}
-  <div class="container mx-auto px-4">
+  <div class="container mx-auto px-8">
     <div
       class="{{
       content_variants.apply({

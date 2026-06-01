@@ -6,11 +6,7 @@
 
 {% set footer_variants = html_cva(base: ['flex', 'flex-col']) %}
 
-{% set footer_top_variants =
-  html_cva(
-    base: ['flex w-full flex-col justify-between gap-6 py-12 md:grid md:grid-cols-2 md:gap-6 [&_li]:text-lg']
-  )
-%}
+{% set footer_top_variants = html_cva(base: ['flex w-full flex-col justify-between gap-6 py-12 md:grid md:grid-cols-2 md:gap-6 [&_li]:text-lg']) %}
 
 {% set footer_first_col_variants = html_cva(base: ['flex', 'flex-col', 'gap-6', '[&_.branding]:h-10 md:[&_.branding]:h-14']) %}
 
@@ -40,7 +36,7 @@
   )
 %}
 <div class="bg-brand-blue-700">
-  <section class="site-footer container mx-auto px-4 text-white">
+  <section class="site-footer container mx-auto px-8 text-white">
     <div class="{{ footer_variants.apply({}, additional_classes) }}">
       <div class="{{ footer_top_variants.apply({}) }}">
         {% if block('footer_first') is defined %}

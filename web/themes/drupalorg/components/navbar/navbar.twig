@@ -17,7 +17,7 @@
   })
 %}
 
-<div class="navbar relative z-[500] container mx-auto flex justify-between p-2 px-4 md:py-4">
+<div class="navbar relative z-[500] container mx-auto flex justify-between p-2 px-8 md:py-4">
   <div class="navbar--logo self-center [&>div]:flex [&>div]:flex-col [&>div]:justify-center">
     {% block logo %}
       {{ include('@drupalorg/templates/block/block--system-branding-block.html.twig') }}
@@ -53,7 +53,7 @@
     </div>
 
     <div
-      class="navbar--dropdown-menu-wrapper relative col-span-1 col-start-1 row-span-1 row-start-2 container mx-auto min-h-0 w-full flex-1 p-2 px-4 after:pointer-events-none after:absolute after:bottom-0 after:z-3 after:h-24 after:w-full after:bg-linear-to-b after:from-transparent after:to-background after:content-[''] md:p-0 md:after:content-none"
+      class="navbar--dropdown-menu-wrapper relative col-span-1 col-start-1 row-span-1 row-start-2 container mx-auto min-h-0 w-full flex-1 p-2 px-8 after:pointer-events-none after:absolute after:bottom-0 after:z-3 after:h-24 after:w-full after:bg-linear-to-b after:from-transparent after:to-background after:content-[''] md:p-0 md:after:content-none"
     >
       <div class="{{ dropdown_menu_classes }}">
         {% block navigation %}
