@@ -1,0 +1,15 @@
+name: 'Drupal.org Marketing'
+type: theme
+'base theme': false
+libraries:
+  - drupalorg/global
+logo: logo-dark.svg
+description: 'Custom theme for the drupal.org marketing site.'
+core_version_requirement: ^11
+generator: 'mercury:1.0.4'
+regions:
+  content: Content
+  header: Header
+  footer: Footer
+dependencies:
+  - 'cva:cva'
