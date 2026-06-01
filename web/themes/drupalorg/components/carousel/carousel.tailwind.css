@@ -13,7 +13,20 @@
   @apply text-dark-grey-400;
 }
 
-/* Slide width drives the peek: narrower than the viewport, centered by Swiper. */
-.carousel .swiper-slide {
+/* Slide width drives the peek (the active slide is centered by Swiper, the rest
+   peek). These are plain, UNLAYERED rules on purpose: Swiper's own CSS sets
+   `.swiper-slide { width: 100% }` unlayered, and Tailwind utilities live in
+   @layer — so a utility would lose regardless of specificity. A plain
+   `.carousel--per-view-N .swiper-slide` rule (0,2,0, unlayered) wins. Driven by
+   the carousel's `slides_per_view` prop. */
+.carousel--per-view-1 .swiper-slide {
   @apply w-[90%] md:w-[85%];
+}
+
+.carousel--per-view-2 .swiper-slide {
+  @apply w-[70%] md:w-[48%];
+}
+
+.carousel--per-view-3 .swiper-slide {
+  @apply w-[80%] md:w-[32%];
 }

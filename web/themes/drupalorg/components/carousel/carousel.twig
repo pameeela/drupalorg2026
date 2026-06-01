@@ -1,6 +1,27 @@
 {% set is_autoplay = autoplay|default(true) %}
+{% set per_view = slides_per_view|default('1') %}
 
-<section class="carousel flex flex-col gap-8" data-autoplay="{{ is_autoplay ? 'true' : 'false' }}">
+{% set carousel =
+  html_cva(
+    base: 'carousel cq-full flex flex-col gap-8',
+    variants: {
+      perView: {
+        '1': 'carousel--per-view-1',
+        '2': 'carousel--per-view-2',
+        '3': 'carousel--per-view-3'
+      }
+    }
+  )
+%}
+
+<section
+  class="{{
+  carousel.apply({
+    perView: per_view
+  })
+  }}"
+  data-autoplay="{{ is_autoplay ? 'true' : 'false' }}"
+>
   {% if block('header') is defined %}
     <div class="carousel__header flex flex-col items-center gap-4 text-center">
       {% block header %}

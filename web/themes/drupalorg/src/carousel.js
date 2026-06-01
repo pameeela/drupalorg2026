@@ -41,6 +41,8 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
     modules: [Autoplay, Keyboard, A11y],
     loop: slides.length > 1,
     centeredSlides: true,
+    // "auto" reads each slide's CSS width (set per the carousel's slides_per_view
+    // prop), which is what reliably produces the peek layout.
     slidesPerView: "auto",
     spaceBetween: 24,
     keyboard: { enabled: true },
