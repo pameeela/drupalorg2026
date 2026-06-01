@@ -56,48 +56,6 @@ final class ThemeHooks {
   }
 
   /**
-   * Implements hook_library_info_alter().
-   */
-  #[Hook('library_info_alter')]
-  public function alterLibraryInfo(array &$libraries, string $extension): void {
-    $override = static function (string $name, string $replacement) use (&$libraries): void {
-      $old_parents = ['global', 'css', 'theme', $name];
-      $new_parents = [...array_slice($old_parents, 0, -1), $replacement];
-      $css_settings = NestedArray::getValue($libraries, $old_parents);
-      NestedArray::setValue($libraries, $new_parents, $css_settings);
-      NestedArray::unsetValue($libraries, $old_parents);
-    };
-    if ($extension === 'drupalorg') {
-      if (file_exists(self::$appRoot . '/theme.css')) {
-        $override('src/theme.css', '/theme.css');
-      }
-      if (file_exists(self::$appRoot . '/fonts.css')) {
-        $override('src/fonts.css', '/fonts.css');
-      }
-    }
-  }
-
-  /**
-   * Implements hook_form_FORM_ID_alter().
-   */
-  #[Hook('form_system_theme_settings_alter')]
-  public function themeSettingsFormAlter(array &$form): void {
-    $form['scheme'] = [
-      '#type' => 'radios',
-      '#title' => t('Color scheme'),
-      '#default_value' => $this->themeSettings->getSetting('scheme'),
-      '#options' => [
-        'light' => t('Light'),
-        'dark' => t('Dark'),
-      ],
-    ];
-    $message = $this->t("See <code>@path</code> to learn how to customize Drupalorg's fonts, colors, and components.", [
-      '@path' => $this->themeList->getPath('drupalorg') . '/CUSTOMIZING.md',
-    ]);
-    $this->messenger()->addMessage($message, 'info');
-  }
-
-  /**
    * Implements template_preprocess_image_widget().
    */
   #[Hook('preprocess_image_widget')]
@@ -118,7 +76,6 @@ final class ThemeHooks {
    */
   #[Hook('preprocess_html')]
   public function preprocessHtml(array &$variables): void {
-    $variables['scheme'] = $this->themeSettings->getSetting('scheme');
     // Get the theme base path for font preloading.
     $variables['drupalorg_path'] = $this->requestStack->getCurrentRequest()->getBasePath() . '/' . $this->themeList->getPath('drupalorg');
   }
