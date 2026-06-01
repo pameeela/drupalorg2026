@@ -1,0 +1,21 @@
+uuid: 2f7d8233-c396-4082-b3d8-7ed9be4f845a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - drupalorg
+active_version: 6d6367123c15a82a
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions: {  }
+    fallback_metadata:
+      slot_definitions:
+        accordion_content:
+          title: 'Accordion content'
+          description: 'Only one of collapsible sections added can be open at a time.'
+label: 'Accordion container'
+id: sdc.drupalorg.accordion-container
+provider: drupalorg
+source: sdc
+source_local_id: 'drupalorg:accordion-container'

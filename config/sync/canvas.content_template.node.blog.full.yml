@@ -1,0 +1,85 @@
+uuid: 4ecb04b5-ef79-47df-b7f6-9f7f5d9ccbb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.block.system_breadcrumb_block
+    - canvas.component.sdc.drupalorg.heading
+    - canvas.component.sdc.drupalorg.section
+    - canvas.component.sdc.drupalorg.text
+    - core.entity_view_mode.node.full
+    - field.field.node.blog.field_content
+    - filter.format.content_format
+    - node.type.blog
+  module:
+    - node
+    - options
+id: node.blog.full
+content_entity_type_id: node
+content_entity_type_bundle: blog
+content_entity_type_view_mode: full
+component_tree:
+  '0:083fb097-30a3-4016-b735-afd5e554a0d3':
+    uuid: 083fb097-30a3-4016-b735-afd5e554a0d3
+    component_id: sdc.drupalorg.section
+    component_version: e17a6aced7510dfa
+    inputs:
+      width: 100%
+      columns: '1 column'
+      mobile_columns: '1'
+      margin_block_start: '48'
+      margin_block_end: '48'
+      padding_block_start: '0'
+      padding_block_end: '0'
+      section_header: false
+      section_footer: false
+  '0:main_slot:0:f519d4f1-e7d0-4cb2-83c6-335421489fa3':
+    parent_uuid: 083fb097-30a3-4016-b735-afd5e554a0d3
+    slot: main_slot
+    uuid: f519d4f1-e7d0-4cb2-83c6-335421489fa3
+    component_id: block.system_breadcrumb_block
+    component_version: ad6359c331fc7c45
+    inputs:
+      label: Breadcrumbs
+      label_display: '0'
+  '1:e40c9bd4-68e1-442c-ac26-90e16226b652':
+    uuid: e40c9bd4-68e1-442c-ac26-90e16226b652
+    component_id: sdc.drupalorg.section
+    component_version: e17a6aced7510dfa
+    inputs:
+      width: 70%
+      columns: '1 column'
+      mobile_columns: '1'
+      margin_block_start: '64'
+      margin_block_end: '48'
+      padding_block_start: '0'
+      padding_block_end: '0'
+      section_header: true
+      section_footer: false
+  '1:header_slot:0:f5db3bd4-e732-4384-8bbd-a3f633e58c4d':
+    parent_uuid: e40c9bd4-68e1-442c-ac26-90e16226b652
+    slot: header_slot
+    uuid: f5db3bd4-e732-4384-8bbd-a3f633e58c4d
+    component_id: sdc.drupalorg.heading
+    component_version: ffda3448819379a1
+    inputs:
+      heading_text:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:blog␝title␞␟value'
+      level: 1
+      text_size: heading-responsive-5xl
+      text_color: default
+      align: left
+  '1:main_slot:0:94ce609d-dd6d-4286-9d73-61910a0f52e5':
+    parent_uuid: e40c9bd4-68e1-442c-ac26-90e16226b652
+    slot: main_slot
+    uuid: 94ce609d-dd6d-4286-9d73-61910a0f52e5
+    component_id: sdc.drupalorg.text
+    component_version: 16c79c28a4108f9b
+    inputs:
+      text:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:blog␝field_content␞␟processed'
+      text_size: normal
+      text_color: default
+exposed_slots: {  }

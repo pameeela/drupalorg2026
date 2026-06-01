@@ -1,0 +1,44 @@
+uuid: 9ae195da-9bc6-453a-b3d0-83534bf6ccca
+langcode: en
+status: true
+dependencies:
+  theme:
+    - drupalorg
+active_version: 1835b2d6fb61038f
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        title:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'One-click site templates'
+          expression: ℹ︎string␟value
+        icon:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: squares-four
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions:
+        content:
+          title: Content
+          description: 'Left column — heading-supporting text and calls to action.'
+        media:
+          title: Media
+          description: 'Right column — image, video, or other media.'
+label: Tab
+id: sdc.drupalorg.tab
+provider: drupalorg
+source: sdc
+source_local_id: 'drupalorg:tab'

@@ -1,0 +1,15 @@
+uuid: 9a355d71-50c2-4beb-8947-8b8dae51bc03
+langcode: en
+status: true
+dependencies: {  }
+name: Card
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.drupalorg.card
+  - sdc.drupalorg.card-article
+  - sdc.drupalorg.card-article-featured
+  - sdc.drupalorg.card-icon
+  - sdc.drupalorg.card-logo
+  - sdc.drupalorg.card-pricing
+  - sdc.drupalorg.card-testimonial

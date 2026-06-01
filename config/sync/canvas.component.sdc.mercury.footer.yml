@@ -1,0 +1,39 @@
+uuid: ddc8079b-fa86-4a25-a6f0-8decdf7c89f0
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: jGe8zqVe6RvvMzUKVpBwnQveUxTCLSqH8n23dqSJvCE
+active_version: fallback
+versioned_properties:
+  active:
+    settings:
+      last_active_version: d696cea1796b650e
+  d696cea1796b650e:
+    settings:
+      prop_field_definitions:
+        align:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value:
+            -
+              value: true
+          expression: ℹ︎boolean␟value
+    fallback_metadata:
+      slot_definitions:
+        footer_first:
+          title: 'Branding & Social'
+        footer_last:
+          title: 'Call to action'
+        footer_utility_first:
+          title: 'Utility links'
+        footer_utility_last:
+          title: 'Copyright text'
+label: Footer
+id: sdc.mercury.footer
+provider: mercury
+source: sdc
+source_local_id: 'mercury:footer'

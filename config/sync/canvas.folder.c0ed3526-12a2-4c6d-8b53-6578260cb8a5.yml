@@ -1,0 +1,20 @@
+uuid: c0ed3526-12a2-4c6d-8b53-6578260cb8a5
+langcode: en
+status: true
+dependencies: {  }
+name: Base
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.drupalorg.anchor
+  - sdc.drupalorg.badge
+  - sdc.drupalorg.blockquote
+  - sdc.drupalorg.button
+  - sdc.drupalorg.heading
+  - sdc.drupalorg.icon
+  - sdc.drupalorg.image
+  - sdc.drupalorg.text
+  - sdc.drupalorg.video
+  - sdc.mercury.button
+  - sdc.mercury.heading
+  - sdc.mercury.text

@@ -1,0 +1,36 @@
+uuid: e50ed01e-7dd2-40bc-a52d-b636fa23dc19
+langcode: en
+status: true
+dependencies:
+  theme:
+    - drupalorg
+active_version: d696cea1796b650e
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        align:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value:
+            -
+              value: true
+          expression: ℹ︎boolean␟value
+    fallback_metadata:
+      slot_definitions:
+        footer_first:
+          title: 'Branding & Social'
+        footer_last:
+          title: 'Call to action'
+        footer_utility_first:
+          title: 'Utility links'
+        footer_utility_last:
+          title: 'Copyright text'
+label: Footer
+id: sdc.drupalorg.footer
+provider: drupalorg
+source: sdc
+source_local_id: 'drupalorg:footer'

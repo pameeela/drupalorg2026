@@ -1,0 +1,37 @@
+uuid: ec1e0b14-d705-4f9f-bf34-f1917ab2198a
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+  theme:
+    - drupalorg
+active_version: b33b80cdd619d5c8
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        columns:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: '6'
+          expression: ℹ︎list_string␟value
+    fallback_metadata:
+      slot_definitions:
+        header:
+          title: Header
+          description: 'Heading shown above the ticker.'
+        items:
+          title: Items
+          description: 'Items to scroll, e.g. Logo cards.'
+label: Ticker
+id: sdc.drupalorg.ticker
+provider: drupalorg
+source: sdc
+source_local_id: 'drupalorg:ticker'

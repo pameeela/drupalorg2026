@@ -1,0 +1,9 @@
+uuid: 6ba33039-6bb3-402e-9d59-444827313ed1
+langcode: en
+status: true
+dependencies: {  }
+name: Forms
+configEntityTypeId: component
+weight: 0
+items:
+  - block.user_login_block

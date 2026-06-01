@@ -1,0 +1,26 @@
+uuid: 14613e7f-ef53-46d3-a5a3-f737e33450a1
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: CcpkzUfYircje-xewks4YEpRjicnvTKSsigjzvwAMyE
+id: stripe
+label: Stripe
+description: 'Stripe payment provider integration.'
+default: true
+required: true
+opt_out: true
+only_once: false
+contextual_consent_only: false
+contextual_consent_text: ''
+info_url: 'https://stripe.com'
+privacy_policy_url: 'https://stripe.com/privacy'
+purposes:
+  - cms
+cookies: {  }
+callback_code: ''
+javascripts:
+  - stripe.com
+wrapper_identifier: {  }
+attachments: {  }
+weight: 0

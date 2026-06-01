@@ -1,0 +1,35 @@
+uuid: 3fe80480-fa9a-4132-b873-9206b0bd07aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.drupalorg.card-article
+    - core.entity_view_mode.node.card
+    - field.field.node.blog.field_author
+    - node.type.blog
+  module:
+    - node
+id: node.blog.card
+content_entity_type_id: node
+content_entity_type_bundle: blog
+content_entity_type_view_mode: card
+component_tree:
+  '0:c218d9ae-4423-437d-969a-938de38ffe69':
+    uuid: c218d9ae-4423-437d-969a-938de38ffe69
+    component_id: sdc.drupalorg.card-article
+    component_version: 405af2323a0f1f0a
+    inputs:
+      title:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:blog␝title␞␟value'
+      date:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node␝created␞␟value'
+        adapter: unix_to_date
+      author_name:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:blog␝field_author␞␟value'
+      url:
+        sourceType: host-entity-url
+        absolute: false
+exposed_slots: {  }

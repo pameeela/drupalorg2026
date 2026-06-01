@@ -1,0 +1,24 @@
+uuid: 55fe4259-9cd7-4939-baba-b1493af1f157
+langcode: en
+status: true
+dependencies:
+  theme:
+    - drupalorg
+active_version: 35aa9b53725d397f
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions: {  }
+    fallback_metadata:
+      slot_definitions:
+        header:
+          title: Header
+          description: 'Optional badge and heading shown above the tab bar.'
+        tabs:
+          title: Tabs
+          description: 'Place Tab components here. Each becomes a tab with its own panel.'
+label: Tabs
+id: sdc.drupalorg.tabs
+provider: drupalorg
+source: sdc
+source_local_id: 'drupalorg:tabs'

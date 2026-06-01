@@ -1,0 +1,21 @@
+uuid: 6907ec77-b895-4b26-be2a-c976e81bcaa3
+langcode: en
+status: true
+dependencies: {  }
+name: Layout
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.drupalorg.accordion
+  - sdc.drupalorg.accordion-container
+  - sdc.drupalorg.footer
+  - sdc.drupalorg.grid
+  - sdc.drupalorg.group
+  - sdc.drupalorg.navbar
+  - sdc.drupalorg.section
+  - sdc.drupalorg.tab
+  - sdc.drupalorg.tabs
+  - sdc.drupalorg.ticker
+  - sdc.mercury.footer
+  - sdc.mercury.navbar
+  - sdc.mercury.section

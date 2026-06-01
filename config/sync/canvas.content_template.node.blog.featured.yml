@@ -1,0 +1,45 @@
+uuid: 7241ef6d-49e7-4e2d-91f7-0bf6c51349e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.drupalorg.card-article-featured
+    - core.entity_view_mode.node.featured
+    - field.field.media.image.field_media_image
+    - field.field.node.blog.field_author
+    - field.field.node.blog.field_featured_image
+    - image.style.canvas_parametrized_width
+    - media.type.image
+    - node.type.blog
+  module:
+    - file
+    - media
+    - node
+id: node.blog.featured
+content_entity_type_id: node
+content_entity_type_bundle: blog
+content_entity_type_view_mode: featured
+component_tree:
+  '0:795d2843-7041-4cb4-94e5-22139ced6f35':
+    uuid: 795d2843-7041-4cb4-94e5-22139ced6f35
+    component_id: sdc.drupalorg.card-article-featured
+    component_version: 2e10d1428fbaa7c8
+    inputs:
+      title:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:blog␝title␞␟value'
+      date:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node␝created␞␟value'
+        adapter: unix_to_date
+      media:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:blog␝field_featured_image␞␟entity␜␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}'
+      author_name:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:blog␝field_author␞␟value'
+      cta_text: 'Read more'
+      url:
+        sourceType: host-entity-url
+        absolute: false
+exposed_slots: {  }

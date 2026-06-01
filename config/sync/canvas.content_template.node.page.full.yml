@@ -1,0 +1,87 @@
+uuid: 0366fbf5-e3e5-42c1-898d-413eedf37792
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.block.system_breadcrumb_block
+    - canvas.component.sdc.drupalorg.heading
+    - canvas.component.sdc.drupalorg.section
+    - canvas.component.sdc.drupalorg.text
+    - core.entity_view_mode.node.full
+    - field.field.node.page.field_content
+    - filter.format.content_format
+    - node.type.page
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: uPexzRXtZ8jODSPcCiMHdf6xhnHuw3yvm6mFJCL7k8M
+id: node.page.full
+content_entity_type_id: node
+content_entity_type_bundle: page
+content_entity_type_view_mode: full
+component_tree:
+  '0:6b1bac6f-1d12-4a66-91df-7c326a73b6ae':
+    uuid: 6b1bac6f-1d12-4a66-91df-7c326a73b6ae
+    component_id: sdc.drupalorg.section
+    component_version: e17a6aced7510dfa
+    inputs:
+      width: 100%
+      columns: '1 column'
+      mobile_columns: '1'
+      margin_block_start: '48'
+      margin_block_end: '48'
+      padding_block_start: '0'
+      padding_block_end: '0'
+      section_header: false
+      section_footer: false
+  '0:main_slot:0:92e68054-9f78-4420-8752-96ec693d2fa9':
+    parent_uuid: 6b1bac6f-1d12-4a66-91df-7c326a73b6ae
+    slot: main_slot
+    uuid: 92e68054-9f78-4420-8752-96ec693d2fa9
+    component_id: block.system_breadcrumb_block
+    component_version: ad6359c331fc7c45
+    inputs:
+      label: Breadcrumbs
+      label_display: '0'
+  '1:bbb6b303-a3f9-48bf-8345-47b0cd64b80b':
+    uuid: bbb6b303-a3f9-48bf-8345-47b0cd64b80b
+    component_id: sdc.drupalorg.section
+    component_version: e17a6aced7510dfa
+    inputs:
+      width: 70%
+      columns: '1 column'
+      mobile_columns: '1'
+      margin_block_start: '48'
+      margin_block_end: '48'
+      padding_block_start: '0'
+      padding_block_end: '0'
+      section_header: true
+      section_footer: true
+  '1:header_slot:0:60351887-13e9-43a4-bc83-b770e954c872':
+    parent_uuid: bbb6b303-a3f9-48bf-8345-47b0cd64b80b
+    slot: header_slot
+    uuid: 60351887-13e9-43a4-bc83-b770e954c872
+    component_id: sdc.drupalorg.heading
+    component_version: ffda3448819379a1
+    inputs:
+      heading_text:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:page␝title␞␟value'
+      level: 1
+      text_size: heading-responsive-5xl
+      text_color: default
+      align: left
+  '1:main_slot:0:3e4e2b51-9282-42cf-810a-9fd7c142387a':
+    parent_uuid: bbb6b303-a3f9-48bf-8345-47b0cd64b80b
+    slot: main_slot
+    uuid: 3e4e2b51-9282-42cf-810a-9fd7c142387a
+    component_id: sdc.drupalorg.text
+    component_version: 16c79c28a4108f9b
+    inputs:
+      text:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:page␝field_content␞␟processed'
+      text_size: normal
+      text_color: default
+exposed_slots: {  }

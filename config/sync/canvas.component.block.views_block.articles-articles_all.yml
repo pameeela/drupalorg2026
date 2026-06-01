@@ -1,0 +1,26 @@
+uuid: 624eeec9-639f-4d65-a182-38ad872c6028
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.articles
+  module:
+    - views
+active_version: e5d5db2a1abbc6e3
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'views_block:articles-articles_all'
+        label: 'Articles: All articles'
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+label: 'Articles: All articles'
+id: block.views_block.articles-articles_all
+provider: views
+source: block
+source_local_id: 'views_block:articles-articles_all'
