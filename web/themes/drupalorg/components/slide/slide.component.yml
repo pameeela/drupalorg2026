@@ -16,7 +16,7 @@ props:
     icon:
       type: string
       title: Icon
-      description: 'The ID of an icon from the Phosphor Icons library.'
+      description: "The ID of an icon from the Phosphor Icons library."
       default: "squares-four"
       examples:
         - "squares-four"

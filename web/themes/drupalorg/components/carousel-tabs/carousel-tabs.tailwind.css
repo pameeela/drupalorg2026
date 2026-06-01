@@ -1,0 +1,46 @@
+/* Feature nav row built by carousel-tabs.js. Clickable nav on desktop only; on
+   mobile the active feature is shown in .carousel-tabs__detail below the carousel-tabs. */
+.carousel-tabs__nav {
+  @apply hidden md:flex md:justify-center md:gap-16;
+}
+
+/* Mobile-only detail below the carousel-tabs: the active slide's feature info + CTAs,
+   populated by carousel-tabs.js. Hidden on desktop (nav row + in-slide CTAs used). */
+.carousel-tabs__detail {
+  @apply flex flex-col items-center gap-4 text-center text-dark-grey-400 md:hidden;
+}
+
+.carousel-tabs__detail-feature {
+  @apply flex flex-col items-center gap-2;
+}
+
+.carousel-tabs__detail-cta {
+  @apply flex flex-col items-center gap-4;
+}
+
+/* Each feature button. Title/description/icon inside inherit this colour, so the
+   active toggle works without per-element colours. */
+.carousel-tabs__feature {
+  @apply flex max-w-xs cursor-pointer flex-col items-center gap-2 text-center text-dark-grey-400/50 transition duration-300;
+}
+
+.carousel-tabs__feature.is-active {
+  @apply text-dark-grey-400;
+}
+
+/* Slide width drives the peek (the active slide is centered by Swiper, the rest
+   peek). These are plain, UNLAYERED rules on purpose: Swiper's own CSS sets
+   `.swiper-slide { width: 100% }` unlayered, and Tailwind utilities live in
+   @layer — so a utility would lose regardless of specificity. A plain
+   `.carousel-tabs--per-view-N .swiper-slide` rule (0,2,0, unlayered) wins. Driven by
+   the carousel-tabs's `slides_per_view` prop. */
+/* The .swiper is a flex item in the flex-col carousel-tabs; flex items default to
+   min-width:auto (their content's min size), so the wide slide row makes it
+   overflow its parent on narrow viewports. min-w-0 lets it shrink to fit. */
+.carousel-tabs .swiper {
+  @apply w-full min-w-0;
+}
+
+.carousel-tabs .swiper-slide {
+  @apply w-[80%] md:w-[85%];
+}
