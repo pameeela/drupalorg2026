@@ -68,38 +68,45 @@ props:
       type: string
       title: Margin top
       enum:
-        - "0"
-        - "8"
-        - "20"
-        - "32"
-        - "48"
-        - "64"
-        - "96"
-        - "128"
+        - 0
+        - small
+        - default
+        - large
+      meta:enum:
+        0: None
+        small: Small
+        default: Default
+        large: Large
       examples:
-        - "48"
+        - "default"
     margin_block_end:
       type: string
       title: Margin bottom
       enum:
         - "0"
-        - "8"
-        - "20"
-        - "32"
-        - "48"
-        - "64"
-        - "96"
-        - "128"
+        - small
+        - default
+        - large
+      meta:enum:
+        "0": None
+        small: Small
+        default: Default
+        large: Large
       examples:
-        - "48"
+        - "default"
     padding_block_start:
       type: string
       title: Padding top
       enum:
         - "0"
-        - "16"
-        - "32"
-        - "64"
+        - small
+        - default
+        - large
+      meta:enum:
+        "0": None
+        small: Small
+        default: Default
+        large: Large
       examples:
         - "0"
     padding_block_end:
@@ -107,24 +114,29 @@ props:
       title: Padding bottom
       enum:
         - "0"
-        - "16"
-        - "32"
-        - "64"
+        - small
+        - default
+        - large
+      meta:enum:
+        "0": None
+        small: Small
+        default: Default
+        large: Large
       examples:
         - "0"
     background_color:
       type: string
       title: Background color
       enum:
-        - primary
-        - secondary
-        - accent
-        - muted
+        - dark
+        - light-grey
+        - light-blue
+        - dark-grey
       meta:enum:
-        primary: Primary
-        secondary: Secondary
-        accent: Accent
-        muted: Muted
+        dark: Dark blue
+        light-grey: Light grey
+        light-blue: Light blue
+        dark-grey: Dark grey
     background_media:
       $ref: json-schema-definitions://canvas.module/image
       title: Background image
