@@ -1,8 +1,7 @@
 {% set slide_icon = icon|default('') %}
 
 <div class="swiper-slide slide h-auto">
-  {# Nav metadata, hoisted into the Tabbed carousel's feature row by carousel-tabs.js.
-     No explicit text colour — it inherits the feature button's active/muted state. #}
+  {# Nav metadata, hoisted into the carousel's feature row by carousel-tabs.js. #}
   <div class="slide__nav hidden">
     {% if slide_icon is not empty %}
       {{
@@ -25,14 +24,14 @@
   <div class="slide__body relative flex min-h-[184px] sm:min-h-[250px] flex-col items-center justify-end overflow-clip rounded-lg bg-soft-grey-300 p-8 text-dark-grey-400 md:min-h-[480px]">
     <div class="slide__media absolute inset-0 [&_img]:size-full [&_img]:object-cover">
       {% block media %}
-        {# Slot: large visual (image, video, etc.). #}
+
       {% endblock %}
     </div>
 
-    {# On mobile the CTAs render in the Tabbed carousel's detail region instead. #}
+    {# On mobile the CTAs render in the carousel's detail region instead. #}
     <div class="slide__content relative flex max-md:hidden flex-wrap items-center justify-center gap-6">
       {% block content %}
-        {# Slot: CTAs. #}
+
       {% endblock %}
     </div>
   </div>
