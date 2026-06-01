@@ -11,7 +11,8 @@
         '100%': 'lg:max-w-full',
         '90%': 'lg:max-w-9/10',
         '80%': 'lg:max-w-8/10',
-        '75%': 'lg:max-w-3/4',
+        '70%': 'lg:max-w-7/10',
+        '60%': 'lg:max-w-6/10',
         '50%': 'lg:max-w-1/2'
       },
       marginBlockStart: {
@@ -110,16 +111,18 @@
     ],
     variants: {
       columns: {
-        '100': 'grid-cols-1',
-        '50-50': 'md:grid-cols-2',
-        '33-33-33': 'md:grid-cols-3',
-        '75-25': 'md:grid-cols-[minmax(0,3fr)_minmax(0,1fr)]',
-        '25-75': 'md:grid-cols-[minmax(0,1fr)_minmax(0,3fr)]',
-        '67-33': 'md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]',
-        '33-67': 'md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]',
-        '50-25-25': 'md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)]',
-        '25-25-50': 'md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,2fr)]',
-        '25-25-25-25': 'sm:grid-cols-2 lg:grid-cols-4'
+        '1 column': 'grid-cols-1',
+        '2 columns': 'md:grid-cols-2',
+        '3 columns': 'md:grid-cols-3',
+        '4 columns': 'sm:grid-cols-2 lg:grid-cols-4',
+        '5 columns': 'sm:grid-cols-2 lg:grid-cols-5',
+        '6 columns': 'sm:grid-cols-3 lg:grid-cols-6',
+        '2 columns 75%-25%': 'md:grid-cols-[minmax(0,3fr)_minmax(0,1fr)]',
+        '2 columns 25%-75%': 'md:grid-cols-[minmax(0,1fr)_minmax(0,3fr)]',
+        '2 columns 67%-33%': 'md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]',
+        '2 columns 33%-67%': 'md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]',
+        '3 columns 50%-25%-25%': 'md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)]',
+        '3 columns 25%-25%-50%': 'md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,2fr)]'
       },
       mobileColumns: {
         '1': '',

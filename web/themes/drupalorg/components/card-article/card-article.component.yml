@@ -1,0 +1,26 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Article card
+group: Card
+props:
+  type: object
+  required:
+    - title
+  properties:
+    title:
+      type: string
+      title: Title
+      examples:
+        - "May 2026 Drupal for Nonprofits Chat"
+    date:
+      type: string
+      title: Date
+      format: date
+    author_name:
+      type: string
+      title: Author name
+      examples:
+        - "Karen Horrocks"
+    url:
+      type: string
+      title: Link
+      format: uri-reference

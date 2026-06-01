@@ -1,0 +1,48 @@
+{% set has_url = url is not empty %}
+{% set has_author = author_name is not empty or has_avatar %}
+
+<article class="group relative flex min-h-[200px] flex-col justify-between gap-4 rounded-lg bg-soft-grey-100 p-6 text-dark-grey-300 hover:bg-soft-grey-200 transition duration-300">
+  <div class="flex flex-col gap-2">
+    <h3 class="text-xl font-medium">
+      {% if has_url %}
+        <a href="{{ url }}" class="after:absolute after:inset-0 after:content-['']">{{ title }}</a>
+      {% else %}
+        {{ title }}
+      {% endif %}
+    </h3>
+    {% if date is not empty %}
+      <p class="mb-0 font-body text-sm font-light">{{ date|date('j F Y') }}</p>
+    {% endif %}
+  </div>
+
+  {% if has_author or has_url %}
+    <div class="flex items-center gap-3">
+      {% if has_author %}
+        <div class="flex items-center gap-3">
+          {% if author_name is not empty %}
+            <span class="font-body text-sm">{{ 'By'|t }} {{ author_name }}</span>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if has_url %}
+        <span
+          class="ms-auto flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground transition duration-300 group-hover:bg-primary/85"
+        >
+          <span class="transition duration-300 group-hover:translate-x-0.5">
+            {{
+              include(
+                '@drupalorg/components/icon/icon.twig',
+                {
+                  icon: 'arrow-right',
+                  icon_size: 'extra-small'
+                },
+                with_context: false
+              )
+            }}
+          </span>
+        </span>
+      {% endif %}
+    </div>
+  {% endif %}
+</article>

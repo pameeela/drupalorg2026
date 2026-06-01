@@ -1,0 +1,43 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Featured article card
+group: Card
+props:
+  type: object
+  required:
+    - title
+  properties:
+    title:
+      type: string
+      title: Title
+      examples:
+        - "Drupal Association secures Alpha-Omega grant to future-proof Open-Source Security for the AI Era."
+    date:
+      type: string
+      title: Date
+      format: date
+      examples:
+        - "2026-05-19"
+    media:
+      $ref: json-schema-definitions://canvas.module/image
+      type: object
+      title: Image
+      examples:
+        - src: "assets/jj-ying-8bghKxNU1j0-unsplash.jpg"
+          width: 1200
+          height: 900
+          alt: "Featured article image"
+    author_name:
+      type: string
+      title: Author name
+      examples:
+        - "Paul Johnson"
+    cta_text:
+      type: string
+      title: Button label
+      default: "Read more"
+      examples:
+        - "Read more"
+    url:
+      type: string
+      title: Link
+      format: uri-reference
