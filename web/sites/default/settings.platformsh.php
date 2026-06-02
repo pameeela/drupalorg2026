@@ -11,7 +11,7 @@ $platformsh = new \Platformsh\ConfigReader\Config();
 // Set up a config sync directory.
 //
 // This is defined inside the read-only "config" directory, deployed via Git.
-$settings['config_sync_directory'] = '../config';
+$settings['config_sync_directory'] = '../config/sync';
 
 // Configure the database.
 if ($platformsh->hasRelationship('database')) {

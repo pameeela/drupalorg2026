@@ -8,11 +8,14 @@ weight: 0
 items:
   - sdc.drupalorg.accordion
   - sdc.drupalorg.accordion-container
+  - sdc.drupalorg.carousel
+  - sdc.drupalorg.carousel-tabs
   - sdc.drupalorg.footer
   - sdc.drupalorg.grid
   - sdc.drupalorg.group
   - sdc.drupalorg.navbar
   - sdc.drupalorg.section
+  - sdc.drupalorg.slide
   - sdc.drupalorg.tab
   - sdc.drupalorg.tabs
   - sdc.drupalorg.ticker

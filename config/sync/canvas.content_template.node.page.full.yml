@@ -24,13 +24,13 @@ component_tree:
   '0:6b1bac6f-1d12-4a66-91df-7c326a73b6ae':
     uuid: 6b1bac6f-1d12-4a66-91df-7c326a73b6ae
     component_id: sdc.drupalorg.section
-    component_version: e17a6aced7510dfa
+    component_version: f658706f1b47f9df
     inputs:
       width: 100%
       columns: '1 column'
       mobile_columns: '1'
-      margin_block_start: '48'
-      margin_block_end: '48'
+      margin_block_start: default
+      margin_block_end: default
       padding_block_start: '0'
       padding_block_end: '0'
       section_header: false
@@ -47,13 +47,13 @@ component_tree:
   '1:bbb6b303-a3f9-48bf-8345-47b0cd64b80b':
     uuid: bbb6b303-a3f9-48bf-8345-47b0cd64b80b
     component_id: sdc.drupalorg.section
-    component_version: e17a6aced7510dfa
+    component_version: f658706f1b47f9df
     inputs:
       width: 70%
       columns: '1 column'
       mobile_columns: '1'
-      margin_block_start: '48'
-      margin_block_end: '48'
+      margin_block_start: default
+      margin_block_end: default
       padding_block_start: '0'
       padding_block_end: '0'
       section_header: true
@@ -69,7 +69,7 @@ component_tree:
         sourceType: entity-field
         expression: 'ℹ︎␜entity:node:page␝title␞␟value'
       level: 1
-      text_size: heading-responsive-5xl
+      text_size: heading-responsive-6xl
       text_color: default
       align: left
   '1:main_slot:0:3e4e2b51-9282-42cf-810a-9fd7c142387a':

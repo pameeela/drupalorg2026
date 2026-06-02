@@ -141,27 +141,27 @@
 
   /* Set base heading styles since Tailwind sets them to inherit */
   h1 {
-    @apply font-sans text-5xl leading-none font-semibold md:text-6xl lg:text-7xl 2xl:text-8xl;
+    @apply font-heading text-5xl leading-none font-semibold md:text-6xl lg:text-7xl 2xl:text-8xl;
   }
 
   h2 {
-    @apply font-sans text-3xl font-semibold md:text-4xl lg:text-5xl 2xl:text-6xl;
+    @apply font-heading text-3xl font-semibold lg:text-4xl;
   }
 
   h3 {
-    @apply font-sans text-2xl font-semibold xl:text-3xl;
+    @apply font-heading text-2xl font-semibold lg:text-3xl;
   }
 
   h4 {
-    @apply font-sans text-xl font-semibold md:text-2xl;
+    @apply font-heading text-xl font-semibold md:text-2xl;
   }
 
   h5 {
-    @apply font-sans text-lg font-semibold md:text-xl;
+    @apply font-heading text-lg font-semibold md:text-xl;
   }
 
   h6 {
-    @apply font-sans text-base font-semibold md:text-lg;
+    @apply font-heading text-base font-semibold md:text-lg;
   }
 
   code,

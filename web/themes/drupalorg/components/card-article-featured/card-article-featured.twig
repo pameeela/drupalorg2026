@@ -2,10 +2,10 @@
 {% set has_media = media.src is not empty %}
 {% set has_author = author_name is not empty or has_avatar %}
 
-<article class="relative flex min-h-[600px] flex-col justify-end overflow-clip rounded-lg bg-dark-grey-300 p-8 text-white">
+<article class="group relative flex min-h-[600px] flex-col justify-end overflow-clip rounded-lg bg-dark-grey-300 p-8 text-white">
   {% if has_media %}
     {# Hero image with a dark scrim for text legibility. #}
-    <div class="absolute inset-0">
+    <div class="absolute inset-0 transition duration-500 group-hover:scale-105">
       {% include 'canvas:image' ignore missing with {
         src: media.src,
         alt: media.alt,
@@ -26,7 +26,13 @@
           {{ date|date('j F Y') }}
         </p>
       {% endif %}
-      <h2 class="text-3xl font-semibold">{{ title }}</h2>
+      <h2 class="text-3xl font-semibold">
+        {% if has_url %}
+          <a href="{{ url }}" class="after:absolute after:inset-0 after:content-['']">{{ title }}</a>
+        {% else %}
+          {{ title }}
+        {% endif %}
+      </h2>
     </div>
 
     {% if has_author %}
@@ -38,18 +44,20 @@
     {% endif %}
 
     {% if has_url %}
-      {{
-        include(
-          '@drupalorg/components/button/button.twig',
-          {
-            label: cta_text|default('Read more'),
-            href: url,
-            variant: 'white',
-            icon: 'arrow-right'
-          },
-          with_context: false
-        )
-      }}
+      <div class="relative z-10">
+        {{
+          include(
+            '@drupalorg/components/button/button.twig',
+            {
+              label: cta_text|default('Read more'),
+              href: url,
+              variant: 'white',
+              icon: 'arrow-right'
+            },
+            with_context: false
+          )
+        }}
+      </div>
     {% endif %}
   </div>
 </article>
