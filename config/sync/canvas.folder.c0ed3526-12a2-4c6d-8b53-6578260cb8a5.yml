@@ -7,6 +7,7 @@ configEntityTypeId: component
 weight: 0
 items:
   - sdc.drupalorg.anchor
+  - sdc.drupalorg.author-date
   - sdc.drupalorg.badge
   - sdc.drupalorg.blockquote
   - sdc.drupalorg.button

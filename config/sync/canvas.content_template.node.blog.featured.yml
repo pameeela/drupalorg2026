@@ -6,7 +6,6 @@ dependencies:
     - canvas.component.sdc.drupalorg.card-article-featured
     - core.entity_view_mode.node.featured
     - field.field.media.image.field_media_image
-    - field.field.node.blog.field_author
     - field.field.node.blog.field_featured_image
     - image.style.canvas_parametrized_width
     - media.type.image
@@ -15,6 +14,7 @@ dependencies:
     - file
     - media
     - node
+    - user
 id: node.blog.featured
 content_entity_type_id: node
 content_entity_type_bundle: blog
@@ -37,7 +37,7 @@ component_tree:
         expression: 'ℹ︎␜entity:node:blog␝field_featured_image␞␟entity␜␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}'
       author_name:
         sourceType: entity-field
-        expression: 'ℹ︎␜entity:node:blog␝field_author␞␟value'
+        expression: 'ℹ︎␜entity:node:blog␝uid␞␟entity␜␜entity:user␝name␞␟value'
       cta_text: 'Read more'
       url:
         sourceType: host-entity-url

@@ -1,0 +1,12 @@
+<div class="text-sm flex flex-col gap-1">
+  {% if date %}
+    <div>
+    {{ date|date('j F Y') }}
+    </div>
+  {% endif %}
+{% if author %}
+<div>
+  {{ 'By'|t }} {{ author }}
+</div>
+{% endif %}
+</div>

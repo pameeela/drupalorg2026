@@ -29,11 +29,13 @@ props:
         - md
         - lg
         - xl
+        - stretch
       meta:enum:
         sm: Small
         md: Medium
         lg: Large
-        xl: Extra-Large
+        xl: Extra large
+        stretch: Space between
       examples:
         - md
     items_align:
@@ -76,7 +78,7 @@ props:
         sm: Small
         md: Medium
         lg: Large
-        xl: Extra-Large
+        xl: Extra large
       examples:
         - sm
     padding:

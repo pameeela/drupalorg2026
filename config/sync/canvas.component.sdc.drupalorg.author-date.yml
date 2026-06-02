@@ -1,0 +1,37 @@
+uuid: a8eb08d8-23ab-4c85-9883-36565d736917
+langcode: en
+status: false
+dependencies:
+  module:
+    - datetime
+  theme:
+    - drupalorg
+active_version: 51851caa6c65d550
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        author:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+        date:
+          required: false
+          field_type: datetime
+          field_storage_settings:
+            datetime_type: date
+          field_instance_settings: {  }
+          field_widget: datetime_default
+          default_value: null
+          expression: ℹ︎datetime␟value
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Author & date info'
+id: sdc.drupalorg.author-date
+provider: drupalorg
+source: sdc
+source_local_id: 'drupalorg:author-date'

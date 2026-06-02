@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.featured
-    - field.field.node.blog.field_author
     - field.field.node.blog.field_category
     - field.field.node.blog.field_content
     - field.field.node.blog.field_description
@@ -29,6 +28,11 @@ targetEntityType: node
 bundle: blog
 mode: featured
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_category:
     type: entity_reference_label
     label: above
@@ -77,7 +81,6 @@ content:
     weight: 100
     region: content
 hidden:
-  field_author: true
   field_description: true
   field_seo_analysis: true
   field_seo_description: true

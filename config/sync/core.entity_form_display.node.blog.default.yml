@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.blog.field_author
     - field.field.node.blog.field_category
     - field.field.node.blog.field_content
     - field.field.node.blog.field_description
@@ -15,6 +14,7 @@ dependencies:
     - field.field.node.blog.field_seo_title
     - field.field.node.blog.field_tags
     - node.type.blog
+    - workflows.workflow.basic_editorial
   module:
     - content_moderation
     - field_group
@@ -54,14 +54,6 @@ content:
     weight: 6
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_author:
-    type: string_textfield
-    weight: 3
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   field_category:
     type: tagify_select_widget

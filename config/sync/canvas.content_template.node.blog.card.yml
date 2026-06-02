@@ -5,10 +5,10 @@ dependencies:
   config:
     - canvas.component.sdc.drupalorg.card-article
     - core.entity_view_mode.node.card
-    - field.field.node.blog.field_author
     - node.type.blog
   module:
     - node
+    - user
 id: node.blog.card
 content_entity_type_id: node
 content_entity_type_bundle: blog
@@ -28,7 +28,7 @@ component_tree:
         adapter: unix_to_date
       author_name:
         sourceType: entity-field
-        expression: 'ℹ︎␜entity:node:blog␝field_author␞␟value'
+        expression: 'ℹ︎␜entity:node:blog␝uid␞␟entity␜␜entity:user␝name␞␟value'
       url:
         sourceType: host-entity-url
         absolute: false
