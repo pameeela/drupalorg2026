@@ -1,6 +1,6 @@
 <section class="tabs flex flex-col gap-8">
   {% if block('header') is defined %}
-    <div class="tabs__header flex flex-col gap-4">
+    <div class="tabs__header flex flex-col gap-4 [&_*]:max-w-2xl">
       {% block header %}
         {% include '@drupalorg/components/badge/badge.twig' with {
           label: 'Why Drupal CMS',

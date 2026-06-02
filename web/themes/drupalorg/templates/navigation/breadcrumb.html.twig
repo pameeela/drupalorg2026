@@ -15,7 +15,7 @@
 
   <nav aria-label="breadcrumb" class="container mx-auto my-2 w-full md:my-3 2xl:my-4">
     <h2 id="system-breadcrumb" class="sr-only">{{ 'Breadcrumb' }}</h2>
-    <ol class="m-0 flex list-none flex-row items-center gap-1 p-0 font-body leading-none text-foreground md:gap-2">
+    <ol class="m-0 flex list-none flex-row items-center gap-1 p-0 font-body leading-none md:gap-2">
       {% for item in breadcrumb %}
         {% set is_first = loop.first %}
         {% set is_last_two = loop.revindex <= 2 %}

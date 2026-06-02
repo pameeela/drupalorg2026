@@ -38,6 +38,10 @@
         small: 'pb-10',
         default: 'pb-20',
         large: 'pb-32'
+      },
+      backgroundColor: {
+        dark: 'text-white! [&_*]:text-white!',
+        'dark-grey': 'text-white! [&_*]:text-white!'
       }
     }
   )
@@ -66,7 +70,7 @@
       backgroundColor: {
         dark: 'bg-primary',
         'light-grey': 'bg-light-grey-100',
-        'light-blue': 'bg-brand-blue-100',
+        'light-blue': 'bg-drupal-light-blue',
         'dark-grey': 'bg-dark-grey-500',
         noColor: 'bg-none'
       },
@@ -169,7 +173,7 @@
           {% endblock %}
         {% endset %}
         {% if header_content|trim is not empty %}
-          <header class="mb-6 flex flex-col items-start gap-4 md:mb-8 xl:mb-10">
+          <header class="mb-6 flex flex-col items-start gap-4 md:mb-8 xl:mb-10 [&_*]:max-w-2xl">
             {{ header_content }}
           </header>
         {% endif %}

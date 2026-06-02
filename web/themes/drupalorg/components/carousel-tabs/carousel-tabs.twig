@@ -2,7 +2,7 @@
 
 <section class="carousel-tabs cq-full flex flex-col gap-8" data-autoplay="{{ is_autoplay ? 'true' : 'false' }}">
   {% if block('header') is defined %}
-    <div class="carousel-tabs__header flex flex-col items-center gap-4 text-center">
+    <div class="carousel-tabs__header flex flex-col items-center gap-4 text-center [&_*]:max-w-2xl">
       {% block header %}
         {% include '@drupalorg/components/badge/badge.twig' with {
           label: 'Why Drupal CMS',

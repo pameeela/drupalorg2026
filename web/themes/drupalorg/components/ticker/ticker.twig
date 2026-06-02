@@ -17,9 +17,9 @@
   )
 %}
 
-<section class="ticker flex flex-col gap-6">
+<section class="ticker flex flex-col items-center gap-6">
   {% if block('header') is defined %}
-    <div class="ticker__header text-center">
+    <div class="ticker__header [&_*]:max-w-2xl">
       {% block header %}
         <h2>Proud to power top global brands.</h2>
       {% endblock %}
