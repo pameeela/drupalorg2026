@@ -68,12 +68,12 @@ props:
       type: string
       title: Margin top
       enum:
-        - 0
+        - "0"
         - small
         - default
         - large
       meta:enum:
-        0: None
+        "0": None
         small: Small
         default: Default
         large: Large

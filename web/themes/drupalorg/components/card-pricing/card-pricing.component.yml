@@ -1,5 +1,6 @@
 "$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
 name: Pricing card
+status: obsolete
 group: Card
 props:
   type: object

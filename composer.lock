@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "55528b6b46dde51fe26022a705c8d51c",
+    "content-hash": "b0c25c9bc3b230b63c90060a877eb6d6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4820,89 +4820,6 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/menu_link_attributes",
                 "issues": "http://drupal.org/project/issues/menu_link_attributes"
-            }
-        },
-        {
-            "name": "drupal/mercury",
-            "version": "1.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/mercury.git",
-                "reference": "1.0.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/mercury-1.0.4.zip",
-                "reference": "1.0.4",
-                "shasum": "a520536aae3d163f0bc09e3536111197a4c37cad"
-            },
-            "require": {
-                "drupal/core": "^11.3",
-                "drupal/cva": "^1"
-            },
-            "conflict": {
-                "drupal/experience_builder": "*"
-            },
-            "require-dev": {
-                "drupal/canvas": "^1"
-            },
-            "type": "drupal-theme",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.4",
-                    "datestamp": "1779381660",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "balintbrews",
-                    "homepage": "https://www.drupal.org/user/613760"
-                },
-                {
-                    "name": "ckrina",
-                    "homepage": "https://www.drupal.org/user/1206650"
-                },
-                {
-                    "name": "galactus86",
-                    "homepage": "https://www.drupal.org/user/1203916"
-                },
-                {
-                    "name": "jurgenhaas",
-                    "homepage": "https://www.drupal.org/user/168924"
-                },
-                {
-                    "name": "lanny heidbreder",
-                    "homepage": "https://www.drupal.org/user/19794"
-                },
-                {
-                    "name": "pameeela",
-                    "homepage": "https://www.drupal.org/user/1431110"
-                },
-                {
-                    "name": "penyaskito",
-                    "homepage": "https://www.drupal.org/user/959536"
-                },
-                {
-                    "name": "phenaproxima",
-                    "homepage": "https://www.drupal.org/user/205645"
-                },
-                {
-                    "name": "thejimbirch",
-                    "homepage": "https://www.drupal.org/user/2507260"
-                }
-            ],
-            "description": "A scalable, modern Drupal CMS prototype theme, integrating cutting-edge front-end tools and a flexible, component-based design system.",
-            "homepage": "https://www.drupal.org/project/mercury",
-            "support": {
-                "source": "https://git.drupalcode.org/project/mercury"
             }
         },
         {
