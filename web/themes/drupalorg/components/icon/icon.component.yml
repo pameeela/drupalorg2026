@@ -33,3 +33,18 @@ props:
       default: small
       examples:
         - small
+    icon_color:
+      type: string
+      title: Icon color
+      enum:
+        - brand-blue
+        - brand-navy
+        - white
+        - destructive
+        - success
+      meta:enum:
+        brand-blue: Brand blue
+        brand-navy: Brand navy
+        white: White
+        destructive: Red
+        success: Green

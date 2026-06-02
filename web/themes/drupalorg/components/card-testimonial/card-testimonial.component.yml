@@ -18,14 +18,15 @@ props:
       title: Citation name
       examples:
         - "Isiah Julio"
+    cite_position:
+      type: string
+      title: Citation position
     cite_text:
       type: string
-      title: Citation text
-      examples:
-        - "Engineer, Technical Services"
+      title: Link text
     cite_url:
       type: string
-      title: Citation link
+      title: Link
       format: uri-reference
     align:
       type: string
@@ -40,14 +41,13 @@ props:
       type: string
       title: Style
       enum:
-        - default
-        - inverted
+        - light
+        - dark
       meta:enum:
-        default: Default
-        inverted: Inverted
-      default: default
+        light: Light
+        dark: Dark
       examples:
-        - default
+        - light
     media:
       $ref: json-schema-definitions://canvas.module/image
       title: Image

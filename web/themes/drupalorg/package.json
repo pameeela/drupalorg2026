@@ -5,7 +5,7 @@
   "license": "GPL-2.0-or-later",
   "type": "module",
   "scripts": {
-    "dev": "$npm_execpath run s:tailwindcss && $npm_execpath run s:carousel-tabs && $npm_execpath run s:motion -- --watch",
+    "dev": "$npm_execpath run s:carousel-tabs && $npm_execpath run s:motion && $npm_execpath run s:tailwindcss -- --watch",
     "build": "$npm_execpath run s:tailwindcss && $npm_execpath run s:motion && $npm_execpath run s:carousel-tabs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

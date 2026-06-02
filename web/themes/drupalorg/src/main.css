@@ -5,16 +5,10 @@
 @import "../components/carousel-tabs/carousel-tabs.tailwind.css";
 
 @theme inline {
-  /* Primitive palette (Figma) — bg-brand-blue-300, text-dark-grey-400, etc. */
-  --color-brand-blue-100: var(--brand-blue-100);
-  --color-brand-blue-200: var(--brand-blue-200);
-  --color-brand-blue-300: var(--brand-blue-300);
-  --color-brand-blue-400: var(--brand-blue-400);
-  --color-brand-blue-500: var(--brand-blue-500);
-  --color-brand-blue-600: var(--brand-blue-600);
-  --color-brand-blue-700: var(--brand-blue-700);
-  --color-brand-blue-800: var(--brand-blue-800);
-  --color-brand-navy: var(--brand-navy);
+  --color-drupal-navy-blue: var(--drupal-navy-blue);
+  --color-drupal-blue: var(--drupal-blue);
+  --color-drupal-dark-blue: var(--drupal-dark-blue);
+  --color-drupal-light-blue: var(--drupal-light-blue);
 
   --color-light-grey-100: var(--light-grey-100);
   --color-light-grey-200: var(--light-grey-200);
@@ -43,12 +37,9 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
   --color-border: var(--border);
   --color-input: var(--input);
 

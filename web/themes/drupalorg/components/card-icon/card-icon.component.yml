@@ -6,6 +6,7 @@ props:
   required:
     - text_align
     - icon_align
+    - icon_size
   properties:
     tile_size:
       type: string
@@ -23,16 +24,12 @@ props:
       title: Background color
       enum:
         - primary
-        - secondary
-        - accent
-        - muted
-        - background
+        - white
+        - navy
       meta:enum:
-        primary: Primary
-        secondary: Secondary
-        accent: Accent
-        muted: Muted
-        background: Background
+        primary: Brand blue
+        white: White
+        navy: Brand navy
     border_radius:
       type: string
       title: Border radius
@@ -68,7 +65,7 @@ props:
         large: Large
         extra-large: Extra large
       examples:
-        - large
+        - medium
     icon_align:
       type: string
       title: Icon alignment

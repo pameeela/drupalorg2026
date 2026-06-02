@@ -1,41 +1,129 @@
-{% set classes = ['blockquote flex flex-col gap-4 !w-auto'] %}
+{% set has_border = border|default(false) ? 'yes' : 'no' %}
 
-{% set cite_attr = cite_url ? 'cite="' ~ cite_url ~ '"' : '' %}
+{% set blockquote_root =
+  html_cva(
+    base: [
+    'blockquote rounded-lg',
+    'relative flex w-full flex-col gap-6',
+    'bg-background text-foreground',
+    'my-10 p-6 pt-14',
+    'md:p-8 md:pt-20'
+  ],
+    variants: {
+      style: {
+        light: 'bg-soft-grey-100',
+        dark: 'bg-brand-navy text-white'
+      }
+    }
+  )
+%}
 
-<blockquote class="{{ classes|join(' ') }} relative ms-10 text-foreground" {{ cite_attr }}>
-  <svg
-    class="absolute -start-8 -top-6 size-16 text-muted"
-    width="16"
-    height="16"
-    viewBox="0 0 16 16"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
+{% set quote_icon = html_cva(base: ['absolute top-12 left-14 z-10 flex -translate-x-1/2 -translate-y-1/2']) %}
+
+{% set quote_text =
+  html_cva(base: ['relative z-10 max-w-3xl text-xl leading-snug md:text-2xl leading-snug', '[&>*:first-child]:mt-0 [&>*:last-child]:mb-0', '[&_p]:mb-0'])
+%}
+
+{% set quote_footer = html_cva(base: ['relative z-10 text-sm leading-snug font-normal not-italic', 'md:text-mbase']) %}
+
+{% set cite_link =
+  html_cva(
+    base: ['not-italic'],
+    variants: {
+      hasUrl: {
+        yes: ['underline underline-offset-2', 'duration-300 hover:opacity-80'],
+        no: ''
+      }
+    }
+  )
+%}
+
+{% set has_cite_url = cite_url is not empty ? 'yes' : 'no' %}
+{% set cite_attr = cite_url is not empty ? 'cite="' ~ cite_url ~ '"' : '' %}
+
+{% set svg_color_map = {
+  'light': 'var(--color-brand-blue-300)',
+  'dark': 'var(--color-white)',
+} %}
+
+{% set resolved_svg_color = style ? svg_color_map[style]|default('currentColor') : 'currentColor' %}
+
+{% if text is not empty %}
+  <blockquote
+    class="{{
+    blockquote_root.apply({
+      style: style
+    })
+    }}"
+    {{ cite_attr }}
   >
-    <path
-      d="M7.39762 10.3C7.39762 11.0733 7.14888 11.7 6.6514 12.18C6.15392 12.6333 5.52552 12.86 4.76621 12.86C3.84979 12.86 3.09047 12.5533 2.48825 11.94C1.91222 11.3266 1.62421 10.4467 1.62421 9.29999C1.62421 8.07332 1.96459 6.87332 2.64535 5.69999C3.35231 4.49999 4.33418 3.55332 5.59098 2.85999L6.4943 4.25999C5.81354 4.73999 5.26369 5.27332 4.84476 5.85999C4.45201 6.44666 4.19017 7.12666 4.05926 7.89999C4.29491 7.79332 4.56983 7.73999 4.88403 7.73999C5.61716 7.73999 6.21938 7.97999 6.69067 8.45999C7.16197 8.93999 7.39762 9.55333 7.39762 10.3ZM14.6242 10.3C14.6242 11.0733 14.3755 11.7 13.878 12.18C13.3805 12.6333 12.7521 12.86 11.9928 12.86C11.0764 12.86 10.3171 12.5533 9.71484 11.94C9.13881 11.3266 8.85079 10.4467 8.85079 9.29999C8.85079 8.07332 9.19117 6.87332 9.87194 5.69999C10.5789 4.49999 11.5608 3.55332 12.8176 2.85999L13.7209 4.25999C13.0401 4.73999 12.4903 5.27332 12.0713 5.85999C11.6786 6.44666 11.4168 7.12666 11.2858 7.89999C11.5215 7.79332 11.7964 7.73999 12.1106 7.73999C12.8437 7.73999 13.446 7.97999 13.9173 8.45999C14.3886 8.93999 14.6242 9.55333 14.6242 10.3Z"
-      fill="currentColor"
-    ></path>
-  </svg>
-  <div class="relative z-10 flex flex-col gap-4">
-    <p class="xl:3xl mb-0 text-xl text-inherit italic md:text-2xl">
+    <span class="{{ quote_icon.apply({}) }}" aria-hidden="true">
+      <svg class="size-8 md:size-12" width="24" height="24" viewBox="0 0 129 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M128.464 0L101.824 56.832L99.16 38.776C104.488 38.776 109.323 40.0587 113.664 42.624C118.005 45.1893 121.459 48.6427 124.024 52.984C126.589 57.128 127.872 61.7653 127.872 66.896C127.872 72.224 126.589 77.0587 124.024 81.4C121.459 85.544 118.005 88.8987 113.664 91.464C109.323 94.0293 104.488 95.312 99.16 95.312C93.832 95.312 88.9973 94.0293 84.656 91.464C80.3147 88.8987 76.7627 85.4453 74 81.104C71.4347 76.5653 70.152 71.632 70.152 66.304C70.152 60.976 71.336 55.4507 73.704 49.728C76.072 43.808 80.216 36.408 86.136 27.528L103.6 0H128.464ZM58.016 0L31.672 56.832L28.712 38.776C34.2373 38.776 39.072 40.0587 43.216 42.624C47.5573 45.1893 51.0107 48.6427 53.576 52.984C56.3387 57.128 57.72 61.7653 57.72 66.896C57.72 72.224 56.3387 77.0587 53.576 81.4C51.0107 85.544 47.5573 88.8987 43.216 91.464C39.072 94.0293 34.2373 95.312 28.712 95.312C23.5813 95.312 18.7467 94.0293 14.208 91.464C9.86667 88.8987 6.41333 85.4453 3.848 81.104C1.28267 76.5653 0 71.632 0 66.304C0 60.976 1.184 55.4507 3.552 49.728C5.92 43.808 10.064 36.408 15.984 27.528L33.448 0H58.016Z"
+          fill="{{ resolved_svg_color }}"
+        />
+      </svg>
+    </span>
+
+    <div class="{{ quote_text.apply({}) }}">
       {{ text }}
-    </p>
-    <footer class="text-left text-base leading-[1.2] font-bold not-italic md:text-lg xl:text-xl">
-      {{ cite_name }}<br />
-      <cite>
-        {% if cite_url %}
-          <a
-            href="{{ cite_url }}"
-            target="_blank"
-            class="text-base leading-[1.2] font-normal not-italic underline underline-offset-2 duration-300 hover:opacity-80"
-          >
-            {{ cite_text }}
-          </a>
-        {% else %}
-          <span class="text-base leading-[1.2] font-normal not-italic">{{ cite_text }}</span>
-        {% endif %}
-      </cite>
-    </footer>
-  </div>
-</blockquote>
+    </div>
+
+    {% if cite_name is not empty or cite_text is not empty %}
+      <footer class="{{ quote_footer.apply({}) }}">
+        <cite class="not-italic">
+          {% if cite_name is not empty and cite_text is not empty %}
+            <strong>{{ cite_name }}</strong> <br>{% if cite_url is not empty %}
+            <a
+              href="{{ cite_url }}"
+              target="_blank"
+              class="{{
+              cite_link.apply({
+                hasUrl: has_cite_url
+              })
+              }}"
+            >
+              {{ cite_text }}
+            </a>
+          {% else %}
+            <span
+              class="{{
+              cite_link.apply({
+                hasUrl: 'no'
+              })
+              }}"
+            >
+                {{ cite_text }}
+              </span>
+          {% endif %}
+          {% elseif cite_name is not empty %}
+            <strong>{{ cite_name }}</strong><br>
+          {% elseif cite_url is not empty %}
+            <a
+              href="{{ cite_url }}"
+              target="_blank"
+              class="{{
+              cite_link.apply({
+                hasUrl: has_cite_url
+              })
+              }}"
+            >
+              {{ cite_text }}
+            </a>
+          {% else %}
+            <span
+              class="{{
+              cite_link.apply({
+                hasUrl: 'no'
+              })
+              }}"
+            >
+              {{ cite_text }}
+            </span>
+          {% endif %}
+        </cite>
+      </footer>
+    {% endif %}
+  </blockquote>
+{% endif %}

@@ -3,7 +3,7 @@
 
   @param icon (string) - The icon ID from the Phosphor icon library (e.g., 'rocket', 'arrow-right')
   @param icon_size (string) - Size enum: 'extra-small', 'small', 'medium', 'large', 'extra-large'
-  @param icon_color (string) - Optional color value (defaults to 'currentColor')
+  @param icon_color (string) - Optional color enum (defaults to 'currentColor')
   @param alt (string) - Optional alt text for accessibility (leave empty for decorative icons)
 #}
 
@@ -16,7 +16,16 @@
   'extra-large': 64
 } %}
 
+{% set color_map = {
+  'brand-blue': 'var(--color-brand-blue-300)',
+  'brand-navy': 'var(--color-brand-navy)',
+  'white': 'white',
+  'destructive': 'var(--color-destructive)',
+  'success': 'var(--color-success)'
+} %}
+
 {% set resolved_size = size_map[icon_size]|default(size_map['small']) %}
+{% set resolved_color = icon_color ? color_map[icon_color]|default('currentColor') : 'currentColor' %}
 
 <div class="min-w:{{ resolved_size }}">
   {{
@@ -25,7 +34,7 @@
       icon,
       {
         size: resolved_size,
-        color: icon_color|default('currentColor'),
+        color: resolved_color,
         alt: alt|default('')
       }
     )

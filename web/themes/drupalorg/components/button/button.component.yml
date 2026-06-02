@@ -13,10 +13,13 @@ props:
       enum:
         - primary
         - white
+        - white-outline
+        - light-blue
       meta:enum:
-        primary: Brand blue
-        navy: Brand navy
+        primary: Brand navy
         white: White
+        white-outline: White with outline
+        light-blue: Light blue
       examples:
         - primary
     label:

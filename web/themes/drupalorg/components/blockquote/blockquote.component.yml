@@ -2,6 +2,8 @@ name: Blockquote
 group: Base
 props:
   type: object
+  required:
+    - style
   properties:
     text:
       type: string
@@ -23,3 +25,14 @@ props:
       type: string
       title: Citation link
       format: uri-reference
+    style:
+      type: string
+      title: Style
+      enum:
+        - light
+        - dark
+      meta:enum:
+        light: Light
+        dark: Dark
+      examples:
+        - light

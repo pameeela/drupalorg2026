@@ -91,9 +91,7 @@ props:
         sm: Small
         md: Medium
         lg: Large
-        xl: Extra-Large
-      examples:
-        - sm
+        xl: Extra large
     background:
       type: string
       title: Background color
