@@ -1,0 +1,106 @@
+uuid: db96d217-42c5-44d0-b285-706f1176a30b
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.drupalorg.group
+    - canvas.component.sdc.drupalorg.heading
+    - canvas.component.sdc.drupalorg.icon
+    - canvas.component.sdc.drupalorg.text
+    - filter.format.canvas_html_block
+  module:
+    - options
+    - text
+id: checklist
+label: Checklist
+component_tree:
+  '0:21629786-3717-4b92-8852-947cf5042baa':
+    uuid: 21629786-3717-4b92-8852-947cf5042baa
+    component_id: sdc.drupalorg.group
+    component_version: 0afd9c88a0c89c60
+    inputs:
+      flex_direction: column
+      flex_gap: sm
+      items_align: start
+      flex_align: center
+      radius: sm
+  '0:group_slot:0:d0800be7-2838-43d6-8f56-2dda3e87c60a':
+    parent_uuid: 21629786-3717-4b92-8852-947cf5042baa
+    slot: group_slot
+    uuid: d0800be7-2838-43d6-8f56-2dda3e87c60a
+    component_id: sdc.drupalorg.heading
+    component_version: ffda3448819379a1
+    inputs:
+      heading_text: 'Your heading goes here'
+      level: 2
+      text_size: heading-responsive-3xl
+      text_color: default
+      align: left
+  '0:group_slot:1:c0252e00-24a2-412a-9205-074062a42e45':
+    parent_uuid: 21629786-3717-4b92-8852-947cf5042baa
+    slot: group_slot
+    uuid: c0252e00-24a2-412a-9205-074062a42e45
+    component_id: sdc.drupalorg.group
+    component_version: 0afd9c88a0c89c60
+    inputs:
+      flex_direction: row
+      flex_gap: sm
+      items_align: start
+      flex_align: center
+      radius: sm
+  '0:group_slot:1:group_slot:0:12d790ed-60cf-48d5-b914-e043ecac4955':
+    parent_uuid: c0252e00-24a2-412a-9205-074062a42e45
+    slot: group_slot
+    uuid: 12d790ed-60cf-48d5-b914-e043ecac4955
+    component_id: sdc.drupalorg.icon
+    component_version: a661fc77ee2b7c4a
+    inputs:
+      icon: check-circle
+      icon_size: medium
+      icon_color: brand-blue
+  '0:group_slot:1:group_slot:1:ec71b221-d0ae-44e2-bad1-63018bb4d254':
+    parent_uuid: c0252e00-24a2-412a-9205-074062a42e45
+    slot: group_slot
+    uuid: ec71b221-d0ae-44e2-bad1-63018bb4d254
+    component_id: sdc.drupalorg.text
+    component_version: 16c79c28a4108f9b
+    inputs:
+      text:
+        value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.&nbsp;</p>'
+        format: canvas_html_block
+      text_size: normal
+      text_color: default
+  '0:group_slot:2:b8a89c20-130b-49d4-b254-1cb53ab71b67':
+    parent_uuid: 21629786-3717-4b92-8852-947cf5042baa
+    slot: group_slot
+    uuid: b8a89c20-130b-49d4-b254-1cb53ab71b67
+    component_id: sdc.drupalorg.group
+    component_version: 0afd9c88a0c89c60
+    inputs:
+      flex_direction: row
+      flex_gap: sm
+      items_align: start
+      flex_align: center
+      radius: sm
+  '0:group_slot:2:group_slot:0:1c3ac75f-37bd-43b3-ad68-38147e050792':
+    parent_uuid: b8a89c20-130b-49d4-b254-1cb53ab71b67
+    slot: group_slot
+    uuid: 1c3ac75f-37bd-43b3-ad68-38147e050792
+    component_id: sdc.drupalorg.icon
+    component_version: a661fc77ee2b7c4a
+    inputs:
+      icon: x-circle
+      icon_size: medium
+      icon_color: destructive
+  '0:group_slot:2:group_slot:1:f88585f5-0c12-41bf-8fa2-19d77b77ade7':
+    parent_uuid: b8a89c20-130b-49d4-b254-1cb53ab71b67
+    slot: group_slot
+    uuid: f88585f5-0c12-41bf-8fa2-19d77b77ade7
+    component_id: sdc.drupalorg.text
+    component_version: 16c79c28a4108f9b
+    inputs:
+      text:
+        value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.&nbsp;</p>'
+        format: canvas_html_block
+      text_size: normal
+      text_color: default

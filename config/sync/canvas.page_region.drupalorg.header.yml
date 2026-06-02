@@ -26,7 +26,7 @@ component_tree:
     slot: links
     uuid: 117719f5-2683-457d-901b-a7d61f5e96f8
     component_id: sdc.drupalorg.button
-    component_version: 0affb7b469540ad6
+    component_version: c3a7ddf31788b214
     inputs:
       variant: primary
       label: 'Drupal for Marketers'

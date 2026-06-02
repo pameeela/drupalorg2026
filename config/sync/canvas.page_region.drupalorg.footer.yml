@@ -46,7 +46,7 @@ component_tree:
       heading_text: "Receive updates, articles \Land more from Drupal "
       level: 2
       text_size: heading-responsive-xl
-      text_color: default
+      text_color: inverted
       align: left
   '0:footer_last:0:a0af9233-46e7-4fb6-b4e2-0ca3258e0228':
     parent_uuid: 8b74b0df-8805-42e2-a46e-8c0b36dd7eaa

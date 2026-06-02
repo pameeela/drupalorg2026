@@ -5,7 +5,7 @@
 {% set has_url = url is not empty %}
 {% set has_cta = has_url and cta_text is not empty %}
 {% set is_featured = card_style == 'featured' %}
-{% set button_variant = is_featured ? 'transparent' : 'primary' %}
+{% set button_variant = is_featured ? 'transparent' : 'light-blue' %}
 
 {% set card =
   html_cva(
