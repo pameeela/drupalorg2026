@@ -14,7 +14,8 @@ props:
         - primary
         - white
       meta:enum:
-        primary: Brand Blue
+        primary: Brand blue
+        navy: Brand navy
         white: White
       examples:
         - primary
