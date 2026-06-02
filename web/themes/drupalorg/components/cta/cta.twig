@@ -6,9 +6,9 @@
     base: ['cq-full relative z-1'],
     variants: {
       backgroundColor: {
-        primary: 'bg-primary text-primary-foreground',
+        primary: 'bg-primary text-white',
         secondary: 'bg-secondary text-secondary-foreground',
-        inverted: 'bg-foreground text-background',
+        inverted: 'bg-foreground text-white',
         noColor: 'bg-none text-foreground'
       }
     }
@@ -31,6 +31,8 @@
     }
   )
 %}
+
+{% set heading_style = background_color != 'noColor' ? 'inverted' : 'default' %}
 
 {% set cta_links_variants =
   html_cva(
@@ -69,7 +71,8 @@
   <div
     class="{{
     cta_content_variants.apply({
-      textAlign: cta_text_align
+      textAlign: cta_text_align,
+      hasBackground: has_background
     })
     }} px-4"
   >
@@ -80,7 +83,7 @@
           heading_text: heading_text|default(''),
           level: level|default(2),
           align: cta_text_align,
-          text_color: 'default',
+          text_color: heading_style,
           url: '',
           heading_classes: 'max-w-3xl',
           text_size: 'heading-responsive-7xl'
