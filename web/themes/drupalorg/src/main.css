@@ -5,6 +5,7 @@
 @import "../components/carousel-tabs/carousel-tabs.tailwind.css";
 
 @theme inline {
+  --color-drupal-extra-dark-blue: var(--drupal-extra-dark-blue);
   --color-drupal-navy-blue: var(--drupal-navy-blue);
   --color-drupal-blue: var(--drupal-blue);
   --color-drupal-dark-blue: var(--drupal-dark-blue);
