@@ -98,11 +98,9 @@ props:
       enum:
         - primary
         - secondary
-        - accent
       meta:enum:
         primary: Primary
         secondary: Secondary
-        accent: Accent
 
     animation:
       type: string

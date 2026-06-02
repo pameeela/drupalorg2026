@@ -7,7 +7,14 @@
 {% set section_classes = section.apply({}) %}
 
 {% set title_button =
-  html_cva(base: ['accordion--title', 'flex w-full cursor-pointer items-center justify-between', 'bg-soft-grey-100 hover:bg-soft-grey-200', 'p-4 text-left text-2xl'])
+  html_cva(
+    base: [
+      'accordion--title',
+      'flex w-full cursor-pointer items-center justify-between',
+      'bg-soft-grey-100 hover:bg-soft-grey-200',
+      'p-4 text-left text-2xl'
+    ]
+  )
 %}
 
 {% set title_button_classes = title_button.apply({}) %}
@@ -16,7 +23,7 @@
   html_cva(
     base: [
       'accordion--content',
-      'h-0 overflow-hidden px-4 lg:px-8 py-0',
+      'h-0 overflow-hidden px-4 py-0 lg:px-8',
       'text-base text-foreground',
       'transition-[height,padding] duration-0 in-[.accordion--animate]:duration-500',
       '[&>:first-child]:mt-0 [&>:last-child]:mb-0',

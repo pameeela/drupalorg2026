@@ -19,7 +19,7 @@
     base: [
       'flex w-full flex-col gap-2 py-4 [&_li]:text-xs [&_li]:md:text-sm [&_li]:xl:text-md',
       'md:grid md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] md:gap-6 md:py-8',
-      'border-t border-brand-blue-600'
+      'border-brand-blue-600 border-t'
     ]
   )
 %}
@@ -36,7 +36,7 @@
   )
 %}
 <div class="bg-brand-blue-700">
-  <section class="site-footer container mx-auto px-4 lg:px-8 text-white">
+  <section class="site-footer container mx-auto px-4 text-white lg:px-8">
     <div class="{{ footer_variants.apply({}, additional_classes) }}">
       <div class="{{ footer_top_variants.apply({}) }}">
         {% if block('footer_first') is defined %}

@@ -38,13 +38,13 @@ props:
       title: Icon color
       enum:
         - brand-blue
-        - brand-navy
+        - primary
         - white
         - destructive
         - success
       meta:enum:
-        brand-blue: Brand blue
-        brand-navy: Brand navy
+        brand-blue: Drupal blue
+        primary: Brand navy
         white: White
         destructive: Red
         success: Green

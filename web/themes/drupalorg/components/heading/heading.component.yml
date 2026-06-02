@@ -55,14 +55,10 @@ props:
         - default
         - inverted
         - primary
-        - muted
-        - accent
       meta:enum:
         default: Default
         inverted: Inverted text
         primary: Primary
-        muted: Muted
-        accent: Accent
       examples:
         - default
     align:

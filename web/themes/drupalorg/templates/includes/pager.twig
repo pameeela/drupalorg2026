@@ -7,14 +7,14 @@
     ],
     variants: {
       isCurrent: {
-        yes: 'bg-foreground font-bold text-white',
-        no: 'hover:bg-muted'
+        yes: 'bg-primary font-bold text-white',
+        no: 'hover:bg-drupal-light-blue'
       }
     }
   )
 %}
 {% set list_classes = ['pager__items', 'js-pager__items', 'flex list-none items-center justify-center gap-1'] %}
-{% set pager_nav_link_classes = 'flex items-center justify-center gap-1 py-2 rounded hover:bg-muted transition-colors duration-300' %}
+{% set pager_nav_link_classes = 'flex items-center justify-center gap-1 py-2 rounded hover:bg-drupal-light-blue transition-colors duration-300' %}
 {% set pager_icon_link_classes = 'pager__icon flex shrink-0 items-center justify-center' %}
 {% set pager_icon_ellipsis_classes = 'pager__icon flex shrink-0 items-center justify-center' %}
 {% set var = value %}

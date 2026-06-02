@@ -20,13 +20,9 @@ props:
       enum:
         - primary
         - secondary
-        - accent
-        - muted
       meta:enum:
         primary: Primary
         secondary: Secondary
-        accent: Accent
-        muted: Muted
         inverted: Inverted
     border_radius:
       type: string

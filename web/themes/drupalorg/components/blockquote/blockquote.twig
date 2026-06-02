@@ -2,17 +2,11 @@
 
 {% set blockquote_root =
   html_cva(
-    base: [
-    'blockquote rounded-lg',
-    'relative flex w-full flex-col gap-6',
-    'bg-background text-foreground',
-    'my-10 p-6 pt-14',
-    'md:p-8 md:pt-20'
-  ],
+    base: ['blockquote rounded-lg', 'relative flex w-full flex-col gap-6', 'bg-background text-foreground', 'my-10 p-6 pt-14', 'md:p-8 md:pt-20'],
     variants: {
       style: {
         light: 'bg-soft-grey-100',
-        dark: 'bg-brand-navy text-white'
+        dark: 'bg-primary text-white'
       }
     }
   )
@@ -21,7 +15,7 @@
 {% set quote_icon = html_cva(base: ['absolute top-12 left-14 z-10 flex -translate-x-1/2 -translate-y-1/2']) %}
 
 {% set quote_text =
-  html_cva(base: ['relative z-10 max-w-3xl text-xl leading-snug md:text-2xl leading-snug', '[&>*:first-child]:mt-0 [&>*:last-child]:mb-0', '[&_p]:mb-0'])
+  html_cva(base: ['relative z-10 max-w-3xl text-xl leading-snug md:text-2xl', '[&>*:first-child]:mt-0 [&>*:last-child]:mb-0', '[&_p]:mb-0'])
 %}
 
 {% set quote_footer = html_cva(base: ['relative z-10 text-sm leading-snug font-normal not-italic', 'md:text-mbase']) %}
@@ -42,8 +36,8 @@
 {% set cite_attr = cite_url is not empty ? 'cite="' ~ cite_url ~ '"' : '' %}
 
 {% set svg_color_map = {
-  'light': 'var(--color-brand-blue-300)',
-  'dark': 'var(--color-white)',
+  light: 'var(--color-brand-blue-300)',
+  dark: 'var(--color-white)'
 } %}
 
 {% set resolved_svg_color = style ? svg_color_map[style]|default('currentColor') : 'currentColor' %}
@@ -74,31 +68,31 @@
       <footer class="{{ quote_footer.apply({}) }}">
         <cite class="not-italic">
           {% if cite_name is not empty and cite_text is not empty %}
-            <strong>{{ cite_name }}</strong> <br>{% if cite_url is not empty %}
-            <a
-              href="{{ cite_url }}"
-              target="_blank"
-              class="{{
-              cite_link.apply({
-                hasUrl: has_cite_url
-              })
-              }}"
-            >
-              {{ cite_text }}
-            </a>
-          {% else %}
-            <span
-              class="{{
-              cite_link.apply({
-                hasUrl: 'no'
-              })
-              }}"
-            >
+            <strong>{{ cite_name }}</strong> <br />{% if cite_url is not empty %}
+              <a
+                href="{{ cite_url }}"
+                target="_blank"
+                class="{{
+                cite_link.apply({
+                  hasUrl: has_cite_url
+                })
+                }}"
+              >
+                {{ cite_text }}
+              </a>
+            {% else %}
+              <span
+                class="{{
+                cite_link.apply({
+                  hasUrl: 'no'
+                })
+                }}"
+              >
                 {{ cite_text }}
               </span>
-          {% endif %}
+            {% endif %}
           {% elseif cite_name is not empty %}
-            <strong>{{ cite_name }}</strong><br>
+            <strong>{{ cite_name }}</strong><br />
           {% elseif cite_url is not empty %}
             <a
               href="{{ cite_url }}"

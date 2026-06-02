@@ -176,7 +176,7 @@
   }
 
   hr {
-    @apply my-4 border-t border-muted;
+    @apply my-4 border-t border-border;
   }
 
   table,
@@ -227,7 +227,7 @@
   .fieldgroup:focus-within {
     > label,
     .fieldset-legend {
-      @apply text-accent;
+      @apply text-primary;
     }
   }
 
@@ -267,17 +267,17 @@
   input[type="time"]:focus,
   textarea:focus,
   select:focus {
-    @apply border-accent bg-muted/60 shadow-sm;
+    @apply border-primary bg-drupal-light-blue shadow-sm;
   }
 
   select:focus {
-    @apply text-accent;
+    @apply text-primary;
   }
 
   input::placeholder,
   textarea::placeholder,
   select {
-    @apply text-muted-foreground;
+    @apply text-dark-grey-200;
   }
 
   .form-submit,

@@ -2,8 +2,10 @@
 {% set heading_level = level|default(3) %}
 {% set has_media = media.src is not empty %}
 {% set has_text = text is not empty %}
-{% set has_cta = url is not empty and cta_text is not empty %}
+{% set has_url = url is not empty %}
+{% set has_cta = has_url and cta_text is not empty %}
 {% set is_featured = card_style == 'featured' %}
+{% set button_variant = is_featured ? 'transparent' : 'primary' %}
 
 {% set card =
   html_cva(
@@ -19,7 +21,7 @@
 
 {% set card_content =
   html_cva(
-    base: 'relative flex flex-col',
+    base: 'pointer-events-none relative flex flex-col',
     variants: {
       style: {
         classic: 'flex-1 justify-between p-8',
@@ -68,7 +70,7 @@
   {% elseif has_media %}
     {# Framed image sitting above the content. #}
     <div class="w-full px-1 pt-1">
-      <div class="aspect-[1619/971] w-full overflow-hidden rounded-sm bg-muted">
+      <div class="aspect-[1619/971] w-full overflow-hidden rounded-sm">
         {% include 'canvas:image' ignore missing with {
           src: media.src,
           alt: media.alt,
@@ -79,6 +81,10 @@
         } only %}
       </div>
     </div>
+  {% endif %}
+
+  {% if has_url %}
+    <a href="{{ url }}" class="absolute inset-0" aria-hidden="true" tabindex="-1"></a>
   {% endif %}
 
   <div
@@ -111,18 +117,20 @@
     </div>
 
     {% if has_cta %}
-      {{
-        include(
-          '@drupalorg/components/button/button.twig',
-          {
-            label: cta_text,
-            href: url,
-            variant: 'transparent',
-            icon: 'arrow-right'
-          },
-          with_context: false
-        )
-      }}
+      <div class="pointer-events-auto">
+        {{
+          include(
+            '@drupalorg/components/button/button.twig',
+            {
+              label: cta_text,
+              href: url,
+              variant: button_variant,
+              icon: 'arrow-right'
+            },
+            with_context: false
+          )
+        }}
+      </div>
     {% endif %}
   </div>
 </div>

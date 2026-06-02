@@ -44,14 +44,10 @@ props:
       enum:
         - primary
         - secondary
-        - accent
-        - muted
         - inverted
       meta:enum:
         primary: Primary
         secondary: Secondary
-        accent: Accent
-        muted: Muted
         inverted: Inverted
     media:
       $ref: json-schema-definitions://canvas.module/image
