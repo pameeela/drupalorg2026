@@ -1,0 +1,34 @@
+uuid: 60230ffa-d42c-4ca7-b0cd-d5535c89f558
+langcode: en
+status: true
+dependencies:
+  theme:
+    - drupalorg
+active_version: f5e7e3d6abe43a71
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        autoplay:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value:
+            -
+              value: true
+          expression: ℹ︎boolean␟value
+    fallback_metadata:
+      slot_definitions:
+        header:
+          title: Header
+          description: 'Element-level badge and heading shown above the carousel (not part of a slide).'
+        slides:
+          title: Slides
+          description: 'Place Slide components here.'
+label: 'Tabbed carousel'
+id: sdc.drupalorg.carousel-tabs
+provider: drupalorg
+source: sdc
+source_local_id: 'drupalorg:carousel-tabs'

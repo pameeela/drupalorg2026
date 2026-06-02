@@ -1,0 +1,54 @@
+uuid: ae3a1b8e-190d-4d4f-9581-a88404ff9116
+langcode: en
+status: true
+dependencies:
+  theme:
+    - drupalorg
+active_version: ecf3eb7387900bb2
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        title:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'One-click site templates'
+          expression: ℹ︎string␟value
+        icon:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: squares-four
+          expression: ℹ︎string␟value
+        description:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Choose a template, launch, and customise. Professional sites in hours.'
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions:
+        media:
+          title: Media
+          description: 'Large visual filling the slide.'
+        content:
+          title: Content
+          description: 'Calls to action shown at the bottom of the slide.'
+label: Slide
+id: sdc.drupalorg.slide
+provider: drupalorg
+source: sdc
+source_local_id: 'drupalorg:slide'
