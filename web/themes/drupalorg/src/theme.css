@@ -20,11 +20,12 @@
   /* ===== Primitive palette (Figma) ===== */
 
   /* Brand Blue */
-  --drupal-extra-dark-blue: #0a1a3a;
+  --drupal-darkest-blue: #0a1a3a;
   --drupal-navy-blue: #12285f;
   --drupal-blue: #009cde;
   --drupal-dark-blue: #006aa9;
   --drupal-light-blue: #ccedf9;
+  --drupal-lightest-blue: #e6f6fc;
 
   /* Light Grey */
   --light-grey-100: #f5f9fc;

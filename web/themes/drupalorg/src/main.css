@@ -5,11 +5,12 @@
 @import "../components/carousel-tabs/carousel-tabs.tailwind.css";
 
 @theme inline {
-  --color-drupal-extra-dark-blue: var(--drupal-extra-dark-blue);
+  --color-drupal-darkest-blue: var(--drupal-darkest-blue);
   --color-drupal-navy-blue: var(--drupal-navy-blue);
   --color-drupal-blue: var(--drupal-blue);
   --color-drupal-dark-blue: var(--drupal-dark-blue);
   --color-drupal-light-blue: var(--drupal-light-blue);
+  --color-drupal-lightest-blue: var(--drupal-lightest-blue);
 
   --color-light-grey-100: var(--light-grey-100);
   --color-light-grey-200: var(--light-grey-200);

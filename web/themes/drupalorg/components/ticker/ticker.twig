@@ -26,7 +26,10 @@
     </div>
   {% endif %}
 
-  <div class="ticker__viewport @container overflow-hidden md:mx-auto md:w-4/5">
+  <div
+    class="ticker__viewport @container overflow-hidden md:mx-auto md:w-5/6"
+    style="mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);"
+  >
     <div
       class="{{
       track.apply({
