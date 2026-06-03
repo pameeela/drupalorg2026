@@ -25,25 +25,39 @@ props:
       enum:
         - primary
         - white
-        - navy
       meta:enum:
-        primary: Brand blue
+        primary: Brand navy
         white: White
-        navy: Brand navy
-    border_radius:
+    url:
       type: string
-      title: Border radius
-      enum:
-        - small
-        - medium
-        - large
-      meta:enum:
-        small: Small
-        medium: Medium
-        large: Large
-      default: medium
+      title: Link
+      format: uri-reference
+    text:
+      type: string
+      title: Heading
       examples:
-        - medium
+        - Your heading here
+    description:
+      type: string
+      title: Description
+      contentMediaType: text/html
+      x-formatting-context: block
+      examples:
+        - "<p>This is placeholder text.</p>"
+    text_align:
+      type: string
+      title: Text alignment
+      enum:
+        - left
+        - center
+        - right
+      meta:enum:
+        left: Left
+        center: Center
+        right: Right
+      default: center
+      examples:
+        - center
     icon:
       type: string
       title: Icon name
@@ -91,33 +105,3 @@ props:
         primary: Primary
         primary_background: Primary with background
         secondary_background: Secondary with background
-    url:
-      type: string
-      title: Link
-      format: uri-reference
-    text:
-      type: string
-      title: Heading
-      examples:
-        - Your heading here
-    description:
-      type: string
-      title: Description
-      contentMediaType: text/html
-      x-formatting-context: block
-      examples:
-        - "<p>This is placeholder text.</p>"
-    text_align:
-      type: string
-      title: Text alignment
-      enum:
-        - left
-        - center
-        - right
-      meta:enum:
-        left: Left
-        center: Center
-        right: Right
-      default: center
-      examples:
-        - center
