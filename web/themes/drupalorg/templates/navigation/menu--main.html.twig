@@ -23,7 +23,7 @@
 {% set attributes = attributes ? attributes.addClass(classes) : ' class="' ~ classes ~ '"' %}
 
 <nav {{ attributes }} aria-label="{{ menu_label }}">
-  <ul class="flex flex-col gap-1 p-0 font-body md:w-auto md:flex-row" data-level="1">
+  <ul class="flex flex-col gap-1 p-0 font-body font-semibold md:w-auto md:flex-row" data-level="1">
     {% for item in items %}
       {% set title = item.title is not empty ? item.title : item.text %}
       {# Capture the rendered URL before testing it for emptiness, since it's a Drupal object under the hood.
@@ -34,7 +34,7 @@
 
       {% set item_classes =
         [
-          item.in_active_trail ? 'bg-drupal-blue/20' : '',
+          item.in_active_trail ? 'bg-lightest-gray' : '',
           'flex flex-wrap justify-between md:flex-nowrap',
           'md:w-auto md:relative md:max-w-[375px]',
           'text-sm rounded-md'
