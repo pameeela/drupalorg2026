@@ -44,9 +44,11 @@ props:
       enum:
         - primary
         - light-blue
+        - light-gray
       meta:enum:
         primary: Brand navy
         light-blue: Light blue
+        light-gray: Light gray
     media:
       $ref: json-schema-definitions://canvas.module/image
       title: Background image

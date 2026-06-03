@@ -7,7 +7,8 @@
     variants: {
       backgroundColor: {
         primary: 'bg-gradient-to-b from-navy to-darkest-blue text-white',
-        'light-blue': 'bg-gradient-to-b from-lightest-blue to-light-blue text-navy'
+        'light-blue': 'bg-lightest-blue text-navy',
+        'light-gray': 'bg-light-gray'
       }
     }
   )
@@ -21,16 +22,12 @@
         left: ['text-left'],
         right: ['text-right'],
         center: ['text-center', 'lg:max-w-3/4', 'mx-auto', 'items-center']
-      },
-      hasBackground: {
-        yes: 'text-white!',
-        no: ''
       }
     }
   )
 %}
 
-{% set heading_style = background_color != 'noColor' ? 'inverted' : 'default' %}
+{% set heading_style = background_color == 'primary' ? 'inverted' : 'default' %}
 
 {% set cta_links_variants =
   html_cva(

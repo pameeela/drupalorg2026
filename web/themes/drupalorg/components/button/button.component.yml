@@ -16,6 +16,8 @@ props:
         - white-outline
         - light-blue
         - drupal-blue
+        - transparent-white
+        - transparent-navy
       meta:enum:
         primary: Brand navy
         white: White
