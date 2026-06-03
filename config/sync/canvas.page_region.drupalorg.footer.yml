@@ -41,7 +41,7 @@ component_tree:
     slot: footer_first
     uuid: 46c143e2-e44c-4a5d-9698-0c125ffc8248
     component_id: sdc.drupalorg.heading
-    component_version: ca71146b4d2d085d
+    component_version: 959bd70914eed3e8
     inputs:
       heading_text: "Receive updates, articles \Land more from Drupal "
       level: 2

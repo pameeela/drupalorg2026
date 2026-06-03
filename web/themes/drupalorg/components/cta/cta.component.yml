@@ -43,12 +43,10 @@ props:
       title: Background color
       enum:
         - primary
-        - secondary
-        - inverted
+        - light-blue
       meta:enum:
-        primary: Primary
-        secondary: Secondary
-        inverted: Inverted
+        primary: Brand navy
+        light-blue: Light blue
     media:
       $ref: json-schema-definitions://canvas.module/image
       title: Background image

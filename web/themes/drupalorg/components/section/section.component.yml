@@ -136,7 +136,7 @@ props:
         dark: Navy blue
         light-grey: Light grey
         light-blue: Light blue
-        dark-grey: Darkest blue
+        darkest-blue: Darkest blue
     background_media:
       $ref: json-schema-definitions://canvas.module/image
       title: Background image

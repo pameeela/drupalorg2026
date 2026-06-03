@@ -15,11 +15,15 @@ props:
         - white
         - white-outline
         - light-blue
+        - drupal-blue
       meta:enum:
         primary: Brand navy
         white: White
         white-outline: White with outline
         light-blue: Light blue
+        drupal-blue: Drupal blue
+        transparent-white: Transparent white
+        transparent-navy: Transparent navy
       examples:
         - primary
     label:

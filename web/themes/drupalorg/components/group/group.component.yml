@@ -35,7 +35,7 @@ props:
         md: Medium
         lg: Large
         xl: Extra large
-        stretch: Space between
+        stretch: Stretch to fill
       examples:
         - md
     items_align:
@@ -101,7 +101,7 @@ props:
         - primary
         - secondary
       meta:enum:
-        primary: Primary
+        primary: Brand navy
         secondary: Secondary
 
     animation:

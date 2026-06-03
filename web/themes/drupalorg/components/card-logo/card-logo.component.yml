@@ -21,7 +21,7 @@ props:
         - primary
         - secondary
       meta:enum:
-        primary: Primary
+        primary: Brand navy
         secondary: Secondary
         inverted: Inverted
     border_radius:

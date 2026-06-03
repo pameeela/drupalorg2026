@@ -99,9 +99,11 @@ props:
       title: Icon style
       enum:
         - primary
+        - drupal-blue
         - primary_background
         - secondary_background
       meta:enum:
-        primary: Primary
-        primary_background: Primary with background
-        secondary_background: Secondary with background
+        primary: Brand navy
+        drupal-blue: Drupal blue
+        primary_background: Drupal blue with background
+        secondary_background: Gray with background

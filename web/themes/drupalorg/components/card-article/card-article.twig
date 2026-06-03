@@ -2,7 +2,7 @@
 {% set has_author = author_name is not empty or has_avatar %}
 
 <article
-  class="group relative flex min-h-[200px] flex-col justify-between gap-4 rounded-lg bg-soft-grey-100 p-6 text-dark-grey-300 transition duration-300 hover:bg-light-grey-200"
+  class="group relative flex min-h-[200px] flex-col justify-between gap-4 rounded-lg bg-lightest-gray p-6 text-darkest-gray transition duration-300 hover:-translate-y-1 hover:bg-lightest-blue"
 >
   <div class="flex flex-col gap-2">
     <h3 class="text-xl font-medium">
@@ -13,7 +13,7 @@
       {% endif %}
     </h3>
     {% if date is not empty %}
-      <p class="mb-0 font-body text-sm font-light">
+      <p class="mb-0 font-body text-sm">
         {{ date|date('j F Y') }}
       </p>
     {% endif %}
@@ -31,7 +31,7 @@
 
       {% if has_url %}
         <span
-          class="ms-auto flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground transition duration-300 group-hover:bg-primary/85"
+          class="group-hover:bg-drupal-dark-blue/85 ms-auto flex size-10 shrink-0 items-center justify-center rounded-full bg-dark-blue text-primary-foreground transition duration-300"
         >
           <span class="transition duration-300 group-hover:translate-x-0.5">
             {{

@@ -9,24 +9,26 @@
     base: ['rounded-sm border px-3 py-1.5', 'text-center text-[11px] leading-normal font-medium tracking-[0.55px] whitespace-nowrap uppercase'],
     variants: {
       style: {
-        transparent: 'border-soft-grey-400 text-dark-grey-400',
-        'transparent-inverse': 'border-dark-grey-100 text-white',
-        white: 'border-soft-grey-400 bg-white text-dark-grey-500',
-        dark: 'border-dark-grey-300 bg-dark-grey-400 text-soft-grey-300'
+        transparent: 'border-medium-gray text-darkest-gray',
+        'transparent-inverse': 'border-white text-white',
+        white: 'border-medium-gray bg-white text-dark-gray',
+        dark: 'border-darkest-gray bg-dark-gray text-lightest-gray'
       }
     }
   )
 %}
 
-<span
-  class="{{
-  badge.apply(
-    {
-      style: style|default('transparent')
-    },
-    additional_classes
-  )
-  }}"
->
-  {{ label }}
-</span>
+{% if label %}
+  <span
+    class="{{
+    badge.apply(
+      {
+        style: style|default('transparent')
+      },
+      additional_classes
+    )
+    }}"
+  >
+    {{ label }}
+  </span>
+{% endif %}

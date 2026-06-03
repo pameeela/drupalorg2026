@@ -5,29 +5,17 @@
 @import "../components/carousel-tabs/carousel-tabs.tailwind.css";
 
 @theme inline {
-  --color-drupal-darkest-blue: var(--drupal-darkest-blue);
-  --color-drupal-navy-blue: var(--drupal-navy-blue);
+  --color-darkest-blue: var(--drupal-darkest-blue);
+  --color-navy: var(--drupal-navy);
   --color-drupal-blue: var(--drupal-blue);
-  --color-drupal-dark-blue: var(--drupal-dark-blue);
-  --color-drupal-light-blue: var(--drupal-light-blue);
-  --color-drupal-lightest-blue: var(--drupal-lightest-blue);
-
-  --color-light-grey-100: var(--light-grey-100);
-  --color-light-grey-200: var(--light-grey-200);
-  --color-light-grey-300: var(--light-grey-300);
-  --color-light-grey-400: var(--light-grey-400);
-
-  --color-soft-grey-100: var(--soft-grey-100);
-  --color-soft-grey-200: var(--soft-grey-200);
-  --color-soft-grey-300: var(--soft-grey-300);
-  --color-soft-grey-400: var(--soft-grey-400);
-
-  --color-dark-grey-100: var(--dark-grey-100);
-  --color-dark-grey-200: var(--dark-grey-200);
-  --color-dark-grey-300: var(--dark-grey-300);
-  --color-dark-grey-400: var(--dark-grey-400);
-  --color-dark-grey-500: var(--dark-grey-500);
-
+  --color-dark-blue: var(--drupal-dark-blue);
+  --color-light-blue: var(--drupal-light-blue);
+  --color-lightest-blue: var(--drupal-lightest-blue);
+  --color-lightest-gray: var(--lightest-gray);
+  --color-light-gray: var(--light-gray);
+  --color-dark-gray: var(--dark-gray);
+  --color-medium-gray: var(--medium-gray);
+  --color-darkest-gray: var(--darkest-gray);
   --color-white: var(--white);
 
   /* Semantic tokens (re-based on the primitives above) */
@@ -121,7 +109,7 @@
 /* Custom theme classes */
 @layer base {
   body {
-    @apply bg-background font-normal text-foreground antialiased;
+    @apply font-normal text-foreground antialiased;
   }
 
   p {
@@ -210,6 +198,12 @@
     }
   }
 
+  .views-element-container:has(.view-display-id-articles_featured),
+  .view-display-id-articles_featured,
+  .view-display-id-articles_featured .view-content {
+    height: 100%;
+  }
+
   .webform-submission-form,
   .fieldset-wrapper,
   *[id^="edit-page-"] {
@@ -269,7 +263,7 @@
   input[type="time"]:focus,
   textarea:focus,
   select:focus {
-    @apply border-primary bg-drupal-light-blue shadow-sm;
+    @apply border-primary bg-light-blue shadow-sm;
   }
 
   select:focus {
@@ -279,7 +273,7 @@
   input::placeholder,
   textarea::placeholder,
   select {
-    @apply text-dark-grey-200;
+    @apply text-dark-gray;
   }
 
   .form-submit,

@@ -5,7 +5,7 @@
 {% set has_url = url is not empty %}
 {% set has_cta = has_url and cta_text is not empty %}
 {% set is_featured = card_style == 'featured' %}
-{% set button_variant = is_featured ? 'transparent' : 'light-blue' %}
+{% set button_variant = is_featured ? 'transparent-white' : 'light-blue' %}
 
 {% set card =
   html_cva(
@@ -13,7 +13,7 @@
     variants: {
       style: {
         classic: 'rounded-lg bg-card text-card-foreground',
-        featured: 'min-h-[480px] justify-end rounded-2xl bg-dark-grey-500 text-white'
+        featured: 'min-h-[480px] justify-end rounded-2xl bg-darkest-gray text-white'
       }
     }
   )
@@ -25,7 +25,7 @@
     variants: {
       style: {
         classic: 'flex-1 justify-between p-8',
-        featured: 'bg-gradient-to-t from-drupal-darkest-blue via-drupal-darkest-blue/85 to-transparent p-8'
+        featured: 'bg-gradient-to-t from-darkest-blue via-darkest-blue/85 to-transparent p-8'
       }
     }
   )

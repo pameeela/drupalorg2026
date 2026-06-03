@@ -45,6 +45,6 @@ props:
       meta:enum:
         default: Default text
         inverted: Inverted text
-        primary: Primary
+        primary: Brand navy
       examples:
         - default

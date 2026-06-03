@@ -5,7 +5,7 @@
  * Structure:
  *   1. Primitive palette — the raw brand colors from the Figma design system.
  *      These are the canonical "new variable names" and can be referenced
- *      directly in components (e.g. bg-brand-blue-300, text-dark-grey-400).
+ *      directly in components (e.g. bg-brand-blue-300, text-darkest-gray).
  *   2. Semantic tokens — shadcn/ui-compatible roles (background, foreground,
  *      primary, card, ...) re-based onto the primitives. Existing components
  *      keep using these (bg-primary, text-foreground, ...) and migrate to
@@ -17,52 +17,34 @@
  */
 
 :root {
-  /* ===== Primitive palette (Figma) ===== */
-
-  /* Brand Blue */
+  /* ===== Brand tokens ===== */
   --drupal-darkest-blue: #0a1a3a;
-  --drupal-navy-blue: #12285f;
+  --drupal-navy: #12285f;
   --drupal-blue: #009cde;
   --drupal-dark-blue: #006aa9;
   --drupal-light-blue: #ccedf9;
   --drupal-lightest-blue: #e6f6fc;
-
-  /* Light Grey */
-  --light-grey-100: #f5f9fc;
-  --light-grey-200: #e8f2f8;
-  --light-grey-300: #d0e8f2;
-  --light-grey-400: #b8d8e8;
-
-  /* Soft Grey */
-  --soft-grey-100: #f7f8f9;
-  --soft-grey-200: #eceef0;
-  --soft-grey-300: #d8dbde;
-  --soft-grey-400: #c0c6cc;
-
-  /* Dark Grey */
-  --dark-grey-100: #6b7c86;
-  --dark-grey-200: #4a5c66;
-  --dark-grey-300: #2e3f48;
-  --dark-grey-400: #1e2d35; /* Font */
-  --dark-grey-500: #1a252c;
-
-  /* Neutral */
+  --lightest-gray: #f9fafb;
+  --light-gray: #f3f4f6;
+  --medium-gray: #d1d5db;
+  --dark-gray: #374151;
+  --darkest-gray: #1f2937;
   --white: #ffffff;
 
-  /* ===== Semantic tokens (re-based on primitives) ===== */
+  /* ===== Semantic tokens ===== */
   --background: var(--white);
-  --foreground: var(--dark-grey-500);
+  --foreground: var(--darkest-gray);
   --card: var(--white);
-  --card-foreground: var(--dark-grey-400);
-  --primary: var(--drupal-navy-blue);
+  --card-foreground: var(--dark-gray);
+  --primary: var(--drupal-navy);
   --primary-foreground: var(--white);
-  --secondary: var(--soft-grey-200);
-  --secondary-foreground: var(--dark-grey-400);
+  --secondary: var(--lightest-gray);
+  --secondary-foreground: var(--darkest-gray);
   --destructive: var(--color-red-600);
   --destructive-foreground: var(--white);
   --success: var(--color-green-700);
-  --border: var(--soft-grey-300);
-  --input: var(--soft-grey-300);
+  --border: var(--medium-gray);
+  --input: var(--light-gray);
 
   --font-heading: "ZTGatha", "Helvetica Neue", Arial, Helvetica, sans-serif;
   --font-sans: "Noto Sans", Arial, Helvetica, sans-serif;

@@ -7,7 +7,7 @@
 /* Mobile-only detail below the carousel-tabs: the active slide's feature info + CTAs,
    populated by carousel-tabs.js. Hidden on desktop (nav row + in-slide CTAs used). */
 .carousel-tabs__detail {
-  @apply flex flex-col items-center gap-4 text-center text-dark-grey-400 md:hidden;
+  @apply flex flex-col items-center gap-4 text-center text-darkest-gray md:hidden;
 }
 
 .carousel-tabs__detail-feature {
@@ -21,11 +21,11 @@
 /* Each feature button. Title/description/icon inside inherit this colour, so the
    active toggle works without per-element colours. */
 .carousel-tabs__feature {
-  @apply flex max-w-xs cursor-pointer flex-col items-center gap-2 text-center text-dark-grey-400/50 transition duration-300;
+  @apply flex max-w-xs cursor-pointer flex-col items-center gap-2 text-center text-darkest-gray/70 transition duration-300;
 }
 
 .carousel-tabs__feature.is-active {
-  @apply text-dark-grey-400;
+  @apply text-darkest-gray;
 }
 
 /* Slide width drives the peek (the active slide is centered by Swiper, the rest

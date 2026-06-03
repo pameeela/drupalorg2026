@@ -2,7 +2,7 @@
 {% set has_media = media.src is not empty %}
 {% set has_author = author_name is not empty or has_avatar %}
 
-<article class="group relative flex min-h-[600px] flex-col justify-end overflow-clip rounded-lg bg-dark-grey-300 p-8 text-white">
+<article class="group relative flex h-full flex-col justify-end overflow-clip rounded-lg bg-dark-gray p-8 text-white">
   {% if has_media %}
     {# Hero image with a dark scrim for text legibility. #}
     <div class="absolute inset-0 transition duration-500 group-hover:scale-105">
@@ -14,19 +14,19 @@
         class: 'size-full object-cover'
       } only %}
     </div>
-    <div class="absolute inset-0 bg-gradient-to-t from-dark-grey-500/90 via-dark-grey-500/40 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-darkest-gray/90 via-darkest-gray/50 to-transparent"></div>
   {% else %}
-    <div class="absolute inset-0 bg-gradient-to-b from-dark-grey-200 to-dark-grey-300"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-dark-gray to-darkest-gray"></div>
   {% endif %}
 
   {% if has_url %}
     <a href="{{ url }}" class="absolute inset-0" aria-hidden="true" tabindex="-1"></a>
   {% endif %}
 
-  <div class="pointer-events-none relative z-10 flex flex-col gap-6">
+  <div class="pointer-events-none relative z-10 flex flex-col gap-6 text-sm font-semibold">
     <div class="flex flex-col gap-3">
       {% if date is not empty %}
-        <p class="mb-0 font-body text-sm font-light">
+        <p class="mb-0">
           {{ date|date('j F Y') }}
         </p>
       {% endif %}
@@ -36,7 +36,7 @@
     {% if has_author %}
       <div class="flex items-center gap-3">
         {% if author_name is not empty %}
-          <span class="font-body text-sm">{{ 'By'|t }} {{ author_name }}</span>
+          <span>{{ 'By'|t }} {{ author_name }}</span>
         {% endif %}
       </div>
     {% endif %}
