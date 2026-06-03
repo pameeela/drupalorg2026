@@ -25,9 +25,6 @@ props:
       type: string
       title: Text size
       enum:
-        - default
-        - heading-responsive-8xl
-        - heading-responsive-7xl
         - heading-responsive-6xl
         - heading-responsive-5xl
         - heading-responsive-4xl
@@ -36,9 +33,6 @@ props:
         - heading-responsive-xl
         - heading-responsive-lg
       meta:enum:
-        default: Default
-        heading-responsive-8xl: 8XL
-        heading-responsive-7xl: 7XL
         heading-responsive-6xl: 6XL
         heading-responsive-5xl: 5XL
         heading-responsive-4xl: 4XL
@@ -47,7 +41,7 @@ props:
         heading-responsive-xl: XL
         heading-responsive-lg: L
       examples:
-        - heading-responsive-4xl
+        - heading-responsive-2xl
     text_color:
       type: string
       title: Text color
