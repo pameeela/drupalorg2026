@@ -36,7 +36,7 @@ inView(
   { amount: 1 },
 );
 
-// Logo ticker: seamless horizontal autoscroll that slows on hover.
+// Logo ticker: horizontal autoscroll that slows on hover.
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 document.querySelectorAll(".ticker").forEach((ticker) => {
@@ -52,8 +52,7 @@ document.querySelectorAll(".ticker").forEach((ticker) => {
   const viewportWidth = viewport.getBoundingClientRect().width;
 
   // Repeat the set enough times that the row always overflows the viewport, so
-  // scrolling by exactly one set never reveals a gap. Item widths are container
-  // units (they scale with the viewport), so this count stays valid on resize.
+  // scrolling by exactly one set never reveals a gap.
   const sets = oneSetWidth > 0 ? Math.ceil(viewportWidth / oneSetWidth) + 2 : 3;
   for (let copy = 1; copy < sets; copy++) {
     originalItems.forEach((item) => {
@@ -63,9 +62,6 @@ document.querySelectorAll(".ticker").forEach((ticker) => {
     });
   }
 
-  // Scroll by exactly one set. Every set is identical, so the loop point looks
-  // the same as the start — a continuous loop with no jump. As a percentage of
-  // the (now N-set) track, this is resize-proof.
   const shift = 100 / sets;
 
   const controls = animate(
@@ -83,13 +79,13 @@ document.querySelectorAll(".ticker").forEach((ticker) => {
   });
 });
 
-// Stat counter: count up to target value when scrolled into view
+// Stat counter: count up to target value when scrolled into view.
 function formatCounter(val, target) {
   if (target >= 1_000_000) {
-    return (val / 1_000_000).toFixed(1).replace(/\.0$/, "") + "M";
+    return (val / 1_000_000).toFixed(1).replace(/\.0$/, "") + "m";
   }
   if (target >= 1_000) {
-    return (val / 1_000).toFixed(1).replace(/\.0$/, "") + "K";
+    return (val / 1_000).toFixed(1).replace(/\.0$/, "") + "k";
   }
   return Math.round(val).toString();
 }

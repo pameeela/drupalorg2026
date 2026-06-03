@@ -18,13 +18,9 @@ props:
     prefix:
       type: string
       title: Prefix
-      examples:
-        - "~"
     suffix:
       type: string
       title: Suffix
-      examples:
-        - "+"
     text_size:
       type: string
       title: Text size
