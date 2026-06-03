@@ -122,8 +122,11 @@ document.querySelectorAll("[data-counter]").forEach((el) => {
         onUpdate: (latest) => {
           numberEl.textContent = formatCounter(latest, target);
         },
+        onComplete: () => {
+          numberEl.textContent = formatCounter(target, target);
+        },
       });
     },
-    { amount: 0.5 },
+    { amount: 0.5, once: true },
   );
 });

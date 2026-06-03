@@ -12,6 +12,7 @@ props:
     value:
       type: integer
       title: Value
+      minimum: 1
       examples:
         - 48000
     prefix:
