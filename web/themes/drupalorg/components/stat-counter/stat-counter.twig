@@ -1,0 +1,45 @@
+{% set text_size_value = text_size|default('default') %}
+{% set text_color_value = text_color|default('default') %}
+
+{% set counter_variants =
+  html_cva(
+    base: [
+      'font-heading',
+      'font-semibold'
+    ],
+    variants: {
+      textColor: {
+        default: 'text-inherit',
+        inverted: 'text-white',
+        'drupal-blue': 'text-drupal-blue',
+        primary: 'text-navy'
+      },
+      textSize: {
+        'heading-responsive-6xl': 'text-5xl lg:text-6xl',
+        'heading-responsive-5xl': 'text-4xl lg:text-5xl',
+        'heading-responsive-4xl': 'text-3xl lg:text-4xl',
+        'heading-responsive-3xl': 'text-2xl lg:text-3xl',
+        'heading-responsive-2xl': 'text-xl lg:text-2xl',
+        'heading-responsive-xl': 'text-lg lg:text-xl',
+        'heading-responsive-lg': 'text-md lg:text-lg'
+      }
+    }
+  )
+%}
+
+<div
+  class="{{
+  counter_variants.apply({
+    textColor: text_color_value,
+    textSize: text_size_value
+  })
+  }}"
+  data-counter="{{ value }}"
+>
+  <span aria-hidden="true">
+    {% if prefix is not empty %}
+      <span class="stat-counter__prefix">{{ prefix }}</span>{% endif %}<span class="stat-counter__number">{{ value }}</span>{% if suffix is not empty %}<span class="stat-counter__suffix">{{ suffix }}</span>
+    {% endif %}
+  </span>
+  <span class="sr-only">{{ prefix|default('') }}{{ value }}{{ suffix|default('') }}</span>
+</div>

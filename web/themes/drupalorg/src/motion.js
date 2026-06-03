@@ -36,7 +36,7 @@ inView(
   { amount: 1 },
 );
 
-// Logo ticker: seamless horizontal autoscroll that slows on hover.
+// Logo ticker: horizontal autoscroll that slows on hover.
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 document.querySelectorAll(".ticker").forEach((ticker) => {
@@ -52,8 +52,7 @@ document.querySelectorAll(".ticker").forEach((ticker) => {
   const viewportWidth = viewport.getBoundingClientRect().width;
 
   // Repeat the set enough times that the row always overflows the viewport, so
-  // scrolling by exactly one set never reveals a gap. Item widths are container
-  // units (they scale with the viewport), so this count stays valid on resize.
+  // scrolling by exactly one set never reveals a gap.
   const sets = oneSetWidth > 0 ? Math.ceil(viewportWidth / oneSetWidth) + 2 : 3;
   for (let copy = 1; copy < sets; copy++) {
     originalItems.forEach((item) => {
@@ -63,9 +62,6 @@ document.querySelectorAll(".ticker").forEach((ticker) => {
     });
   }
 
-  // Scroll by exactly one set. Every set is identical, so the loop point looks
-  // the same as the start — a continuous loop with no jump. As a percentage of
-  // the (now N-set) track, this is resize-proof.
   const shift = 100 / sets;
 
   const controls = animate(
@@ -81,4 +77,52 @@ document.querySelectorAll(".ticker").forEach((ticker) => {
   ticker.addEventListener("mouseleave", () => {
     controls.speed = 1;
   });
+});
+
+// Stat counter: count up to target value when scrolled into view.
+function formatCounter(val, target) {
+  if (target >= 1_000_000) {
+    return (val / 1_000_000).toFixed(1).replace(/\.0$/, "") + "m";
+  }
+  if (target >= 1_000) {
+    return (val / 1_000).toFixed(1).replace(/\.0$/, "") + "k";
+  }
+  return Math.round(val).toString();
+}
+
+document.querySelectorAll("[data-counter]").forEach((el) => {
+  const target = parseInt(el.dataset.counter, 10);
+  if (isNaN(target)) return;
+
+  const numberEl = el.querySelector(".stat-counter__number");
+  const srEl = el.querySelector(".sr-only");
+  if (!numberEl || !srEl) return;
+
+  const prefix = (el.querySelector(".stat-counter__prefix") || { textContent: "" }).textContent;
+  const suffix = (el.querySelector(".stat-counter__suffix") || { textContent: "" }).textContent;
+  const formatted = formatCounter(target, target);
+
+  srEl.textContent = prefix + formatted + suffix;
+
+  if (prefersReducedMotion) {
+    numberEl.textContent = formatted;
+    return;
+  }
+
+  inView(
+    el,
+    () => {
+      animate(0, target, {
+        duration: 1.5,
+        ease: "easeOut",
+        onUpdate: (latest) => {
+          numberEl.textContent = formatCounter(latest, target);
+        },
+        onComplete: () => {
+          numberEl.textContent = formatCounter(target, target);
+        },
+      });
+    },
+    { amount: 0.5, once: true },
+  );
 });
