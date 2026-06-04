@@ -1,0 +1,25 @@
+uuid: 2e014800-44a3-4c2b-8fab-6b4579e57bd3
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.articles
+  module:
+    - views
+active_version: 745ca1605241a2f1
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'views_exposed_filter_block:articles-articles_all'
+        label: 'Exposed form: articles-articles_all'
+        label_display: '0'
+        provider: views
+        views_label: ''
+    fallback_metadata:
+      slot_definitions: null
+label: 'Exposed form: articles-articles_all'
+id: block.views_exposed_filter_block.articles-articles_all
+provider: views
+source: block
+source_local_id: 'views_exposed_filter_block:articles-articles_all'

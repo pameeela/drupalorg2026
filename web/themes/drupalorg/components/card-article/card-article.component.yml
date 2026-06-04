@@ -24,3 +24,7 @@ props:
       type: string
       title: Link
       format: uri-reference
+    description:
+      type: string
+      title: Description
+      pattern: "(.|\\r?\\n)*"

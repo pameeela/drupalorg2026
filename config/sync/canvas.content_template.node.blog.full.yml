@@ -68,7 +68,7 @@ component_tree:
     slot: main_slot
     uuid: f5db3bd4-e732-4384-8bbd-a3f633e58c4d
     component_id: sdc.drupalorg.heading
-    component_version: ca71146b4d2d085d
+    component_version: 959bd70914eed3e8
     inputs:
       heading_text:
         sourceType: entity-field

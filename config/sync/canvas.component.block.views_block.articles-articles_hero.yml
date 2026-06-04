@@ -1,0 +1,26 @@
+uuid: 21acc8b9-235e-4d5c-a801-47fff2b3efcb
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.articles
+  module:
+    - views
+active_version: a3f51d99be49d60f
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'views_block:articles-articles_hero'
+        label: 'Articles: Hero'
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+label: 'Articles: Hero'
+id: block.views_block.articles-articles_hero
+provider: views
+source: block
+source_local_id: 'views_block:articles-articles_hero'

@@ -1,0 +1,129 @@
+uuid: f185f9b6-a5d0-4c74-8662-13555bd1bdca
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+  theme:
+    - drupalorg
+active_version: 81cee7983b545f65
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        value:
+          required: true
+          field_type: integer
+          field_storage_settings: {  }
+          field_instance_settings:
+            min: 1
+            max: null
+          field_widget: number
+          default_value:
+            -
+              value: 48000
+          expression: ℹ︎integer␟value
+        prefix:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+        suffix:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+        text_size:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: heading-responsive-2xl
+          expression: ℹ︎list_string␟value
+        text_color:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: default
+          expression: ℹ︎list_string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+  f8da0a52068835b8:
+    settings:
+      prop_field_definitions:
+        value:
+          required: true
+          field_type: integer
+          field_storage_settings: {  }
+          field_instance_settings:
+            min: 1
+            max: null
+          field_widget: number
+          default_value:
+            -
+              value: 48000
+          expression: ℹ︎integer␟value
+        prefix:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: '~'
+          expression: ℹ︎string␟value
+        suffix:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: +
+          expression: ℹ︎string␟value
+        text_size:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: heading-responsive-4xl
+          expression: ℹ︎list_string␟value
+        text_color:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: default
+          expression: ℹ︎list_string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Stat counter'
+id: sdc.drupalorg.stat-counter
+provider: drupalorg
+source: sdc
+source_local_id: 'drupalorg:stat-counter'

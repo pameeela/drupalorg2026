@@ -3,10 +3,7 @@
 
 {% set counter_variants =
   html_cva(
-    base: [
-      'font-heading',
-      'font-semibold'
-    ],
+    base: ['font-heading', 'font-semibold'],
     variants: {
       textColor: {
         default: 'text-inherit',
@@ -38,7 +35,9 @@
 >
   <span aria-hidden="true">
     {% if prefix is not empty %}
-      <span class="stat-counter__prefix">{{ prefix }}</span>{% endif %}<span class="stat-counter__number">{{ value }}</span>{% if suffix is not empty %}<span class="stat-counter__suffix">{{ suffix }}</span>
+      <span class="stat-counter__prefix">{{ prefix }}</span>
+    {% endif %}<span class="stat-counter__number">{{ value }}</span>{% if suffix is not empty %}
+      <span class="stat-counter__suffix">{{ suffix }}</span>
     {% endif %}
   </span>
   <span class="sr-only">{{ prefix|default('') }}{{ value }}{{ suffix|default('') }}</span>

@@ -19,6 +19,14 @@
     {% endif %}
   </div>
 
+  {% if description %}
+    <div>
+      <p>
+        {{ description }}
+      </p>
+    </div>
+  {% endif %}
+
   {% if has_author or has_url %}
     <div class="flex items-center gap-3">
       {% if has_author %}

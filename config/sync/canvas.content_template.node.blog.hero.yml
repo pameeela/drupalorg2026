@@ -1,0 +1,122 @@
+uuid: 15b224ba-c40d-4599-a10d-395c9eafbbe7
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.drupalorg.author-date
+    - canvas.component.sdc.drupalorg.badge
+    - canvas.component.sdc.drupalorg.button
+    - canvas.component.sdc.drupalorg.group
+    - canvas.component.sdc.drupalorg.heading
+    - canvas.component.sdc.drupalorg.hero-side-by-side
+    - canvas.component.sdc.drupalorg.plain-text
+    - core.entity_view_mode.node.hero
+    - field.field.media.image.field_media_image
+    - field.field.node.blog.field_category
+    - field.field.node.blog.field_description
+    - field.field.node.blog.field_featured_image
+    - image.style.canvas_parametrized_width
+    - media.type.image
+    - node.type.blog
+    - taxonomy.vocabulary.category
+  module:
+    - file
+    - media
+    - node
+    - options
+    - taxonomy
+    - user
+id: node.blog.hero
+content_entity_type_id: node
+content_entity_type_bundle: blog
+content_entity_type_view_mode: hero
+component_tree:
+  '0:d678ea13-4b36-498d-be6d-10875e0c1f76':
+    uuid: d678ea13-4b36-498d-be6d-10875e0c1f76
+    component_id: sdc.drupalorg.hero-side-by-side
+    component_version: 134543b92be69eb8
+    inputs:
+      hero_flex_gap: large
+      justify_content: center
+      hero_flex_direction_mobile: vertical
+      padding_block_start: '0'
+      padding_block_end: '0'
+      image_size: '4:3'
+      image_position: left
+      image_radius: large
+      media:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:blog␝field_featured_image␞␟entity␜␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}'
+  '0:hero_slot:0:9934eb33-ebc5-4f22-bd70-e23c68d45daf':
+    parent_uuid: d678ea13-4b36-498d-be6d-10875e0c1f76
+    slot: hero_slot
+    uuid: 9934eb33-ebc5-4f22-bd70-e23c68d45daf
+    component_id: sdc.drupalorg.heading
+    component_version: 959bd70914eed3e8
+    inputs:
+      heading_text:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:blog␝title␞␟value'
+      level: 2
+      text_size: heading-responsive-3xl
+      text_color: default
+      align: left
+  '0:hero_slot:1:1898c3a4-9e9a-4b17-ae60-cbcda109dc31':
+    parent_uuid: d678ea13-4b36-498d-be6d-10875e0c1f76
+    slot: hero_slot
+    uuid: 1898c3a4-9e9a-4b17-ae60-cbcda109dc31
+    component_id: sdc.drupalorg.group
+    component_version: d8d9fbefbb4abe5f
+    inputs:
+      flex_direction: row
+      flex_gap: stretch
+      items_align: center
+      flex_align: center
+      radius: sm
+  '0:hero_slot:1:group_slot:0:00432008-8290-4ca8-a93b-873e85548672':
+    parent_uuid: 1898c3a4-9e9a-4b17-ae60-cbcda109dc31
+    slot: group_slot
+    uuid: 00432008-8290-4ca8-a93b-873e85548672
+    component_id: sdc.drupalorg.author-date
+    component_version: 51851caa6c65d550
+    inputs:
+      author:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:blog␝uid␞␟entity␜␜entity:user␝name␞␟value'
+      date:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node␝created␞␟value'
+        adapter: unix_to_date
+  '0:hero_slot:1:group_slot:1:17110caf-ec55-4311-ac11-cd2b49a1edf1':
+    parent_uuid: 1898c3a4-9e9a-4b17-ae60-cbcda109dc31
+    slot: group_slot
+    uuid: 17110caf-ec55-4311-ac11-cd2b49a1edf1
+    component_id: sdc.drupalorg.badge
+    component_version: a2a9f9689e147da6
+    inputs:
+      label:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:blog␝field_category␞␟entity␜␜entity:taxonomy_term␝name␞␟value'
+      style: transparent-inverse
+  '0:hero_slot:2:d6a2f473-cf7f-42ed-a59b-692e1e1fcc1b':
+    parent_uuid: d678ea13-4b36-498d-be6d-10875e0c1f76
+    slot: hero_slot
+    uuid: d6a2f473-cf7f-42ed-a59b-692e1e1fcc1b
+    component_id: sdc.drupalorg.plain-text
+    component_version: 85b6ce75d344b10b
+    inputs:
+      text:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:blog␝field_description␞␟value'
+  '0:hero_slot:3:0d6d4551-2dc4-42a1-b17e-14581a311163':
+    parent_uuid: d678ea13-4b36-498d-be6d-10875e0c1f76
+    slot: hero_slot
+    uuid: 0d6d4551-2dc4-42a1-b17e-14581a311163
+    component_id: sdc.drupalorg.button
+    component_version: 669c214939c8200a
+    inputs:
+      variant: drupal-blue
+      label: 'Read the article'
+      icon: arrow-right
+      disabled: false
+exposed_slots: {  }

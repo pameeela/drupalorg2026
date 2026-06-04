@@ -1,24 +1,23 @@
-uuid: 3fe80480-fa9a-4132-b873-9206b0bd07aa
+uuid: 3da9d52d-23a8-4296-a19d-d6d0f2c66a74
 langcode: en
 status: true
 dependencies:
   config:
     - canvas.component.sdc.drupalorg.card-article
-    - core.entity_view_mode.node.card
-    - field.field.node.blog.field_description
+    - core.entity_view_mode.node.compact_card
     - node.type.blog
   module:
     - node
     - user
-id: node.blog.card
+id: node.blog.compact_card
 content_entity_type_id: node
 content_entity_type_bundle: blog
-content_entity_type_view_mode: card
+content_entity_type_view_mode: compact_card
 component_tree:
-  '0:c218d9ae-4423-437d-969a-938de38ffe69':
-    uuid: c218d9ae-4423-437d-969a-938de38ffe69
+  '0:8febc102-4e16-4954-9442-34eca9b1d08b':
+    uuid: 8febc102-4e16-4954-9442-34eca9b1d08b
     component_id: sdc.drupalorg.card-article
-    component_version: 74b367c444b39eea
+    component_version: 405af2323a0f1f0a
     inputs:
       title:
         sourceType: entity-field
@@ -33,7 +32,4 @@ component_tree:
       url:
         sourceType: host-entity-url
         absolute: false
-      description:
-        sourceType: entity-field
-        expression: 'ℹ︎␜entity:node:blog␝field_description␞␟value'
 exposed_slots: {  }

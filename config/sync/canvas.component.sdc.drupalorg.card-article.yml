@@ -16,9 +16,113 @@ dependencies:
     - media_library
   theme:
     - drupalorg
-active_version: 405af2323a0f1f0a
+active_version: 74b367c444b39eea
 versioned_properties:
   active:
+    settings:
+      prop_field_definitions:
+        title:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'May 2026 Drupal for Nonprofits Chat'
+          expression: ℹ︎string␟value
+        date:
+          required: false
+          field_type: datetime
+          field_storage_settings:
+            datetime_type: date
+          field_instance_settings: {  }
+          field_widget: datetime_default
+          default_value: null
+          expression: ℹ︎datetime␟value
+        author_name:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Karen Horrocks'
+          expression: ℹ︎string␟value
+        url:
+          required: false
+          field_type: link
+          field_storage_settings: {  }
+          field_instance_settings:
+            title: 0
+            link_type: 17
+          field_widget: link_default
+          default_value: null
+          expression: ℹ︎link␟url
+        description:
+          required: false
+          field_type: string_long
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textarea
+          default_value: null
+          expression: ℹ︎string_long␟value
+    fallback_metadata:
+      slot_definitions: {  }
+  f29e4d1ca37f3660:
+    settings:
+      prop_field_definitions:
+        title:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'May 2026 Drupal for Nonprofits Chat'
+          expression: ℹ︎string␟value
+        date:
+          required: false
+          field_type: datetime
+          field_storage_settings:
+            datetime_type: date
+          field_instance_settings: {  }
+          field_widget: datetime_default
+          default_value: null
+          expression: ℹ︎datetime␟value
+        author_name:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Karen Horrocks'
+          expression: ℹ︎string␟value
+        url:
+          required: false
+          field_type: link
+          field_storage_settings: {  }
+          field_instance_settings:
+            title: 0
+            link_type: 17
+          field_widget: link_default
+          default_value: null
+          expression: ℹ︎link␟url
+        text:
+          required: false
+          field_type: string_long
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textarea
+          default_value: null
+          expression: ℹ︎string_long␟value
+    fallback_metadata:
+      slot_definitions: {  }
+  405af2323a0f1f0a:
     settings:
       prop_field_definitions:
         title:

@@ -1,0 +1,11 @@
+uuid: 16ff79b1-a724-4084-8104-d2093445bafd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.compact_card
+label: 'Compact card'
+description: null
+targetEntityType: node
+cache: true

@@ -1,0 +1,43 @@
+uuid: b097386f-f2f0-4e41-a44d-b580836673ba
+langcode: en
+status: false
+dependencies:
+  theme:
+    - drupalorg
+active_version: 85b6ce75d344b10b
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        text:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Enter your text here'
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+  08d1e6ec1014da29:
+    settings:
+      prop_field_definitions:
+        text:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Enter your text here'
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Plain text'
+id: sdc.drupalorg.plain-text
+provider: drupalorg
+source: sdc
+source_local_id: 'drupalorg:plain-text'

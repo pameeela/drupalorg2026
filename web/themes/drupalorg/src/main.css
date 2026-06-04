@@ -204,6 +204,10 @@
     height: 100%;
   }
 
+  .view-display-id-block_1 {
+    color: white !important;
+  }
+
   .webform-submission-form,
   .fieldset-wrapper,
   *[id^="edit-page-"] {

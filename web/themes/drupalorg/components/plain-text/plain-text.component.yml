@@ -1,0 +1,12 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Plain text
+status: obsolete
+group: Base
+props:
+  type: object
+  properties:
+    text:
+      type: string
+      title: Text
+      examples:
+        - "Enter your text here"

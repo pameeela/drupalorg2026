@@ -1,0 +1,11 @@
+uuid: 43ad3c93-b92b-49b6-913d-5f1de1bf6890
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.hero
+label: Hero
+description: null
+targetEntityType: node
+cache: true
