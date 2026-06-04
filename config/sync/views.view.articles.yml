@@ -340,7 +340,7 @@ display:
           exposed: true
           expose:
             operator_id: field_category_target_id_op
-            label: 'Filter posts'
+            label: ''
             description: ''
             use_operator: false
             operator: field_category_target_id_op

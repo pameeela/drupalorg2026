@@ -18,7 +18,7 @@ dependencies:
 id: customerstory
 label: 'Customer Story'
 component_tree:
-  dd3a46b1-883a-41bb-b0a8-920238f4dfe1:
+  '0:dd3a46b1-883a-41bb-b0a8-920238f4dfe1':
     uuid: dd3a46b1-883a-41bb-b0a8-920238f4dfe1
     component_id: sdc.drupalorg.section
     component_version: 93c0c4422ba21d67
@@ -33,7 +33,7 @@ component_tree:
       background_color: dark
       section_header: false
       section_footer: false
-  a3cac02d-ec93-4126-80ac-8be28cb43ac7:
+  '0:main_slot:0:a3cac02d-ec93-4126-80ac-8be28cb43ac7':
     parent_uuid: dd3a46b1-883a-41bb-b0a8-920238f4dfe1
     slot: main_slot
     uuid: a3cac02d-ec93-4126-80ac-8be28cb43ac7
@@ -74,16 +74,7 @@ component_tree:
           required:
             - src
         componentId: sdc.drupalorg.hero-side-by-side
-  9cb392b3-b4db-4485-aab9-f0037a556ef8:
-    parent_uuid: a3cac02d-ec93-4126-80ac-8be28cb43ac7
-    slot: hero_slot
-    uuid: 9cb392b3-b4db-4485-aab9-f0037a556ef8
-    component_id: sdc.drupalorg.badge
-    component_version: a2a9f9689e147da6
-    inputs:
-      label: 'Customer story'
-      style: transparent-inverse
-  092e5ea0-4054-404a-9d1b-4177365da5e4:
+  '0:main_slot:0:hero_slot:0:092e5ea0-4054-404a-9d1b-4177365da5e4':
     parent_uuid: a3cac02d-ec93-4126-80ac-8be28cb43ac7
     slot: hero_slot
     uuid: 092e5ea0-4054-404a-9d1b-4177365da5e4
@@ -95,19 +86,7 @@ component_tree:
       text_size: heading-responsive-3xl
       text_color: inverted
       align: left
-  c32d2915-10d8-4ead-94e0-95a8c9d82979:
-    parent_uuid: a3cac02d-ec93-4126-80ac-8be28cb43ac7
-    slot: hero_slot
-    uuid: c32d2915-10d8-4ead-94e0-95a8c9d82979
-    component_id: sdc.drupalorg.text
-    component_version: 16c79c28a4108f9b
-    inputs:
-      text:
-        value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium pellentesque semper enim aliquam.</p>'
-        format: canvas_html_block
-      text_size: normal
-      text_color: inverted
-  80299fac-cf1d-45cd-ad6a-50b50f678351:
+  '0:main_slot:0:hero_slot:1:80299fac-cf1d-45cd-ad6a-50b50f678351':
     parent_uuid: a3cac02d-ec93-4126-80ac-8be28cb43ac7
     slot: hero_slot
     uuid: 80299fac-cf1d-45cd-ad6a-50b50f678351
@@ -118,7 +97,16 @@ component_tree:
       label: 'Drupal for Marketers'
       icon: arrow-right
       disabled: false
-  b34f5e5f-b580-46ae-a537-2e6d97aa318f:
+  '0:main_slot:0:hero_slot:2:9cb392b3-b4db-4485-aab9-f0037a556ef8':
+    parent_uuid: a3cac02d-ec93-4126-80ac-8be28cb43ac7
+    slot: hero_slot
+    uuid: 9cb392b3-b4db-4485-aab9-f0037a556ef8
+    component_id: sdc.drupalorg.badge
+    component_version: a2a9f9689e147da6
+    inputs:
+      label: 'Customer story'
+      style: transparent-inverse
+  '0:main_slot:0:hero_slot:3:b34f5e5f-b580-46ae-a537-2e6d97aa318f':
     parent_uuid: a3cac02d-ec93-4126-80ac-8be28cb43ac7
     slot: hero_slot
     uuid: b34f5e5f-b580-46ae-a537-2e6d97aa318f
@@ -128,77 +116,7 @@ component_tree:
       width: 100%
       columns: '3 columns'
       mobile_columns: '1'
-  bcc67489-f25e-4d30-9986-a7f37a65fc43:
-    parent_uuid: b34f5e5f-b580-46ae-a537-2e6d97aa318f
-    slot: main_slot
-    uuid: bcc67489-f25e-4d30-9986-a7f37a65fc43
-    component_id: sdc.drupalorg.group
-    component_version: d8d9fbefbb4abe5f
-    inputs:
-      flex_direction: column
-      items_align: start
-      flex_align: center
-      radius: sm
-  013cffe8-98d4-45ed-9fa2-f1a729ffec69:
-    parent_uuid: bcc67489-f25e-4d30-9986-a7f37a65fc43
-    slot: group_slot
-    uuid: 013cffe8-98d4-45ed-9fa2-f1a729ffec69
-    component_id: sdc.drupalorg.heading
-    component_version: ca71146b4d2d085d
-    inputs:
-      heading_text: 3x
-      level: 2
-      text_size: heading-responsive-3xl
-      text_color: inverted
-      align: left
-  ca79656b-e299-4ad5-bda1-9e685ed536b6:
-    parent_uuid: bcc67489-f25e-4d30-9986-a7f37a65fc43
-    slot: group_slot
-    uuid: ca79656b-e299-4ad5-bda1-9e685ed536b6
-    component_id: sdc.drupalorg.text
-    component_version: 16c79c28a4108f9b
-    inputs:
-      text:
-        value: '<p>More content published</p>'
-        format: canvas_html_block
-      text_size: normal
-      text_color: inverted
-  9f948bf1-ca0c-46b9-ba74-5f0bd52449ac:
-    parent_uuid: b34f5e5f-b580-46ae-a537-2e6d97aa318f
-    slot: main_slot
-    uuid: 9f948bf1-ca0c-46b9-ba74-5f0bd52449ac
-    component_id: sdc.drupalorg.group
-    component_version: d8d9fbefbb4abe5f
-    inputs:
-      flex_direction: column
-      items_align: start
-      flex_align: center
-      radius: sm
-  ceb6556c-9bac-4cea-b2b5-9e3e6f9ed562:
-    parent_uuid: 9f948bf1-ca0c-46b9-ba74-5f0bd52449ac
-    slot: group_slot
-    uuid: ceb6556c-9bac-4cea-b2b5-9e3e6f9ed562
-    component_id: sdc.drupalorg.heading
-    component_version: ca71146b4d2d085d
-    inputs:
-      heading_text: 85%
-      level: 2
-      text_size: heading-responsive-3xl
-      text_color: inverted
-      align: left
-  8f0a0226-eace-419c-a140-6cc502b99f3f:
-    parent_uuid: 9f948bf1-ca0c-46b9-ba74-5f0bd52449ac
-    slot: group_slot
-    uuid: 8f0a0226-eace-419c-a140-6cc502b99f3f
-    component_id: sdc.drupalorg.text
-    component_version: 16c79c28a4108f9b
-    inputs:
-      text:
-        value: '<p>Fewer developer tickets</p>'
-        format: canvas_html_block
-      text_size: normal
-      text_color: inverted
-  77e65845-b5b9-423e-9eca-b975272409e3:
+  '0:main_slot:0:hero_slot:3:main_slot:0:77e65845-b5b9-423e-9eca-b975272409e3':
     parent_uuid: b34f5e5f-b580-46ae-a537-2e6d97aa318f
     slot: main_slot
     uuid: 77e65845-b5b9-423e-9eca-b975272409e3
@@ -209,7 +127,19 @@ component_tree:
       items_align: start
       flex_align: center
       radius: sm
-  8b9915cb-b0b6-4bc9-8837-95267f753d42:
+  '0:main_slot:0:hero_slot:3:main_slot:0:group_slot:0:29965c93-e78d-43e9-b861-5d04f90382f4':
+    parent_uuid: 77e65845-b5b9-423e-9eca-b975272409e3
+    slot: group_slot
+    uuid: 29965c93-e78d-43e9-b861-5d04f90382f4
+    component_id: sdc.drupalorg.text
+    component_version: 16c79c28a4108f9b
+    inputs:
+      text:
+        value: '<p>Page turnaround</p>'
+        format: canvas_html_block
+      text_size: normal
+      text_color: inverted
+  '0:main_slot:0:hero_slot:3:main_slot:0:group_slot:1:8b9915cb-b0b6-4bc9-8837-95267f753d42':
     parent_uuid: 77e65845-b5b9-423e-9eca-b975272409e3
     slot: group_slot
     uuid: 8b9915cb-b0b6-4bc9-8837-95267f753d42
@@ -221,15 +151,85 @@ component_tree:
       text_size: heading-responsive-3xl
       text_color: inverted
       align: left
-  29965c93-e78d-43e9-b861-5d04f90382f4:
-    parent_uuid: 77e65845-b5b9-423e-9eca-b975272409e3
+  '0:main_slot:0:hero_slot:3:main_slot:1:9f948bf1-ca0c-46b9-ba74-5f0bd52449ac':
+    parent_uuid: b34f5e5f-b580-46ae-a537-2e6d97aa318f
+    slot: main_slot
+    uuid: 9f948bf1-ca0c-46b9-ba74-5f0bd52449ac
+    component_id: sdc.drupalorg.group
+    component_version: d8d9fbefbb4abe5f
+    inputs:
+      flex_direction: column
+      items_align: start
+      flex_align: center
+      radius: sm
+  '0:main_slot:0:hero_slot:3:main_slot:1:group_slot:0:8f0a0226-eace-419c-a140-6cc502b99f3f':
+    parent_uuid: 9f948bf1-ca0c-46b9-ba74-5f0bd52449ac
     slot: group_slot
-    uuid: 29965c93-e78d-43e9-b861-5d04f90382f4
+    uuid: 8f0a0226-eace-419c-a140-6cc502b99f3f
     component_id: sdc.drupalorg.text
     component_version: 16c79c28a4108f9b
     inputs:
       text:
-        value: '<p>Page turnaround</p>'
+        value: '<p>Fewer developer tickets</p>'
+        format: canvas_html_block
+      text_size: normal
+      text_color: inverted
+  '0:main_slot:0:hero_slot:3:main_slot:1:group_slot:1:ceb6556c-9bac-4cea-b2b5-9e3e6f9ed562':
+    parent_uuid: 9f948bf1-ca0c-46b9-ba74-5f0bd52449ac
+    slot: group_slot
+    uuid: ceb6556c-9bac-4cea-b2b5-9e3e6f9ed562
+    component_id: sdc.drupalorg.heading
+    component_version: ca71146b4d2d085d
+    inputs:
+      heading_text: 85%
+      level: 2
+      text_size: heading-responsive-3xl
+      text_color: inverted
+      align: left
+  '0:main_slot:0:hero_slot:3:main_slot:2:bcc67489-f25e-4d30-9986-a7f37a65fc43':
+    parent_uuid: b34f5e5f-b580-46ae-a537-2e6d97aa318f
+    slot: main_slot
+    uuid: bcc67489-f25e-4d30-9986-a7f37a65fc43
+    component_id: sdc.drupalorg.group
+    component_version: d8d9fbefbb4abe5f
+    inputs:
+      flex_direction: column
+      items_align: start
+      flex_align: center
+      radius: sm
+  '0:main_slot:0:hero_slot:3:main_slot:2:group_slot:0:013cffe8-98d4-45ed-9fa2-f1a729ffec69':
+    parent_uuid: bcc67489-f25e-4d30-9986-a7f37a65fc43
+    slot: group_slot
+    uuid: 013cffe8-98d4-45ed-9fa2-f1a729ffec69
+    component_id: sdc.drupalorg.heading
+    component_version: ca71146b4d2d085d
+    inputs:
+      heading_text: 3x
+      level: 2
+      text_size: heading-responsive-3xl
+      text_color: inverted
+      align: left
+  '0:main_slot:0:hero_slot:3:main_slot:2:group_slot:1:ca79656b-e299-4ad5-bda1-9e685ed536b6':
+    parent_uuid: bcc67489-f25e-4d30-9986-a7f37a65fc43
+    slot: group_slot
+    uuid: ca79656b-e299-4ad5-bda1-9e685ed536b6
+    component_id: sdc.drupalorg.text
+    component_version: 16c79c28a4108f9b
+    inputs:
+      text:
+        value: '<p>More content published</p>'
+        format: canvas_html_block
+      text_size: normal
+      text_color: inverted
+  '0:main_slot:0:hero_slot:4:c32d2915-10d8-4ead-94e0-95a8c9d82979':
+    parent_uuid: a3cac02d-ec93-4126-80ac-8be28cb43ac7
+    slot: hero_slot
+    uuid: c32d2915-10d8-4ead-94e0-95a8c9d82979
+    component_id: sdc.drupalorg.text
+    component_version: 16c79c28a4108f9b
+    inputs:
+      text:
+        value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium pellentesque semper enim aliquam.</p>'
         format: canvas_html_block
       text_size: normal
       text_color: inverted

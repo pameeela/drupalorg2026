@@ -1,3 +1,5 @@
+{% set is_stretched = stretch ? 'yes' : 'no' %}
+
 {% set group =
   html_cva(
     base: ['flex', 'bg-none'],
@@ -23,7 +25,7 @@
         md: 'gap-4',
         lg: 'gap-8',
         xl: 'gap-16',
-        stretch: 'justify-between! self-auto!'
+        stretch: 'justify-between!'
       },
       radius: {
         sm: 'rounded-sm',
@@ -40,6 +42,9 @@
       background: {
         primary: 'bg-primary',
         secondary: 'bg-secondary'
+      },
+      stretch: {
+        yes: 'w-full'
       },
       animation: {
         fade_up: 'opacity-0',
@@ -60,6 +65,7 @@
     radius: radius,
     padding: padding,
     background: background,
+    stretch: is_stretched|default('no'),
     animation: animation
   })
 %}

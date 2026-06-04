@@ -66,13 +66,14 @@ component_tree:
     slot: hero_slot
     uuid: 1898c3a4-9e9a-4b17-ae60-cbcda109dc31
     component_id: sdc.drupalorg.group
-    component_version: d8d9fbefbb4abe5f
+    component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: row
       flex_gap: stretch
       items_align: center
       flex_align: center
       radius: sm
+      stretch: true
   '0:hero_slot:1:group_slot:0:00432008-8290-4ca8-a93b-873e85548672':
     parent_uuid: 1898c3a4-9e9a-4b17-ae60-cbcda109dc31
     slot: group_slot

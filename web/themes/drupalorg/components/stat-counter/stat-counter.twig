@@ -34,11 +34,11 @@
   data-counter="{{ value }}"
 >
   <span aria-hidden="true">
-    {% if prefix is not empty %}
+    {%- if prefix is not empty -%}
       <span class="stat-counter__prefix">{{ prefix }}</span>
-    {% endif %}<span class="stat-counter__number">{{ value }}</span>{% if suffix is not empty %}
+    {%- endif -%}<span class="stat-counter__number">{{ value }}</span>{%- if suffix is not empty -%}
       <span class="stat-counter__suffix">{{ suffix }}</span>
-    {% endif %}
+    {%- endif -%}
   </span>
   <span class="sr-only">{{ prefix|default('') }}{{ value }}{{ suffix|default('') }}</span>
 </div>

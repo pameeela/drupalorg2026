@@ -103,7 +103,13 @@ props:
       meta:enum:
         primary: Brand navy
         secondary: Secondary
-
+    stretch:
+      type: boolean
+      title: Stretch group to fit container
+      examples:
+        - false
+      default:
+        - false
     animation:
       type: string
       title: Animation
