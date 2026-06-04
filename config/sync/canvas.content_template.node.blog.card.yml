@@ -5,10 +5,13 @@ dependencies:
   config:
     - canvas.component.sdc.drupalorg.card-article
     - core.entity_view_mode.node.card
+    - field.field.node.blog.field_category
     - field.field.node.blog.field_description
     - node.type.blog
+    - taxonomy.vocabulary.category
   module:
     - node
+    - taxonomy
     - user
 id: node.blog.card
 content_entity_type_id: node
@@ -18,7 +21,7 @@ component_tree:
   '0:c218d9ae-4423-437d-969a-938de38ffe69':
     uuid: c218d9ae-4423-437d-969a-938de38ffe69
     component_id: sdc.drupalorg.card-article
-    component_version: 74b367c444b39eea
+    component_version: 94da69efd1a42d5d
     inputs:
       title:
         sourceType: entity-field
@@ -36,4 +39,7 @@ component_tree:
       description:
         sourceType: entity-field
         expression: 'ℹ︎␜entity:node:blog␝field_description␞␟value'
+      category:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:blog␝field_category␞␟entity␜␜entity:taxonomy_term␝name␞␟value'
 exposed_slots: {  }

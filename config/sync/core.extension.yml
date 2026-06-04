@@ -5,6 +5,7 @@ module:
   automated_cron: 0
   automatic_updates: 0
   autosave_form: 0
+  better_exposed_filters: 0
   big_pipe: 0
   block: 0
   bpmn_io: 0
@@ -106,6 +107,7 @@ module:
   workflows: 0
   yoast_seo: 0
   pathauto: 1
+  selective_better_exposed_filters: 1
   views: 10
 theme:
   canvas_stark: 0

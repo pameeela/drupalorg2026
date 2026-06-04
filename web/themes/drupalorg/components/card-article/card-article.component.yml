@@ -28,3 +28,6 @@ props:
       type: string
       title: Description
       pattern: "(.|\\r?\\n)*"
+    category:
+      type: string
+      title: Category

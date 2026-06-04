@@ -8,8 +8,8 @@ dependencies:
     - core.entity_view_mode.node.featured
     - core.entity_view_mode.node.hero
     - taxonomy.vocabulary.category
-    - taxonomy.vocabulary.tags
   module:
+    - better_exposed_filters
     - node
     - taxonomy
     - user
@@ -224,6 +224,58 @@ display:
     position: 3
     display_options:
       title: 'All articles'
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: content_format
+          bef:
+            general:
+              autosubmit: true
+              auto_submit_sort_only: false
+              autosubmit_breakpoint: ''
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_textfield_minimum_length: 3
+              autosubmit_hide: true
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+            filter:
+              field_category_target_id:
+                plugin_id: bef_links
+                advanced:
+                  sort_options: false
+                  sort_options_method: alphabetical_asc
+                  sort_options_natural: true
+                  rewrite:
+                    filter_rewrite_values: '- Any -|All'
+                    filter_rewrite_values_key: false
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  open_by_default: false
+                  is_secondary: false
+                  hide_label: false
+                  field_classes: ''
+                select_all_none: false
+                soft_limit: 0
+                soft_limit_label_less: 'Show less'
+                soft_limit_label_more: 'Show more'
+                scrollable: false
+                scrollable_height: 300
+                options_show_only_used: true
+                options_show_only_used_filtered: false
+                options_hide_when_empty: false
+                options_show_items_count: 0
       filters:
         status:
           id: status
@@ -288,13 +340,13 @@ display:
           exposed: true
           expose:
             operator_id: field_category_target_id_op
-            label: Category
+            label: 'Filter posts'
             description: ''
             use_operator: false
             operator: field_category_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_category_target_id
+            identifier: category
             required: false
             remember: false
             multiple: false
@@ -318,52 +370,7 @@ display:
           type: select
           hierarchy: false
           limit: true
-          error_message: true
-        field_tags_target_id:
-          id: field_tags_target_id
-          table: node__field_tags
-          field: field_tags_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_tags_target_id_op
-            label: Tags
-            description: ''
-            use_operator: false
-            operator: field_tags_target_id_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_tags_target_id
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          vid: tags
-          type: textfield
-          hierarchy: false
-          limit: true
-          error_message: true
+          error_message: false
       filter_groups:
         operator: AND
         groups:
@@ -371,9 +378,10 @@ display:
       defaults:
         title: false
         use_ajax: false
+        exposed_form: false
         filters: false
         filter_groups: false
-      use_ajax: true
+      use_ajax: false
       display_description: ''
       exposed_block: true
       display_extenders: {  }

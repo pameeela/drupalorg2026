@@ -12,18 +12,30 @@
         {{ title }}
       {% endif %}
     </h3>
-    {% if date is not empty %}
-      <p class="mb-0 font-body text-sm">
-        {{ date|date('j F Y') }}
-      </p>
-    {% endif %}
+    <div class="flex flex-row items-center justify-between">
+      {% if date is not empty %}
+        <p class="mb-0 font-body text-sm">
+          {{ date|date('j F Y') }}
+        </p>
+      {% endif %}
+      {% if category %}
+        {{
+          include(
+            '@drupalorg/components/badge/badge.twig',
+            {
+              label: category,
+              style: transparent
+            },
+            with_context: false
+          )
+        }}
+      {% endif %}
+    </div>
   </div>
 
   {% if description %}
-    <div>
-      <p>
-        {{ description }}
-      </p>
+    <div class="text-sm">
+      {{ description }}
     </div>
   {% endif %}
 

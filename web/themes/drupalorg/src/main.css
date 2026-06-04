@@ -208,6 +208,20 @@
     color: white !important;
   }
 
+  #views-exposed-form-articles-articles-all {
+    ul {
+      @apply mt-2 flex list-none gap-2 ps-0;
+      li {
+        a {
+          @apply rounded-sm border px-3 py-1.5 text-center text-[11px] leading-normal font-medium tracking-[0.55px] text-dark-blue uppercase hover:bg-lightest-blue;
+          &.bef-link--selected {
+            @apply bg-lightest-blue underline underline-offset-2;
+          }
+        }
+      }
+    }
+  }
+
   .webform-submission-form,
   .fieldset-wrapper,
   *[id^="edit-page-"] {

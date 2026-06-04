@@ -41,3 +41,6 @@ props:
       type: string
       title: Link
       format: uri-reference
+    category:
+      type: string
+      title: Category

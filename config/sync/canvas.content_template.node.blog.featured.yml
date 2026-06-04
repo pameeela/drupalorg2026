@@ -6,14 +6,17 @@ dependencies:
     - canvas.component.sdc.drupalorg.card-article-featured
     - core.entity_view_mode.node.featured
     - field.field.media.image.field_media_image
+    - field.field.node.blog.field_category
     - field.field.node.blog.field_featured_image
     - image.style.canvas_parametrized_width
     - media.type.image
     - node.type.blog
+    - taxonomy.vocabulary.category
   module:
     - file
     - media
     - node
+    - taxonomy
     - user
 id: node.blog.featured
 content_entity_type_id: node
@@ -23,7 +26,7 @@ component_tree:
   '0:795d2843-7041-4cb4-94e5-22139ced6f35':
     uuid: 795d2843-7041-4cb4-94e5-22139ced6f35
     component_id: sdc.drupalorg.card-article-featured
-    component_version: 2e10d1428fbaa7c8
+    component_version: 80a382ad99db38fa
     inputs:
       title:
         sourceType: entity-field
@@ -42,4 +45,7 @@ component_tree:
       url:
         sourceType: host-entity-url
         absolute: false
+      category:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:blog␝field_category␞␟entity␜␜entity:taxonomy_term␝name␞␟value'
 exposed_slots: {  }
