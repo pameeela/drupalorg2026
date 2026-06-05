@@ -4,9 +4,30 @@ status: true
 dependencies:
   theme:
     - drupalorg
-active_version: 35aa9b53725d397f
+active_version: c324bff4e6fdae6f
 versioned_properties:
   active:
+    settings:
+      prop_field_definitions:
+        center_header:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value:
+            -
+              value: false
+          expression: ℹ︎boolean␟value
+    fallback_metadata:
+      slot_definitions:
+        header:
+          title: Header
+          description: 'Optional badge and heading shown above the tab bar.'
+        tabs:
+          title: Tabs
+          description: 'Place Tab components here. Each becomes a tab with its own panel.'
+  35aa9b53725d397f:
     settings:
       prop_field_definitions: {  }
     fallback_metadata:

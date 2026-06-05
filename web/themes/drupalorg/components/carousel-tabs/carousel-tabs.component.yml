@@ -5,6 +5,11 @@ group: Layout
 props:
   type: object
   properties:
+    center_header:
+      type: boolean
+      title: Center header content
+      examples:
+        - true
     autoplay:
       type: boolean
       title: Autoplay

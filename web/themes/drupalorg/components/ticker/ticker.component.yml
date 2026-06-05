@@ -22,6 +22,11 @@ props:
       default: "6"
       examples:
         - "6"
+    center_header:
+      type: boolean
+      title: Center header content
+      examples:
+        - true
 slots:
   header:
     title: Header

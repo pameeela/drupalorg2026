@@ -1,7 +1,6 @@
-{# Boolean for conditionals #}
 {% set has_background_image = background_media is not empty and background_media.src is not empty %}
-{# String for CVA variants #}
 {% set has_background_image_variant = has_background_image ? 'yes' : 'no' %}
+{% set center_header = center_header ? 'yes' : 'no' %}
 
 {% set section =
   html_cva(
@@ -81,6 +80,24 @@
   background.apply({
     backgroundColor: background_color|default('noColor'),
     backgroundImage: has_background_image_variant
+  })
+%}
+
+{% set header =
+  html_cva(
+    base: ['mb-6 flex flex-col gap-2 md:mb-8 xl:mb-10 [&_h2]:max-w-2xl [&_h3]:max-w-2xl [&_p]:max-w-2xl'],
+    variants: {
+      center: {
+        yes: 'mx-auto items-center text-center',
+        no: ''
+      }
+    }
+  )
+%}
+
+{% set header_classes =
+  header.apply({
+    center: center_header|default('no')
   })
 %}
 
@@ -168,7 +185,7 @@
           {% endblock %}
         {% endset %}
         {% if header_content|trim is not empty %}
-          <header class="mb-6 flex flex-col gap-4 md:mb-8 xl:mb-10 [&_h2]:max-w-2xl [&_h3]:max-w-2xl [&_p]:max-w-2xl">
+          <header class="{{ header_classes }}">
             {{ header_content }}
           </header>
         {% endif %}

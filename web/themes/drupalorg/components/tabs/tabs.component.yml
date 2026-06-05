@@ -4,7 +4,12 @@ description: A tabbed content section. Place Tab components in the Tabs slot; on
 group: Layout
 props:
   type: object
-  properties: {}
+  properties:
+    center_header:
+      type: boolean
+      title: Center header content
+      examples:
+        - false
 slots:
   header:
     title: Header

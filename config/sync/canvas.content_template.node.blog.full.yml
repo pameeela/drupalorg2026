@@ -4,22 +4,37 @@ status: true
 dependencies:
   config:
     - canvas.component.block.system_breadcrumb_block
+    - canvas.component.block.views_block.articles-articles_related
     - canvas.component.sdc.drupalorg.author-date
     - canvas.component.sdc.drupalorg.badge
+    - canvas.component.sdc.drupalorg.button
     - canvas.component.sdc.drupalorg.group
     - canvas.component.sdc.drupalorg.heading
+    - canvas.component.sdc.drupalorg.hero-billboard
     - canvas.component.sdc.drupalorg.section
     - canvas.component.sdc.drupalorg.text
     - core.entity_view_mode.node.full
+    - field.field.media.image.field_media_image
+    - field.field.media.svg_image.field_media_svg_image
     - field.field.node.blog.field_category
     - field.field.node.blog.field_content
+    - filter.format.canvas_html_block
     - filter.format.content_format
+    - image.style.canvas_parametrized_width
+    - media.type.image
+    - media.type.svg_image
     - node.type.blog
     - taxonomy.vocabulary.category
+  content:
+    - 'file:file:0c85a805-38e7-4562-903e-475f116c7ae9'
+    - 'media:image:12a7859c-b378-4da8-9ab3-5083b9122740'
   module:
+    - file
+    - media
     - node
     - options
     - taxonomy
+    - text
     - user
 id: node.blog.full
 content_entity_type_id: node
@@ -82,7 +97,7 @@ component_tree:
     slot: main_slot
     uuid: a7b2c664-6b46-4eb0-af73-dd986b031941
     component_id: sdc.drupalorg.group
-    component_version: d8d9fbefbb4abe5f
+    component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: row
       flex_gap: stretch
@@ -131,11 +146,144 @@ component_tree:
     slot: main_slot
     uuid: d854bef6-a0ce-4142-a138-88e71a259598
     component_id: sdc.drupalorg.group
-    component_version: d8d9fbefbb4abe5f
+    component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: row
       flex_gap: sm
       items_align: start
       flex_align: center
       radius: sm
+  '2:c2cda74c-3059-4f3d-8b21-21e1bf0d73d5':
+    uuid: c2cda74c-3059-4f3d-8b21-21e1bf0d73d5
+    component_id: sdc.drupalorg.section
+    component_version: 93c0c4422ba21d67
+    inputs:
+      width: 80%
+      columns: '1 column'
+      views_columns: 33-33-33
+      mobile_columns: '1'
+      margin_block_start: default
+      margin_block_end: default
+      padding_block_start: '0'
+      padding_block_end: '0'
+      section_header: true
+      section_footer: false
+  '2:header_slot:0:d06c9cd4-4495-47c7-8e92-4de9d87a4725':
+    parent_uuid: c2cda74c-3059-4f3d-8b21-21e1bf0d73d5
+    slot: header_slot
+    uuid: d06c9cd4-4495-47c7-8e92-4de9d87a4725
+    component_id: sdc.drupalorg.heading
+    component_version: 959bd70914eed3e8
+    inputs:
+      heading_text: 'Related posts'
+      level: 2
+      text_size: heading-responsive-3xl
+      text_color: default
+      align: center
+  '2:main_slot:0:2e7a4a13-0d78-4e29-b264-bd094fd9cda1':
+    parent_uuid: c2cda74c-3059-4f3d-8b21-21e1bf0d73d5
+    slot: main_slot
+    uuid: 2e7a4a13-0d78-4e29-b264-bd094fd9cda1
+    component_id: block.views_block.articles-articles_related
+    component_version: 79bb48a543d58af5
+    inputs:
+      label: 'Articles: Related'
+      label_display: '0'
+      views_label: ''
+      items_per_page: null
+  '3:dce94466-534a-437e-b0ba-0a6ca7cfd69e':
+    uuid: dce94466-534a-437e-b0ba-0a6ca7cfd69e
+    component_id: sdc.drupalorg.section
+    component_version: 93c0c4422ba21d67
+    inputs:
+      width: 80%
+      columns: '1 column'
+      mobile_columns: '1'
+      margin_block_start: default
+      margin_block_end: default
+      padding_block_start: '0'
+      padding_block_end: '0'
+      section_header: false
+      section_footer: false
+  '3:main_slot:0:74d03bcb-c658-4310-9d32-43c6b1749434':
+    parent_uuid: dce94466-534a-437e-b0ba-0a6ca7cfd69e
+    slot: main_slot
+    uuid: 74d03bcb-c658-4310-9d32-43c6b1749434
+    component_id: sdc.drupalorg.hero-billboard
+    component_version: 69e1345b50b2f63c
+    inputs:
+      height: large
+      flex_position: hero-center
+      overlay_opacity: 0%
+      object_position: center
+      media:
+        target_id: '11'
+      overlap_navbar: false
+  '3:main_slot:0:hero_slot:0:0828d200-a8d8-457d-b05b-49cbd9ba24d8':
+    parent_uuid: 74d03bcb-c658-4310-9d32-43c6b1749434
+    slot: hero_slot
+    uuid: 0828d200-a8d8-457d-b05b-49cbd9ba24d8
+    component_id: sdc.drupalorg.badge
+    component_version: a2a9f9689e147da6
+    inputs:
+      label: 'Get started'
+      style: transparent-inverse
+  '3:main_slot:0:hero_slot:1:f0111a04-cdba-4bad-b570-2f29e1813fe5':
+    parent_uuid: 74d03bcb-c658-4310-9d32-43c6b1749434
+    slot: hero_slot
+    uuid: f0111a04-cdba-4bad-b570-2f29e1813fe5
+    component_id: sdc.drupalorg.heading
+    component_version: 959bd70914eed3e8
+    inputs:
+      heading_text: 'See what you can build in an afternoon.'
+      level: 2
+      text_size: heading-responsive-4xl
+      text_color: inverted
+      align: center
+  '3:main_slot:0:hero_slot:2:defe3569-7a50-4225-a116-0a9dd3e099e4':
+    parent_uuid: 74d03bcb-c658-4310-9d32-43c6b1749434
+    slot: hero_slot
+    uuid: defe3569-7a50-4225-a116-0a9dd3e099e4
+    component_id: sdc.drupalorg.text
+    component_version: 16c79c28a4108f9b
+    inputs:
+      text:
+        value: '<p class="text-align-center">Spin up a professional site in hours — templates, drag-and-drop and AI agents, ready from day one.</p>'
+        format: canvas_html_block
+      text_size: normal
+      text_color: inverted
+  '3:main_slot:0:hero_slot:3:7034b9fd-d9fe-4fbb-b881-039a00b611f1':
+    parent_uuid: 74d03bcb-c658-4310-9d32-43c6b1749434
+    slot: hero_slot
+    uuid: 7034b9fd-d9fe-4fbb-b881-039a00b611f1
+    component_id: sdc.drupalorg.group
+    component_version: a248dae5b5ad03ec
+    inputs:
+      flex_direction: row
+      flex_gap: md
+      items_align: start
+      flex_align: center
+      radius: sm
+      stretch: false
+  '3:main_slot:0:hero_slot:3:group_slot:0:982d1acf-d971-4777-85cb-8a348b01203b':
+    parent_uuid: 7034b9fd-d9fe-4fbb-b881-039a00b611f1
+    slot: group_slot
+    uuid: 982d1acf-d971-4777-85cb-8a348b01203b
+    component_id: sdc.drupalorg.button
+    component_version: 669c214939c8200a
+    inputs:
+      variant: white
+      label: 'Try Drupal'
+      icon: arrow-right
+      disabled: false
+  '3:main_slot:0:hero_slot:3:group_slot:1:84655ea5-0cda-440c-9b3d-86ee630dde75':
+    parent_uuid: 7034b9fd-d9fe-4fbb-b881-039a00b611f1
+    slot: group_slot
+    uuid: 84655ea5-0cda-440c-9b3d-86ee630dde75
+    component_id: sdc.drupalorg.button
+    component_version: 669c214939c8200a
+    inputs:
+      variant: transparent-white
+      label: 'Try Drupal'
+      disabled: false
 exposed_slots: {  }

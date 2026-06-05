@@ -6,16 +6,16 @@
   html_cva(
     base: [
       'group inline-flex w-fit items-center justify-center gap-2.5',
-      'rounded-full px-5 py-3 text-sm leading-normal font-medium',
+      'rounded-full px-5 py-2.5 text-sm leading-normal font-medium',
       'cursor-pointer no-underline transition duration-300 ease-in-out hover:no-underline',
       'focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none',
       'disabled:pointer-events-none disabled:opacity-50'
     ],
     variants: {
       variant: {
-        primary: 'bg-primary text-primary-foreground hover:bg-primary/85',
+        primary: 'bg-primary text-primary-foreground shadow-md shadow-navy/50 hover:bg-primary/85',
         'drupal-blue': 'bg-drupal-blue text-darkest-blue hover:bg-drupal-blue/85',
-        'light-blue': 'bg-lightest-blue text-primary hover:bg-lightest-blue/85',
+        'light-blue': 'bg-lightest-blue text-primary shadow-md shadow-medium-gray/80 hover:bg-lightest-blue/85',
         'white-outline': 'border border-primary bg-white text-primary hover:bg-white/90',
         'transparent-white': 'border border-white bg-transparent text-white hover:text-light-blue',
         'transparent-navy': 'border border-navy bg-transparent text-navy hover:text-darkest-blue',

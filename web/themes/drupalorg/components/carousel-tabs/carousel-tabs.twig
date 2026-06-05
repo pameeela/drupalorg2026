@@ -1,8 +1,27 @@
+{% set center_header = center_header ? 'yes' : 'no' %}
 {% set is_autoplay = autoplay|default(true) %}
+
+{% set header_cva =
+  html_cva(
+    base: ['carousel-tabs__header flex flex-col gap-2 [&_h2]:max-w-2xl [&_h3]:max-w-2xl [&_p]:max-w-2xl'],
+    variants: {
+      center: {
+        yes: 'mx-auto items-center text-center',
+        no: ''
+      }
+    }
+  )
+%}
 
 <section class="carousel-tabs cq-full flex flex-col gap-8" data-autoplay="{{ is_autoplay ? 'true' : 'false' }}">
   {% if block('header') is defined %}
-    <div class="carousel-tabs__header flex flex-col items-center gap-4 text-center [&_*]:max-w-2xl">
+    <div
+      class="{{
+      header_cva.apply({
+        center: center_header
+      })
+      }}"
+    >
       {% block header %}
         {% include '@drupalorg/components/badge/badge.twig' with {
           label: 'Why Drupal CMS',

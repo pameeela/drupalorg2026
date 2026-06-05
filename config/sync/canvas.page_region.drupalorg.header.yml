@@ -26,10 +26,10 @@ component_tree:
     slot: links
     uuid: 117719f5-2683-457d-901b-a7d61f5e96f8
     component_id: sdc.drupalorg.button
-    component_version: 669c214939c8200a
+    component_version: 8985aaac808b1e09
     inputs:
       variant: primary
-      label: 'Drupal for Marketers'
+      label: 'Try Drupal'
       icon: arrow-right
       disabled: false
   '0:logo:0:c16dbf4a-0bde-4be0-994b-b55a034308d0':
