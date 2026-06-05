@@ -44,7 +44,7 @@ component_tree:
   '0:083fb097-30a3-4016-b735-afd5e554a0d3':
     uuid: 083fb097-30a3-4016-b735-afd5e554a0d3
     component_id: sdc.drupalorg.section
-    component_version: 93c0c4422ba21d67
+    component_version: 14b39e0eb4b650c6
     inputs:
       width: 100%
       columns: '1 column'
@@ -67,7 +67,7 @@ component_tree:
   '1:e40c9bd4-68e1-442c-ac26-90e16226b652':
     uuid: e40c9bd4-68e1-442c-ac26-90e16226b652
     component_id: sdc.drupalorg.section
-    component_version: 93c0c4422ba21d67
+    component_version: 14b39e0eb4b650c6
     inputs:
       width: 70%
       columns: '1 column'
@@ -123,7 +123,7 @@ component_tree:
     slot: group_slot
     uuid: d0536b6c-c397-47eb-a9ea-109cda8f8642
     component_id: sdc.drupalorg.badge
-    component_version: a2a9f9689e147da6
+    component_version: d86e02390d856974
     inputs:
       label:
         sourceType: entity-field
@@ -156,9 +156,9 @@ component_tree:
   '2:c2cda74c-3059-4f3d-8b21-21e1bf0d73d5':
     uuid: c2cda74c-3059-4f3d-8b21-21e1bf0d73d5
     component_id: sdc.drupalorg.section
-    component_version: 93c0c4422ba21d67
+    component_version: 14b39e0eb4b650c6
     inputs:
-      width: 80%
+      width: 90%
       columns: '1 column'
       views_columns: 33-33-33
       mobile_columns: '1'
@@ -167,6 +167,7 @@ component_tree:
       padding_block_start: '0'
       padding_block_end: '0'
       section_header: true
+      center_header: true
       section_footer: false
   '2:header_slot:0:d06c9cd4-4495-47c7-8e92-4de9d87a4725':
     parent_uuid: c2cda74c-3059-4f3d-8b21-21e1bf0d73d5
@@ -194,9 +195,9 @@ component_tree:
   '3:dce94466-534a-437e-b0ba-0a6ca7cfd69e':
     uuid: dce94466-534a-437e-b0ba-0a6ca7cfd69e
     component_id: sdc.drupalorg.section
-    component_version: 93c0c4422ba21d67
+    component_version: 14b39e0eb4b650c6
     inputs:
-      width: 80%
+      width: 90%
       columns: '1 column'
       mobile_columns: '1'
       margin_block_start: default
@@ -204,6 +205,7 @@ component_tree:
       padding_block_start: '0'
       padding_block_end: '0'
       section_header: false
+      center_header: false
       section_footer: false
   '3:main_slot:0:74d03bcb-c658-4310-9d32-43c6b1749434':
     parent_uuid: dce94466-534a-437e-b0ba-0a6ca7cfd69e
@@ -224,7 +226,7 @@ component_tree:
     slot: hero_slot
     uuid: 0828d200-a8d8-457d-b05b-49cbd9ba24d8
     component_id: sdc.drupalorg.badge
-    component_version: a2a9f9689e147da6
+    component_version: d86e02390d856974
     inputs:
       label: 'Get started'
       style: transparent-inverse
@@ -270,7 +272,7 @@ component_tree:
     slot: group_slot
     uuid: 982d1acf-d971-4777-85cb-8a348b01203b
     component_id: sdc.drupalorg.button
-    component_version: 669c214939c8200a
+    component_version: 8985aaac808b1e09
     inputs:
       variant: white
       label: 'Try Drupal'
@@ -281,7 +283,7 @@ component_tree:
     slot: group_slot
     uuid: 84655ea5-0cda-440c-9b3d-86ee630dde75
     component_id: sdc.drupalorg.button
-    component_version: 669c214939c8200a
+    component_version: 8985aaac808b1e09
     inputs:
       variant: transparent-white
       label: 'Try Drupal'
