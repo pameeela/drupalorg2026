@@ -1,4 +1,4 @@
-import { animate, inView } from "motion";
+import { animate, inView, scroll, stagger } from "motion";
 
 const animatableElements = document.querySelectorAll("[data-animation]");
 
@@ -124,5 +124,89 @@ document.querySelectorAll("[data-counter]").forEach((el) => {
       });
     },
     { amount: 0.5, once: true },
+  );
+});
+
+document.querySelectorAll("[data-stagger-items]").forEach((stagger_container) => {
+  const items = Array.from(stagger_container.children);
+  if (items.length === 0) return;
+  
+  // Set initial hidden state
+  items.forEach((item) => {
+    item.style.opacity = "0";
+    item.style.transform = "translateY(20px)";
+  });
+  
+  inView(
+    stagger_container,
+    () => {
+      animate(
+        items,
+        { opacity: 1, transform: "translateY(0)" },
+        { duration: 0.5, delay: stagger(0.15), ease: "easeOut" },
+      );
+    },
+    { amount: 0.2, once: true },
+  );
+});
+
+document.querySelectorAll("[data-scroll-stack]").forEach((el) => {
+  const header = el.querySelector(".scroll-stack__header");
+  const item_wrapper = el.querySelector(".stack-items");
+  if (!item_wrapper || !header) return;
+
+  const items = Array.from(item_wrapper.children);
+  if (items.length === 0) return;
+
+  // First card is visible immediately; each subsequent card needs one viewport of scroll.
+  el.style.height = `${items.length * 100}vh`;
+
+  header.style.position = "sticky";
+  header.style.top = "0";
+  header.style.height = "100vh";
+  header.style.display = "flex";
+  header.style.alignItems = "center";
+
+  // Stack items becomes a sticky full-viewport container; cards are absolutely
+  // positioned inside it so they can stack on top of each other.
+  item_wrapper.style.position = "sticky";
+  item_wrapper.style.top = "0";
+  item_wrapper.style.height = "100vh";
+  item_wrapper.style.overflow = "hidden";
+
+  // Read all heights before touching the layout — making earlier items absolute
+  // removes them from grid flow and corrupts later items' offsetHeight.
+  const cardHeights = items.map((item) => item.offsetHeight);
+
+  items.forEach((item, index) => {
+    item.style.position = "absolute";
+    item.style.left = "0";
+    item.style.right = "0";
+    item.style.top = `calc(50vh - ${cardHeights[index] / 2}px)`;
+    item.style.zIndex = index + 1;
+    // First card is visible immediately as a scroll hint; the rest start off-screen below.
+    item.style.transform = index === 0 ? "translateY(0)" : "translateY(100vh)";
+    item.classList.remove("transition", "duration-500", "ease-out");
+  });
+
+  // Slide cards 1+ up from below during their scroll segment; lock in place once arrived.
+  const scrollItems = items.slice(1);
+  scroll(
+    (progress) => {
+      const segmentSize = 1 / scrollItems.length;
+      scrollItems.forEach((item, index) => {
+        const segmentStart = index * segmentSize;
+        const segmentEnd = segmentStart + segmentSize;
+        if (progress < segmentStart) {
+          item.style.transform = "translateY(100vh)";
+        } else if (progress >= segmentEnd) {
+          item.style.transform = "translateY(0)";
+        } else {
+          const itemProgress = Math.min(1, (progress - segmentStart) / segmentSize);
+          item.style.transform = `translateY(${(1 - itemProgress) * 100}vh)`;
+        }
+      });
+    },
+    { target: el, offset: ["start start", "end end"] },
   );
 });

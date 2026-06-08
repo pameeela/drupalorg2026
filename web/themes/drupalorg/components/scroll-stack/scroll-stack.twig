@@ -1,0 +1,56 @@
+{% set _headline = headline ?? "Everything you need. Nothing you don't." %}
+{% set _subheading = subheading ?? 'One platform built for every role — marketers, developers, and editors.' %}
+{% set _scroll_hint = scroll_hint ?? 'scroll to explore' %}
+
+<section class="scroll-stack cq-full grid grid-cols-2" data-scroll-stack>
+  {# Absolutely positioned so it doesn't affect card flow or sticky behaviour. #}
+  <div class="scroll-stack__header sticky">
+    {% block header %}
+      <p class="scroll-stack__hint text-xs leading-tight uppercase opacity-40">
+        {{ _scroll_hint }}
+      </p>
+      <h2 class="heading-responsive-5xl mb-4 max-w-2xl font-bold text-foreground">{{ _headline }}</h2>
+      <p class="max-w-xl text-xl text-foreground/70">
+        {{ _subheading }}
+      </p>
+    {% endblock %}
+  </div>
+
+  {# Cards: JS wraps each in a sticky centering div and sets top + scale. #}
+  <div class="stack-items grid">
+    {% block cards %}
+      <div class="scroll-stack__card flex h-[300px] w-[500px] flex-col rounded-3xl p-8" style="background-color: #ffd580;">
+        <p class="mb-3 text-xs font-semibold tracking-widest uppercase" style="color: #1b3fa8;">
+          Visual page building
+        </p>
+        <h3 class="mb-2 text-2xl font-bold" style="color: #1b3fa8;">Build pages without code</h3>
+        <p class="mb-4 text-sm" style="color: #1b3fa8;">
+          Drag, drop, and arrange stunning pages with live preview and reusable blocks.
+        </p>
+        <a href="#" class="mt-auto text-sm font-semibold" style="color: #1b3fa8;">Explore →</a>
+      </div>
+      <div class="scroll-stack__card flex h-[300px] w-[500px] flex-col rounded-3xl p-8" style="background-color: #5ec4a0;">
+        <p class="mb-3 text-xs font-semibold tracking-widest uppercase" style="color: #163a6b;">
+          AI agents, day one
+        </p>
+        <h3 class="mb-2 text-2xl font-bold" style="color: #163a6b;">A suite of AI agents</h3>
+        <p class="mb-4 text-sm" style="color: #163a6b;">
+          Create, personalise and publish content. SEO powered by AI at every step.
+        </p>
+        <a href="#" class="mt-auto text-sm font-semibold" style="color: #163a6b;">Explore →</a>
+      </div>
+      <div class="scroll-stack__card flex h-[300px] w-[500px] flex-col rounded-3xl p-8" style="background-color: #7ab3f5;">
+        <p class="mb-3 text-xs font-semibold tracking-widest uppercase" style="color: #0b1f4a;">
+          Enterprise security
+        </p>
+        <h3 class="mb-2 text-2xl font-bold" style="color: #0b1f4a;">Security built in</h3>
+        <p class="mb-4 text-sm" style="color: #0b1f4a;">
+          Robust permissions, audit trails, and 20 years of open-source trust.
+        </p>
+        <a href="#" class="mt-auto text-sm font-semibold" style="color: #0b1f4a;">Explore →</a>
+      </div>
+    {% endblock %}
+  </div>
+
+  {{ attach_library('drupalorg/motion') }}
+</section>
