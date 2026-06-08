@@ -2,9 +2,9 @@
 {% set _subheading = subheading ?? 'One platform built for every role — marketers, developers, and editors.' %}
 {% set _scroll_hint = scroll_hint ?? 'scroll to explore' %}
 
-<section class="scroll-stack cq-full grid grid-cols-2" data-scroll-stack>
+<section class="scroll-stack cq-full grid md:grid-cols-2" data-scroll-stack>
   {# Absolutely positioned so it doesn't affect card flow or sticky behaviour. #}
-  <div class="scroll-stack__header sticky">
+  <div class="scroll-stack__header sticky mb-10">
     {% block header %}
       <p class="scroll-stack__hint text-xs leading-tight uppercase opacity-40">
         {{ _scroll_hint }}
@@ -17,7 +17,7 @@
   </div>
 
   {# Cards: JS wraps each in a sticky centering div and sets top + scale. #}
-  <div class="stack-items grid">
+  <div class="stack-items grid gap-8">
     {% block cards %}
       <div class="scroll-stack__card flex h-[300px] w-[500px] flex-col rounded-3xl p-8" style="background-color: #ffd580;">
         <p class="mb-3 text-xs font-semibold tracking-widest uppercase" style="color: #1b3fa8;">

@@ -151,6 +151,9 @@ document.querySelectorAll("[data-stagger-items]").forEach((stagger_container) =>
 });
 
 document.querySelectorAll("[data-scroll-stack]").forEach((el) => {
+  // Below md, the grid is single-column — let cards flow naturally instead.
+  if (window.innerWidth < 768) return;
+
   const header = el.querySelector(".scroll-stack__header");
   const item_wrapper = el.querySelector(".stack-items");
   if (!item_wrapper || !header) return;
