@@ -213,3 +213,42 @@ document.querySelectorAll("[data-scroll-stack]").forEach((el) => {
     { target: el, offset: ["start start", "end end"] },
   );
 });
+
+document.querySelectorAll('[data-reveal="center_spread"]').forEach((el) => {
+  const children = Array.from(el.children);
+  if (children.length === 0) return;
+
+  const middleIndex = Math.floor(children.length / 2);
+
+  // Measure natural positions before applying any transforms.
+  const containerRect = el.getBoundingClientRect();
+  const containerCenter = containerRect.left + containerRect.width / 2;
+  const offsets = children.map((child) => {
+    const rect = child.getBoundingClientRect();
+    return containerCenter - (rect.left + rect.width / 2);
+  });
+
+  // Stack all items at the container centre; middle item sits on top.
+  children.forEach((child, index) => {
+    child.style.zIndex = String(children.length - Math.abs(index - middleIndex));
+    child.style.transform = `translateX(${offsets[index]}px)`;
+
+    child.classList.remove("transition", "duration-500", "ease-out");
+
+    if (index === middleIndex) return
+
+    child.style.scale = "0.6"
+  });
+
+  // Spread driven by scroll: starts when container enters the viewport from below,
+  // finishes when the container is fully in view.
+  scroll(
+    (progress) => {
+      children.forEach((child, index) => {
+        child.style.transform = `translateX(${offsets[index] * (1 - progress)}px)`;
+        child.style.scale = index === middleIndex ? "1" : String(0.6 + 0.4 * progress);
+      });
+    },
+    { target: el, offset: ["start end", "end end"] },
+  );
+});
