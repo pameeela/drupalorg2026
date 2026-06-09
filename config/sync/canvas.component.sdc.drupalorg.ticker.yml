@@ -62,6 +62,38 @@ versioned_properties:
         items:
           title: Items
           description: 'Items to scroll, e.g. Logo cards.'
+  e5fae936fe944697:
+    settings:
+      prop_field_definitions:
+        columns:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: '6'
+          expression: ℹ︎list_string␟value
+        center_header:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value:
+            -
+              value: true
+          expression: ℹ︎boolean␟value
+    fallback_metadata:
+      slot_definitions:
+        header:
+          title: Header
+          description: 'Heading shown above the ticker.'
+        items:
+          title: Items
+          description: 'Items to scroll, e.g. Logo cards.'
 label: Ticker
 id: sdc.drupalorg.ticker
 provider: drupalorg

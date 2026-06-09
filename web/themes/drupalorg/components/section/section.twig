@@ -191,7 +191,7 @@
         {% endif %}
       {% endif %}
 
-      <div class="{{ grid_classes }}">
+      <div class="{{ grid_classes }}" {{stagger_items ? 'data-stagger-items' : ''}}>
         {% block main_slot %}
 
         {% endblock %}
