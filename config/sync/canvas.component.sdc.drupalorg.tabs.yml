@@ -4,9 +4,20 @@ status: true
 dependencies:
   theme:
     - drupalorg
-active_version: c324bff4e6fdae6f
+active_version: 35aa9b53725d397f
 versioned_properties:
   active:
+    settings:
+      prop_field_definitions: {  }
+    fallback_metadata:
+      slot_definitions:
+        header:
+          title: Header
+          description: 'Optional badge and heading shown above the tab bar.'
+        tabs:
+          title: Tabs
+          description: 'Place Tab components here. Each becomes a tab with its own panel.'
+  c324bff4e6fdae6f:
     settings:
       prop_field_definitions:
         center_header:

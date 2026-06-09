@@ -4,9 +4,30 @@ status: true
 dependencies:
   theme:
     - drupalorg
-active_version: dfcbd1de3c9d6b9d
+active_version: f5e7e3d6abe43a71
 versioned_properties:
   active:
+    settings:
+      prop_field_definitions:
+        autoplay:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value:
+            -
+              value: true
+          expression: ℹ︎boolean␟value
+    fallback_metadata:
+      slot_definitions:
+        header:
+          title: Header
+          description: 'Element-level badge and heading shown above the carousel (not part of a slide).'
+        slides:
+          title: Slides
+          description: 'Place Slide components here.'
+  dfcbd1de3c9d6b9d:
     settings:
       prop_field_definitions:
         center_header:
