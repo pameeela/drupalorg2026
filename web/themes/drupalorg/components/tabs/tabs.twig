@@ -1,6 +1,26 @@
+{% set center_header = center_header ? 'yes' : 'no' %}
+
+{% set header_cva =
+  html_cva(
+    base: ['tabs__header flex flex-col gap-2 [&_h2]:max-w-2xl [&_h3]:max-w-2xl [&_p]:max-w-2xl'],
+    variants: {
+      center: {
+        yes: 'mx-auto items-center text-center',
+        no: ''
+      }
+    }
+  )
+%}
+
 <section class="tabs flex flex-col gap-8">
   {% if block('header') is defined %}
-    <div class="tabs__header flex flex-col gap-4 [&_*]:max-w-2xl">
+    <div
+      class="{{
+      header_cva.apply({
+        center: center_header
+      })
+      }}"
+    >
       {% block header %}
         {% include '@drupalorg/components/badge/badge.twig' with {
           label: 'Why Drupal CMS',

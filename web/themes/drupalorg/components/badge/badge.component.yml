@@ -11,7 +11,7 @@ props:
       type: string
       title: Label
       examples:
-        - "Built for your whole team"
+        - "Why Drupal CMS"
     style:
       type: string
       title: Style

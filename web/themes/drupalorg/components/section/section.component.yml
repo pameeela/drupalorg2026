@@ -151,6 +151,11 @@ props:
         - true
       default:
         - true
+    center_header:
+      type: boolean
+      title: Center header content
+      examples:
+        - false
     section_footer:
       type: boolean
       title: Show footer region

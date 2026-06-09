@@ -10,4 +10,5 @@ items:
   - block.views_block.articles-articles_featured
   - block.views_block.articles-articles_hero
   - block.views_block.articles-articles_latest
+  - block.views_block.articles-articles_related
   - block.views_block.recent_pages-block_recent_pages

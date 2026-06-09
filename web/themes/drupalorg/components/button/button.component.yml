@@ -33,7 +33,7 @@ props:
       title: Label
       default: "Button label"
       examples:
-        - "Drupal for Marketers"
+        - "Try Drupal"
     href:
       type: string
       title: Link
