@@ -79,4 +79,55 @@ class Navbar extends ComponentInstance {
   }
 }
 
+class DropdownMenu extends ComponentInstance {
+  init() {
+    this.button = this.el.querySelector(".dropdown-menu__expand-button");
+    this.isOpen = false;
+    if (!this.button) return;
+
+    const desktopMQ = window.matchMedia("(min-width: 48rem)");
+
+    this.el.addEventListener("mouseenter", () => {
+      if (desktopMQ.matches) {
+        this.open();
+      }
+    });
+
+    this.el.addEventListener("mouseleave", () => {
+      if (desktopMQ.matches) {
+        this.close();
+      }
+    });
+
+    this.button.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (this.isOpen) {
+        this.close();
+      } else {
+        this.open();
+      }
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!desktopMQ.matches && !this.el.contains(e.target)) {
+        this.close();
+      }
+    });
+  }
+
+  open() {
+    this.el.classList.add("is-open");
+    this.button.setAttribute("aria-expanded", "true");
+    this.button.classList.add("dropdown-menu__expand-button--has-been-opened");
+    this.isOpen = true;
+  }
+
+  close() {
+    this.el.classList.remove("is-open");
+    this.button.setAttribute("aria-expanded", "false");
+    this.isOpen = false;
+  }
+}
+
+window.dropdownMenu = new ComponentType(DropdownMenu, "dropdownMenu", ".dropdown-menu");
 window.navbar = new ComponentType(Navbar, "navbar", ".navbar");

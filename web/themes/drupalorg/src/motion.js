@@ -49,8 +49,7 @@ document.querySelectorAll(".ticker").forEach((ticker) => {
 
   // Measure one set as the sum of item widths.
   const originalItems = Array.from(track.children);
-  const measureSet = () =>
-    originalItems.reduce((width, item) => width + item.getBoundingClientRect().width, 0);
+  const measureSet = () => originalItems.reduce((width, item) => width + item.getBoundingClientRect().width, 0);
   const oneSetWidth = measureSet();
   const viewportWidth = viewport.getBoundingClientRect().width;
 
@@ -125,7 +124,6 @@ document.querySelectorAll("[data-counter]").forEach((el) => {
       animate(0, target, {
         duration: 1.5,
         ease: "easeOut",
-
 
         onUpdate: (latest) => {
           numberEl.textContent = formatCounter(latest, target);

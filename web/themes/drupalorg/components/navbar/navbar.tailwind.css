@@ -44,3 +44,36 @@
     }
   }
 }
+
+/* Dropdown panel — collapsed by default using grid-rows technique */
+.dropdown-menu__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.dropdown-menu__panel > ul {
+  min-height: 0;
+}
+
+/* Enable slide transition only after the panel has been opened once.
+   Prevents the close animation from firing on page load. */
+.dropdown-menu:has(.dropdown-menu__expand-button--has-been-opened) .dropdown-menu__panel {
+  transition: grid-template-rows 0.3s ease;
+}
+
+/* Expanded state */
+.dropdown-menu.is-open .dropdown-menu__panel {
+  grid-template-rows: 1fr;
+  visibility: visible;
+}
+
+/* Rotate caret when open; gate transition on --has-been-opened to prevent snap on page load */
+.dropdown-menu:has(.dropdown-menu__expand-button--has-been-opened) .dropdown-menu__expand-button {
+  transition: transform 0.3s ease;
+}
+
+.dropdown-menu.is-open .dropdown-menu__expand-button {
+  transform: rotate(180deg);
+}
