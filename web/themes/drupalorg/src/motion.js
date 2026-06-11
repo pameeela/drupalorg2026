@@ -2,7 +2,7 @@ import { animate, inView } from "motion";
 
 const animatableElements = document.querySelectorAll("[data-animation]");
 
-// Define animation transforms for each type
+// Define animation transforms for each type.
 const animationTransforms = {
   fade_up: ["translateY(100px)", "translateY(0px)"],
   fade_down: ["translateY(-100px)", "translateY(0px)"],
@@ -16,7 +16,7 @@ inView(
     const animationType = element.dataset.animation || "fade_up";
     const transform = animationTransforms[animationType] || animationTransforms.fade_up;
 
-    // Get delay and duration from data attributes (in milliseconds), convert to seconds
+    // Get delay and duration from data attributes (in milliseconds), convert to seconds.
     const delay = (parseFloat(element.dataset.delay) || 0) / 1000;
     const duration = (parseFloat(element.dataset.duration) || 300) / 1000;
 
@@ -47,8 +47,11 @@ document.querySelectorAll(".ticker").forEach((ticker) => {
     return;
   }
 
+  // Measure one set as the sum of item widths.
   const originalItems = Array.from(track.children);
-  const oneSetWidth = track.getBoundingClientRect().width;
+  const measureSet = () =>
+    originalItems.reduce((width, item) => width + item.getBoundingClientRect().width, 0);
+  const oneSetWidth = measureSet();
   const viewportWidth = viewport.getBoundingClientRect().width;
 
   // Repeat the set enough times that the row always overflows the viewport, so
@@ -61,6 +64,13 @@ document.querySelectorAll(".ticker").forEach((ticker) => {
       track.appendChild(clone);
     });
   }
+
+  // Get the track width and keep it in sync on resize.
+  const sizeTrack = () => {
+    track.style.width = `${measureSet() * sets}px`;
+  };
+  sizeTrack();
+  new ResizeObserver(sizeTrack).observe(viewport);
 
   const shift = 100 / sets;
 
@@ -115,6 +125,8 @@ document.querySelectorAll("[data-counter]").forEach((el) => {
       animate(0, target, {
         duration: 1.5,
         ease: "easeOut",
+
+
         onUpdate: (latest) => {
           numberEl.textContent = formatCounter(latest, target);
         },
