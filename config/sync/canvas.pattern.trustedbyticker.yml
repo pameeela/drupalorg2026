@@ -1,0 +1,112 @@
+uuid: deeece08-c3b0-4793-a80c-e4421e21aaa9
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.drupalorg.card-logo
+    - canvas.component.sdc.drupalorg.heading
+    - canvas.component.sdc.drupalorg.ticker
+    - field.field.media.image.field_media_image
+    - field.field.media.svg_image.field_media_svg_image
+    - image.style.canvas_parametrized_width
+    - media.type.image
+    - media.type.svg_image
+  content:
+    - 'file:file:0c83e26d-450e-4ec1-99da-17d7f28fe86b'
+    - 'file:file:179c6dc9-a1d4-40b5-a3d5-f2e6d97fe8c1'
+    - 'file:file:2b502c29-3300-4e5f-9564-089a97a97f1b'
+    - 'file:file:896728f9-7d8b-4fe1-923e-e47cba856412'
+    - 'file:file:c433a0cd-a410-4f44-a451-527586438a82'
+    - 'file:file:e9630cae-e54e-42f4-aef1-e944e724730a'
+    - 'media:image:2ce3648e-f568-4fc4-bd5c-86cdb2a5d3d5'
+    - 'media:image:4e2034c4-a0d1-4e1a-805b-acaca2c964cd'
+    - 'media:image:87e78193-5aa5-4e47-b4c7-fb0a7d06d0c8'
+    - 'media:image:9336b4d1-23d7-46da-97e0-97c8f559fa48'
+    - 'media:image:956f47ea-5a1e-4d22-803b-1515e505ae79'
+    - 'media:image:b26088fc-ace7-42f0-bd6d-1ecdcc602ea4'
+  module:
+    - file
+    - media
+    - options
+id: trustedbyticker
+label: 'Trusted By Ticker'
+component_tree:
+  '0:1763601c-1fe6-43ff-81c4-3b4e88c53202':
+    uuid: 1763601c-1fe6-43ff-81c4-3b4e88c53202
+    component_id: sdc.drupalorg.ticker
+    component_version: e5fae936fe944697
+    inputs:
+      columns: '6'
+      center_header: true
+  '0:header:0:73e57e93-5049-4399-9c98-d0b9eb9ecde4':
+    parent_uuid: 1763601c-1fe6-43ff-81c4-3b4e88c53202
+    slot: header
+    uuid: 73e57e93-5049-4399-9c98-d0b9eb9ecde4
+    component_id: sdc.drupalorg.heading
+    component_version: 959bd70914eed3e8
+    inputs:
+      heading_text: "Trusted by organisations that can't afford to get it wrong."
+      level: 2
+      text_size: heading-responsive-2xl
+      text_color: primary
+      align: center
+  '0:items:0:96ea666c-e715-4434-8538-a985e18fa286':
+    parent_uuid: 1763601c-1fe6-43ff-81c4-3b4e88c53202
+    slot: items
+    uuid: 96ea666c-e715-4434-8538-a985e18fa286
+    component_id: sdc.drupalorg.card-logo
+    component_version: 3287ec41c68a61f9
+    inputs:
+      media:
+        target_id: '27'
+      border_radius: small
+  '0:items:1:227cfe25-0d24-40cd-bef4-c311b609fddb':
+    parent_uuid: 1763601c-1fe6-43ff-81c4-3b4e88c53202
+    slot: items
+    uuid: 227cfe25-0d24-40cd-bef4-c311b609fddb
+    component_id: sdc.drupalorg.card-logo
+    component_version: 3287ec41c68a61f9
+    inputs:
+      media:
+        target_id: '32'
+      border_radius: small
+  '0:items:2:4cd5e8f3-82ce-48a3-a3d4-41ded6f2aeb6':
+    parent_uuid: 1763601c-1fe6-43ff-81c4-3b4e88c53202
+    slot: items
+    uuid: 4cd5e8f3-82ce-48a3-a3d4-41ded6f2aeb6
+    component_id: sdc.drupalorg.card-logo
+    component_version: 3287ec41c68a61f9
+    inputs:
+      media:
+        target_id: '28'
+      border_radius: small
+  '0:items:3:fb052750-c402-4eb6-a6da-e8a3a5ab3b86':
+    parent_uuid: 1763601c-1fe6-43ff-81c4-3b4e88c53202
+    slot: items
+    uuid: fb052750-c402-4eb6-a6da-e8a3a5ab3b86
+    component_id: sdc.drupalorg.card-logo
+    component_version: 3287ec41c68a61f9
+    inputs:
+      media:
+        target_id: '31'
+      border_radius: small
+  '0:items:4:29972a84-1396-4f62-a9e5-69d177f9a6be':
+    parent_uuid: 1763601c-1fe6-43ff-81c4-3b4e88c53202
+    slot: items
+    uuid: 29972a84-1396-4f62-a9e5-69d177f9a6be
+    component_id: sdc.drupalorg.card-logo
+    component_version: 3287ec41c68a61f9
+    inputs:
+      media:
+        target_id: '29'
+      border_radius: small
+  '0:items:5:2e1a1aea-3d7d-4b5c-abf0-81569eb09563':
+    parent_uuid: 1763601c-1fe6-43ff-81c4-3b4e88c53202
+    slot: items
+    uuid: 2e1a1aea-3d7d-4b5c-abf0-81569eb09563
+    component_id: sdc.drupalorg.card-logo
+    component_version: 3287ec41c68a61f9
+    inputs:
+      media:
+        target_id: '30'
+      border_radius: small
