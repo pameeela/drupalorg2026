@@ -1,4 +1,4 @@
-{% set center_header = center_header ? 'yes' : 'no' %}
+{% set center = center_header ? 'yes' : 'no' %}
 {% set is_autoplay = autoplay|default(true) %}
 
 {% set header_cva =
@@ -18,7 +18,7 @@
     <div
       class="{{
       header_cva.apply({
-        center: center_header
+        center: center
       })
       }}"
     >

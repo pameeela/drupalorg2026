@@ -160,12 +160,6 @@
     @apply my-4 border-t border-border;
   }
 
-  table,
-  th,
-  td {
-    @apply text-base text-inherit lg:text-lg 2xl:text-xl;
-  }
-
   sup {
     font-size: 60%;
     top: -0.5em;
