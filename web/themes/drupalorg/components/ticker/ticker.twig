@@ -8,6 +8,18 @@
       center: {
         yes: 'mx-auto items-center text-center',
         no: 'items-start'
+      },
+      marginBlockStart: {
+        '0': 'mt-0',
+        small: 'mt-10',
+        default: 'mt-20',
+        large: 'mt-32'
+      },
+      marginBlockEnd: {
+        '0': 'mb-0',
+        small: 'mb-10',
+        default: 'mb-20',
+        large: 'mb-32'
       }
     }
   )
@@ -35,7 +47,9 @@
     <div
       class="{{
       header_cva.apply({
-        center: center_header
+        center: center_header,
+        marginBlockStart: margin_block_start,
+        marginBlockEnd: margin_block_end
       })
       }}"
     >
