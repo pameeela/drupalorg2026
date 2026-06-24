@@ -25,3 +25,7 @@ slots:
   cards:
     title: Cards
     description: Card components to stack. Each direct child of this slot becomes a separate sticky card driven by scroll().
+
+libraryOverrides:
+  js:
+    scroll-stack.js: { attributes: { type: module } }

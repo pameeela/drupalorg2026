@@ -1,4 +1,5 @@
 import { animate, inView, scroll, stagger } from "motion";
+import currentlyInCanvasEditor from "../lib/currentlyInCanvasEditor.js";
 
 const animatableElements = document.querySelectorAll("[data-animation]");
 
@@ -130,27 +131,28 @@ document.querySelectorAll("[data-counter]").forEach((el) => {
 document.querySelectorAll("[data-stagger-items]").forEach((stagger_container) => {
   const items = Array.from(stagger_container.children);
   if (items.length === 0) return;
-  
+
   // Set initial hidden state
   items.forEach((item) => {
     item.style.opacity = "0";
     item.style.transform = "translateY(20px)";
   });
-  
+
   inView(
     stagger_container,
     () => {
-      animate(
-        items,
-        { opacity: 1, transform: "translateY(0)" },
-        { duration: 0.5, delay: stagger(0.15), ease: "easeOut" },
-      );
+      animate(items, { opacity: 1, transform: "translateY(0)" }, { duration: 0.5, delay: stagger(0.15), ease: "easeOut" });
     },
     { amount: 0.2, once: true },
   );
 });
 
 document.querySelectorAll("[data-scroll-stack]").forEach((el) => {
+  // In the Canvas editor, skip the scroll-driven effect entirely. Otherwise the
+  // persistent scroll() subscription below keeps re-writing each card's inline
+  // transform on every scroll, and cleanup in the component JS can't cancel it.
+  if (currentlyInCanvasEditor()) return;
+
   // Below md, the grid is single-column — let cards flow naturally instead.
   if (window.innerWidth < 768) return;
 
@@ -235,9 +237,9 @@ document.querySelectorAll('[data-reveal="center_spread"]').forEach((el) => {
 
     child.classList.remove("transition", "duration-500", "ease-out");
 
-    if (index === middleIndex) return
+    if (index === middleIndex) return;
 
-    child.style.scale = "0.6"
+    child.style.scale = "0.6";
   });
 
   // Spread driven by scroll: starts when container enters the viewport from below,
