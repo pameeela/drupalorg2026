@@ -40,7 +40,7 @@
   --primary-foreground: var(--white);
   --secondary: var(--lightest-gray);
   --secondary-foreground: var(--darkest-gray);
-  --destructive: var(--color-red-500);
+  --destructive: var(--color-red-600);
   --destructive-foreground: var(--white);
   --success: var(--color-green-600);
   --border: var(--medium-gray);
