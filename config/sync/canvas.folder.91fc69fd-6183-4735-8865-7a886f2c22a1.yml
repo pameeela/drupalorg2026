@@ -1,0 +1,8 @@
+uuid: 91fc69fd-6183-4735-8865-7a886f2c22a1
+langcode: en
+status: true
+dependencies: {  }
+name: Content
+configEntityTypeId: component
+weight: 0
+items: {  }

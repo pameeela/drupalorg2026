@@ -1,0 +1,172 @@
+uuid: 8d931f89-668c-4d87-911d-14afc4459306
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.drupalorg.badge
+    - canvas.component.sdc.drupalorg.button
+    - canvas.component.sdc.drupalorg.group
+    - canvas.component.sdc.drupalorg.heading
+    - canvas.component.sdc.drupalorg.image
+    - canvas.component.sdc.drupalorg.section
+    - canvas.component.sdc.drupalorg.text
+    - filter.format.canvas_html_block
+  module:
+    - options
+    - text
+id: partnerrecognition
+label: 'Partner Recognition'
+component_tree:
+  '0:1e9d1e25-3ad2-4827-9210-5a99ce6632c4':
+    uuid: 1e9d1e25-3ad2-4827-9210-5a99ce6632c4
+    component_id: sdc.drupalorg.section
+    component_version: 14b39e0eb4b650c6
+    inputs:
+      width: 70%
+      columns: '2 columns 75%-25%'
+      mobile_columns: '1'
+      margin_block_start: '0'
+      margin_block_end: '0'
+      padding_block_start: default
+      padding_block_end: default
+      background_color: light-grey
+      section_header: false
+      section_footer: false
+  '0:main_slot:0:a6c2594b-e953-44d3-a1e0-b6f598339cb0':
+    parent_uuid: 1e9d1e25-3ad2-4827-9210-5a99ce6632c4
+    slot: main_slot
+    uuid: a6c2594b-e953-44d3-a1e0-b6f598339cb0
+    component_id: sdc.drupalorg.group
+    component_version: a248dae5b5ad03ec
+    inputs:
+      flex_direction: column
+      flex_gap: md
+      items_align: start
+      flex_align: center
+      radius: sm
+  '0:main_slot:0:group_slot:0:b3ca0296-a144-4f56-8540-12b87e7491f9':
+    parent_uuid: a6c2594b-e953-44d3-a1e0-b6f598339cb0
+    slot: group_slot
+    uuid: b3ca0296-a144-4f56-8540-12b87e7491f9
+    component_id: sdc.drupalorg.heading
+    component_version: 959bd70914eed3e8
+    inputs:
+      heading_text: 'Expert content by'
+      level: 4
+      text_size: heading-responsive-lg
+      text_color: drupal-blue
+      align: left
+  '0:main_slot:0:group_slot:1:82e3b1a2-b59d-43f0-a30c-d713089b246b':
+    parent_uuid: a6c2594b-e953-44d3-a1e0-b6f598339cb0
+    slot: group_slot
+    uuid: 82e3b1a2-b59d-43f0-a30c-d713089b246b
+    component_id: sdc.drupalorg.heading
+    component_version: 959bd70914eed3e8
+    inputs:
+      heading_text: '[Agency name]'
+      level: 2
+      text_size: heading-responsive-3xl
+      text_color: default
+      align: left
+  '0:main_slot:0:group_slot:2:304836e3-f901-4e9d-a3d9-c67359a5cf80':
+    parent_uuid: a6c2594b-e953-44d3-a1e0-b6f598339cb0
+    slot: group_slot
+    uuid: 304836e3-f901-4e9d-a3d9-c67359a5cf80
+    component_id: sdc.drupalorg.badge
+    component_version: d86e02390d856974
+    inputs:
+      label: 'Platinum Parter'
+      style: transparent
+  '0:main_slot:0:group_slot:3:7ed1d236-fae9-46d9-8b7f-63a82333ded1':
+    parent_uuid: a6c2594b-e953-44d3-a1e0-b6f598339cb0
+    slot: group_slot
+    uuid: 7ed1d236-fae9-46d9-8b7f-63a82333ded1
+    component_id: sdc.drupalorg.text
+    component_version: 16c79c28a4108f9b
+    inputs:
+      text:
+        value: '<p>The best Drupal agency for website that not only look great, they smell good too.</p>'
+        format: canvas_html_block
+      text_size: normal
+      text_color: default
+  '0:main_slot:0:group_slot:4:809c2ecd-6118-4ddf-9a6f-622b23fa3694':
+    parent_uuid: a6c2594b-e953-44d3-a1e0-b6f598339cb0
+    slot: group_slot
+    uuid: 809c2ecd-6118-4ddf-9a6f-622b23fa3694
+    component_id: sdc.drupalorg.group
+    component_version: a248dae5b5ad03ec
+    inputs:
+      flex_direction: row
+      flex_gap: md
+      items_align: start
+      flex_align: start
+      radius: sm
+      stretch: false
+  '0:main_slot:0:group_slot:4:group_slot:0:f1f1178f-9e35-413a-a779-2447b522fb3f':
+    parent_uuid: 809c2ecd-6118-4ddf-9a6f-622b23fa3694
+    slot: group_slot
+    uuid: f1f1178f-9e35-413a-a779-2447b522fb3f
+    component_id: sdc.drupalorg.button
+    component_version: 8985aaac808b1e09
+    inputs:
+      variant: white-outline
+      label: 'View profile'
+      icon: arrow-right
+      disabled: false
+  '0:main_slot:0:group_slot:4:group_slot:1:7d741e6f-061a-4b26-8519-ff6b10d957a0':
+    parent_uuid: 809c2ecd-6118-4ddf-9a6f-622b23fa3694
+    slot: group_slot
+    uuid: 7d741e6f-061a-4b26-8519-ff6b10d957a0
+    component_id: sdc.drupalorg.button
+    component_version: 8985aaac808b1e09
+    inputs:
+      variant: drupal-blue
+      label: 'Find a Drupal Certified Partner'
+      icon: arrow-right
+      disabled: false
+  '0:main_slot:1:cd00f549-3575-4cac-b861-9ad4a04e2cfb':
+    parent_uuid: 1e9d1e25-3ad2-4827-9210-5a99ce6632c4
+    slot: main_slot
+    uuid: cd00f549-3575-4cac-b861-9ad4a04e2cfb
+    component_id: sdc.drupalorg.group
+    component_version: a248dae5b5ad03ec
+    inputs:
+      flex_direction: column
+      items_align: center
+      flex_align: center
+      stretch: false
+  '0:main_slot:1:group_slot:0:ab48baff-517e-4a98-b242-41bdaf3795a8':
+    parent_uuid: cd00f549-3575-4cac-b861-9ad4a04e2cfb
+    slot: group_slot
+    uuid: ab48baff-517e-4a98-b242-41bdaf3795a8
+    component_id: sdc.drupalorg.image
+    component_version: d77451010df91d0e
+    inputs:
+      media:
+        sourceType: default-relative-url
+        value:
+          src: assets/pexels-felix-mittermeier-1209650.jpg
+          alt: 'A purple, cloudy sky reflected on a calm lake'
+          width: 1920
+          height: 1014
+        jsonSchema:
+          type: object
+          properties:
+            src:
+              type: string
+              contentMediaType: 'image/*'
+              format: uri-reference
+              x-allowed-schemes:
+                - http
+                - https
+            alt:
+              type: string
+            width:
+              type: integer
+            height:
+              type: integer
+          required:
+            - src
+        componentId: sdc.drupalorg.image
+      size: '4:3'
+      radius: small

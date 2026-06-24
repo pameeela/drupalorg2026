@@ -1,0 +1,127 @@
+uuid: 5ce2bc9f-b0b3-4861-a7c2-13b7f60a1cc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.drupalorg.button
+    - canvas.component.sdc.drupalorg.group
+    - canvas.component.sdc.drupalorg.heading
+    - canvas.component.sdc.drupalorg.image
+    - canvas.component.sdc.drupalorg.section
+    - canvas.component.sdc.drupalorg.text
+    - filter.format.canvas_html_block
+  module:
+    - options
+    - text
+id: drupalcertifiedpartner
+label: 'Drupal Certified Partner'
+component_tree:
+  '0:bc08d186-9fe2-40d5-911b-c27e988e3535':
+    uuid: bc08d186-9fe2-40d5-911b-c27e988e3535
+    component_id: sdc.drupalorg.section
+    component_version: 14b39e0eb4b650c6
+    inputs:
+      width: 70%
+      columns: '2 columns 75%-25%'
+      mobile_columns: '1'
+      margin_block_start: '0'
+      margin_block_end: '0'
+      padding_block_start: default
+      padding_block_end: default
+      background_color: light-grey
+      section_header: false
+      section_footer: false
+  '0:main_slot:0:0befcece-c8e2-4cac-9580-e76f78655cc1':
+    parent_uuid: bc08d186-9fe2-40d5-911b-c27e988e3535
+    slot: main_slot
+    uuid: 0befcece-c8e2-4cac-9580-e76f78655cc1
+    component_id: sdc.drupalorg.group
+    component_version: a248dae5b5ad03ec
+    inputs:
+      flex_direction: column
+      flex_gap: md
+      items_align: start
+      flex_align: center
+      radius: sm
+  '0:main_slot:0:group_slot:0:b471e392-af1f-4491-aaf8-ad2abd2647ac':
+    parent_uuid: 0befcece-c8e2-4cac-9580-e76f78655cc1
+    slot: group_slot
+    uuid: b471e392-af1f-4491-aaf8-ad2abd2647ac
+    component_id: sdc.drupalorg.heading
+    component_version: 959bd70914eed3e8
+    inputs:
+      heading_text: 'Need help getting started?'
+      level: 2
+      text_size: heading-responsive-3xl
+      text_color: default
+      align: left
+  '0:main_slot:0:group_slot:1:54817ce1-89f7-4a8d-8b1c-f9450f58bec1':
+    parent_uuid: 0befcece-c8e2-4cac-9580-e76f78655cc1
+    slot: group_slot
+    uuid: 54817ce1-89f7-4a8d-8b1c-f9450f58bec1
+    component_id: sdc.drupalorg.text
+    component_version: 16c79c28a4108f9b
+    inputs:
+      text:
+        value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium pellentesque semper enim aliquam.</p>'
+        format: canvas_html_block
+      text_size: normal
+      text_color: default
+  '0:main_slot:0:group_slot:2:64399f8e-40c9-482a-9ea5-4ce0901364bd':
+    parent_uuid: 0befcece-c8e2-4cac-9580-e76f78655cc1
+    slot: group_slot
+    uuid: 64399f8e-40c9-482a-9ea5-4ce0901364bd
+    component_id: sdc.drupalorg.button
+    component_version: 8985aaac808b1e09
+    inputs:
+      variant: white-outline
+      label: 'Find a partner'
+      icon: arrow-right
+      disabled: false
+  '0:main_slot:1:b446eb44-33cc-445b-8393-3a99f53d6b3f':
+    parent_uuid: bc08d186-9fe2-40d5-911b-c27e988e3535
+    slot: main_slot
+    uuid: b446eb44-33cc-445b-8393-3a99f53d6b3f
+    component_id: sdc.drupalorg.group
+    component_version: a248dae5b5ad03ec
+    inputs:
+      flex_direction: column
+      flex_gap: md
+      items_align: start
+      flex_align: center
+      radius: sm
+  '0:main_slot:1:group_slot:0:25032abe-e591-42cb-9b0d-2bc5e89a5c3a':
+    parent_uuid: b446eb44-33cc-445b-8393-3a99f53d6b3f
+    slot: group_slot
+    uuid: 25032abe-e591-42cb-9b0d-2bc5e89a5c3a
+    component_id: sdc.drupalorg.image
+    component_version: d77451010df91d0e
+    inputs:
+      media:
+        sourceType: default-relative-url
+        value:
+          src: assets/pexels-felix-mittermeier-1209650.jpg
+          alt: 'A purple, cloudy sky reflected on a calm lake'
+          width: 1920
+          height: 1014
+        jsonSchema:
+          type: object
+          properties:
+            src:
+              type: string
+              contentMediaType: 'image/*'
+              format: uri-reference
+              x-allowed-schemes:
+                - http
+                - https
+            alt:
+              type: string
+            width:
+              type: integer
+            height:
+              type: integer
+          required:
+            - src
+        componentId: sdc.drupalorg.image
+      size: '1:1'
+      radius: large

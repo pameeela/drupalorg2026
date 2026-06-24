@@ -1,0 +1,53 @@
+{% set highlight = highlight_column|default('none') %}
+{% set col_count = column_count|default(2) + 0 %}
+{% set cell_classes = 'px-5 py-3 text-left rounded-t-lg border-b-2 border-b-border/80' %}
+
+{% set table_classes =
+  html_cva(
+    base: [
+      'border-separate border-spacing-0 w-full',
+      '[&_tr:last-child_td]:border-b-0',
+      '[&_tbody_tr:last-child_th]:border-b-0'
+    ],
+    variants: {
+      highlight: {
+        none: '',
+        '1': '[&_th:nth-child(2)]:bg-lightest-blue [&_td:nth-child(2)]:bg-lightest-blue/60',
+        '2': '[&_th:nth-child(3)]:bg-lightest-blue [&_td:nth-child(3)]:bg-lightest-blue/60',
+        '3': '[&_th:nth-child(4)]:bg-lightest-blue [&_td:nth-child(4)]:bg-lightest-blue/60',
+        '4': '[&_th:nth-child(5)]:bg-lightest-blue [&_td:nth-child(5)]:bg-lightest-blue/60'
+      }
+    }
+  )
+%}
+
+{% set table_resolved_classes =
+  table_classes.apply({
+    highlight: highlight
+  })
+%}
+
+<div class="overflow-x-auto">
+  <table class="{{ table_resolved_classes }}">
+    <thead>
+      <tr>
+        <th class="{{ cell_classes }}"></th>
+        {% if col_count >= 1 %}
+          <th class="{{ cell_classes }}">{{ col1_label }}</th>
+        {% endif %}
+        {% if col_count >= 2 %}
+          <th class="{{ cell_classes }}">{{ col2_label }}</th>
+        {% endif %}
+        {% if col_count >= 3 %}
+          <th class="{{ cell_classes }}">{{ col3_label }}</th>
+        {% endif %}
+        {% if col_count >= 4 %}
+          <th class="{{ cell_classes }}">{{ col4_label }}</th>
+        {% endif %}
+      </tr>
+    </thead>
+    <tbody>
+      {% block rows %}{% endblock %}
+    </tbody>
+  </table>
+</div>

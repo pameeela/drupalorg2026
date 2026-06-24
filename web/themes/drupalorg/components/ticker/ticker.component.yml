@@ -4,6 +4,10 @@ description: A header and an auto-scrolling row of items (e.g. logos) that slows
 group: Layout
 props:
   type: object
+  required:
+    - columns
+    - margin_block_start
+    - margin_block_end
   properties:
     columns:
       type: string
@@ -22,6 +26,36 @@ props:
       default: "6"
       examples:
         - "6"
+    margin_block_start:
+      type: string
+      title: Margin top
+      enum:
+        - "0"
+        - small
+        - default
+        - large
+      meta:enum:
+        "0": None
+        small: Small
+        default: Default
+        large: Large
+      examples:
+        - "default"
+    margin_block_end:
+      type: string
+      title: Margin bottom
+      enum:
+        - "0"
+        - small
+        - default
+        - large
+      meta:enum:
+        "0": None
+        small: Small
+        default: Default
+        large: Large
+      examples:
+        - "default"
     center_header:
       type: boolean
       title: Center header content

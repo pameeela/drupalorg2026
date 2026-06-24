@@ -1,0 +1,67 @@
+{% set col_count = column_count|default(2) + 0 %}
+{% set cell_classes = 'px-5 py-3 border-b border-b-border/60' %}
+{% set container_classes = 'flex items-center gap-1' %}
+
+{% set color_map = {
+  'brand-blue': 'var(--color-drupal-blue)',
+  primary: 'var(--color-primary)',
+  white: 'white',
+  destructive: 'var(--color-destructive)',
+  success: 'var(--color-success)'
+} %}
+
+<tr>
+  <th scope="row" class="px-5 py-3 text-left font-medium border-b border-b-border/60">{{ row_label }}</th>
+
+  {% if col_count >= 1 %}
+    <td class="{{ cell_classes }}">
+      <div class="{{ container_classes }}">
+      {% if cell1_icon is not empty %}
+        {{ icon('phosphor', cell1_icon, { size: 20, color: cell1_icon_color ? color_map[cell1_icon_color]|default('currentColor') : 'currentColor' }) }}
+      {% endif %}
+      {% if cell1_text is not empty %}
+        <span>{{ cell1_text }}</span>
+      {% endif %}
+      </div>
+    </td>
+  {% endif %}
+
+  {% if col_count >= 2 %}
+    <td class="{{ cell_classes }}">
+      <div class="{{ container_classes }}">
+      {% if cell2_icon is not empty %}
+        {{ icon('phosphor', cell2_icon, { size: 20, color: cell2_icon_color ? color_map[cell2_icon_color]|default('currentColor') : 'currentColor' }) }}
+      {% endif %}
+      {% if cell2_text is not empty %}
+        <span>{{ cell2_text }}</span>
+      {% endif %}
+      </div>
+    </td>
+  {% endif %}
+
+  {% if col_count >= 3 %}
+    <td class="{{ cell_classes }}">
+      <div class="{{ container_classes }}">
+      {% if cell3_icon is not empty %}
+        {{ icon('phosphor', cell3_icon, { size: 20, color: cell3_icon_color ? color_map[cell3_icon_color]|default('currentColor') : 'currentColor' }) }}
+      {% endif %}
+      {% if cell3_text is not empty %}
+        <span>{{ cell3_text }}</span>
+      {% endif %}
+      </div>
+    </td>
+  {% endif %}
+
+  {% if col_count >= 4 %}
+    <td class="{{ cell_classes }}">
+      <div class="{{ container_classes }}">
+      {% if cell4_icon is not empty %}
+        {{ icon('phosphor', cell4_icon, { size: 20, color: cell4_icon_color ? color_map[cell4_icon_color]|default('currentColor') : 'currentColor' }) }}
+      {% endif %}
+      {% if cell4_text is not empty %}
+        <span>{{ cell4_text }}</span>
+      {% endif %}
+      </div>
+    </td>
+  {% endif %}
+</tr>

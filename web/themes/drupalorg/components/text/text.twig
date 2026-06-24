@@ -10,9 +10,13 @@
       '[&_li]:mb-1 [&_ol]:my-4 [&_ol]:list-decimal [&_ul]:my-4',
       '[&>*:first-child]:mt-0 [&>*:last-child]:mb-0',
       '[&_a]:underline [&_a]:underline-offset-4',
-      '[&_table]:my-6',
-      '[&_td]:p-3 [&_th]:p-3',
-      '[&_tr]:border-b [&_tr]:border-b-border/40',
+      '[&_table]:border-separate [&_table]:border-spacing-0',
+      '[&_table]:mx-auto [&_table]:my-6',
+      '[&_th]:rounded-t-lg [&_th]:text-left',
+      '[&_th]:border-b-2 [&_th]:border-b-border/80',
+      '[&_td:nth-child(2)]:bg-lightest-blue/80 [&_th:nth-child(2)]:bg-lightest-blue',
+      '[&_td]:px-5 [&_td]:py-3 [&_th]:px-5 [&_th]:py-3',
+      '[&_td]:border-b [&_td]:border-b-border/60 [&_tr:last-child_td]:border-b-0',
       '[&_blockquote]:xl:3xl [&_blockquote]:text-xl [&_blockquote]:italic [&_blockquote]:md:text-2xl',
       '[&_blockquote]:my-8 [&_blockquote]:border-l-4 [&_blockquote]:border-drupal-blue [&_blockquote]:p-1 [&_blockquote]:pl-6',
       '[&_figure]:my-6 [&_figure]:w-fit',
@@ -32,6 +36,11 @@
         'text-xl': 'text-xl md:text-2xl',
         'text-2xl': 'text-2xl md:text-3xl',
         'text-3xl': 'text-3xl md:text-4xl'
+      },
+      style: {
+        'callout-blue': 'pl-4 border-l-3 border-drupal-blue',
+        'callout-navy': 'pl-4 border-l-3 border-navy',
+        'callout-white': 'pl-4 border-l-3 border-white'
       }
     }
   )
@@ -40,7 +49,8 @@
 {% set text_classes =
   text_component.apply({
     textColor: text_text_color,
-    textSize: text_text_size
+    textSize: text_text_size,
+    style: style
   })
 %}
 

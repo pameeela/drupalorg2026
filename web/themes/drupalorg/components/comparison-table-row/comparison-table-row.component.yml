@@ -1,0 +1,126 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Comparison table row
+group: Layout
+status: stable
+props:
+  type: object
+  required:
+    - column_count
+  properties:
+    column_count:
+      type: string
+      title: Number of columns
+      enum:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+      meta:enum:
+        "1": 1 column
+        "2": 2 columns
+        "3": 3 columns
+        "4": 4 columns
+      default: "2"
+      examples:
+        - "2"
+    row_label:
+      type: string
+      title: Feature label
+      examples:
+        - Custom domains
+    cell1_text:
+      type: string
+      title: Cell 1 text
+      examples:
+        - Included
+    cell1_icon:
+      type: string
+      title: Cell 1 icon
+      description: 'The ID of an icon from the <a href="https://phosphoricons.com" target="_blank">Phosphor Icons</a> library.'
+      examples:
+        - check-circle
+    cell1_icon_color:
+      type: string
+      title: Cell 1 icon color
+      enum:
+        - brand-blue
+        - primary
+        - white
+        - destructive
+        - success
+      meta:enum:
+        brand-blue: Drupal blue
+        primary: Brand navy
+        white: White
+        destructive: Red
+        success: Green
+    cell2_text:
+      type: string
+      title: Cell 2 text
+      examples:
+        - Included
+    cell2_icon:
+      type: string
+      title: Cell 2 icon
+      description: 'The ID of an icon from the <a href="https://phosphoricons.com" target="_blank">Phosphor Icons</a> library.'
+      examples:
+        - x-circle
+    cell2_icon_color:
+      type: string
+      title: Cell 2 icon color
+      enum:
+        - brand-blue
+        - primary
+        - white
+        - destructive
+        - success
+      meta:enum:
+        brand-blue: Drupal blue
+        primary: Brand navy
+        white: White
+        destructive: Red
+        success: Green
+    cell3_text:
+      type: string
+      title: Cell 3 text
+    cell3_icon:
+      type: string
+      title: Cell 3 icon
+      description: 'The ID of an icon from the <a href="https://phosphoricons.com" target="_blank">Phosphor Icons</a> library.'
+    cell3_icon_color:
+      type: string
+      title: Cell 3 icon color
+      enum:
+        - brand-blue
+        - primary
+        - white
+        - destructive
+        - success
+      meta:enum:
+        brand-blue: Drupal blue
+        primary: Brand navy
+        white: White
+        destructive: Red
+        success: Green
+    cell4_text:
+      type: string
+      title: Cell 4 text
+    cell4_icon:
+      type: string
+      title: Cell 4 icon
+      description: 'The ID of an icon from the <a href="https://phosphoricons.com" target="_blank">Phosphor Icons</a> library.'
+    cell4_icon_color:
+      type: string
+      title: Cell 4 icon color
+      enum:
+        - brand-blue
+        - primary
+        - white
+        - destructive
+        - success
+      meta:enum:
+        brand-blue: Drupal blue
+        primary: Brand navy
+        white: White
+        destructive: Red
+        success: Green

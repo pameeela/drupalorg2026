@@ -1,6 +1,26 @@
 {% set ticker_columns = columns|default('6') %}
 {% set center_header = center_header ? 'yes' : 'no' %}
 
+{% set container =
+  html_cva(
+    base: ['ticker flex flex-col gap-6'],
+    variants: {
+      marginBlockStart: {
+        '0': 'mt-0',
+        small: 'mt-10',
+        default: 'mt-20',
+        large: 'mt-32'
+      },
+      marginBlockEnd: {
+        '0': 'mb-0',
+        small: 'mb-10',
+        default: 'mb-20',
+        large: 'mb-32'
+      }
+    }
+  )
+%}
+
 {% set header_cva =
   html_cva(
     base: ['ticker__header flex flex-col gap-2 [&_h2]:max-w-2xl [&_h3]:max-w-2xl [&_p]:max-w-2xl'],
@@ -30,7 +50,14 @@
   )
 %}
 
-<section class="ticker flex flex-col gap-6">
+<section
+  class="{{
+  container.apply({
+    marginBlockStart: margin_block_start,
+    marginBlockEnd: margin_block_end
+  })
+  }}"
+>
   {% if block('header') is defined %}
     <div
       class="{{

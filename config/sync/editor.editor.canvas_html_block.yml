@@ -24,6 +24,8 @@ settings:
       - '|'
       - bulletedList
       - numberedList
+      - insertTable
+      - sourceEditing
   plugins:
     ckeditor5_alignment:
       enabled_alignments:

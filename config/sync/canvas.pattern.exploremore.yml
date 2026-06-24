@@ -1,0 +1,83 @@
+uuid: 5f4a3c2f-bcf7-4697-b6db-29163522e054
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.drupalorg.card-icon
+    - canvas.component.sdc.drupalorg.heading
+    - canvas.component.sdc.drupalorg.section
+    - filter.format.canvas_html_block
+  module:
+    - options
+    - text
+id: exploremore
+label: 'Explore More'
+component_tree:
+  '0:9fe563cf-39a1-48c7-a511-a1983ad3b877':
+    uuid: 9fe563cf-39a1-48c7-a511-a1983ad3b877
+    component_id: sdc.drupalorg.section
+    component_version: 14b39e0eb4b650c6
+    inputs:
+      width: 100%
+      columns: '3 columns'
+      mobile_columns: '1'
+      margin_block_start: default
+      margin_block_end: default
+      padding_block_start: '0'
+      padding_block_end: '0'
+      section_header: true
+      section_footer: false
+  '0:header_slot:0:0fdd1ff5-9231-42a4-ab28-f19794d97a28':
+    parent_uuid: 9fe563cf-39a1-48c7-a511-a1983ad3b877
+    slot: header_slot
+    uuid: 0fdd1ff5-9231-42a4-ab28-f19794d97a28
+    component_id: sdc.drupalorg.heading
+    component_version: 959bd70914eed3e8
+    inputs:
+      heading_text: 'Explore more'
+      level: 2
+      text_size: heading-responsive-3xl
+      text_color: default
+      align: left
+  '0:main_slot:0:c91522b2-3c79-4bb0-9089-19115633075b':
+    parent_uuid: 9fe563cf-39a1-48c7-a511-a1983ad3b877
+    slot: main_slot
+    uuid: c91522b2-3c79-4bb0-9089-19115633075b
+    component_id: sdc.drupalorg.card-icon
+    component_version: 4df7d088dab2c55d
+    inputs:
+      text: 'Your heading here'
+      description:
+        value: '<p>This is placeholder text.</p>'
+        format: canvas_html_block
+      text_align: left
+      icon_size: medium
+      icon_align: center
+  '0:main_slot:1:e285ed39-4ac4-4648-bda2-5a1a579ecfda':
+    parent_uuid: 9fe563cf-39a1-48c7-a511-a1983ad3b877
+    slot: main_slot
+    uuid: e285ed39-4ac4-4648-bda2-5a1a579ecfda
+    component_id: sdc.drupalorg.card-icon
+    component_version: 4df7d088dab2c55d
+    inputs:
+      text: 'Your heading here'
+      description:
+        value: '<p>This is placeholder text.</p>'
+        format: canvas_html_block
+      text_align: left
+      icon_size: medium
+      icon_align: center
+  '0:main_slot:2:16aaf556-fb39-4f38-99c7-9eddc044d057':
+    parent_uuid: 9fe563cf-39a1-48c7-a511-a1983ad3b877
+    slot: main_slot
+    uuid: 16aaf556-fb39-4f38-99c7-9eddc044d057
+    component_id: sdc.drupalorg.card-icon
+    component_version: 4df7d088dab2c55d
+    inputs:
+      text: 'Your heading here'
+      description:
+        value: '<p>This is placeholder text.</p>'
+        format: canvas_html_block
+      text_align: left
+      icon_size: medium
+      icon_align: center

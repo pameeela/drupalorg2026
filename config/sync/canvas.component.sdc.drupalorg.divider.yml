@@ -1,0 +1,96 @@
+uuid: 6b22f17b-c1dc-4049-900d-6288cd9dc9ac
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+  theme:
+    - drupalorg
+active_version: 77471a77bce528aa
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        color:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: light-gray
+          expression: ℹ︎list_string␟value
+        margin:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: small
+          expression: ℹ︎list_string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+  dc68f6b43b9155d2:
+    settings:
+      prop_field_definitions:
+        color:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: light-gray
+          expression: ℹ︎list_string␟value
+        margin:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: small
+          expression: ℹ︎list_string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+  1ab027c93469615c:
+    settings:
+      prop_field_definitions:
+        color:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: light-gray
+          expression: ℹ︎list_string␟value
+        margin:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: default
+          expression: ℹ︎list_string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+label: Divider
+id: sdc.drupalorg.divider
+provider: drupalorg
+source: sdc
+source_local_id: 'drupalorg:divider'

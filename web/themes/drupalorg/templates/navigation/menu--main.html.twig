@@ -32,33 +32,106 @@
         {{- item.url -}}
       {% endset %}
 
-      {% set item_classes =
-        [
-          item.in_active_trail ? 'bg-lightest-gray' : '',
-          'flex flex-wrap justify-between md:flex-nowrap',
-          'md:w-auto md:relative md:max-w-[375px]',
-          'text-sm rounded-md'
-        ]|filter(c => c is not empty)
-      %}
+      {% if item.below %}
+        {# Item with children — renders as a dropdown #}
+        {% set dropdown_id = (title ~ '-dropdown-' ~ loop.index)|clean_id %}
 
-      {% if item.attributes %}
-        {% do item.attributes.addClass(item_classes) %}
-        {% do item.attributes.setAttribute('data-level', 1) %}
-      {% else %}
-        {% set item_attributes_string = 'class="' ~ (item_classes|join(' ')) ~ '" data-level="1"' %}
-      {% endif %}
+        {% set item_classes =
+          [
+            item.in_active_trail ? 'underline underline-offset-2' : '',
+            'dropdown-menu',
+            'flex flex-wrap justify-between md:flex-nowrap',
+            'md:w-auto md:relative md:max-w-[375px]',
+            'text-sm rounded-md'
+          ]|filter(c => c is not empty)
+        %}
 
-      <li {{ item.attributes ? : item_attributes_string }}>
-        {% if url is not empty %}
-          <a
-            href="{{ url }}"
-            class="flex min-h-[44px] shrink-1 grow-1 basis-0 items-center gap-1 rounded-md p-2 duration-300 md:min-h-auto hover:md:bg-primary hover:md:text-primary-foreground focus:md:bg-primary focus:md:text-primary-foreground xl:px-3"
-            data-level="1"
-          >
-            {{ title }}
-          </a>
+        {% if item.attributes %}
+          {% do item.attributes.addClass(item_classes) %}
+          {% do item.attributes.setAttribute('data-level', 1) %}
+        {% else %}
+          {% set item_attributes_string = 'class="' ~ (item_classes|join(' ')) ~ '" data-level="1"' %}
         {% endif %}
-      </li>
+
+        <li {{ item.attributes ? : item_attributes_string }}>
+          <div class="dropdown-menu__trigger flex w-full items-center justify-between rounded-md hover:bg-lightest-blue">
+            {% if url is not empty %}
+              <a href="{{ url }}" class="flex shrink-1 grow-1 basis-0 items-center gap-1 p-2 duration-300 md:min-h-auto xl:pr-0" data-level="1">
+                {{ title }}
+              </a>
+            {% endif %}
+            <button
+              class="dropdown-menu__expand-button flex shrink-0 cursor-pointer items-center justify-center p-2 duration-300"
+              aria-expanded="false"
+              aria-controls="{{ dropdown_id }}"
+              aria-label="{{ 'Toggle submenu for @title'|t({
+                '@title': title
+              }) }}"
+            >
+              {{
+                include(
+                  '@drupalorg/components/icon/icon.twig',
+                  {
+                    icon: 'caret-down',
+                    icon_size: 'extra-extra-small'
+                  },
+                  with_context: false
+                )
+              }}
+            </button>
+          </div>
+          <div class="dropdown-menu__panel w-full md:absolute md:top-full md:left-0 md:z-10 md:min-w-[200px]">
+            <ul id="{{ dropdown_id }}" class="flex list-none flex-col gap-1 p-2 md:rounded-md md:bg-background md:shadow-lg">
+              {% for child in item.below %}
+                {% set child_url %}
+                  {{- child.url -}}
+                {% endset %}
+                <li>
+                  {% if child_url is not empty %}
+                    <a
+                      href="{{ child_url }}"
+                      class="flex min-h-[44px] items-center rounded-md p-2 text-sm duration-300 hover:bg-lightest-blue md:min-h-auto"
+                    >
+                      {{ child.title }}
+                    </a>
+                  {% else %}
+                    <span class="flex items-center p-2 text-sm">{{ child.title }}</span>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </li>
+      {% else %}
+        {# Plain item — no children #}
+        {% set item_classes =
+          [
+            item.in_active_trail ? 'underline underline-offset-2' : '',
+            'flex flex-wrap justify-between md:flex-nowrap',
+            'md:w-auto md:relative md:max-w-[375px]',
+            'text-sm rounded-md'
+          ]|filter(c => c is not empty)
+        %}
+
+        {% if item.attributes %}
+          {% do item.attributes.addClass(item_classes) %}
+          {% do item.attributes.setAttribute('data-level', 1) %}
+        {% else %}
+          {% set item_attributes_string = 'class="' ~ (item_classes|join(' ')) ~ '" data-level="1"' %}
+        {% endif %}
+
+        <li {{ item.attributes ? : item_attributes_string }}>
+          {% if url is not empty %}
+            <a
+              href="{{ url }}"
+              class="flex min-h-[44px] shrink-1 grow-1 basis-0 items-center gap-1 rounded-md p-2 duration-300 md:min-h-auto hover:md:bg-lightest-blue xl:px-3"
+              data-level="1"
+            >
+              {{ title }}
+            </a>
+          {% endif %}
+        </li>
+      {% endif %}
     {% endfor %}
   </ul>
 </nav>

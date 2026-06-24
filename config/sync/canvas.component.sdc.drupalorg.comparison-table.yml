@@ -1,4 +1,4 @@
-uuid: f185f9b6-a5d0-4c74-8662-13555bd1bdca
+uuid: 5fb78e69-31cc-4fda-a13f-957b099dc74b
 langcode: en
 status: true
 dependencies:
@@ -6,40 +6,12 @@ dependencies:
     - options
   theme:
     - drupalorg
-active_version: e9702c30cfb1ba55
+active_version: b7b652e14872c915
 versioned_properties:
   active:
     settings:
       prop_field_definitions:
-        value:
-          required: true
-          field_type: integer
-          field_storage_settings: {  }
-          field_instance_settings:
-            min: 1
-            max: null
-          field_widget: number
-          default_value:
-            -
-              value: 48000
-          expression: ℹ︎integer␟value
-        prefix:
-          required: false
-          field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-        suffix:
-          required: false
-          field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-        text_size:
+        column_count:
           required: true
           field_type: list_string
           field_storage_settings:
@@ -48,9 +20,45 @@ versioned_properties:
           field_widget: options_select
           default_value:
             -
-              value: heading-responsive-2xl
+              value: '2'
           expression: ℹ︎list_string␟value
-        text_color:
+        col1_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Product A'
+          expression: ℹ︎string␟value
+        col2_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Product B'
+          expression: ℹ︎string␟value
+        col3_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+        col4_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+        highlight_column:
           required: true
           field_type: list_string
           field_storage_settings:
@@ -59,42 +67,16 @@ versioned_properties:
           field_widget: options_select
           default_value:
             -
-              value: default
+              value: none
           expression: ℹ︎list_string␟value
     fallback_metadata:
-      slot_definitions: {  }
-  81cee7983b545f65:
+      slot_definitions:
+        rows:
+          title: Rows
+  f6e56fc0f815b2e6:
     settings:
       prop_field_definitions:
-        value:
-          required: true
-          field_type: integer
-          field_storage_settings: {  }
-          field_instance_settings:
-            min: 1
-            max: null
-          field_widget: number
-          default_value:
-            -
-              value: 48000
-          expression: ℹ︎integer␟value
-        prefix:
-          required: false
-          field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-        suffix:
-          required: false
-          field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-        text_size:
+        column_count:
           required: true
           field_type: list_string
           field_storage_settings:
@@ -103,9 +85,49 @@ versioned_properties:
           field_widget: options_select
           default_value:
             -
-              value: heading-responsive-2xl
+              value: '2'
           expression: ℹ︎list_string␟value
-        text_color:
+        col1_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Product A'
+          expression: ℹ︎string␟value
+        col2_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Product B'
+          expression: ℹ︎string␟value
+        col3_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Product C'
+          expression: ℹ︎string␟value
+        col4_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Product D'
+          expression: ℹ︎string␟value
+        highlight_column:
           required: true
           field_type: list_string
           field_storage_settings:
@@ -114,26 +136,27 @@ versioned_properties:
           field_widget: options_select
           default_value:
             -
-              value: default
+              value: none
           expression: ℹ︎list_string␟value
     fallback_metadata:
-      slot_definitions: {  }
-  f8da0a52068835b8:
+      slot_definitions:
+        rows:
+          title: Rows
+  a8782a257db9efb3:
     settings:
       prop_field_definitions:
-        value:
+        column_count:
           required: true
-          field_type: integer
-          field_storage_settings: {  }
-          field_instance_settings:
-            min: 1
-            max: null
-          field_widget: number
+          field_type: list_integer
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
           default_value:
             -
-              value: 48000
-          expression: ℹ︎integer␟value
-        prefix:
+              value: 2
+          expression: ℹ︎list_integer␟value
+        col1_label:
           required: false
           field_type: string
           field_storage_settings: {  }
@@ -141,9 +164,9 @@ versioned_properties:
           field_widget: string_textfield
           default_value:
             -
-              value: '~'
+              value: 'Product A'
           expression: ℹ︎string␟value
-        suffix:
+        col2_label:
           required: false
           field_type: string
           field_storage_settings: {  }
@@ -151,9 +174,29 @@ versioned_properties:
           field_widget: string_textfield
           default_value:
             -
-              value: +
+              value: 'Product B'
           expression: ℹ︎string␟value
-        text_size:
+        col3_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Product C'
+          expression: ℹ︎string␟value
+        col4_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Product D'
+          expression: ℹ︎string␟value
+        highlight_column:
           required: true
           field_type: list_string
           field_storage_settings:
@@ -162,23 +205,14 @@ versioned_properties:
           field_widget: options_select
           default_value:
             -
-              value: heading-responsive-4xl
-          expression: ℹ︎list_string␟value
-        text_color:
-          required: true
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value:
-            -
-              value: default
+              value: none
           expression: ℹ︎list_string␟value
     fallback_metadata:
-      slot_definitions: {  }
-label: 'Stat counter'
-id: sdc.drupalorg.stat-counter
+      slot_definitions:
+        rows:
+          title: Rows
+label: 'Comparison table'
+id: sdc.drupalorg.comparison-table
 provider: drupalorg
 source: sdc
-source_local_id: 'drupalorg:stat-counter'
+source_local_id: 'drupalorg:comparison-table'

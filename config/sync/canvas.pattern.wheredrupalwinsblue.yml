@@ -1,0 +1,179 @@
+uuid: ebf11df2-e2a3-456d-98e6-410c94b555bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.drupalorg.card-icon
+    - canvas.component.sdc.drupalorg.grid
+    - canvas.component.sdc.drupalorg.heading
+    - canvas.component.sdc.drupalorg.section
+    - filter.format.canvas_html_block
+  module:
+    - options
+    - text
+id: wheredrupalwinsblue
+label: 'Where drupal wins - blue'
+component_tree:
+  '0:9c679bf2-681c-4a10-82f6-077d2b7e6626':
+    uuid: 9c679bf2-681c-4a10-82f6-077d2b7e6626
+    component_id: sdc.drupalorg.section
+    component_version: 14b39e0eb4b650c6
+    inputs:
+      width: 90%
+      columns: '1 column'
+      views_columns: 33-33-33
+      mobile_columns: '1'
+      margin_block_start: default
+      margin_block_end: default
+      padding_block_start: default
+      padding_block_end: default
+      background_color: dark
+      section_header: true
+      center_header: false
+      section_footer: false
+  '0:header_slot:0:4f3fe443-93bd-4b4b-a5fa-f22ef0084fb9':
+    parent_uuid: 9c679bf2-681c-4a10-82f6-077d2b7e6626
+    slot: header_slot
+    uuid: 4f3fe443-93bd-4b4b-a5fa-f22ef0084fb9
+    component_id: sdc.drupalorg.heading
+    component_version: 959bd70914eed3e8
+    inputs:
+      heading_text: 'WHERE DRUPAL WINS'
+      level: 2
+      text_size: heading-responsive-lg
+      text_color: drupal-blue
+      align: left
+  '0:header_slot:1:59ea5210-a7fe-453f-a648-ccd90e230c0b':
+    parent_uuid: 9c679bf2-681c-4a10-82f6-077d2b7e6626
+    slot: header_slot
+    uuid: 59ea5210-a7fe-453f-a648-ccd90e230c0b
+    component_id: sdc.drupalorg.heading
+    component_version: 959bd70914eed3e8
+    inputs:
+      heading_text: 'The differences that matter '
+      level: 2
+      text_size: heading-responsive-5xl
+      text_color: inverted
+      align: left
+  '0:main_slot:0:bd9204b3-4e35-4d39-9201-6adaaa2560fb':
+    parent_uuid: 9c679bf2-681c-4a10-82f6-077d2b7e6626
+    slot: main_slot
+    uuid: bd9204b3-4e35-4d39-9201-6adaaa2560fb
+    component_id: sdc.drupalorg.grid
+    component_version: d3e0565623935449
+    inputs:
+      width: 100%
+      columns: '3 columns'
+      mobile_columns: '1'
+  '0:main_slot:0:main_slot:0:720316cb-1cca-494c-8d80-4d334db9475c':
+    parent_uuid: bd9204b3-4e35-4d39-9201-6adaaa2560fb
+    slot: main_slot
+    uuid: 720316cb-1cca-494c-8d80-4d334db9475c
+    component_id: sdc.drupalorg.card-icon
+    component_version: 4df7d088dab2c55d
+    inputs:
+      background_color: white
+      text: 'Total cost of ownership'
+      description:
+        value: "<p>Sitecore's licensing alone can run to six or seven figures annually — before implementation, hosting, and ongoing support. Drupal's licensing cost is zero. Your investment goes into building, not renting.</p>"
+        format: canvas_html_block
+      text_align: left
+      icon: currency-dollar
+      icon_size: medium
+      icon_align: left
+      icon_style: primary_background
+  '0:main_slot:0:main_slot:1:fa25f48f-0178-4949-8db6-b10fb6c68e17':
+    parent_uuid: bd9204b3-4e35-4d39-9201-6adaaa2560fb
+    slot: main_slot
+    uuid: fa25f48f-0178-4949-8db6-b10fb6c68e17
+    component_id: sdc.drupalorg.card-icon
+    component_version: 4df7d088dab2c55d
+    inputs:
+      background_color: white
+      text: 'No vendor lock-in'
+      description:
+        value: '<p>Sitecore controls your hosting, your upgrade cycle, and your exit path. With Drupal, you choose your hosting, your agency, your AI providers — and you can migrate without penalty. Your platform, your terms.</p>'
+        format: canvas_html_block
+      text_align: left
+      icon: lock-open
+      icon_size: medium
+      icon_align: left
+      icon_style: primary_background
+  '0:main_slot:0:main_slot:2:56adc179-15ad-4a73-9a47-02efa87ac9aa':
+    parent_uuid: bd9204b3-4e35-4d39-9201-6adaaa2560fb
+    slot: main_slot
+    uuid: 56adc179-15ad-4a73-9a47-02efa87ac9aa
+    component_id: sdc.drupalorg.card-icon
+    component_version: 4df7d088dab2c55d
+    inputs:
+      background_color: white
+      text: 'Open AI, not proprietary AI'
+      description:
+        value: "<p>Drupal CMS ships with 22 AI agents supporting 48 providers. Choose your AI stack — cloud, on-premise, or self-hosted — and swap providers without changing code. Sitecore's AI tools are proprietary and single-vendor.</p>"
+        format: canvas_html_block
+      text_align: left
+      icon: lightning
+      icon_size: medium
+      icon_align: left
+      icon_style: primary_background
+  '0:main_slot:1:e781c2f0-c61d-4541-bc46-4e9363e4d7ec':
+    parent_uuid: 9c679bf2-681c-4a10-82f6-077d2b7e6626
+    slot: main_slot
+    uuid: e781c2f0-c61d-4541-bc46-4e9363e4d7ec
+    component_id: sdc.drupalorg.grid
+    component_version: d3e0565623935449
+    inputs:
+      width: 100%
+      columns: '3 columns'
+      mobile_columns: '1'
+  '0:main_slot:1:main_slot:0:e7512a6c-66c6-440b-8b28-3f9142e66046':
+    parent_uuid: e781c2f0-c61d-4541-bc46-4e9363e4d7ec
+    slot: main_slot
+    uuid: e7512a6c-66c6-440b-8b28-3f9142e66046
+    component_id: sdc.drupalorg.card-icon
+    component_version: 4df7d088dab2c55d
+    inputs:
+      background_color: white
+      text: 'Digital sovereignty'
+      description:
+        value: "<p>Your data lives on your servers, governed by your policies. Drupal is the CMS of choice for governments and regulated industries precisely because no vendor has access to your content or your users' data.</p>"
+        format: canvas_html_block
+      text_align: left
+      icon: globe-hemisphere-east
+      icon_size: medium
+      icon_align: left
+      icon_style: primary_background
+  '0:main_slot:1:main_slot:1:ad270269-715a-495d-ac19-994f7e0aab1b':
+    parent_uuid: e781c2f0-c61d-4541-bc46-4e9363e4d7ec
+    slot: main_slot
+    uuid: ad270269-715a-495d-ac19-994f7e0aab1b
+    component_id: sdc.drupalorg.card-icon
+    component_version: 4df7d088dab2c55d
+    inputs:
+      background_color: white
+      text: 'Agency choice'
+      description:
+        value: "<p>Thousands of agencies worldwide build on Drupal. You're never dependent on a small pool of certified partners. Competition keeps quality high and costs competitive.</p>"
+        format: canvas_html_block
+      text_align: left
+      icon: users-three
+      icon_size: medium
+      icon_align: left
+      icon_style: primary_background
+  '0:main_slot:1:main_slot:2:de7cfff3-4b97-4d1f-aec4-cb072c77c0f9':
+    parent_uuid: e781c2f0-c61d-4541-bc46-4e9363e4d7ec
+    slot: main_slot
+    uuid: de7cfff3-4b97-4d1f-aec4-cb072c77c0f9
+    component_id: sdc.drupalorg.card-icon
+    component_version: 4df7d088dab2c55d
+    inputs:
+      background_color: white
+      text: 'Security transparency'
+      description:
+        value: "<p>Drupal's security model is community-audited and publicly documented. Every vulnerability, every patch, every advisory is transparent. You can verify it. With proprietary platforms, you can't.</p>"
+        format: canvas_html_block
+      text_align: left
+      icon: shield-chevron
+      icon_size: medium
+      icon_align: left
+      icon_style: primary_background
