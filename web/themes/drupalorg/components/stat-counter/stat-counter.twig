@@ -24,6 +24,29 @@
   )
 %}
 
+{% set character_size =
+  html_cva(
+    base: [],
+    variants: {
+      textColor: {
+        default: 'text-inherit',
+        inverted: 'text-drupal-blue',
+        'drupal-blue': 'text-white',
+        primary: 'text-navy'
+      },
+      textSize: {
+        'heading-responsive-6xl': 'text-3xl lg:text-4xl',
+        'heading-responsive-5xl': 'text-2xl lg:text-3xl',
+        'heading-responsive-4xl': 'text-xl',
+        'heading-responsive-3xl': 'text-lg',
+        'heading-responsive-2xl': 'text-md',
+        'heading-responsive-xl': 'text-sm',
+        'heading-responsive-lg': 'text-xs'
+      }
+    }
+  )
+%}
+
 <div
   class="{{
   counter_variants.apply({
@@ -35,9 +58,19 @@
 >
   <span aria-hidden="true">
     {%- if prefix is not empty -%}
-      <span class="stat-counter__prefix">{{ prefix }}</span>
+      <span class="{{
+      character_size.apply({
+        textColor: text_color_value,
+        textSize: text_size_value
+      })
+      }} stat-counter__prefix">{{ prefix }}</span>
     {%- endif -%}<span class="stat-counter__number">{{ value }}</span>{%- if suffix is not empty -%}
-      <span class="stat-counter__suffix">{{ suffix }}</span>
+      <span class="{{
+      character_size.apply({
+        textColor: text_color_value,
+        textSize: text_size_value
+      })
+      }}  stat-counter__suffix">{{ suffix }}</span>
     {%- endif -%}
   </span>
   <span class="sr-only">{{ prefix|default('') }}{{ value }}{{ suffix|default('') }}</span>

@@ -54,6 +54,7 @@ props:
       enum:
         - callout-blue
         - callout-white
+        - callout-navy
       meta:enum:
         callout-blue: Drupal blue callout
         callout-white: White callout
