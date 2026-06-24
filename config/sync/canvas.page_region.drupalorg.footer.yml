@@ -65,7 +65,7 @@ component_tree:
     slot: footer_utility_first
     uuid: 1554b2c3-01a0-438f-a43a-fbffdf3117b0
     component_id: sdc.drupalorg.text
-    component_version: 16c79c28a4108f9b
+    component_version: d5567ed62b176ab9
     inputs:
       text:
         value: '<p>© 2026 Drupal All rights reserved. Drupal is a registered trademark of Dries Buytaert.</p>'

@@ -48,3 +48,13 @@ props:
         primary: Brand navy
       examples:
         - default
+    style:
+      type: string
+      title: Style
+      enum:
+        - callout-blue
+        - callout-white
+      meta:enum:
+        callout-blue: Drupal blue callout
+        callout-white: White callout
+        callout-navy: Navy callout
