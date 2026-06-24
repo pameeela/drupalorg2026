@@ -1,7 +1,25 @@
 uuid: 6907ec77-b895-4b26-be2a-c976e81bcaa3
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - canvas.component.sdc.drupalorg.accordion
+    - canvas.component.sdc.drupalorg.accordion-container
+    - canvas.component.sdc.drupalorg.carousel-tabs
+    - canvas.component.sdc.drupalorg.comparison-table
+    - canvas.component.sdc.drupalorg.comparison-table-row
+    - canvas.component.sdc.drupalorg.footer
+    - canvas.component.sdc.drupalorg.grid
+    - canvas.component.sdc.drupalorg.group
+    - canvas.component.sdc.drupalorg.navbar
+    - canvas.component.sdc.drupalorg.section
+    - canvas.component.sdc.drupalorg.slide
+    - canvas.component.sdc.drupalorg.tab
+    - canvas.component.sdc.drupalorg.tabs
+    - canvas.component.sdc.drupalorg.ticker
+    - canvas.component.sdc.mercury.footer
+    - canvas.component.sdc.mercury.navbar
+    - canvas.component.sdc.mercury.section
 name: Layout
 configEntityTypeId: component
 weight: 0
@@ -9,6 +27,8 @@ items:
   - sdc.drupalorg.accordion
   - sdc.drupalorg.accordion-container
   - sdc.drupalorg.carousel-tabs
+  - sdc.drupalorg.comparison-table
+  - sdc.drupalorg.comparison-table-row
   - sdc.drupalorg.footer
   - sdc.drupalorg.grid
   - sdc.drupalorg.group

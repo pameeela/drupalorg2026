@@ -1,0 +1,64 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Comparison table
+group: Layout
+status: stable
+props:
+  type: object
+  required:
+    - column_count
+    - highlight_column
+  properties:
+    column_count:
+      type: string
+      title: Number of columns
+      enum:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+      meta:enum:
+        "1": 1 column
+        "2": 2 columns
+        "3": 3 columns
+        "4": 4 columns
+      default: "2"
+      examples:
+        - "2"
+    col1_label:
+      type: string
+      title: Column 1 label
+      examples:
+        - Product A
+    col2_label:
+      type: string
+      title: Column 2 label
+      examples:
+        - Product B
+    col3_label:
+      type: string
+      title: Column 3 label
+    col4_label:
+      type: string
+      title: Column 4 label
+    highlight_column:
+      type: string
+      title: Highlighted column
+      enum:
+        - none
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+      meta:enum:
+        none: None
+        "1": Column 1
+        "2": Column 2
+        "3": Column 3
+        "4": Column 4
+      default: none
+      examples:
+        - none
+
+slots:
+  rows:
+    title: Rows

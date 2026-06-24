@@ -1,0 +1,218 @@
+uuid: 5fb78e69-31cc-4fda-a13f-957b099dc74b
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+  theme:
+    - drupalorg
+active_version: b7b652e14872c915
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        column_count:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: '2'
+          expression: ℹ︎list_string␟value
+        col1_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Product A'
+          expression: ℹ︎string␟value
+        col2_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Product B'
+          expression: ℹ︎string␟value
+        col3_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+        col4_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+        highlight_column:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: none
+          expression: ℹ︎list_string␟value
+    fallback_metadata:
+      slot_definitions:
+        rows:
+          title: Rows
+  f6e56fc0f815b2e6:
+    settings:
+      prop_field_definitions:
+        column_count:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: '2'
+          expression: ℹ︎list_string␟value
+        col1_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Product A'
+          expression: ℹ︎string␟value
+        col2_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Product B'
+          expression: ℹ︎string␟value
+        col3_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Product C'
+          expression: ℹ︎string␟value
+        col4_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Product D'
+          expression: ℹ︎string␟value
+        highlight_column:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: none
+          expression: ℹ︎list_string␟value
+    fallback_metadata:
+      slot_definitions:
+        rows:
+          title: Rows
+  a8782a257db9efb3:
+    settings:
+      prop_field_definitions:
+        column_count:
+          required: true
+          field_type: list_integer
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: 2
+          expression: ℹ︎list_integer␟value
+        col1_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Product A'
+          expression: ℹ︎string␟value
+        col2_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Product B'
+          expression: ℹ︎string␟value
+        col3_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Product C'
+          expression: ℹ︎string␟value
+        col4_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Product D'
+          expression: ℹ︎string␟value
+        highlight_column:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: none
+          expression: ℹ︎list_string␟value
+    fallback_metadata:
+      slot_definitions:
+        rows:
+          title: Rows
+label: 'Comparison table'
+id: sdc.drupalorg.comparison-table
+provider: drupalorg
+source: sdc
+source_local_id: 'drupalorg:comparison-table'
