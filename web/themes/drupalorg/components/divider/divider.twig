@@ -1,0 +1,27 @@
+{% set divider =
+  html_cva(
+    base: ['w-full border-0 border-t'],
+    variants: {
+      color: {
+        'light-gray': 'border-light-gray',
+        'medium-gray': 'border-medium-gray',
+        'dark-gray': 'border-dark-gray'
+      },
+      margin: {
+        '0': 'my-0',
+        small: 'my-5',
+        medium: 'my-10',
+        large: 'my-20'
+      }
+    }
+  )
+%}
+
+<hr
+  class="{{
+  divider.apply({
+    color: color|default('light-gray'),
+    margin: margin|default('default')
+  })
+  }}"
+/>

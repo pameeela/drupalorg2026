@@ -1,7 +1,25 @@
 uuid: c0ed3526-12a2-4c6d-8b53-6578260cb8a5
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - canvas.component.sdc.drupalorg.anchor
+    - canvas.component.sdc.drupalorg.author-date
+    - canvas.component.sdc.drupalorg.badge
+    - canvas.component.sdc.drupalorg.blockquote
+    - canvas.component.sdc.drupalorg.button
+    - canvas.component.sdc.drupalorg.divider
+    - canvas.component.sdc.drupalorg.eyebrow
+    - canvas.component.sdc.drupalorg.heading
+    - canvas.component.sdc.drupalorg.icon
+    - canvas.component.sdc.drupalorg.image
+    - canvas.component.sdc.drupalorg.plain-text
+    - canvas.component.sdc.drupalorg.stat-counter
+    - canvas.component.sdc.drupalorg.text
+    - canvas.component.sdc.drupalorg.video
+    - canvas.component.sdc.mercury.button
+    - canvas.component.sdc.mercury.heading
+    - canvas.component.sdc.mercury.text
 name: Base
 configEntityTypeId: component
 weight: 0
@@ -11,6 +29,7 @@ items:
   - sdc.drupalorg.badge
   - sdc.drupalorg.blockquote
   - sdc.drupalorg.button
+  - sdc.drupalorg.divider
   - sdc.drupalorg.eyebrow
   - sdc.drupalorg.heading
   - sdc.drupalorg.icon

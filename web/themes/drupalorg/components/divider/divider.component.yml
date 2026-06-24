@@ -1,0 +1,38 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Divider
+group: Base
+status: stable
+props:
+  type: object
+  required:
+    - color
+    - margin
+  properties:
+    color:
+      type: string
+      title: Color
+      enum:
+        - light-gray
+        - medium-gray
+        - dark-gray
+      meta:enum:
+        light-gray: Light gray
+        medium-gray: Medium gray
+        dark-gray: Dark gray
+      examples:
+        - light-gray
+    margin:
+      type: string
+      title: Margin
+      enum:
+        - "0"
+        - small
+        - medium
+        - large
+      meta:enum:
+        "0": None
+        small: Small
+        medium: Medium
+        large: Large
+      examples:
+        - "small"
