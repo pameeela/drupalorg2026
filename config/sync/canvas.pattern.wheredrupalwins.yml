@@ -1,9 +1,10 @@
-uuid: 0f1eee8b-fd64-49ee-8505-c1f2ad26923d
+uuid: 6d8bab2e-bfed-4897-8d48-3d5f20a885a8
 langcode: en
 status: true
 dependencies:
   config:
     - canvas.component.sdc.drupalorg.card-icon
+    - canvas.component.sdc.drupalorg.eyebrow
     - canvas.component.sdc.drupalorg.grid
     - canvas.component.sdc.drupalorg.heading
     - canvas.component.sdc.drupalorg.section
@@ -14,8 +15,8 @@ dependencies:
 id: wheredrupalwins
 label: 'Where Drupal Wins'
 component_tree:
-  '0:9c679bf2-681c-4a10-82f6-077d2b7e6626':
-    uuid: 9c679bf2-681c-4a10-82f6-077d2b7e6626
+  '0:372c5f88-09c4-47bd-afdd-f617d47880bb':
+    uuid: 372c5f88-09c4-47bd-afdd-f617d47880bb
     component_id: sdc.drupalorg.section
     component_version: 14b39e0eb4b650c6
     inputs:
@@ -31,44 +32,41 @@ component_tree:
       section_header: true
       center_header: false
       section_footer: false
-  '0:header_slot:0:4f3fe443-93bd-4b4b-a5fa-f22ef0084fb9':
-    parent_uuid: 9c679bf2-681c-4a10-82f6-077d2b7e6626
+  '0:header_slot:0:9c2bd0ce-ce13-4f70-9efd-da49cee2ddf6':
+    parent_uuid: 372c5f88-09c4-47bd-afdd-f617d47880bb
     slot: header_slot
-    uuid: 4f3fe443-93bd-4b4b-a5fa-f22ef0084fb9
-    component_id: sdc.drupalorg.heading
-    component_version: 959bd70914eed3e8
+    uuid: 9c2bd0ce-ce13-4f70-9efd-da49cee2ddf6
+    component_id: sdc.drupalorg.eyebrow
+    component_version: 2ff2015e21e55e15
     inputs:
-      heading_text: 'WHERE DRUPAL WINS'
-      level: 2
-      text_size: heading-responsive-lg
+      eyebrow_text: 'WHERE DRUPAL WINS'
       text_color: drupal-blue
-      align: left
-  '0:header_slot:1:59ea5210-a7fe-453f-a648-ccd90e230c0b':
-    parent_uuid: 9c679bf2-681c-4a10-82f6-077d2b7e6626
+  '0:header_slot:1:2e591e74-df93-4808-8a1b-4ddfa2b3ffc8':
+    parent_uuid: 372c5f88-09c4-47bd-afdd-f617d47880bb
     slot: header_slot
-    uuid: 59ea5210-a7fe-453f-a648-ccd90e230c0b
+    uuid: 2e591e74-df93-4808-8a1b-4ddfa2b3ffc8
     component_id: sdc.drupalorg.heading
-    component_version: 959bd70914eed3e8
+    component_version: 1e24c13cc69b948e
     inputs:
       heading_text: 'The differences that matter '
       level: 2
       text_size: heading-responsive-5xl
       text_color: inverted
       align: left
-  '0:main_slot:0:bd9204b3-4e35-4d39-9201-6adaaa2560fb':
-    parent_uuid: 9c679bf2-681c-4a10-82f6-077d2b7e6626
+  '0:main_slot:0:88d7b5be-9102-4de8-92ad-e44e3e711d73':
+    parent_uuid: 372c5f88-09c4-47bd-afdd-f617d47880bb
     slot: main_slot
-    uuid: bd9204b3-4e35-4d39-9201-6adaaa2560fb
+    uuid: 88d7b5be-9102-4de8-92ad-e44e3e711d73
     component_id: sdc.drupalorg.grid
     component_version: d3e0565623935449
     inputs:
       width: 100%
       columns: '3 columns'
       mobile_columns: '1'
-  '0:main_slot:0:main_slot:0:720316cb-1cca-494c-8d80-4d334db9475c':
-    parent_uuid: bd9204b3-4e35-4d39-9201-6adaaa2560fb
+  '0:main_slot:0:main_slot:0:4f98423d-a342-454b-8633-6a5c8165c809':
+    parent_uuid: 88d7b5be-9102-4de8-92ad-e44e3e711d73
     slot: main_slot
-    uuid: 720316cb-1cca-494c-8d80-4d334db9475c
+    uuid: 4f98423d-a342-454b-8633-6a5c8165c809
     component_id: sdc.drupalorg.card-icon
     component_version: 4df7d088dab2c55d
     inputs:
@@ -82,10 +80,10 @@ component_tree:
       icon_size: medium
       icon_align: left
       icon_style: primary_background
-  '0:main_slot:0:main_slot:1:fa25f48f-0178-4949-8db6-b10fb6c68e17':
-    parent_uuid: bd9204b3-4e35-4d39-9201-6adaaa2560fb
+  '0:main_slot:0:main_slot:1:e801db0d-de3f-493e-b5e1-5a6b0bc95b9f':
+    parent_uuid: 88d7b5be-9102-4de8-92ad-e44e3e711d73
     slot: main_slot
-    uuid: fa25f48f-0178-4949-8db6-b10fb6c68e17
+    uuid: e801db0d-de3f-493e-b5e1-5a6b0bc95b9f
     component_id: sdc.drupalorg.card-icon
     component_version: 4df7d088dab2c55d
     inputs:
@@ -99,10 +97,10 @@ component_tree:
       icon_size: medium
       icon_align: left
       icon_style: primary_background
-  '0:main_slot:0:main_slot:2:56adc179-15ad-4a73-9a47-02efa87ac9aa':
-    parent_uuid: bd9204b3-4e35-4d39-9201-6adaaa2560fb
+  '0:main_slot:0:main_slot:2:c1168b80-72b9-4faf-98e2-08903cbdfbff':
+    parent_uuid: 88d7b5be-9102-4de8-92ad-e44e3e711d73
     slot: main_slot
-    uuid: 56adc179-15ad-4a73-9a47-02efa87ac9aa
+    uuid: c1168b80-72b9-4faf-98e2-08903cbdfbff
     component_id: sdc.drupalorg.card-icon
     component_version: 4df7d088dab2c55d
     inputs:
@@ -116,20 +114,20 @@ component_tree:
       icon_size: medium
       icon_align: left
       icon_style: primary_background
-  '0:main_slot:1:e781c2f0-c61d-4541-bc46-4e9363e4d7ec':
-    parent_uuid: 9c679bf2-681c-4a10-82f6-077d2b7e6626
+  '0:main_slot:1:291690a1-8731-469a-a7a8-745e2d134f11':
+    parent_uuid: 372c5f88-09c4-47bd-afdd-f617d47880bb
     slot: main_slot
-    uuid: e781c2f0-c61d-4541-bc46-4e9363e4d7ec
+    uuid: 291690a1-8731-469a-a7a8-745e2d134f11
     component_id: sdc.drupalorg.grid
     component_version: d3e0565623935449
     inputs:
       width: 100%
       columns: '3 columns'
       mobile_columns: '1'
-  '0:main_slot:1:main_slot:0:e7512a6c-66c6-440b-8b28-3f9142e66046':
-    parent_uuid: e781c2f0-c61d-4541-bc46-4e9363e4d7ec
+  '0:main_slot:1:main_slot:0:bddaeb1e-cd13-46bf-be54-49fc8d733055':
+    parent_uuid: 291690a1-8731-469a-a7a8-745e2d134f11
     slot: main_slot
-    uuid: e7512a6c-66c6-440b-8b28-3f9142e66046
+    uuid: bddaeb1e-cd13-46bf-be54-49fc8d733055
     component_id: sdc.drupalorg.card-icon
     component_version: 4df7d088dab2c55d
     inputs:
@@ -143,10 +141,10 @@ component_tree:
       icon_size: medium
       icon_align: left
       icon_style: primary_background
-  '0:main_slot:1:main_slot:1:ad270269-715a-495d-ac19-994f7e0aab1b':
-    parent_uuid: e781c2f0-c61d-4541-bc46-4e9363e4d7ec
+  '0:main_slot:1:main_slot:1:354f7297-24b0-4e50-a052-109c0eaa79fc':
+    parent_uuid: 291690a1-8731-469a-a7a8-745e2d134f11
     slot: main_slot
-    uuid: ad270269-715a-495d-ac19-994f7e0aab1b
+    uuid: 354f7297-24b0-4e50-a052-109c0eaa79fc
     component_id: sdc.drupalorg.card-icon
     component_version: 4df7d088dab2c55d
     inputs:
@@ -160,10 +158,10 @@ component_tree:
       icon_size: medium
       icon_align: left
       icon_style: primary_background
-  '0:main_slot:1:main_slot:2:de7cfff3-4b97-4d1f-aec4-cb072c77c0f9':
-    parent_uuid: e781c2f0-c61d-4541-bc46-4e9363e4d7ec
+  '0:main_slot:1:main_slot:2:c6497378-35a2-43ec-8c3c-f136e0957d1d':
+    parent_uuid: 291690a1-8731-469a-a7a8-745e2d134f11
     slot: main_slot
-    uuid: de7cfff3-4b97-4d1f-aec4-cb072c77c0f9
+    uuid: c6497378-35a2-43ec-8c3c-f136e0957d1d
     component_id: sdc.drupalorg.card-icon
     component_version: 4df7d088dab2c55d
     inputs:
