@@ -1,0 +1,32 @@
+{#
+  Hero Gallery
+  - The <section> is the scroll runway; JS sets its height to create travel.
+  - .hero-gallery__content is the sticky 100vh stage (sticky lives in CSS so the
+    static fallback still centres the grid when JS doesn't run).
+  - The cards slot's children are the tiles: the FIRST is the centre hero (placed
+    in the middle cell by CSS, scaled to fill the viewport by JS); the rest
+    auto-flow into the surrounding cells.
+#}
+<section class="hero-gallery cq-full" data-gallery-reveal>
+  {% if headline is not empty %}
+    <header class="hero-gallery__intro">
+      <h1 class="heading-responsive-8xl font-bold">{{ headline }}</h1>
+    </header>
+  {% endif %}
+
+  <div class="hero-gallery__content">
+    <div class="hero-gallery__grid">
+      {% block cards %}
+
+      {% endblock %}
+    </div>
+  </div>
+
+  {% if outro is not empty %}
+    <div class="hero-gallery__outro">
+      <h2 class="heading-responsive-8xl font-bold">{{ outro }}</h2>
+    </div>
+  {% endif %}
+
+  {{ attach_library('drupalorg/motion') }}
+</section>

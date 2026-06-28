@@ -1,4 +1,4 @@
-import { animate, inView, scroll, stagger } from "motion";
+import { animate, inView, scroll, stagger, cubicBezier } from "motion";
 import currentlyInCanvasEditor from "../lib/currentlyInCanvasEditor.js";
 
 const animatableElements = document.querySelectorAll("[data-animation]");
@@ -262,5 +262,92 @@ document.querySelectorAll('[data-reveal="center_spread"]').forEach((el) => {
       });
     },
     { target: el, offset: ["start end", "end end"] },
+  );
+});
+
+// Hero gallery: the first card fills the viewport then shrinks into the centre
+// cell, while the remaining cards fade + scale into the grid around it from the
+// centre outward. The static centred grid is pure CSS, so this only runs the
+// enhancement.
+document.querySelectorAll("[data-gallery-reveal]").forEach((el) => {
+  // Skip in the Canvas editor — a persistent scroll() subscription would keep
+  // re-writing inline styles the component JS can't cancel (matches scroll-stack).
+  if (currentlyInCanvasEditor()) return;
+  // Mobile + reduced motion fall back to the static CSS grid.
+  if (prefersReducedMotion) return;
+  if (window.innerWidth < 768) return;
+
+  const content = el.querySelector(".hero-gallery__content");
+  const grid = el.querySelector(".hero-gallery__grid");
+  if (!content || !grid) return;
+
+  // First card is the hero (centre cell, scales to fill); the rest are tiles.
+  const tiles = Array.from(grid.children);
+  const hero = tiles[0];
+  const cards = tiles.slice(1);
+  if (!hero || cards.length === 0) return;
+
+  el.style.height = "240vh";
+
+  const ease = cubicBezier(0.16, 1, 0.3, 1);
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const clamp01 = (t) => Math.min(1, Math.max(0, t));
+
+  // Measure-before-mutate: the hero's cell size, the stage (container) size, and
+  // each card's distance from the grid centre (drives the concentric reveal).
+  const heroRect = hero.getBoundingClientRect();
+  const stageRect = content.getBoundingClientRect();
+  const gridRect = grid.getBoundingClientRect();
+  const cx = gridRect.left + gridRect.width / 2;
+  const cy = gridRect.top + gridRect.height / 2;
+  // For each card: the vector from its resting cell to the grid centre. Cards
+  // start stacked at the centre (behind the hero) and slide out to their cell.
+  const offsets = cards.map((card) => {
+    const r = card.getBoundingClientRect();
+    const dx = cx - (r.left + r.width / 2);
+    const dy = cy - (r.top + r.height / 2);
+    return { dx, dy, dist: Math.hypot(dx, dy) };
+  });
+  const maxDistance = Math.max(...offsets.map((o) => o.dist), 1);
+
+  // Scale the hero needs to cover its container (stage) from its cell size.
+  const fillScale = Math.max((stageRect.width - 32) / heroRect.width, (stageRect.height - 32) / heroRect.height);
+  const heroEnd = 0.5; // hero finishes shrinking at the halfway point
+
+  // Strip the cards' Tailwind transition classes so their built-in easing doesn't
+  // fight (and lag behind) the scroll-driven opacity + scale updates below.
+  // Matches the scroll-stack / center_spread blocks.
+  hero.classList.remove("transition", "duration-500", "ease-out");
+
+  // Enhanced start state, set synchronously to avoid a flash of the resolved grid
+  // before the first scroll callback fires.
+  hero.style.scale = String(fillScale);
+  cards.forEach((card, index) => {
+    card.classList.remove("transition", "duration-500", "ease-out");
+    card.style.opacity = "0";
+    card.style.scale = "0";
+    // Stacked at the grid centre, hidden behind the hero (z-index 2).
+    card.style.translate = `${offsets[index].dx}px ${offsets[index].dy}px`;
+  });
+
+  scroll(
+    (progress) => {
+      const s = ease(clamp01(progress / heroEnd));
+      hero.style.scale = String(lerp(fillScale, 1, s));
+
+      cards.forEach((card, index) => {
+        const { dx, dy, dist } = offsets[index];
+        // Nearer the centre = earlier window; farther = later (centre-outward).
+        const norm = dist / maxDistance;
+        const start = 0.1 + norm * 0.4;
+        const end = start + 0.4;
+        const t = ease(clamp01((progress - start) / (end - start)));
+        card.style.opacity = String(t);
+        card.style.scale = String(t);
+        // Slide from the centre out to the resting cell as it scales in.
+        card.style.translate = `${dx * (1 - t)}px ${dy * (1 - t)}px`;
+      });
+    },
+    { target: el, offset: ["start start", "end end"] },
   );
 });
