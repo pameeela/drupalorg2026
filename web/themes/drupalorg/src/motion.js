@@ -176,17 +176,19 @@ document.querySelectorAll("[data-scroll-stack]").forEach((el) => {
   // First card is visible immediately; each subsequent card needs one viewport of scroll.
   el.style.height = `${items.length * 100}vh`;
 
+  // Heading pinned to the top of the viewport while the cards scroll beneath it.
   header.style.position = "sticky";
   header.style.top = "0";
-  header.style.height = "100vh";
-  header.style.display = "flex";
-  header.style.alignItems = "center";
+  header.style.zIndex = "50";
+  const headerHeight = header.offsetHeight;
 
   // Stack items becomes a sticky full-viewport container; cards are absolutely
-  // positioned inside it so they can stack on top of each other.
+  // positioned inside it so they can stack on top of each other. Pull it up under
+  // the sticky header so cards centre in the viewport rather than below the header.
   item_wrapper.style.position = "sticky";
   item_wrapper.style.top = "0";
   item_wrapper.style.height = "100vh";
+  item_wrapper.style.marginTop = `-${headerHeight}px`;
   item_wrapper.style.overflow = "hidden";
 
   // Read all heights before touching the layout — making earlier items absolute
@@ -197,6 +199,7 @@ document.querySelectorAll("[data-scroll-stack]").forEach((el) => {
     item.style.position = "absolute";
     item.style.left = "0";
     item.style.right = "0";
+    item.style.marginInline = "auto";
     item.style.top = `calc(50vh - ${cardHeights[index] / 2}px)`;
     item.style.zIndex = index + 1;
     // First card is visible immediately as a scroll hint; the rest start off-screen below.
