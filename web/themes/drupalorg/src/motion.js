@@ -11,9 +11,16 @@ const animationTransforms = {
   fade_right: ["translateX(-100px)", "translateX(0px)"],
 };
 
+// Firefox can fire inView's onStart twice for the same element (see the stagger
+// block), which cancels and replays the in-flight animation. Track handled elements.
+const animatedElements = new WeakSet();
+
 inView(
   animatableElements,
   (element) => {
+    if (animatedElements.has(element)) return;
+    animatedElements.add(element);
+
     const animationType = element.dataset.animation || "fade_up";
     const transform = animationTransforms[animationType] || animationTransforms.fade_up;
 
@@ -100,7 +107,9 @@ function formatCounter(val, target) {
   return Math.round(val).toString();
 }
 
-document.querySelectorAll("[data-counter]").forEach((el) => {
+// `once` guards against duplicate library execution re-running the count-up (see
+// the stagger block below for details).
+once("stat-counter", "[data-counter]").forEach((el) => {
   const target = parseInt(el.dataset.counter, 10);
   if (isNaN(target)) return;
 
@@ -119,9 +128,14 @@ document.querySelectorAll("[data-counter]").forEach((el) => {
     return;
   }
 
+  // Guard against Firefox firing inView's onStart twice (see the stagger block),
+  // which would restart the count-up from zero.
+  let counted = false;
   inView(
     el,
     () => {
+      if (counted) return;
+      counted = true;
       animate(0, target, {
         duration: 1.5,
         ease: "easeOut",
@@ -134,11 +148,16 @@ document.querySelectorAll("[data-counter]").forEach((el) => {
         },
       });
     },
-    { amount: 0.5, once: true },
+    { amount: 0.5 },
   );
 });
 
-document.querySelectorAll("[data-stagger-items]").forEach((stagger_container) => {
+// Use Drupal's `once` (a declared dependency of this library) so each container is
+// initialised a single time. Without it, if the motion library is attached/executed
+// more than once — which Firefox was doing here — the setup below re-hides the items
+// (opacity 0) and registers a second observer, replaying the stagger. A per-closure
+// flag can't prevent that because each execution gets its own closure.
+once("stagger-items", "[data-stagger-items]").forEach((stagger_container) => {
   const items = Array.from(stagger_container.children);
   if (items.length === 0) return;
 
@@ -146,14 +165,37 @@ document.querySelectorAll("[data-stagger-items]").forEach((stagger_container) =>
   items.forEach((item) => {
     item.style.opacity = "0";
     item.style.transform = "translateY(20px)";
+    item.classList.remove("transition", "duration-500", "ease-out");
   });
 
+  // Firefox's IntersectionObserver can deliver two entries for the same target in
+  // one callback batch, so inView runs this onStart twice before it can unobserve.
+  // The second run cancels the in-flight WAAPI animation — reverting items to their
+  // inline opacity:0 (a visible flicker) before replaying. Guard so it plays once.
+  let played = false;
   inView(
     stagger_container,
     () => {
-      animate(items, { opacity: 1, transform: "translateY(0)" }, { duration: 0.5, delay: stagger(0.15), ease: "easeOut" });
+      if (played) return;
+      played = true;
+
+      const duration = 0.5;
+      const staggerDelay = 0.15;
+      animate(items, { opacity: 1, transform: "translateY(0)" }, { duration, delay: stagger(staggerDelay), ease: "easeOut" });
+
+      // motion's group `.finished` can resolve before the last item's stagger delay
+      // has played out, so restoring `transition` mid-flight flickers that item.
+      // Wait the real total (last item's delay + duration) plus a small buffer.
+      const totalMs = (duration + (items.length - 1) * staggerDelay) * 1000 + 50;
+      setTimeout(() => {
+        items.forEach((item) => {
+          item.style.opacity = "1";
+          item.style.transform = "translateY(0)";
+          item.classList.add("transition", "duration-500", "ease-out");
+        });
+      }, totalMs);
     },
-    { amount: 0.2, once: true },
+    { amount: 0.2 },
   );
 });
 
@@ -230,6 +272,9 @@ document.querySelectorAll("[data-scroll-stack]").forEach((el) => {
 });
 
 document.querySelectorAll('[data-reveal="center_spread"]').forEach((el) => {
+  if (currentlyInCanvasEditor()) return;
+  if (window.innerWidth < 768) return;
+  
   const children = Array.from(el.children);
   if (children.length === 0) return;
 
