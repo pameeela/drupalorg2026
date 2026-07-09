@@ -6,9 +6,20 @@ dependencies:
     - views.view.articles
   module:
     - views
-active_version: a3f51d99be49d60f
+active_version: d98ade17a39d8483
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: 'views_block:articles-articles_hero'
+        label: 'Articles: Hero'
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+  a3f51d99be49d60f:
     settings:
       default_settings:
         id: 'views_block:articles-articles_hero'

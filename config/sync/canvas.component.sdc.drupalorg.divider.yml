@@ -22,6 +22,7 @@ versioned_properties:
             -
               value: light-gray
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         margin:
           required: true
           field_type: list_string
@@ -33,6 +34,7 @@ versioned_properties:
             -
               value: small
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   dc68f6b43b9155d2:
@@ -49,6 +51,7 @@ versioned_properties:
             -
               value: light-gray
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         margin:
           required: true
           field_type: list_string
@@ -60,6 +63,7 @@ versioned_properties:
             -
               value: small
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   1ab027c93469615c:
@@ -76,6 +80,7 @@ versioned_properties:
             -
               value: light-gray
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         margin:
           required: true
           field_type: list_string
@@ -87,6 +92,7 @@ versioned_properties:
             -
               value: default
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
 label: Divider

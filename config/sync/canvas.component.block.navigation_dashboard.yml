@@ -6,12 +6,7 @@ dependencies:
     - dashboard
 _core:
   default_config_hash: a4MpUIoF3wMNPcOcCDHTJDx2r6uxZiOywwrLJF2BLYU
-label: 'Navigation Dashboard'
-id: block.navigation_dashboard
-source: block
-source_local_id: navigation_dashboard
-provider: dashboard
-active_version: b8299fffa95ae6ca
+active_version: 96919a0c9b7ec9ae
 versioned_properties:
   active:
     settings:
@@ -22,3 +17,17 @@ versioned_properties:
         provider: dashboard
     fallback_metadata:
       slot_definitions: null
+  b8299fffa95ae6ca:
+    settings:
+      default_settings:
+        id: navigation_dashboard
+        label: 'Navigation Dashboard'
+        label_display: '0'
+        provider: dashboard
+    fallback_metadata:
+      slot_definitions: null
+label: 'Navigation Dashboard'
+id: block.navigation_dashboard
+provider: dashboard
+source: block
+source_local_id: navigation_dashboard

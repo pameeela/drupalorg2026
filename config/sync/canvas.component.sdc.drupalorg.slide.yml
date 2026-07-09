@@ -19,6 +19,8 @@ versioned_properties:
             -
               value: 'One-click site templates'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         icon:
           required: false
           field_type: string
@@ -29,6 +31,8 @@ versioned_properties:
             -
               value: squares-four
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         description:
           required: false
           field_type: string
@@ -39,6 +43,8 @@ versioned_properties:
             -
               value: 'Choose a template, launch, and customise. Professional sites in hours.'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
     fallback_metadata:
       slot_definitions:
         media:

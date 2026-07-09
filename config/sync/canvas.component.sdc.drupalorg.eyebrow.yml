@@ -21,6 +21,8 @@ versioned_properties:
             -
               value: 'Eyebrow label'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         text_color:
           required: true
           field_type: list_string
@@ -32,6 +34,7 @@ versioned_properties:
             -
               value: drupal-dark-blue
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   bfd703095b65f975:
@@ -47,6 +50,7 @@ versioned_properties:
             -
               value: 'Eyebrow label'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         text_color:
           required: true
           field_type: list_string
@@ -58,6 +62,7 @@ versioned_properties:
             -
               value: default
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
 label: Eyebrow

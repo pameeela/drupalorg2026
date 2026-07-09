@@ -19,6 +19,7 @@ versioned_properties:
             -
               value: true
           expression: ℹ︎boolean␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions:
         footer_first:

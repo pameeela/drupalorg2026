@@ -32,6 +32,7 @@ versioned_properties:
             -
               value: classic
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         heading_text:
           required: true
           field_type: string
@@ -42,6 +43,8 @@ versioned_properties:
             -
               value: 'The best CMS for agents to use'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         level:
           required: false
           field_type: list_float
@@ -53,6 +56,7 @@ versioned_properties:
             -
               value: '3'
           expression: ℹ︎list_float␟value
+          derived_schema_metadata: {  }
         text:
           required: false
           field_type: string_long
@@ -63,6 +67,9 @@ versioned_properties:
             -
               value: 'Any MCP-compatible agent connects to Drupal directly — reading content models, creating pages, managing media, respecting permissions. No Drupal knowledge required. Every action queued for human review.'
           expression: ℹ︎string_long␟value
+          derived_schema_metadata:
+            string_shape:
+              pattern: '(.|\r?\n)*'
         media:
           required: false
           field_type: entity_reference
@@ -77,6 +84,7 @@ versioned_properties:
           field_widget: media_library_widget
           default_value: {  }
           expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
+          derived_schema_metadata: {  }
         url:
           required: false
           field_type: link
@@ -87,6 +95,9 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata:
+            string_shape:
+              format: uri-reference
         cta_text:
           required: false
           field_type: string
@@ -97,6 +108,8 @@ versioned_properties:
             -
               value: 'Drupal for AI Builders'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
     fallback_metadata:
       slot_definitions: {  }
   9b2f878feeadcb9e:
@@ -113,6 +126,7 @@ versioned_properties:
             -
               value: classic
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         heading_text:
           required: true
           field_type: string
@@ -123,6 +137,7 @@ versioned_properties:
             -
               value: 'The best CMS for agents to use'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         level:
           required: false
           field_type: list_float
@@ -134,6 +149,7 @@ versioned_properties:
             -
               value: '3'
           expression: ℹ︎list_float␟value
+          derived_schema_metadata: {  }
         text:
           required: false
           field_type: string_long
@@ -144,6 +160,7 @@ versioned_properties:
             -
               value: 'Any MCP-compatible agent connects to Drupal directly — reading content models, creating pages, managing media, respecting permissions. No Drupal knowledge required. Every action queued for human review.'
           expression: ℹ︎string_long␟value
+          derived_schema_metadata: {  }
         media:
           required: false
           field_type: entity_reference
@@ -158,6 +175,7 @@ versioned_properties:
           field_widget: media_library_widget
           default_value: {  }
           expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
+          derived_schema_metadata: {  }
         url:
           required: false
           field_type: link
@@ -168,6 +186,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
         cta_text:
           required: false
           field_type: string
@@ -178,6 +197,7 @@ versioned_properties:
             -
               value: 'Drupal for AI Builders'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   f0a35b7463881a76:
@@ -194,6 +214,7 @@ versioned_properties:
             -
               value: classic
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         heading_text:
           required: true
           field_type: string
@@ -204,6 +225,7 @@ versioned_properties:
             -
               value: 'The best CMS for agents to use'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         level:
           required: false
           field_type: list_float
@@ -215,6 +237,7 @@ versioned_properties:
             -
               value: '3'
           expression: ℹ︎list_float␟value
+          derived_schema_metadata: {  }
         text:
           required: false
           field_type: string_long
@@ -225,6 +248,7 @@ versioned_properties:
             -
               value: 'Any MCP-compatible agent connects to Drupal directly — reading content models, creating pages, managing media, respecting permissions. No Drupal knowledge required. Every action queued for human review.'
           expression: ℹ︎string_long␟value
+          derived_schema_metadata: {  }
         media:
           required: false
           field_type: entity_reference
@@ -239,6 +263,7 @@ versioned_properties:
           field_widget: media_library_widget
           default_value: {  }
           expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
+          derived_schema_metadata: {  }
         url:
           required: false
           field_type: link
@@ -249,6 +274,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
         cta_text:
           required: false
           field_type: string
@@ -259,6 +285,7 @@ versioned_properties:
             -
               value: 'Drupal for AI Builders'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         background_color:
           required: false
           field_type: list_string
@@ -268,6 +295,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   6555eca968c22299:
@@ -284,6 +312,7 @@ versioned_properties:
             -
               value: classic
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         heading_text:
           required: true
           field_type: string
@@ -294,6 +323,7 @@ versioned_properties:
             -
               value: 'The best CMS for agents to use'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         level:
           required: false
           field_type: list_float
@@ -305,6 +335,7 @@ versioned_properties:
             -
               value: '3'
           expression: ℹ︎list_float␟value
+          derived_schema_metadata: {  }
         text:
           required: false
           field_type: string_long
@@ -315,6 +346,7 @@ versioned_properties:
             -
               value: 'Any MCP-compatible agent connects to Drupal directly — reading content models, creating pages, managing media, respecting permissions. No Drupal knowledge required. Every action queued for human review.'
           expression: ℹ︎string_long␟value
+          derived_schema_metadata: {  }
         media:
           required: false
           field_type: entity_reference
@@ -329,6 +361,7 @@ versioned_properties:
           field_widget: media_library_widget
           default_value: {  }
           expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
+          derived_schema_metadata: {  }
         url:
           required: false
           field_type: link
@@ -339,6 +372,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
         cta_text:
           required: false
           field_type: string
@@ -349,6 +383,7 @@ versioned_properties:
             -
               value: 'Drupal for AI Builders'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         background_color:
           required: false
           field_type: list_string
@@ -358,6 +393,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   bce678f85da56ec8:
@@ -374,6 +410,7 @@ versioned_properties:
             -
               value: classic
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         heading_text:
           required: true
           field_type: string
@@ -384,6 +421,7 @@ versioned_properties:
             -
               value: 'The best CMS for agents to use'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         level:
           required: false
           field_type: list_float
@@ -395,6 +433,7 @@ versioned_properties:
             -
               value: '3'
           expression: ℹ︎list_float␟value
+          derived_schema_metadata: {  }
         text:
           required: false
           field_type: string_long
@@ -405,6 +444,7 @@ versioned_properties:
             -
               value: 'Any MCP-compatible agent connects to Drupal directly — reading content models, creating pages, managing media, respecting permissions. No Drupal knowledge required. Every action queued for human review.'
           expression: ℹ︎string_long␟value
+          derived_schema_metadata: {  }
         media:
           required: false
           field_type: entity_reference
@@ -419,6 +459,7 @@ versioned_properties:
           field_widget: media_library_widget
           default_value: {  }
           expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
+          derived_schema_metadata: {  }
         url:
           required: false
           field_type: link
@@ -429,6 +470,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
         cta_text:
           required: false
           field_type: string
@@ -439,6 +481,7 @@ versioned_properties:
             -
               value: 'Drupal for AI Builders'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
 label: Card

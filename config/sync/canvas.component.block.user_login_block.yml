@@ -6,12 +6,7 @@ dependencies:
     - user
 _core:
   default_config_hash: _oV55FC9Frbp0rGFU7dbi0FpFOVmR0HJmy0cbom0wDI
-label: 'User login'
-id: block.user_login_block
-source: block
-source_local_id: user_login_block
-provider: user
-active_version: c6887f2904ac0974
+active_version: 888aba0d384b6b7c
 versioned_properties:
   active:
     settings:
@@ -22,3 +17,17 @@ versioned_properties:
         provider: user
     fallback_metadata:
       slot_definitions: null
+  c6887f2904ac0974:
+    settings:
+      default_settings:
+        id: user_login_block
+        label: 'User login'
+        label_display: '0'
+        provider: user
+    fallback_metadata:
+      slot_definitions: null
+label: 'User login'
+id: block.user_login_block
+provider: user
+source: block
+source_local_id: user_login_block

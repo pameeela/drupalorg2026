@@ -31,6 +31,8 @@ versioned_properties:
             -
               value: 'Drupal Association secures Alpha-Omega grant to future-proof Open-Source Security for the AI Era.'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         date:
           required: false
           field_type: datetime
@@ -42,6 +44,7 @@ versioned_properties:
             -
               value: '2026-05-19'
           expression: ℹ︎datetime␟value
+          derived_schema_metadata: {  }
         media:
           required: false
           field_type: entity_reference
@@ -56,6 +59,7 @@ versioned_properties:
           field_widget: media_library_widget
           default_value: {  }
           expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
+          derived_schema_metadata: {  }
         author_name:
           required: false
           field_type: string
@@ -66,6 +70,8 @@ versioned_properties:
             -
               value: 'Paul Johnson'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         cta_text:
           required: false
           field_type: string
@@ -76,6 +82,8 @@ versioned_properties:
             -
               value: 'Read more'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         url:
           required: false
           field_type: link
@@ -86,6 +94,9 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata:
+            string_shape:
+              format: uri-reference
         category:
           required: false
           field_type: string
@@ -94,6 +105,8 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
     fallback_metadata:
       slot_definitions: {  }
   2e10d1428fbaa7c8:
@@ -109,6 +122,7 @@ versioned_properties:
             -
               value: 'Drupal Association secures Alpha-Omega grant to future-proof Open-Source Security for the AI Era.'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         date:
           required: false
           field_type: datetime
@@ -120,6 +134,7 @@ versioned_properties:
             -
               value: '2026-05-19'
           expression: ℹ︎datetime␟value
+          derived_schema_metadata: {  }
         media:
           required: false
           field_type: entity_reference
@@ -134,6 +149,7 @@ versioned_properties:
           field_widget: media_library_widget
           default_value: {  }
           expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
+          derived_schema_metadata: {  }
         author_name:
           required: false
           field_type: string
@@ -144,6 +160,7 @@ versioned_properties:
             -
               value: 'Paul Johnson'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cta_text:
           required: false
           field_type: string
@@ -154,6 +171,7 @@ versioned_properties:
             -
               value: 'Read more'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         url:
           required: false
           field_type: link
@@ -164,6 +182,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   2d00cee7b7b0beae:
@@ -179,6 +198,7 @@ versioned_properties:
             -
               value: 'Drupal Association secures Alpha-Omega grant to future-proof Open-Source Security for the AI Era.'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         date:
           required: false
           field_type: datetime
@@ -190,6 +210,7 @@ versioned_properties:
             -
               value: '2026-05-19'
           expression: ℹ︎datetime␟value
+          derived_schema_metadata: {  }
         media:
           required: false
           field_type: entity_reference
@@ -204,6 +225,7 @@ versioned_properties:
           field_widget: media_library_widget
           default_value: {  }
           expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
+          derived_schema_metadata: {  }
         author_name:
           required: false
           field_type: string
@@ -214,6 +236,7 @@ versioned_properties:
             -
               value: 'Paul Johnson'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         author_image:
           required: false
           field_type: entity_reference
@@ -228,6 +251,7 @@ versioned_properties:
           field_widget: media_library_widget
           default_value: {  }
           expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
+          derived_schema_metadata: {  }
         cta_text:
           required: false
           field_type: string
@@ -238,6 +262,7 @@ versioned_properties:
             -
               value: 'Read more'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         url:
           required: false
           field_type: link
@@ -248,6 +273,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   94f62ec105f74f14:
@@ -263,6 +289,7 @@ versioned_properties:
             -
               value: 'Drupal Association secures Alpha-Omega grant to future-proof Open-Source Security for the AI Era.'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         date:
           required: false
           field_type: datetime
@@ -274,6 +301,7 @@ versioned_properties:
             -
               value: '2026-05-19'
           expression: ℹ︎datetime␟value
+          derived_schema_metadata: {  }
         author_name:
           required: false
           field_type: string
@@ -284,6 +312,7 @@ versioned_properties:
             -
               value: 'Paul Johnson'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         author_image:
           required: false
           field_type: entity_reference
@@ -298,6 +327,7 @@ versioned_properties:
           field_widget: media_library_widget
           default_value: {  }
           expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
+          derived_schema_metadata: {  }
         cta_text:
           required: false
           field_type: string
@@ -308,6 +338,7 @@ versioned_properties:
             -
               value: 'Read more'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         url:
           required: false
           field_type: link
@@ -318,6 +349,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
 label: 'Featured article card'

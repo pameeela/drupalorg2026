@@ -6,12 +6,7 @@ dependencies:
     - navigation
 _core:
   default_config_hash: KYpC_StcA78V6uIUiBOuKOLUocIhNkDJfvo3xWDWjLE
-label: 'Navigation Shortcuts'
-id: block.navigation_shortcuts
-source: block
-source_local_id: navigation_shortcuts
-provider: navigation
-active_version: 2891751bf7069a8f
+active_version: a2ddb9f467280871
 versioned_properties:
   active:
     settings:
@@ -22,3 +17,17 @@ versioned_properties:
         provider: navigation
     fallback_metadata:
       slot_definitions: null
+  2891751bf7069a8f:
+    settings:
+      default_settings:
+        id: navigation_shortcuts
+        label: 'Navigation Shortcuts'
+        label_display: '0'
+        provider: navigation
+    fallback_metadata:
+      slot_definitions: null
+label: 'Navigation Shortcuts'
+id: block.navigation_shortcuts
+provider: navigation
+source: block
+source_local_id: navigation_shortcuts

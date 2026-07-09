@@ -31,6 +31,8 @@ versioned_properties:
             -
               value: 'May 2026 Drupal for Nonprofits Chat'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         date:
           required: false
           field_type: datetime
@@ -40,6 +42,7 @@ versioned_properties:
           field_widget: datetime_default
           default_value: null
           expression: ℹ︎datetime␟value
+          derived_schema_metadata: {  }
         author_name:
           required: false
           field_type: string
@@ -50,6 +53,8 @@ versioned_properties:
             -
               value: 'Karen Horrocks'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         url:
           required: false
           field_type: link
@@ -60,6 +65,9 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata:
+            string_shape:
+              format: uri-reference
         description:
           required: false
           field_type: string_long
@@ -68,6 +76,9 @@ versioned_properties:
           field_widget: string_textarea
           default_value: null
           expression: ℹ︎string_long␟value
+          derived_schema_metadata:
+            string_shape:
+              pattern: '(.|\r?\n)*'
         category:
           required: false
           field_type: string
@@ -76,6 +87,8 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
     fallback_metadata:
       slot_definitions: {  }
   74b367c444b39eea:
@@ -91,6 +104,7 @@ versioned_properties:
             -
               value: 'May 2026 Drupal for Nonprofits Chat'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         date:
           required: false
           field_type: datetime
@@ -100,6 +114,7 @@ versioned_properties:
           field_widget: datetime_default
           default_value: null
           expression: ℹ︎datetime␟value
+          derived_schema_metadata: {  }
         author_name:
           required: false
           field_type: string
@@ -110,6 +125,7 @@ versioned_properties:
             -
               value: 'Karen Horrocks'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         url:
           required: false
           field_type: link
@@ -120,6 +136,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
         description:
           required: false
           field_type: string_long
@@ -128,6 +145,7 @@ versioned_properties:
           field_widget: string_textarea
           default_value: null
           expression: ℹ︎string_long␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   f29e4d1ca37f3660:
@@ -143,6 +161,7 @@ versioned_properties:
             -
               value: 'May 2026 Drupal for Nonprofits Chat'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         date:
           required: false
           field_type: datetime
@@ -152,6 +171,7 @@ versioned_properties:
           field_widget: datetime_default
           default_value: null
           expression: ℹ︎datetime␟value
+          derived_schema_metadata: {  }
         author_name:
           required: false
           field_type: string
@@ -162,6 +182,7 @@ versioned_properties:
             -
               value: 'Karen Horrocks'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         url:
           required: false
           field_type: link
@@ -172,6 +193,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
         text:
           required: false
           field_type: string_long
@@ -180,6 +202,7 @@ versioned_properties:
           field_widget: string_textarea
           default_value: null
           expression: ℹ︎string_long␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   405af2323a0f1f0a:
@@ -195,6 +218,7 @@ versioned_properties:
             -
               value: 'May 2026 Drupal for Nonprofits Chat'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         date:
           required: false
           field_type: datetime
@@ -204,6 +228,7 @@ versioned_properties:
           field_widget: datetime_default
           default_value: null
           expression: ℹ︎datetime␟value
+          derived_schema_metadata: {  }
         author_name:
           required: false
           field_type: string
@@ -214,6 +239,7 @@ versioned_properties:
             -
               value: 'Karen Horrocks'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         url:
           required: false
           field_type: link
@@ -224,6 +250,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   0e481a72f5d1e87d:
@@ -239,6 +266,7 @@ versioned_properties:
             -
               value: 'May 2026 Drupal for Nonprofits Chat'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         date:
           required: false
           field_type: datetime
@@ -248,6 +276,7 @@ versioned_properties:
           field_widget: datetime_default
           default_value: null
           expression: ℹ︎datetime␟value
+          derived_schema_metadata: {  }
         author_name:
           required: false
           field_type: string
@@ -258,6 +287,7 @@ versioned_properties:
             -
               value: 'Karen Horrocks'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         author_image:
           required: false
           field_type: entity_reference
@@ -272,6 +302,7 @@ versioned_properties:
           field_widget: media_library_widget
           default_value: {  }
           expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
+          derived_schema_metadata: {  }
         url:
           required: false
           field_type: link
@@ -282,6 +313,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
 label: 'Article card'

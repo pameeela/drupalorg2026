@@ -24,6 +24,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         background_color:
           required: false
           field_type: list_string
@@ -33,6 +34,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         url:
           required: false
           field_type: link
@@ -43,6 +45,9 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata:
+            string_shape:
+              format: uri-reference
         text:
           required: false
           field_type: string
@@ -53,6 +58,8 @@ versioned_properties:
             -
               value: 'Your heading here'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         description:
           required: false
           field_type: text_long
@@ -66,6 +73,10 @@ versioned_properties:
               value: '<p>This is placeholder text.</p>'
               format: canvas_html_block
           expression: ℹ︎text_long␟processed
+          derived_schema_metadata:
+            string_shape:
+              contentMediaType: text/html
+              x-formatting-context: block
         text_align:
           required: true
           field_type: list_string
@@ -77,6 +88,7 @@ versioned_properties:
             -
               value: center
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         icon:
           required: false
           field_type: string
@@ -87,6 +99,8 @@ versioned_properties:
             -
               value: rocket
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         icon_size:
           required: true
           field_type: list_string
@@ -98,6 +112,7 @@ versioned_properties:
             -
               value: medium
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         icon_align:
           required: true
           field_type: list_string
@@ -109,6 +124,7 @@ versioned_properties:
             -
               value: center
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         icon_style:
           required: false
           field_type: list_string
@@ -118,6 +134,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   8fdb919bb6268993:
@@ -132,6 +149,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         background_color:
           required: false
           field_type: list_string
@@ -141,6 +159,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         url:
           required: false
           field_type: link
@@ -151,6 +170,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
         text:
           required: false
           field_type: string
@@ -161,6 +181,7 @@ versioned_properties:
             -
               value: 'Your heading here'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         description:
           required: false
           field_type: text_long
@@ -174,6 +195,7 @@ versioned_properties:
               value: '<p>This is placeholder text.</p>'
               format: canvas_html_block
           expression: ℹ︎text_long␟processed
+          derived_schema_metadata: {  }
         text_align:
           required: true
           field_type: list_string
@@ -185,6 +207,7 @@ versioned_properties:
             -
               value: center
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         icon:
           required: false
           field_type: string
@@ -195,6 +218,7 @@ versioned_properties:
             -
               value: rocket
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         icon_size:
           required: true
           field_type: list_string
@@ -206,6 +230,7 @@ versioned_properties:
             -
               value: medium
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         icon_align:
           required: true
           field_type: list_string
@@ -217,6 +242,7 @@ versioned_properties:
             -
               value: center
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         icon_style:
           required: false
           field_type: list_string
@@ -226,6 +252,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   520975892079cb8d:
@@ -240,6 +267,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         background_color:
           required: false
           field_type: list_string
@@ -249,6 +277,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         border_radius:
           required: false
           field_type: list_string
@@ -260,6 +289,7 @@ versioned_properties:
             -
               value: medium
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         icon:
           required: false
           field_type: string
@@ -270,6 +300,7 @@ versioned_properties:
             -
               value: rocket
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         icon_size:
           required: true
           field_type: list_string
@@ -281,6 +312,7 @@ versioned_properties:
             -
               value: medium
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         icon_align:
           required: true
           field_type: list_string
@@ -292,6 +324,7 @@ versioned_properties:
             -
               value: center
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         icon_style:
           required: false
           field_type: list_string
@@ -301,6 +334,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         url:
           required: false
           field_type: link
@@ -311,6 +345,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
         text:
           required: false
           field_type: string
@@ -321,6 +356,7 @@ versioned_properties:
             -
               value: 'Your heading here'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         description:
           required: false
           field_type: text_long
@@ -334,6 +370,7 @@ versioned_properties:
               value: '<p>This is placeholder text.</p>'
               format: canvas_html_block
           expression: ℹ︎text_long␟processed
+          derived_schema_metadata: {  }
         text_align:
           required: true
           field_type: list_string
@@ -345,6 +382,7 @@ versioned_properties:
             -
               value: center
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   24225d0deaf324d5:
@@ -359,6 +397,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         background_color:
           required: false
           field_type: list_string
@@ -368,6 +407,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         border_radius:
           required: false
           field_type: list_string
@@ -379,6 +419,7 @@ versioned_properties:
             -
               value: medium
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         icon:
           required: false
           field_type: string
@@ -389,6 +430,7 @@ versioned_properties:
             -
               value: rocket
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         icon_size:
           required: false
           field_type: list_string
@@ -400,6 +442,7 @@ versioned_properties:
             -
               value: large
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         icon_align:
           required: true
           field_type: list_string
@@ -411,6 +454,7 @@ versioned_properties:
             -
               value: center
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         icon_style:
           required: false
           field_type: list_string
@@ -420,6 +464,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         url:
           required: false
           field_type: link
@@ -430,6 +475,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
         text:
           required: false
           field_type: string
@@ -440,6 +486,7 @@ versioned_properties:
             -
               value: 'Your heading here'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         description:
           required: false
           field_type: text_long
@@ -453,6 +500,7 @@ versioned_properties:
               value: '<p>This is placeholder text.</p>'
               format: canvas_html_block
           expression: ℹ︎text_long␟processed
+          derived_schema_metadata: {  }
         text_align:
           required: true
           field_type: list_string
@@ -464,6 +512,7 @@ versioned_properties:
             -
               value: center
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   65aac92c6edf2380:
@@ -478,6 +527,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         background_color:
           required: false
           field_type: list_string
@@ -487,6 +537,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         border_radius:
           required: false
           field_type: list_string
@@ -498,6 +549,7 @@ versioned_properties:
             -
               value: medium
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         icon:
           required: false
           field_type: string
@@ -508,6 +560,7 @@ versioned_properties:
             -
               value: rocket
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         icon_size:
           required: false
           field_type: list_string
@@ -519,6 +572,7 @@ versioned_properties:
             -
               value: large
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         icon_align:
           required: true
           field_type: list_string
@@ -530,6 +584,7 @@ versioned_properties:
             -
               value: center
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         icon_style:
           required: false
           field_type: list_string
@@ -539,6 +594,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         url:
           required: false
           field_type: link
@@ -549,6 +605,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
         text:
           required: false
           field_type: string
@@ -559,6 +616,7 @@ versioned_properties:
             -
               value: 'Your heading here'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         description:
           required: false
           field_type: text_long
@@ -572,6 +630,7 @@ versioned_properties:
               value: '<p>This is placeholder text.</p>'
               format: canvas_html_block
           expression: ℹ︎text_long␟processed
+          derived_schema_metadata: {  }
         text_align:
           required: true
           field_type: list_string
@@ -583,6 +642,7 @@ versioned_properties:
             -
               value: center
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
 label: 'Icon card'

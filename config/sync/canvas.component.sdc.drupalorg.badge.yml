@@ -22,6 +22,8 @@ versioned_properties:
             -
               value: 'Why Drupal CMS'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         style:
           required: true
           field_type: list_string
@@ -33,6 +35,7 @@ versioned_properties:
             -
               value: transparent
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   a2a9f9689e147da6:
@@ -48,6 +51,7 @@ versioned_properties:
             -
               value: 'Built for your whole team'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         style:
           required: true
           field_type: list_string
@@ -59,6 +63,7 @@ versioned_properties:
             -
               value: transparent
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   c143a2b2d87a3149:
@@ -74,6 +79,7 @@ versioned_properties:
             -
               value: 'Built for your whole team'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         style:
           required: true
           field_type: list_string
@@ -85,6 +91,7 @@ versioned_properties:
             -
               value: transparent
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   bfe5c65718a21f4d:
@@ -100,6 +107,7 @@ versioned_properties:
             -
               value: 'Badge text'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         url:
           required: false
           field_type: link
@@ -110,6 +118,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
         style:
           required: true
           field_type: list_string
@@ -121,6 +130,7 @@ versioned_properties:
             -
               value: primary
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         icon:
           required: false
           field_type: string
@@ -131,6 +141,7 @@ versioned_properties:
             -
               value: rocket
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         icon_first:
           required: false
           field_type: boolean
@@ -141,6 +152,7 @@ versioned_properties:
             -
               value: true
           expression: ℹ︎boolean␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
 label: Badge

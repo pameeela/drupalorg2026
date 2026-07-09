@@ -30,6 +30,8 @@ versioned_properties:
             -
               value: 'Your heading goes here'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         level:
           required: true
           field_type: list_float
@@ -41,6 +43,7 @@ versioned_properties:
             -
               value: '2'
           expression: ℹ︎list_float␟value
+          derived_schema_metadata: {  }
         text:
           required: false
           field_type: string
@@ -51,6 +54,8 @@ versioned_properties:
             -
               value: 'Lorem ipsum dolor sit amet.'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         text_align:
           required: true
           field_type: list_string
@@ -62,6 +67,7 @@ versioned_properties:
             -
               value: center
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         background_color:
           required: false
           field_type: list_string
@@ -71,6 +77,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         media:
           required: false
           field_type: entity_reference
@@ -85,6 +92,7 @@ versioned_properties:
           field_widget: media_library_widget
           default_value: {  }
           expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions:
         actions:
@@ -102,6 +110,7 @@ versioned_properties:
             -
               value: 'Your heading goes here'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         level:
           required: true
           field_type: list_float
@@ -113,6 +122,7 @@ versioned_properties:
             -
               value: '2'
           expression: ℹ︎list_float␟value
+          derived_schema_metadata: {  }
         text:
           required: false
           field_type: string
@@ -123,6 +133,7 @@ versioned_properties:
             -
               value: 'Lorem ipsum dolor sit amet.'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         text_align:
           required: true
           field_type: list_string
@@ -134,6 +145,7 @@ versioned_properties:
             -
               value: center
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         background_color:
           required: false
           field_type: list_string
@@ -143,6 +155,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         media:
           required: false
           field_type: entity_reference
@@ -157,6 +170,7 @@ versioned_properties:
           field_widget: media_library_widget
           default_value: {  }
           expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions:
         actions:
@@ -174,6 +188,7 @@ versioned_properties:
             -
               value: 'Your heading goes here'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         level:
           required: true
           field_type: list_float
@@ -185,6 +200,7 @@ versioned_properties:
             -
               value: '2'
           expression: ℹ︎list_float␟value
+          derived_schema_metadata: {  }
         text:
           required: false
           field_type: string
@@ -195,6 +211,7 @@ versioned_properties:
             -
               value: 'Lorem ipsum dolor sit amet.'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         text_align:
           required: true
           field_type: list_string
@@ -206,6 +223,7 @@ versioned_properties:
             -
               value: center
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         background_color:
           required: false
           field_type: list_string
@@ -215,6 +233,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         media:
           required: false
           field_type: entity_reference
@@ -229,6 +248,7 @@ versioned_properties:
           field_widget: media_library_widget
           default_value: {  }
           expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions:
         actions:
@@ -246,6 +266,7 @@ versioned_properties:
             -
               value: 'Your heading goes here'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         level:
           required: true
           field_type: list_float
@@ -257,6 +278,7 @@ versioned_properties:
             -
               value: '2'
           expression: ℹ︎list_float␟value
+          derived_schema_metadata: {  }
         text:
           required: false
           field_type: string
@@ -267,6 +289,7 @@ versioned_properties:
             -
               value: 'Lorem ipsum dolor sit amet.'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         text_align:
           required: true
           field_type: list_string
@@ -278,6 +301,7 @@ versioned_properties:
             -
               value: center
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         background_color:
           required: false
           field_type: list_string
@@ -287,6 +311,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         media:
           required: false
           field_type: entity_reference
@@ -301,6 +326,7 @@ versioned_properties:
           field_widget: media_library_widget
           default_value: {  }
           expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions:
         actions:
@@ -318,6 +344,7 @@ versioned_properties:
             -
               value: 'Your heading goes here'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         level:
           required: true
           field_type: list_float
@@ -329,6 +356,7 @@ versioned_properties:
             -
               value: '2'
           expression: ℹ︎list_float␟value
+          derived_schema_metadata: {  }
         text:
           required: false
           field_type: string
@@ -339,6 +367,7 @@ versioned_properties:
             -
               value: 'Lorem ipsum dolor sit amet.'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         text_align:
           required: true
           field_type: list_string
@@ -350,6 +379,7 @@ versioned_properties:
             -
               value: center
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         background_color:
           required: false
           field_type: list_string
@@ -359,6 +389,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         media:
           required: false
           field_type: entity_reference
@@ -373,6 +404,7 @@ versioned_properties:
           field_widget: media_library_widget
           default_value: {  }
           expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions:
         actions:

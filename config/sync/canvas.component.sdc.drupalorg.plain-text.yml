@@ -19,6 +19,8 @@ versioned_properties:
             -
               value: 'Enter your text here'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
     fallback_metadata:
       slot_definitions: {  }
   08d1e6ec1014da29:
@@ -34,6 +36,7 @@ versioned_properties:
             -
               value: 'Enter your text here'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
 label: 'Plain text'

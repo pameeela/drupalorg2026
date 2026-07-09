@@ -6,9 +6,19 @@ dependencies:
     - views.view.articles
   module:
     - views
-active_version: 745ca1605241a2f1
+active_version: 44fcf558d56f4e8a
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: 'views_exposed_filter_block:articles-articles_all'
+        label: 'Exposed form: articles-articles_all'
+        label_display: '0'
+        provider: views
+        views_label: ''
+    fallback_metadata:
+      slot_definitions: null
+  745ca1605241a2f1:
     settings:
       default_settings:
         id: 'views_exposed_filter_block:articles-articles_all'

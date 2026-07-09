@@ -22,6 +22,7 @@ versioned_properties:
             -
               value: 100%
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         columns:
           required: true
           field_type: list_string
@@ -33,6 +34,7 @@ versioned_properties:
             -
               value: '2 columns'
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         mobile_columns:
           required: true
           field_type: list_string
@@ -44,6 +46,7 @@ versioned_properties:
             -
               value: '1'
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions:
         main_slot:

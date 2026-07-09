@@ -116,7 +116,8 @@
             "drupal/core-recipe-unpack": true,
             "drupal/core-vendor-hardening": true,
             "drupal/site_template_helper": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "symfony/runtime": true
         },
         "bin-dir": "vendor/bin",
         "sort-packages": true,

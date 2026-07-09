@@ -25,6 +25,8 @@ versioned_properties:
             -
               value: Premium
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         description:
           required: false
           field_type: string
@@ -35,6 +37,8 @@ versioned_properties:
             -
               value: 'Curabitur nascetur non potenti pede luctus vivamus'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         price:
           required: false
           field_type: string
@@ -45,6 +49,8 @@ versioned_properties:
             -
               value: '159'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         currency_code:
           required: false
           field_type: string
@@ -55,6 +61,8 @@ versioned_properties:
             -
               value: USD
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         currency_symbol:
           required: false
           field_type: string
@@ -65,6 +73,8 @@ versioned_properties:
             -
               value: $
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         symbol_position:
           required: true
           field_type: list_string
@@ -76,6 +86,7 @@ versioned_properties:
             -
               value: before
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         text:
           required: false
           field_type: text_long
@@ -89,6 +100,10 @@ versioned_properties:
               value: '<ul> <li>Example item 1</li> <li>Example item 2</li> </ul>'
               format: canvas_html_block
           expression: ℹ︎text_long␟processed
+          derived_schema_metadata:
+            string_shape:
+              contentMediaType: text/html
+              x-formatting-context: block
         button_url:
           required: false
           field_type: link
@@ -99,6 +114,9 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata:
+            string_shape:
+              format: uri-reference
         button_label:
           required: false
           field_type: string
@@ -109,6 +127,8 @@ versioned_properties:
             -
               value: 'Choose this plan'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         promote:
           required: false
           field_type: boolean
@@ -119,6 +139,7 @@ versioned_properties:
             -
               value: false
           expression: ℹ︎boolean␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
 label: 'Pricing card'
