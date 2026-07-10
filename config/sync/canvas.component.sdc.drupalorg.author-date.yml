@@ -19,6 +19,8 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         date:
           required: false
           field_type: datetime
@@ -28,6 +30,7 @@ versioned_properties:
           field_widget: datetime_default
           default_value: null
           expression: ℹ︎datetime␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
 label: 'Author & date info'

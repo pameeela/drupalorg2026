@@ -21,6 +21,8 @@ versioned_properties:
             -
               value: rocket
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         icon_size:
           required: true
           field_type: list_string
@@ -32,6 +34,7 @@ versioned_properties:
             -
               value: small
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         icon_color:
           required: false
           field_type: list_string
@@ -41,6 +44,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   a661fc77ee2b7c4a:
@@ -56,6 +60,7 @@ versioned_properties:
             -
               value: rocket
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         icon_size:
           required: true
           field_type: list_string
@@ -67,6 +72,7 @@ versioned_properties:
             -
               value: small
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         icon_color:
           required: false
           field_type: list_string
@@ -76,6 +82,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   7d2cdaeca3752d68:
@@ -91,6 +98,7 @@ versioned_properties:
             -
               value: rocket
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         icon_size:
           required: true
           field_type: list_string
@@ -102,6 +110,7 @@ versioned_properties:
             -
               value: small
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
 label: Icon

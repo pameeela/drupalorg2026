@@ -22,6 +22,7 @@ versioned_properties:
             -
               value: '2'
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         row_label:
           required: false
           field_type: string
@@ -32,6 +33,8 @@ versioned_properties:
             -
               value: 'Custom domains'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         cell1_text:
           required: false
           field_type: string
@@ -42,6 +45,8 @@ versioned_properties:
             -
               value: Included
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         cell1_icon:
           required: false
           field_type: string
@@ -52,6 +57,8 @@ versioned_properties:
             -
               value: check-circle
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         cell1_icon_color:
           required: false
           field_type: list_string
@@ -61,6 +68,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         cell2_text:
           required: false
           field_type: string
@@ -71,6 +79,8 @@ versioned_properties:
             -
               value: Included
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         cell2_icon:
           required: false
           field_type: string
@@ -81,6 +91,8 @@ versioned_properties:
             -
               value: x-circle
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         cell2_icon_color:
           required: false
           field_type: list_string
@@ -90,6 +102,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         cell3_text:
           required: false
           field_type: string
@@ -98,6 +111,8 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         cell3_icon:
           required: false
           field_type: string
@@ -106,6 +121,8 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         cell3_icon_color:
           required: false
           field_type: list_string
@@ -115,6 +132,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         cell4_text:
           required: false
           field_type: string
@@ -123,6 +141,8 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         cell4_icon:
           required: false
           field_type: string
@@ -131,6 +151,8 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         cell4_icon_color:
           required: false
           field_type: list_string
@@ -140,6 +162,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   c4fb67b3250502c4:
@@ -156,6 +179,7 @@ versioned_properties:
             -
               value: '2'
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         row_label:
           required: false
           field_type: string
@@ -166,6 +190,7 @@ versioned_properties:
             -
               value: 'Custom domains'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell1_text:
           required: false
           field_type: string
@@ -176,6 +201,7 @@ versioned_properties:
             -
               value: Included
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell1_icon:
           required: false
           field_type: string
@@ -186,6 +212,7 @@ versioned_properties:
             -
               value: check-circle
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell1_icon_color:
           required: false
           field_type: list_string
@@ -195,6 +222,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         cell2_text:
           required: false
           field_type: string
@@ -205,6 +233,7 @@ versioned_properties:
             -
               value: Included
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell2_icon:
           required: false
           field_type: string
@@ -215,6 +244,7 @@ versioned_properties:
             -
               value: check
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell2_icon_color:
           required: false
           field_type: list_string
@@ -224,6 +254,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         cell3_text:
           required: false
           field_type: string
@@ -232,6 +263,7 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell3_icon:
           required: false
           field_type: string
@@ -240,6 +272,7 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell3_icon_color:
           required: false
           field_type: list_string
@@ -249,6 +282,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         cell4_text:
           required: false
           field_type: string
@@ -257,6 +291,7 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell4_icon:
           required: false
           field_type: string
@@ -265,6 +300,7 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell4_icon_color:
           required: false
           field_type: list_string
@@ -274,6 +310,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   2894e7278555509d:
@@ -290,6 +327,7 @@ versioned_properties:
             -
               value: 2
           expression: ℹ︎list_integer␟value
+          derived_schema_metadata: {  }
         row_label:
           required: false
           field_type: string
@@ -300,6 +338,7 @@ versioned_properties:
             -
               value: 'Custom domains'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell1_text:
           required: false
           field_type: string
@@ -310,6 +349,7 @@ versioned_properties:
             -
               value: Included
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell1_icon:
           required: false
           field_type: string
@@ -320,6 +360,7 @@ versioned_properties:
             -
               value: check-circle
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell1_icon_color:
           required: false
           field_type: list_string
@@ -329,6 +370,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         cell2_text:
           required: false
           field_type: string
@@ -339,6 +381,7 @@ versioned_properties:
             -
               value: Included
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell2_icon:
           required: false
           field_type: string
@@ -349,6 +392,7 @@ versioned_properties:
             -
               value: check
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell2_icon_color:
           required: false
           field_type: list_string
@@ -358,6 +402,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         cell3_text:
           required: false
           field_type: string
@@ -366,6 +411,7 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell3_icon:
           required: false
           field_type: string
@@ -374,6 +420,7 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell3_icon_color:
           required: false
           field_type: list_string
@@ -383,6 +430,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         cell4_text:
           required: false
           field_type: string
@@ -391,6 +439,7 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell4_icon:
           required: false
           field_type: string
@@ -399,6 +448,7 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell4_icon_color:
           required: false
           field_type: list_string
@@ -408,6 +458,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   dcc1e63bc84cc131:
@@ -424,6 +475,7 @@ versioned_properties:
             -
               value: '2'
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         row_label:
           required: false
           field_type: string
@@ -434,6 +486,7 @@ versioned_properties:
             -
               value: 'Custom domains'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell1_text:
           required: false
           field_type: string
@@ -444,6 +497,7 @@ versioned_properties:
             -
               value: Included
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell1_icon:
           required: false
           field_type: string
@@ -454,6 +508,7 @@ versioned_properties:
             -
               value: check
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell2_text:
           required: false
           field_type: string
@@ -464,6 +519,7 @@ versioned_properties:
             -
               value: Included
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell2_icon:
           required: false
           field_type: string
@@ -474,6 +530,7 @@ versioned_properties:
             -
               value: check
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell3_text:
           required: false
           field_type: string
@@ -482,6 +539,7 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell3_icon:
           required: false
           field_type: string
@@ -490,6 +548,7 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell4_text:
           required: false
           field_type: string
@@ -498,6 +557,7 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         cell4_icon:
           required: false
           field_type: string
@@ -506,6 +566,7 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
 label: 'Comparison table row'

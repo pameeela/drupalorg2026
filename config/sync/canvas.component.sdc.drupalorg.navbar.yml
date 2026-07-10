@@ -22,6 +22,7 @@ versioned_properties:
             -
               value: center
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions:
         logo:

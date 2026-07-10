@@ -6,9 +6,20 @@ dependencies:
     - views.view.articles
   module:
     - views
-active_version: e5d5db2a1abbc6e3
+active_version: caee7b6ca8e1db0e
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: 'views_block:articles-articles_all'
+        label: 'Articles: All articles'
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+  e5d5db2a1abbc6e3:
     settings:
       default_settings:
         id: 'views_block:articles-articles_all'

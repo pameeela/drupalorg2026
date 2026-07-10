@@ -23,6 +23,7 @@ versioned_properties:
             -
               value: primary
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         label:
           required: false
           field_type: string
@@ -33,6 +34,8 @@ versioned_properties:
             -
               value: 'Try Drupal'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         href:
           required: false
           field_type: link
@@ -43,6 +46,9 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata:
+            string_shape:
+              format: uri-reference
         icon:
           required: false
           field_type: list_string
@@ -54,6 +60,7 @@ versioned_properties:
             -
               value: arrow-right
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         disabled:
           required: false
           field_type: boolean
@@ -64,6 +71,7 @@ versioned_properties:
             -
               value: false
           expression: ℹ︎boolean␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   669c214939c8200a:
@@ -80,6 +88,7 @@ versioned_properties:
             -
               value: primary
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         label:
           required: false
           field_type: string
@@ -90,6 +99,7 @@ versioned_properties:
             -
               value: 'Drupal for Marketers'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         href:
           required: false
           field_type: link
@@ -100,6 +110,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
         icon:
           required: false
           field_type: list_string
@@ -111,6 +122,7 @@ versioned_properties:
             -
               value: arrow-right
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         disabled:
           required: false
           field_type: boolean
@@ -121,6 +133,7 @@ versioned_properties:
             -
               value: false
           expression: ℹ︎boolean␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   8985aaac808b1e09:
@@ -194,6 +207,7 @@ versioned_properties:
             -
               value: primary
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         label:
           required: false
           field_type: string
@@ -204,6 +218,7 @@ versioned_properties:
             -
               value: 'Drupal for Marketers'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         href:
           required: false
           field_type: link
@@ -214,6 +229,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
         icon:
           required: false
           field_type: list_string
@@ -225,6 +241,7 @@ versioned_properties:
             -
               value: arrow-right
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         disabled:
           required: false
           field_type: boolean
@@ -235,6 +252,7 @@ versioned_properties:
             -
               value: false
           expression: ℹ︎boolean␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   c3a7ddf31788b214:
@@ -251,6 +269,7 @@ versioned_properties:
             -
               value: primary
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         label:
           required: false
           field_type: string
@@ -261,6 +280,7 @@ versioned_properties:
             -
               value: 'Drupal for Marketers'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         href:
           required: false
           field_type: link
@@ -271,6 +291,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
         icon:
           required: false
           field_type: list_string
@@ -282,6 +303,7 @@ versioned_properties:
             -
               value: arrow-right
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         disabled:
           required: false
           field_type: boolean
@@ -292,6 +314,7 @@ versioned_properties:
             -
               value: false
           expression: ℹ︎boolean␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   1d549d5b4ff812c0:
@@ -308,6 +331,7 @@ versioned_properties:
             -
               value: primary
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         label:
           required: false
           field_type: string
@@ -318,6 +342,7 @@ versioned_properties:
             -
               value: 'Drupal for Marketers'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         href:
           required: false
           field_type: link
@@ -328,6 +353,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
         icon:
           required: false
           field_type: list_string
@@ -339,6 +365,7 @@ versioned_properties:
             -
               value: arrow-right
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         disabled:
           required: false
           field_type: boolean
@@ -349,6 +376,7 @@ versioned_properties:
             -
               value: false
           expression: ℹ︎boolean␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   0affb7b469540ad6:
@@ -365,6 +393,7 @@ versioned_properties:
             -
               value: primary
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         label:
           required: false
           field_type: string
@@ -375,6 +404,7 @@ versioned_properties:
             -
               value: 'Drupal for Marketers'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         href:
           required: false
           field_type: link
@@ -385,6 +415,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
         icon:
           required: false
           field_type: list_string
@@ -396,6 +427,7 @@ versioned_properties:
             -
               value: arrow-right
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         disabled:
           required: false
           field_type: boolean
@@ -406,6 +438,7 @@ versioned_properties:
             -
               value: false
           expression: ℹ︎boolean␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
 label: Button

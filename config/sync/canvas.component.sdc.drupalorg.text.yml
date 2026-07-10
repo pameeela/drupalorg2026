@@ -27,6 +27,10 @@ versioned_properties:
               value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium pellentesque semper enim aliquam.</p>'
               format: canvas_html_block
           expression: ℹ︎text_long␟processed
+          derived_schema_metadata:
+            string_shape:
+              contentMediaType: text/html
+              x-formatting-context: block
         text_size:
           required: true
           field_type: list_string
@@ -38,6 +42,7 @@ versioned_properties:
             -
               value: normal
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         text_color:
           required: true
           field_type: list_string
@@ -49,6 +54,7 @@ versioned_properties:
             -
               value: default
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         style:
           required: false
           field_type: list_string
@@ -58,6 +64,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   58f125dfa449e85f:
@@ -76,6 +83,7 @@ versioned_properties:
               value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium pellentesque semper enim aliquam.</p>'
               format: canvas_html_block
           expression: ℹ︎text_long␟processed
+          derived_schema_metadata: {  }
         text_size:
           required: true
           field_type: list_string
@@ -87,6 +95,7 @@ versioned_properties:
             -
               value: normal
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         text_color:
           required: true
           field_type: list_string
@@ -98,6 +107,7 @@ versioned_properties:
             -
               value: default
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         style:
           required: false
           field_type: list_string
@@ -107,6 +117,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   d5567ed62b176ab9:
@@ -125,6 +136,7 @@ versioned_properties:
               value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium pellentesque semper enim aliquam.</p>'
               format: canvas_html_block
           expression: ℹ︎text_long␟processed
+          derived_schema_metadata: {  }
         text_size:
           required: true
           field_type: list_string
@@ -136,6 +148,7 @@ versioned_properties:
             -
               value: normal
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         text_color:
           required: true
           field_type: list_string
@@ -147,6 +160,7 @@ versioned_properties:
             -
               value: default
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         style:
           required: false
           field_type: list_string
@@ -156,6 +170,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   16c79c28a4108f9b:
@@ -174,6 +189,7 @@ versioned_properties:
               value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium pellentesque semper enim aliquam.</p>'
               format: canvas_html_block
           expression: ℹ︎text_long␟processed
+          derived_schema_metadata: {  }
         text_size:
           required: true
           field_type: list_string
@@ -185,6 +201,7 @@ versioned_properties:
             -
               value: normal
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         text_color:
           required: true
           field_type: list_string
@@ -196,6 +213,7 @@ versioned_properties:
             -
               value: default
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
 label: Text

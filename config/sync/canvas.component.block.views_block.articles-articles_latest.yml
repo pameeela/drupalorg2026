@@ -6,9 +6,20 @@ dependencies:
     - views.view.articles
   module:
     - views
-active_version: 2b4e95ee0054b8e7
+active_version: f657adea0448445b
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: 'views_block:articles-articles_latest'
+        label: 'Articles: Latest'
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+  2b4e95ee0054b8e7:
     settings:
       default_settings:
         id: 'views_block:articles-articles_latest'
