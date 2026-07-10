@@ -22,7 +22,6 @@
         "drupal/ai_agents": "^1.2",
         "drupal/ai_dashboard": "^1",
         "drupal/ai_image_alt_text": "^1",
-        "drupal/ai_provider_amazeeio": "^1.2.7",
         "drupal/ai_provider_anthropic": "^1.1",
         "drupal/ai_provider_openai": "^1.1",
         "drupal/automatic_updates": "^4.1.0",
