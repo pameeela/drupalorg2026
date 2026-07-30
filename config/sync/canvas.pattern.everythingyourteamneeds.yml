@@ -1,0 +1,140 @@
+uuid: e71cf92b-7bcd-4097-ace9-0c2491195570
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.drupalorg.badge
+    - canvas.component.sdc.drupalorg.card
+    - canvas.component.sdc.drupalorg.group
+    - canvas.component.sdc.drupalorg.heading
+    - canvas.component.sdc.drupalorg.section
+    - field.field.media.image.field_media_image
+    - field.field.media.svg_image.field_media_svg_image
+    - image.style.canvas_parametrized_width
+    - media.type.image
+    - media.type.svg_image
+  content:
+    - 'file:file:49b1e250-191b-4eb4-b3b3-972bbaefe940'
+    - 'file:file:8c198104-d2c9-4c92-96d2-1db331db35a2'
+    - 'file:file:b9f90343-fcb5-49dc-b057-4b2ecc7dbb44'
+    - 'media:image:2e21b1ed-080c-4dde-9b39-5ee9ba53a720'
+    - 'media:image:6529d6bb-77ce-4465-bfae-bc0ac30e8465'
+    - 'media:image:be5e8d63-738a-4070-9c6c-3eee830c8bc5'
+  module:
+    - file
+    - link
+    - media
+    - options
+id: everythingyourteamneeds
+label: 'Everything your team needs (3 options)'
+component_tree:
+  '0:7e3a62b0-4361-4734-9ce0-c0d048a25b26':
+    uuid: 7e3a62b0-4361-4734-9ce0-c0d048a25b26
+    component_id: sdc.drupalorg.section
+    component_version: 14b39e0eb4b650c6
+    inputs:
+      width: 100%
+      columns: '3 columns'
+      mobile_columns: '1'
+      margin_block_start: default
+      margin_block_end: small
+      padding_block_start: '0'
+      padding_block_end: '0'
+      section_header: true
+      center_header: false
+      section_footer: false
+  '0:header_slot:0:8645cae1-0aa7-49bc-9560-d19c5cd68f0a':
+    parent_uuid: 7e3a62b0-4361-4734-9ce0-c0d048a25b26
+    slot: header_slot
+    uuid: 8645cae1-0aa7-49bc-9560-d19c5cd68f0a
+    component_id: sdc.drupalorg.group
+    component_version: a248dae5b5ad03ec
+    inputs:
+      flex_direction: column
+      flex_gap: md
+      items_align: center
+      flex_align: center
+      radius: sm
+  '0:header_slot:0:group_slot:0:2f5aebd3-7768-4e0c-a35a-8f4927ab558c':
+    parent_uuid: 8645cae1-0aa7-49bc-9560-d19c5cd68f0a
+    slot: group_slot
+    uuid: 2f5aebd3-7768-4e0c-a35a-8f4927ab558c
+    component_id: sdc.drupalorg.badge
+    component_version: d86e02390d856974
+    inputs:
+      label: "What's inside"
+      style: transparent
+  '0:header_slot:0:group_slot:1:c7345e69-4811-4e9c-af4e-183aa32403f6':
+    parent_uuid: 8645cae1-0aa7-49bc-9560-d19c5cd68f0a
+    slot: group_slot
+    uuid: c7345e69-4811-4e9c-af4e-183aa32403f6
+    component_id: sdc.drupalorg.group
+    component_version: a248dae5b5ad03ec
+    inputs:
+      flex_direction: column
+      items_align: center
+      flex_align: center
+      radius: sm
+  '0:header_slot:0:group_slot:1:group_slot:0:e1ad7990-8a84-4feb-9c39-626ee5889443':
+    parent_uuid: c7345e69-4811-4e9c-af4e-183aa32403f6
+    slot: group_slot
+    uuid: e1ad7990-8a84-4feb-9c39-626ee5889443
+    component_id: sdc.drupalorg.heading
+    component_version: 1e24c13cc69b948e
+    inputs:
+      heading_text: 'Everything your team needs to build, publish, and grow.'
+      level: 2
+      text_size: heading-responsive-4xl
+      text_color: default
+      align: center
+  '0:main_slot:0:b4907bc6-54bd-4714-80aa-dce6b1fc97ab':
+    parent_uuid: 7e3a62b0-4361-4734-9ce0-c0d048a25b26
+    slot: main_slot
+    uuid: b4907bc6-54bd-4714-80aa-dce6b1fc97ab
+    component_id: sdc.drupalorg.card
+    component_version: 5be6453c79688432
+    inputs:
+      style: classic
+      heading_text: 'A visual page builder designed for marketers'
+      level: 3
+      text: 'Drag-and-drop editing, pre-built components, and real-time preview. Build and publish pages without writing a line of code.'
+      media:
+        target_id: '33'
+      url:
+        uri: 'internal:/'
+        options: {  }
+      cta_text: 'See Canvas in action'
+  '0:main_slot:1:b5bec7ee-01ec-427b-afcb-c923b5b15d9c':
+    parent_uuid: 7e3a62b0-4361-4734-9ce0-c0d048a25b26
+    slot: main_slot
+    uuid: b5bec7ee-01ec-427b-afcb-c923b5b15d9c
+    component_id: sdc.drupalorg.card
+    component_version: 5be6453c79688432
+    inputs:
+      style: classic
+      heading_text: 'AI agents to create, translate, and optimise your content'
+      level: 3
+      text: 'Content generation, translation, SEO, accessibility — built in. 48 providers supported, zero lock-in. Fast AI, with the oversight your organisation needs.'
+      media:
+        target_id: '34'
+      url:
+        uri: 'internal:/'
+        options: {  }
+      cta_text: 'What to AI agents do'
+  '0:main_slot:2:ae4333c7-0d27-493d-a733-1df9838625e8':
+    parent_uuid: 7e3a62b0-4361-4734-9ce0-c0d048a25b26
+    slot: main_slot
+    uuid: ae4333c7-0d27-493d-a733-1df9838625e8
+    component_id: sdc.drupalorg.card
+    component_version: 5be6453c79688432
+    inputs:
+      style: classic
+      heading_text: 'The security and control global enterprises trust'
+      level: 3
+      text: 'Role-based permissions, approval workflows, audit logs, and a 20-year security track record. Marketing moves fast. IT stays in control.'
+      media:
+        target_id: '35'
+      url:
+        uri: 'internal:/'
+        options: {  }
+      cta_text: "What's under the hood"

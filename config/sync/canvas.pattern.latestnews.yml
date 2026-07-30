@@ -1,0 +1,90 @@
+uuid: 0a540079-e9e8-4603-a77e-edb6b9ac1acd
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.block.views_block.articles-articles_featured
+    - canvas.component.block.views_block.articles-articles_latest
+    - canvas.component.sdc.drupalorg.badge
+    - canvas.component.sdc.drupalorg.button
+    - canvas.component.sdc.drupalorg.group
+    - canvas.component.sdc.drupalorg.section
+  module:
+    - link
+    - options
+id: latestnews
+label: 'Latest news'
+component_tree:
+  '0:d5af4583-ed7b-445a-bc72-4c0861184658':
+    uuid: d5af4583-ed7b-445a-bc72-4c0861184658
+    component_id: sdc.drupalorg.section
+    component_version: 14b39e0eb4b650c6
+    inputs:
+      width: 100%
+      columns: '2 columns 67%-33%'
+      mobile_columns: '1'
+      margin_block_start: default
+      margin_block_end: '0'
+      padding_block_start: default
+      padding_block_end: default
+      background_color: dark
+      section_header: true
+      section_footer: false
+  '0:header_slot:0:13872f36-4c94-4a17-bc08-06a88649071a':
+    parent_uuid: d5af4583-ed7b-445a-bc72-4c0861184658
+    slot: header_slot
+    uuid: 13872f36-4c94-4a17-bc08-06a88649071a
+    component_id: sdc.drupalorg.group
+    component_version: a248dae5b5ad03ec
+    inputs:
+      flex_direction: row
+      flex_gap: stretch
+      items_align: center
+      flex_align: center
+      radius: sm
+      stretch: true
+  '0:header_slot:0:group_slot:0:f21dfb84-8249-4641-9c81-a08952e6fd35':
+    parent_uuid: 13872f36-4c94-4a17-bc08-06a88649071a
+    slot: group_slot
+    uuid: f21dfb84-8249-4641-9c81-a08952e6fd35
+    component_id: sdc.drupalorg.badge
+    component_version: d86e02390d856974
+    inputs:
+      label: 'Latest from Drupal'
+      style: transparent-inverse
+  '0:header_slot:0:group_slot:1:b4982d91-e80d-4da8-b711-b528affef3da':
+    parent_uuid: 13872f36-4c94-4a17-bc08-06a88649071a
+    slot: group_slot
+    uuid: b4982d91-e80d-4da8-b711-b528affef3da
+    component_id: sdc.drupalorg.button
+    component_version: 8985aaac808b1e09
+    inputs:
+      variant: drupal-blue
+      label: 'View all articles'
+      href:
+        uri: 'internal:/blog'
+        options: {  }
+      icon: arrow-right
+      disabled: false
+  '0:main_slot:0:b2dd4e25-0b4c-4814-a88c-8abb1c2b1a79':
+    parent_uuid: d5af4583-ed7b-445a-bc72-4c0861184658
+    slot: main_slot
+    uuid: b2dd4e25-0b4c-4814-a88c-8abb1c2b1a79
+    component_id: block.views_block.articles-articles_featured
+    component_version: 4153f9a3222f27d6
+    inputs:
+      label: 'Articles: Featured'
+      label_display: '0'
+      views_label: ''
+      items_per_page: null
+  '0:main_slot:1:b05af29e-3129-4867-9710-56349946b06c':
+    parent_uuid: d5af4583-ed7b-445a-bc72-4c0861184658
+    slot: main_slot
+    uuid: b05af29e-3129-4867-9710-56349946b06c
+    component_id: block.views_block.articles-articles_latest
+    component_version: 2b4e95ee0054b8e7
+    inputs:
+      label: 'Articles: Latest'
+      label_display: '0'
+      views_label: ''
+      items_per_page: null
