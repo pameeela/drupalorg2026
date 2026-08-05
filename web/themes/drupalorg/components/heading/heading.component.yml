@@ -56,11 +56,13 @@ props:
         - inverted
         - primary
         - drupal-blue
+        - dark-gray
       meta:enum:
         default: Default
         inverted: Inverted text
         primary: Brand navy
         drupal-blue: Drupal blue
+        dark-gray: Dark gray
       examples:
         - default
     align:
