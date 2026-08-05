@@ -1,0 +1,31 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Scroll Stack
+description: Scroll-driven sticky card stack. A sticky text header fades a scroll hint as progress increases; cards beneath scale down one-by-one via scroll().
+group: Layout
+props:
+  type: object
+  properties:
+    headline:
+      type: string
+      title: Headline
+      description: Main heading shown in the sticky text zone.
+    subheading:
+      type: string
+      title: Subheading
+      description: Supporting text shown beneath the headline.
+    scroll_hint:
+      type: string
+      title: Scroll hint
+      description: Small label below the headline that fades out over the first 10% of scroll progress.
+
+slots:
+  header:
+    title: Header
+    description: Override the entire sticky text zone. When provided, the headline/subheading/scroll_hint props are ignored and no .scroll-stack__hint element is rendered.
+  cards:
+    title: Cards
+    description: Card components to stack. Each direct child of this slot becomes a separate sticky card driven by scroll().
+
+libraryOverrides:
+  js:
+    scroll-stack.js: { attributes: { type: module } }

@@ -1,0 +1,34 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Hero Gallery
+status: experimental
+group: Display
+description: >-
+  Scroll-driven hero. The first card fills the viewport, then shrinks into the
+  centre of a grid while the remaining cards fade and scale into place around it,
+  centre-outward. Driven by Motion's scroll() (native ScrollTimeline where
+  supported). Degrades to a static centred grid on mobile, with reduced motion,
+  or in the Canvas editor.
+props:
+  type: object
+  properties:
+    headline:
+      type: string
+      title: Headline
+      description: Large intro heading shown above the gallery (e.g. "let's scroll.").
+    outro:
+      type: string
+      title: Outro
+      description: Closing heading shown after the gallery (e.g. "fin.").
+
+slots:
+  cards:
+    title: Cards
+    description: >-
+      Cards to display. The FIRST card becomes the centre hero that fills the
+      viewport and shrinks into the grid; the remaining cards fill the grid
+      around it, revealing from the centre outward. Works best with up to 9
+      cards total (a 3×3 grid).
+
+libraryOverrides:
+  js:
+    hero-gallery.js: { attributes: { type: module } }

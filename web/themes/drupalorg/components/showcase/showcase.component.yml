@@ -1,0 +1,21 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Showcase
+status: stable
+group: Display
+props:
+  type: object
+  properties: 
+    reveal:
+      type: string
+      title: Reveal type
+      description: What type of reveal.
+      enum:
+        - center_spread
+
+slots:
+  header_slot:
+    title: "Header"
+  main_slot:
+    title: "Grid"
+  footer_slot:
+    title: "Footer"

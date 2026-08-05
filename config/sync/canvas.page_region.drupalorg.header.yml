@@ -26,7 +26,7 @@ component_tree:
     slot: links
     uuid: 117719f5-2683-457d-901b-a7d61f5e96f8
     component_id: sdc.drupalorg.button
-    component_version: 8985aaac808b1e09
+    component_version: 669c214939c8200a
     inputs:
       variant: primary
       label: 'Try Drupal'

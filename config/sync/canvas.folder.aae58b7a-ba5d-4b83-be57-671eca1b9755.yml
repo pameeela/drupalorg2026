@@ -1,0 +1,9 @@
+uuid: aae58b7a-ba5d-4b83-be57-671eca1b9755
+langcode: en
+status: true
+dependencies: {  }
+name: Display
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.drupalorg.showcase

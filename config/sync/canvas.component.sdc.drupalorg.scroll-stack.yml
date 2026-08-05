@@ -1,0 +1,48 @@
+uuid: 5c5fd3a6-c1c3-4bf5-b3e1-3c6a548bd7a8
+langcode: en
+status: true
+dependencies:
+  theme:
+    - drupalorg
+active_version: 2ccf0ffec2eed65a
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        headline:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+        subheading:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+        scroll_hint:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions:
+        header:
+          title: Header
+          description: 'Override the entire sticky text zone. When provided, the headline/subheading/scroll_hint props are ignored and no .scroll-stack__hint element is rendered.'
+        cards:
+          title: Cards
+          description: 'Card components to stack. Each direct child of this slot becomes a separate sticky card driven by scroll().'
+label: 'Scroll Stack'
+id: sdc.drupalorg.scroll-stack
+provider: drupalorg
+source: sdc
+source_local_id: 'drupalorg:scroll-stack'

@@ -33,6 +33,7 @@ items:
   - sdc.drupalorg.grid
   - sdc.drupalorg.group
   - sdc.drupalorg.navbar
+  - sdc.drupalorg.scroll-stack
   - sdc.drupalorg.section
   - sdc.drupalorg.slide
   - sdc.drupalorg.tab

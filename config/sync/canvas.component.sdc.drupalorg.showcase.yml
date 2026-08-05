@@ -1,0 +1,35 @@
+uuid: b196c5b9-f4c2-4e06-8b50-093e125f4fc1
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+  theme:
+    - drupalorg
+active_version: 195377ea9627c40b
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        reveal:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value: null
+          expression: ℹ︎list_string␟value
+    fallback_metadata:
+      slot_definitions:
+        header_slot:
+          title: Header
+        main_slot:
+          title: Grid
+        footer_slot:
+          title: Footer
+label: Showcase
+id: sdc.drupalorg.showcase
+provider: drupalorg
+source: sdc
+source_local_id: 'drupalorg:showcase'

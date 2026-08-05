@@ -141,6 +141,9 @@ props:
       $ref: json-schema-definitions://canvas.module/image
       title: Background image
       type: object
+    stagger_items:
+      type: boolean
+      title: Stagger grid items
     section_header:
       type: boolean
       title: Show header region
