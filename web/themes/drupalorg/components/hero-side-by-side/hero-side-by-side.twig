@@ -32,7 +32,7 @@
 
 {% set image =
   html_cva(
-    base: ['flex-1', 'overflow-hidden', 'rounded-none'],
+    base: ['md:flex-1', 'overflow-hidden', 'rounded-none'],
     variants: {
       imageSize: {
         '2:1': 'aspect-2/1',
@@ -52,7 +52,7 @@
 
 {% set content =
   html_cva(
-    base: ['flex-1 items-start', 'overflow-hidden', 'rounded-none'],
+    base: ['md:flex-1 items-start md:pt-8', 'rounded-none'],
     variants: {
       justifyContent: {
         start: 'justify-start',
