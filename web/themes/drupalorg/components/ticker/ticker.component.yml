@@ -12,17 +12,19 @@ props:
     columns:
       type: string
       title: Columns
-      description: Number of items visible across the row on desktop.
+      description: Number of items visible across the row on desktop, or "fit" to size each item to its content.
       enum:
         - "3"
         - "4"
         - "5"
         - "6"
+        - fit
       meta:enum:
         "3": 3 columns
         "4": 4 columns
         "5": 5 columns
         "6": 6 columns
+        fit: Fit to content
       default: "6"
       examples:
         - "6"
@@ -61,6 +63,10 @@ props:
       title: Center header content
       examples:
         - true
+    add_separator:
+      type: boolean
+      title: Add separator
+      description: Show a small Drupal blue circle between each item.
 slots:
   header:
     title: Header
