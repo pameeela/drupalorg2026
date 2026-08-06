@@ -16,24 +16,6 @@ props:
       title: Body text
       examples:
         - "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    primary_cta_label:
-      type: string
-      title: Primary CTA label
-      examples:
-        - "Primary call to action"
-    primary_cta_href:
-      type: string
-      title: Primary CTA link
-      format: uri-reference
-    secondary_cta_label:
-      type: string
-      title: Secondary CTA label
-      examples:
-        - "Secondary call to action"
-    secondary_cta_href:
-      type: string
-      title: Secondary CTA link
-      format: uri-reference
     background_video:
       $ref: json-schema-definitions://canvas.module/video
       title: Background video
@@ -54,3 +36,7 @@ props:
       default: false
       examples:
         - false
+
+slots:
+  actions:
+    title: Buttons

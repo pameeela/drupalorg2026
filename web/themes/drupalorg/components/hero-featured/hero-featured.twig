@@ -80,34 +80,11 @@
           </p>
         {% endif %}
 
-        {% if primary_cta_label is not empty or secondary_cta_label is not empty %}
+        {% if block('actions') is defined %}
           <div class="flex flex-wrap items-center justify-center gap-3.5">
-            {% if primary_cta_label is not empty %}
-              {{
-                include(
-                  'drupalorg:button',
-                  {
-                    label: primary_cta_label,
-                    href: primary_cta_href|default(''),
-                    variant: 'drupal-blue'
-                  },
-                  with_context: false
-                )
-              }}
-            {% endif %}
-            {% if secondary_cta_label is not empty %}
-              {{
-                include(
-                  'drupalorg:button',
-                  {
-                    label: secondary_cta_label,
-                    href: secondary_cta_href|default(''),
-                    variant: 'primary'
-                  },
-                  with_context: false
-                )
-              }}
-            {% endif %}
+            {% block actions %}
+
+            {% endblock %}
           </div>
         {% endif %}
       </div>
