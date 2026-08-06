@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - canvas.component.sdc.drupalorg.cta
-    - canvas.component.sdc.drupalorg.featured-hero
     - canvas.component.sdc.drupalorg.hero-billboard
     - canvas.component.sdc.drupalorg.hero-featured
     - canvas.component.sdc.drupalorg.hero-side-by-side
@@ -14,7 +13,6 @@ configEntityTypeId: component
 weight: 0
 items:
   - sdc.drupalorg.cta
-  - sdc.drupalorg.featured-hero
   - sdc.drupalorg.hero-billboard
   - sdc.drupalorg.hero-featured
   - sdc.drupalorg.hero-side-by-side
