@@ -1,0 +1,134 @@
+{# Normalize additional classes #}
+{% set additional_classes = classes|default('') %}
+{% if additional_classes is iterable %}
+  {% set additional_classes = additional_classes|join(' ') %}
+{% endif %}
+
+{% set hero_overlap_navbar = overlap_navbar|default(false) ? 'yes' : 'no' %}
+
+{% set section_variants =
+  html_cva(
+    base: ['cq-full relative'],
+    variants: {
+      overlapNavbar: {
+        yes: 'mt-[calc(var(--navbar-height)*-1)]',
+        no: ''
+      }
+    }
+  )
+%}
+
+{% set content_variants =
+  html_cva(
+    base: ['flex flex-col items-center gap-6 pb-14 text-center md:gap-8 xl:pb-16'],
+    variants: {
+      overlapNavbar: {
+        yes: ['pt-[calc(var(--navbar-height)+5rem)]', 'md:pt-[calc(var(--navbar-height)+7rem)]', 'xl:pt-[calc(var(--navbar-height)+168px)]'],
+        no: 'pt-20 md:pt-28 xl:pt-[168px]'
+      }
+    }
+  )
+%}
+
+<section
+  class="{{
+  section_variants.apply(
+    {
+      overlapNavbar: hero_overlap_navbar
+    },
+    additional_classes
+  )
+  }}"
+>
+  {% if background_video.src is not empty %}
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+      <video src="{{ background_video.src }}" autoplay muted loop playsinline class="h-full w-full object-cover"></video>
+    </div>
+  {% endif %}
+
+  {# Content sticks at top while image scrolls into view from below #}
+  <div class="sticky top-0 overflow-hidden">
+    <div class="relative z-10 container mx-auto px-4 lg:px-8">
+      <div
+        class="{{
+        content_variants.apply({
+          overlapNavbar: hero_overlap_navbar
+        })
+        }}"
+      >
+        {% if heading %}
+          {{
+            include(
+              'drupalorg:heading',
+              {
+                heading_text: heading,
+                level: 2,
+                align: 'center',
+                text_color: 'default',
+                url: '',
+                text_size: 'heading-responsive-7xl',
+                heading_classes: 'tracking-[-0.04em] max-w-3xl'
+              },
+              with_context: false
+            )
+          }}
+        {% endif %}
+
+        {% if body %}
+          <p class="max-w-2xl text-xl">
+            {{ body }}
+          </p>
+        {% endif %}
+
+        {% if primary_cta_label is not empty or secondary_cta_label is not empty %}
+          <div class="flex flex-wrap items-center justify-center gap-3.5">
+            {% if primary_cta_label is not empty %}
+              {{
+                include(
+                  'drupalorg:button',
+                  {
+                    label: primary_cta_label,
+                    href: primary_cta_href|default(''),
+                    variant: 'drupal-blue'
+                  },
+                  with_context: false
+                )
+              }}
+            {% endif %}
+            {% if secondary_cta_label is not empty %}
+              {{
+                include(
+                  'drupalorg:button',
+                  {
+                    label: secondary_cta_label,
+                    href: secondary_cta_href|default(''),
+                    variant: 'primary'
+                  },
+                  with_context: false
+                )
+              }}
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {# Screenshot scrolls up from below the sticky content #}
+  {% if image.src is not empty %}
+    <div class="relative z-10 container mx-auto px-4 lg:px-8">
+      <div class="mx-auto pb-12 md:max-w-2xl md:pb-15 xl:max-w-6xl">
+        <div class="overflow-hidden rounded-xl bg-white shadow-[0px_12px_24px_-4px_rgba(18,26,38,0.12),0px_4px_8px_-4px_rgba(18,26,38,0.05)]">
+          {% include 'canvas:image' ignore missing with {
+            src: image.src,
+            alt: image.alt,
+            width: image.width,
+            height: image.height,
+            loading: 'eager',
+            class: 'block h-auto w-full'
+          } only %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</section>

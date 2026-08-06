@@ -1,0 +1,56 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Featured hero
+group: Hero
+props:
+  type: object
+  required:
+    - heading
+  properties:
+    heading:
+      type: string
+      title: Heading
+      examples:
+        - "Your headline goes here."
+    body:
+      type: string
+      title: Body text
+      examples:
+        - "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    primary_cta_label:
+      type: string
+      title: Primary CTA label
+      examples:
+        - "Primary call to action"
+    primary_cta_href:
+      type: string
+      title: Primary CTA link
+      format: uri-reference
+    secondary_cta_label:
+      type: string
+      title: Secondary CTA label
+      examples:
+        - "Secondary call to action"
+    secondary_cta_href:
+      type: string
+      title: Secondary CTA link
+      format: uri-reference
+    background_video:
+      $ref: json-schema-definitions://canvas.module/video
+      title: Background video
+      type: object
+    image:
+      $ref: json-schema-definitions://canvas.module/image
+      title: Screenshot image
+      type: object
+      examples:
+        - src: ""
+          alt: "Drupal CMS screenshot"
+          width: 1120
+          height: 662
+    overlap_navbar:
+      type: boolean
+      title: Overlap header
+      description: Enable this to place it behind the header, if it is the first item on the page.
+      default: false
+      examples:
+        - false
