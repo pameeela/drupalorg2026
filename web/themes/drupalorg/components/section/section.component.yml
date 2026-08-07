@@ -131,11 +131,15 @@ props:
         - dark
         - light-grey
         - light-blue
+        - light-blue-gradient
+        - dark-blue-gradient
         - darkest-blue
       meta:enum:
         dark: Navy blue
         light-grey: Light grey
         light-blue: Light blue
+        light-blue-gradient: Light blue gradient
+        dark-blue-gradient: Dark blue gradient
         darkest-blue: Darkest blue
     background_media:
       $ref: json-schema-definitions://canvas.module/image

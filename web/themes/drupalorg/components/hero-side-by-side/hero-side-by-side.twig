@@ -52,10 +52,10 @@
 
 {% set content =
   html_cva(
-    base: ['items-start md:flex-1 md:pt-8', 'rounded-none'],
+    base: ['items-start md:flex-1', 'rounded-none'],
     variants: {
       justifyContent: {
-        start: 'justify-start',
+        start: 'justify-start md:pt-8',
         center: 'justify-center',
         end: 'justify-end'
       }
