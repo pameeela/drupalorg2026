@@ -42,9 +42,11 @@ props:
         - default
         - inverted
         - primary
+        - light-blue
       meta:enum:
-        default: Default text
-        inverted: Inverted text
+        default: Default
+        inverted: White
+        light-blue: Light blue
         primary: Brand navy
       examples:
         - default

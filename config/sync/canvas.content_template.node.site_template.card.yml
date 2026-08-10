@@ -33,7 +33,7 @@ component_tree:
     component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: column
-      flex_gap: sm
+      flex_gap: md
       items_align: start
       flex_align: start
       radius: sm
@@ -53,8 +53,21 @@ component_tree:
       size: card
       show_chrome: false
       caption: 'Hover to scroll'
-  '0:group_slot:1:6f852470-6bd3-4d4b-a984-ae7dbf14985f':
+  '0:group_slot:1:d0a61fec-a1ad-401c-a8ae-a2299c6936ae':
     parent_uuid: 829d667a-9904-41a7-b62a-5495e23f7241
+    slot: group_slot
+    uuid: d0a61fec-a1ad-401c-a8ae-a2299c6936ae
+    component_id: sdc.drupalorg.group
+    component_version: a248dae5b5ad03ec
+    inputs:
+      flex_direction: column
+      flex_gap: sm
+      items_align: start
+      flex_align: start
+      radius: sm
+      stretch: false
+  '0:group_slot:1:group_slot:0:6f852470-6bd3-4d4b-a984-ae7dbf14985f':
+    parent_uuid: d0a61fec-a1ad-401c-a8ae-a2299c6936ae
     slot: group_slot
     uuid: 6f852470-6bd3-4d4b-a984-ae7dbf14985f
     component_id: sdc.drupalorg.group
@@ -66,21 +79,24 @@ component_tree:
       flex_align: start
       radius: sm
       stretch: false
-  '0:group_slot:1:group_slot:0:df8d2ac0-ce38-4483-9f8c-260429f1c560':
+  '0:group_slot:1:group_slot:0:group_slot:0:df8d2ac0-ce38-4483-9f8c-260429f1c560':
     parent_uuid: 6f852470-6bd3-4d4b-a984-ae7dbf14985f
     slot: group_slot
     uuid: df8d2ac0-ce38-4483-9f8c-260429f1c560
     component_id: sdc.drupalorg.heading
-    component_version: 9fc55396fecbab86
+    component_version: 98abcbae4cf1add5
     inputs:
       heading_text:
         sourceType: entity-field
         expression: 'ℹ︎␜entity:node:site_template␝title␞␟value'
       level: 2
-      text_size: heading-responsive-3xl
-      text_color: default
+      text_size: heading-responsive-2xl
+      text_color: primary
       align: left
-  '0:group_slot:1:group_slot:1:cde68e48-f6ec-457d-a062-329f23481110':
+      url:
+        sourceType: host-entity-url
+        absolute: false
+  '0:group_slot:1:group_slot:0:group_slot:1:cde68e48-f6ec-457d-a062-329f23481110':
     parent_uuid: 6f852470-6bd3-4d4b-a984-ae7dbf14985f
     slot: group_slot
     uuid: cde68e48-f6ec-457d-a062-329f23481110
@@ -91,8 +107,8 @@ component_tree:
         sourceType: entity-field
         expression: 'ℹ︎␜entity:node:site_template␝field_price␞␟value'
       style: light-blue
-  '0:group_slot:2:379f06f4-aa07-46b4-b6f1-1769d306cbd4':
-    parent_uuid: 829d667a-9904-41a7-b62a-5495e23f7241
+  '0:group_slot:1:group_slot:1:379f06f4-aa07-46b4-b6f1-1769d306cbd4':
+    parent_uuid: d0a61fec-a1ad-401c-a8ae-a2299c6936ae
     slot: group_slot
     uuid: 379f06f4-aa07-46b4-b6f1-1769d306cbd4
     component_id: sdc.drupalorg.plain-text
@@ -101,15 +117,18 @@ component_tree:
       text:
         sourceType: entity-field
         expression: 'ℹ︎␜entity:node:site_template␝field_short_description␞␟value'
-  '0:group_slot:3:76fa0163-099d-43d8-9f84-3f41c618e4a2':
-    parent_uuid: 829d667a-9904-41a7-b62a-5495e23f7241
+  '0:group_slot:1:group_slot:2:76fa0163-099d-43d8-9f84-3f41c618e4a2':
+    parent_uuid: d0a61fec-a1ad-401c-a8ae-a2299c6936ae
     slot: group_slot
     uuid: 76fa0163-099d-43d8-9f84-3f41c618e4a2
     component_id: sdc.drupalorg.button
-    component_version: fcadf533340e8f50
+    component_version: dab04045f380affe
     inputs:
-      variant: white
+      variant: navy-link
       label: 'View template'
+      href:
+        sourceType: host-entity-url
+        absolute: false
       icon: arrow-right
       disabled: false
 exposed_slots: {  }

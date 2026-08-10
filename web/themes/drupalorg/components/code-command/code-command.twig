@@ -20,9 +20,9 @@
   )
 %}
 
-{% set switch_row = html_cva(base: ['flex', 'flex-col', 'items-start', 'gap-4']) %}
+{% set switch_row = html_cva(base: ['flex', 'flex-col', 'items-start', 'gap-2']) %}
 
-{% set switch_label = html_cva(base: ['text-[13px]', 'leading-normal', 'font-normal', 'text-dark-gray', 'uppercase']) %}
+{% set switch_label = html_cva(base: ['text-xs', 'font-normal', 'text-dark-gray', 'uppercase']) %}
 
 {% set switch_group =
   html_cva(base: ['code-command__switch', 'inline-flex', 'gap-1', 'rounded-full', 'border', 'border-light-gray', 'bg-white', 'p-1'])

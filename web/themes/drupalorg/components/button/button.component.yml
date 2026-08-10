@@ -18,6 +18,8 @@ props:
         - drupal-blue
         - transparent-white
         - transparent-navy
+        - navy-link
+        - blue-link
       meta:enum:
         primary: Brand navy
         white: White
@@ -26,6 +28,8 @@ props:
         drupal-blue: Drupal blue
         transparent-white: Transparent white
         transparent-navy: Transparent navy
+        navy-link: Navy link
+        blue-link: Drupal blue link
       examples:
         - primary
     label:

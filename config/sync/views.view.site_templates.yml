@@ -223,6 +223,20 @@ display:
         options:
           offset: 0
           items_per_page: 3
+      sorts:
+        random:
+          id: random
+          table: views
+          field: random
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: random
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments:
         nid:
           id: nid
@@ -262,11 +276,12 @@ display:
       defaults:
         title: false
         pager: false
+        sorts: false
         arguments: false
       display_description: ''
       display_extenders: {  }
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'

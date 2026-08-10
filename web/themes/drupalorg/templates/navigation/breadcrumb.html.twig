@@ -11,7 +11,7 @@
 {% if breadcrumb %}
   {% set needs_truncation = (breadcrumb|length) > 3 %}
 
-  {% set item_classes = 'flex items-center text-sm md:text-md' %}
+  {% set item_classes = 'flex items-center text-xs md:text-sm' %}
 
   <nav aria-label="breadcrumb" class="container mx-auto my-2 w-full md:my-3 2xl:my-4">
     <h2 id="system-breadcrumb" class="sr-only">{{ 'Breadcrumb' }}</h2>
@@ -22,19 +22,9 @@
         {% set should_show = not needs_truncation or is_first or is_last_two %}
 
         {% if loop.first %}
-          <li class="gap-1 md:gap-2 2xl:text-base">
-            <a href="{{ item.url }}" class="flex items-center no-underline hover:opacity-80">
-              {{
-                include(
-                  '@drupalorg/components/icon/icon.twig',
-                  {
-                    weight: 'bold',
-                    icon: 'house',
-                    icon_size: 'extra-small'
-                  }
-                )
-              }}
-              <span class="sr-only">{{ item.text }}</span>
+          <li class="{{ item_classes }}">
+            <a href="{{ item.url }}" class="no-underline hover:underline hover:underline-offset-2 focus:underline text-dark-blue">
+              Home
             </a>
           </li>
         {% endif %}
@@ -54,16 +44,7 @@
             }}
           </li>
           <li aria-hidden="true">
-            {{
-              include(
-                '@drupalorg/components/icon/icon.twig',
-                {
-                  weight: 'bold',
-                  icon: 'caret-right',
-                  icon_size: 'extra-small'
-                }
-              )
-            }}
+            /
           </li>
         {% endif %}
 
@@ -73,23 +54,14 @@
             <li class="{{ item_classes }} active" aria-current="page">{{ item.text }}</li>
           {% elseif item.url and not is_first %}
             <li class="{{ item_classes }}">
-              <a href="{{ item.url }}" class="no-underline hover:underline hover:underline-offset-2 focus:underline">{{ item.text }}</a>
+              <a href="{{ item.url }}" class="no-underline hover:underline hover:underline-offset-2 focus:underline text-dark-blue">{{ item.text }}</a>
             </li>
           {% endif %}
 
           {# Add chevron after item (except last) #}
           {% if not loop.last and (not needs_truncation or is_last_two or is_first) %}
             <li aria-hidden="true">
-              {{
-                include(
-                  '@drupalorg/components/icon/icon.twig',
-                  {
-                    weight: 'bold',
-                    icon: 'caret-right',
-                    icon_size: 'extra-small'
-                  }
-                )
-              }}
+              /
             </li>
           {% endif %}
         {% endif %}

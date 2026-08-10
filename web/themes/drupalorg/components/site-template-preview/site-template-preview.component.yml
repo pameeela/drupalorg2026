@@ -68,3 +68,7 @@ props:
     preview_classes:
       type: string
       title: Additional classes
+
+libraryOverrides:
+  js:
+    site-template-preview.js: { attributes: { type: module } }

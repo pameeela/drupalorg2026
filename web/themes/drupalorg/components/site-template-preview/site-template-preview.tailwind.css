@@ -1,6 +1,7 @@
 @layer components;
 
 .site-template-preview__viewport--hover .site-template-preview__image--hover {
+  /* Duration is set in JS: (imageHeight - viewportHeight) / 400px per second. */
   transition: transform var(--stp-duration, 9s) linear;
 }
 
