@@ -1,0 +1,37 @@
+uuid: 4a2ab58f-4143-4605-9254-ec022aacb606
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.site_templates
+  module:
+    - views
+active_version: 94c123c54730a2f7
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'views_block:site_templates-site_templates_related'
+        label: 'Site templates: Related'
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+  b02b11eab0d29c30:
+    settings:
+      default_settings:
+        id: 'views_block:site_templates-site_templates_related'
+        label: 'Site templates'
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+label: 'Site templates: Related'
+id: block.views_block.site_templates-site_templates_related
+provider: views
+source: block
+source_local_id: 'views_block:site_templates-site_templates_related'

@@ -4,6 +4,10 @@
 {% set has_media = media is defined and media is not empty and media.src is defined and media.src is not empty %}
 {% set has_caption = caption is not empty %}
 {% set is_hover_mode = preview_mode == 'hover' %}
+{% set is_card_size = preview_size == 'card' or preview_size == 'mobile' %}
+{% set show_fade_caption = has_caption and not is_card_size %}
+{% set show_chip_caption = has_caption and is_card_size %}
+{% set show_static_caption = has_caption and not is_card_size %}
 {% set viewport_tabindex = is_hover_mode ? '0' : '-1' %}
 
 {% set additional_classes = preview_classes|default('') %}
@@ -83,19 +87,7 @@
 %}
 
 {% set caption_row =
-  html_cva(
-    base: [
-      'mt-3',
-      'flex',
-      'items-center',
-      'justify-center',
-      'gap-1.5',
-      'text-sm',
-      'font-normal',
-      'text-navy',
-      'text-pretty'
-    ]
-  )
+  html_cva(base: ['mt-3', 'flex', 'items-center', 'justify-center', 'gap-1.5', 'text-sm', 'font-normal', 'text-navy', 'text-pretty'])
 %}
 
 {% set caption_overlay =
@@ -123,6 +115,32 @@
       'text-pretty',
       'shadow-sm',
       'backdrop-blur-sm'
+    ]
+  )
+%}
+
+{% set caption_chip =
+  html_cva(
+    base: [
+      'pointer-events-none',
+      'absolute',
+      'bottom-3',
+      'left-3',
+      'z-10',
+      'inline-flex',
+      'items-center',
+      'gap-1.5',
+      'rounded-full',
+      'bg-darkest-blue/72',
+      'px-2.5',
+      'py-1',
+      'text-[11px]',
+      'leading-none',
+      'font-medium',
+      'tracking-[0.5px]',
+      'text-white',
+      'text-pretty',
+      'backdrop-blur-[8px]'
     ]
   )
 %}
@@ -193,7 +211,7 @@
         {% endif %}
       </div>
 
-      {% if has_caption %}
+      {% if show_fade_caption %}
         <div class="{{ caption_overlay.apply({}) }}" aria-hidden="true">
           {{
             include(
@@ -209,10 +227,27 @@
           <span>{{ caption }}</span>
         </div>
       {% endif %}
+
+      {% if show_chip_caption %}
+        <div class="{{ caption_chip.apply({}) }}" aria-hidden="true">
+          {{
+            include(
+              '@drupalorg/components/icon/icon.twig',
+              {
+                icon: 'arrow-down',
+                icon_size: 'extra-extra-small',
+                icon_color: 'white'
+              },
+              with_context: false
+            )
+          }}
+          <span>{{ caption }}</span>
+        </div>
+      {% endif %}
     </div>
   </div>
 
-  {% if has_caption %}
+  {% if show_static_caption %}
     <div class="{{ caption_row.apply({}) }}">
       {{
         include(

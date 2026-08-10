@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - canvas.component.block.views_block.site_templates-site_templates_related
     - canvas.component.sdc.drupalorg.anchor
     - canvas.component.sdc.drupalorg.badge
     - canvas.component.sdc.drupalorg.button
@@ -508,4 +509,43 @@ component_tree:
       icon: arrow-right
       icon_size: extra-small
       icon_color: primary
+  '2:6ed925bd-5bae-4db0-b1b0-3af566b26f2d':
+    uuid: 6ed925bd-5bae-4db0-b1b0-3af566b26f2d
+    component_id: sdc.drupalorg.section
+    component_version: d5cb71b20de277d5
+    inputs:
+      width: 100%
+      columns: '1 column'
+      views_columns: 33-33-33
+      mobile_columns: '1'
+      margin_block_start: default
+      margin_block_end: default
+      padding_block_start: '0'
+      padding_block_end: '0'
+      section_header: true
+      center_header: false
+      section_footer: true
+  '2:header_slot:0:e35df607-eb0f-4063-98a7-016509044677':
+    parent_uuid: 6ed925bd-5bae-4db0-b1b0-3af566b26f2d
+    slot: header_slot
+    uuid: e35df607-eb0f-4063-98a7-016509044677
+    component_id: sdc.drupalorg.heading
+    component_version: 9fc55396fecbab86
+    inputs:
+      heading_text: 'More templates'
+      level: 2
+      text_size: heading-responsive-4xl
+      text_color: default
+      align: left
+  '2:main_slot:0:720fb581-a0c8-49db-8882-ccd179e7e73f':
+    parent_uuid: 6ed925bd-5bae-4db0-b1b0-3af566b26f2d
+    slot: main_slot
+    uuid: 720fb581-a0c8-49db-8882-ccd179e7e73f
+    component_id: block.views_block.site_templates-site_templates_related
+    component_version: 94c123c54730a2f7
+    inputs:
+      label: 'Site templates: Related'
+      label_display: '0'
+      views_label: ''
+      items_per_page: null
 exposed_slots: {  }
