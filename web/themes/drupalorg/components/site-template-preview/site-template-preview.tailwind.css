@@ -69,9 +69,9 @@
 }
 
 .site-template-preview__thumb[aria-selected="true"] {
-  @apply border-2 border-navy;
+  @apply outline-2 outline-drupal-blue outline-offset-2;
 }
 
 .site-template-preview__thumb[aria-selected="false"] {
-  @apply border border-light-gray;
+  @apply outline-none;
 }
