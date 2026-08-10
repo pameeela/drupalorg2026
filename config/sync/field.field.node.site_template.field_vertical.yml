@@ -1,0 +1,28 @@
+uuid: bff9a0c1-977b-4202-8b17-a52b71746c51
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vertical
+    - node.type.site_template
+    - taxonomy.vocabulary.site_template_vertical
+id: node.site_template.field_vertical
+field_name: field_vertical
+entity_type: node
+bundle: site_template
+label: Vertical
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      site_template_vertical: site_template_vertical
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+field_type: entity_reference

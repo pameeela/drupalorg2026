@@ -52,7 +52,7 @@ component_tree:
     slot: hero_slot
     uuid: 9934eb33-ebc5-4f22-bd70-e23c68d45daf
     component_id: sdc.drupalorg.heading
-    component_version: 959bd70914eed3e8
+    component_version: 9fc55396fecbab86
     inputs:
       heading_text:
         sourceType: entity-field
@@ -93,7 +93,7 @@ component_tree:
     slot: group_slot
     uuid: 17110caf-ec55-4311-ac11-cd2b49a1edf1
     component_id: sdc.drupalorg.badge
-    component_version: a2a9f9689e147da6
+    component_version: d86e02390d856974
     inputs:
       label:
         sourceType: entity-field
@@ -114,7 +114,7 @@ component_tree:
     slot: hero_slot
     uuid: 0d6d4551-2dc4-42a1-b17e-14581a311163
     component_id: sdc.drupalorg.button
-    component_version: 669c214939c8200a
+    component_version: 8985aaac808b1e09
     inputs:
       variant: drupal-blue
       label: 'Read the article'

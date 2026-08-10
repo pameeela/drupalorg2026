@@ -1,0 +1,9 @@
+uuid: ee421fb1-698d-4e1d-b711-04692ecdf150
+langcode: en
+status: true
+dependencies: {  }
+name: 'Site template vertical'
+vid: site_template_vertical
+description: 'Sector / vertical for marketplace filtering (e.g. Government, Nonprofit).'
+weight: 0
+new_revision: false

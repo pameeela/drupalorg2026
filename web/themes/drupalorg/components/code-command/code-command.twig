@@ -1,0 +1,132 @@
+{#
+  Single-line shell command on a dark slab, with optional env switch, $ prompt, and copy.
+  Default environment is DDEV. Switch choice syncs across all code-command instances.
+#}
+
+{% set ddev_command = command_ddev|default('') %}
+{% set local_command = command_local|default('') %}
+{% set display_switch = show_switch ?? true %}
+{% set switch_visible = display_switch ? 'yes' : 'no' %}
+
+{% set root =
+  html_cva(
+    base: ['code-command', 'flex', 'w-full', 'flex-col'],
+    variants: {
+      hasSwitch: {
+        yes: 'gap-4',
+        no: ''
+      }
+    }
+  )
+%}
+
+{% set switch_row = html_cva(base: ['flex', 'flex-col', 'items-start', 'gap-4']) %}
+
+{% set switch_label = html_cva(base: ['text-[13px]', 'leading-normal', 'font-normal', 'text-dark-gray', 'uppercase']) %}
+
+{% set switch_group =
+  html_cva(base: ['code-command__switch', 'inline-flex', 'gap-1', 'rounded-full', 'border', 'border-light-gray', 'bg-white', 'p-1'])
+%}
+
+{% set switch_segment =
+  html_cva(
+    base: [
+      'code-command__segment',
+      'cursor-pointer',
+      'rounded-full',
+      'border-0',
+      'px-4',
+      'py-2',
+      'font-sans',
+      'text-[13px]',
+      'leading-none',
+      'font-medium',
+      'transition-[background-color,color]',
+      'duration-150',
+      'ease-in-out',
+      'focus-visible:ring-2',
+      'focus-visible:ring-drupal-blue/50',
+      'focus-visible:outline-none'
+    ]
+  )
+%}
+
+{% set block =
+  html_cva(base: ['code-command__block', 'flex', 'items-center', 'gap-4', 'rounded-lg', 'bg-darkest-blue', 'p-4', 'pl-6'])
+%}
+
+{% set code_wrap =
+  html_cva(base: ['min-w-0', 'flex-1', 'overflow-x-auto', 'font-mono', 'text-sm', 'leading-normal', 'text-white', 'whitespace-pre'])
+%}
+
+{% set copy_button =
+  html_cva(
+    base: [
+      'code-command__copy',
+      'inline-flex',
+      'shrink-0',
+      'cursor-pointer',
+      'items-center',
+      'gap-2',
+      'rounded-full',
+      'border',
+      'border-lightest-blue/25',
+      'bg-transparent',
+      'px-4',
+      'py-2',
+      'font-sans',
+      'text-[13px]',
+      'leading-none',
+      'font-medium',
+      'text-lightest-blue',
+      'transition-[background,border-color]',
+      'duration-150',
+      'ease-in-out',
+      'hover:border-lightest-blue/40',
+      'hover:bg-lightest-blue/10',
+      'focus-visible:ring-2',
+      'focus-visible:ring-drupal-blue/50',
+      'focus-visible:outline-none'
+    ]
+  )
+%}
+
+{% set attributes =
+  attributes.addClass(
+    root.apply({
+      hasSwitch: switch_visible
+    })
+  ).setAttribute(
+    'data-command-ddev',
+    ddev_command
+  ).setAttribute(
+    'data-command-local',
+    local_command
+  ).setAttribute(
+    'data-env',
+    'ddev'
+  )
+%}
+
+<div {{ attributes }}>
+  {% if display_switch %}
+    <div class="{{ switch_row.apply({}) }}">
+      <span class="{{ switch_label.apply({}) }}">Environment</span>
+      <div class="{{ switch_group.apply({}) }}" role="radiogroup" aria-label="Environment selector">
+        <button type="button" class="{{ switch_segment.apply({}) }}" role="radio" data-code-command-env="ddev" aria-checked="true" tabindex="0">
+          DDEV
+        </button>
+        <button type="button" class="{{ switch_segment.apply({}) }}" role="radio" data-code-command-env="local" aria-checked="false" tabindex="-1">
+          Local PHP
+        </button>
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="{{ block.apply({}) }}" data-block>
+    {# prettier-ignore #}
+    <pre class="{{ code_wrap.apply({}) }}"><code data-code-command-text>{{ ddev_command }}</code></pre>
+    <button type="button" class="{{ copy_button.apply({}) }}" data-code-command-copy><span data-code-command-label>Copy</span></button>
+    <span class="sr-only" data-code-command-live aria-live="polite"></span>
+  </div>
+</div>

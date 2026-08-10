@@ -1,0 +1,68 @@
+@layer components;
+
+.site-template-preview__viewport--hover .site-template-preview__image--hover {
+  transition: transform var(--stp-duration, 9s) linear;
+}
+
+.site-template-preview__viewport--hover:hover .site-template-preview__image--hover,
+.site-template-preview__viewport--hover:focus-within .site-template-preview__image--hover {
+  transform: translateY(calc(-100% + var(--stp-height, 300px)));
+}
+
+@keyframes site-template-preview-caption-nudge {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  8% {
+    opacity: 1;
+    transform: translateY(6px);
+  }
+
+  16% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  24% {
+    opacity: 1;
+    transform: translateY(6px);
+  }
+
+  32% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  75% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+
+.site-template-preview__caption-overlay {
+  /* Nudge early, hold readable, then fade — 4s total after 0.4s delay */
+  animation: site-template-preview-caption-nudge 4s ease-in-out 1.5s 1 both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-template-preview__viewport--hover .site-template-preview__image--hover {
+    transition: none;
+  }
+
+  .site-template-preview__viewport--hover:hover .site-template-preview__image--hover,
+  .site-template-preview__viewport--hover:focus-within .site-template-preview__image--hover {
+    transform: none;
+  }
+
+  .site-template-preview__caption-overlay {
+    animation: none;
+    opacity: 0;
+  }
+}

@@ -3,6 +3,8 @@
 @import "../components/navbar/navbar.tailwind.css";
 @import "../components/anchor/anchor.tailwind.css";
 @import "../components/carousel-tabs/carousel-tabs.tailwind.css";
+@import "../components/site-template-preview/site-template-preview.tailwind.css";
+@import "../components/code-command/code-command.tailwind.css";
 @theme inline {
   --color-darkest-blue: var(--drupal-darkest-blue);
   --color-navy: var(--drupal-navy);
@@ -113,19 +115,19 @@
 
   /* Set base heading styles since Tailwind sets them to inherit */
   h1 {
-    @apply font-heading text-5xl leading-none font-semibold md:text-6xl lg:text-7xl 2xl:text-8xl tracking-tight;
+    @apply font-heading text-5xl leading-none font-semibold tracking-tight md:text-6xl lg:text-7xl 2xl:text-8xl;
   }
 
   h2 {
-    @apply font-heading text-3xl font-semibold lg:text-4xl tracking-tight;
+    @apply font-heading text-3xl font-semibold tracking-tight lg:text-4xl;
   }
 
   h3 {
-    @apply font-heading text-2xl font-semibold lg:text-3xl tracking-tight;
+    @apply font-heading text-2xl font-semibold tracking-tight lg:text-3xl;
   }
 
   h4 {
-    @apply font-heading text-xl font-semibold md:text-2xl tracking-tight;
+    @apply font-heading text-xl font-semibold tracking-tight md:text-2xl;
   }
 
   h5 {
@@ -368,27 +370,27 @@
 
   /* Responsive text size utility */
   .heading-responsive-8xl {
-    @apply text-6xl md:text-7xl xl:text-8xl tracking-tight;
+    @apply text-6xl tracking-tight md:text-7xl xl:text-8xl;
   }
 
   .heading-responsive-7xl {
-    @apply text-5xl md:text-6xl xl:text-7xl tracking-tight;
+    @apply text-5xl tracking-tight md:text-6xl xl:text-7xl;
   }
 
   .heading-responsive-6xl {
-    @apply text-4xl md:text-5xl xl:text-6xl tracking-tight; /* H1 */
+    @apply text-4xl tracking-tight md:text-5xl xl:text-6xl; /* H1 */
   }
 
   .heading-responsive-5xl {
-    @apply text-3xl md:text-4xl xl:text-5xl tracking-tight;
+    @apply text-3xl tracking-tight md:text-4xl xl:text-5xl;
   }
 
   .heading-responsive-4xl {
-    @apply text-3xl xl:text-4xl tracking-tight; /* H2 */
+    @apply text-3xl tracking-tight xl:text-4xl; /* H2 */
   }
 
   .heading-responsive-3xl {
-    @apply text-2xl xl:text-3xl tracking-tight; /* H3 */
+    @apply text-2xl tracking-tight xl:text-3xl; /* H3 */
   }
 
   .heading-responsive-2xl {

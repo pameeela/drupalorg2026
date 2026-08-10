@@ -1,0 +1,511 @@
+uuid: 0e3c428b-fce9-4263-8c10-1877b60734b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.drupalorg.anchor
+    - canvas.component.sdc.drupalorg.badge
+    - canvas.component.sdc.drupalorg.button
+    - canvas.component.sdc.drupalorg.code-command
+    - canvas.component.sdc.drupalorg.eyebrow
+    - canvas.component.sdc.drupalorg.group
+    - canvas.component.sdc.drupalorg.heading
+    - canvas.component.sdc.drupalorg.icon
+    - canvas.component.sdc.drupalorg.plain-text
+    - canvas.component.sdc.drupalorg.section
+    - canvas.component.sdc.drupalorg.site-template-preview
+    - canvas.component.sdc.drupalorg.text
+    - core.entity_view_mode.node.full
+    - field.field.media.image.field_media_image
+    - field.field.node.site_template.field_bare_install
+    - field.field.node.site_template.field_ddev_install
+    - field.field.node.site_template.field_demo_link
+    - field.field.node.site_template.field_featured_screenshot
+    - field.field.node.site_template.field_price
+    - field.field.node.site_template.field_short_description
+    - filter.format.canvas_html_block
+    - image.style.canvas_parametrized_width
+    - media.type.image
+    - node.type.site_template
+  module:
+    - file
+    - link
+    - media
+    - node
+    - options
+    - text
+id: node.site_template.full
+content_entity_type_id: node
+content_entity_type_bundle: site_template
+content_entity_type_view_mode: full
+component_tree:
+  '0:2ab60f33-9672-483c-9530-b19f4cdcde82':
+    uuid: 2ab60f33-9672-483c-9530-b19f4cdcde82
+    component_id: sdc.drupalorg.section
+    component_version: d5cb71b20de277d5
+    inputs:
+      width: 100%
+      columns: '2 columns 67%-33%'
+      mobile_columns: '1'
+      margin_block_start: default
+      margin_block_end: default
+      padding_block_start: '0'
+      padding_block_end: '0'
+      section_header: false
+      center_header: false
+      section_footer: true
+  '0:main_slot:0:2f7143a0-6570-47ce-90b2-00b65335d92a':
+    parent_uuid: 2ab60f33-9672-483c-9530-b19f4cdcde82
+    slot: main_slot
+    uuid: 2f7143a0-6570-47ce-90b2-00b65335d92a
+    component_id: sdc.drupalorg.group
+    component_version: a248dae5b5ad03ec
+    inputs:
+      flex_direction: column
+      flex_gap: md
+      items_align: start
+      flex_align: center
+      radius: sm
+      stretch: false
+  '0:main_slot:0:group_slot:0:31c372c7-9282-4de2-a165-21d5369a4ac8':
+    parent_uuid: 2f7143a0-6570-47ce-90b2-00b65335d92a
+    slot: group_slot
+    uuid: 31c372c7-9282-4de2-a165-21d5369a4ac8
+    component_id: sdc.drupalorg.site-template-preview
+    component_version: 73d6a518f9b6893b
+    inputs:
+      media:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:site_template␝field_featured_screenshot␞␟entity␜␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}'
+      chrome_url: byte.preview.drupal.org
+      mode: scroll
+      size: detail
+      show_chrome: true
+      caption: 'Scroll to explore the full page'
+  '0:main_slot:1:cd428d6b-6a83-4c31-8839-71fa894861c0':
+    parent_uuid: 2ab60f33-9672-483c-9530-b19f4cdcde82
+    slot: main_slot
+    uuid: cd428d6b-6a83-4c31-8839-71fa894861c0
+    component_id: sdc.drupalorg.group
+    component_version: a248dae5b5ad03ec
+    inputs:
+      flex_direction: column
+      flex_gap: md
+      items_align: start
+      flex_align: start
+      radius: sm
+      stretch: false
+  '0:main_slot:1:group_slot:0:9c7709e9-8d45-4948-b132-57856ad94707':
+    parent_uuid: cd428d6b-6a83-4c31-8839-71fa894861c0
+    slot: group_slot
+    uuid: 9c7709e9-8d45-4948-b132-57856ad94707
+    component_id: sdc.drupalorg.group
+    component_version: a248dae5b5ad03ec
+    inputs:
+      flex_direction: row
+      flex_gap: md
+      items_align: center
+      flex_align: start
+      radius: sm
+      stretch: false
+  '0:main_slot:1:group_slot:0:group_slot:0:aa943514-b4a9-47b0-a52d-acae5b82fa36':
+    parent_uuid: 9c7709e9-8d45-4948-b132-57856ad94707
+    slot: group_slot
+    uuid: aa943514-b4a9-47b0-a52d-acae5b82fa36
+    component_id: sdc.drupalorg.heading
+    component_version: 9fc55396fecbab86
+    inputs:
+      heading_text:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:site_template␝title␞␟value'
+      level: 1
+      text_size: heading-responsive-4xl
+      text_color: default
+      align: left
+  '0:main_slot:1:group_slot:0:group_slot:1:5e67ab0b-5837-46fe-92c3-35d4fe737ab0':
+    parent_uuid: 9c7709e9-8d45-4948-b132-57856ad94707
+    slot: group_slot
+    uuid: 5e67ab0b-5837-46fe-92c3-35d4fe737ab0
+    component_id: sdc.drupalorg.badge
+    component_version: cf658701f300b03b
+    inputs:
+      label:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:site_template␝field_price␞␟value'
+      style: light-blue
+  '0:main_slot:1:group_slot:1:5d8e8188-393c-4326-a476-2c0b9ad48f16':
+    parent_uuid: cd428d6b-6a83-4c31-8839-71fa894861c0
+    slot: group_slot
+    uuid: 5d8e8188-393c-4326-a476-2c0b9ad48f16
+    component_id: sdc.drupalorg.plain-text
+    component_version: 85b6ce75d344b10b
+    inputs:
+      text:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:site_template␝field_short_description␞␟value'
+  '0:main_slot:1:group_slot:2:44362bf4-c869-4aa5-821d-ed5d7bccd0e8':
+    parent_uuid: cd428d6b-6a83-4c31-8839-71fa894861c0
+    slot: group_slot
+    uuid: 44362bf4-c869-4aa5-821d-ed5d7bccd0e8
+    component_id: sdc.drupalorg.button
+    component_version: fcadf533340e8f50
+    inputs:
+      variant: primary
+      label: 'Install this template'
+      href:
+        uri: '#install'
+        options: {  }
+      disabled: false
+  '1:27a623ee-c4db-4e03-a4ab-73eb0c6fbc99':
+    uuid: 27a623ee-c4db-4e03-a4ab-73eb0c6fbc99
+    component_id: sdc.drupalorg.section
+    component_version: d5cb71b20de277d5
+    inputs:
+      width: 100%
+      columns: '2 columns 33%-67%'
+      mobile_columns: '1'
+      margin_block_start: default
+      margin_block_end: default
+      padding_block_start: '0'
+      padding_block_end: '0'
+      section_header: true
+      center_header: false
+      section_footer: true
+  '1:header_slot:0:f51e0504-8d34-4ab9-82cf-159f3b14399f':
+    parent_uuid: 27a623ee-c4db-4e03-a4ab-73eb0c6fbc99
+    slot: header_slot
+    uuid: f51e0504-8d34-4ab9-82cf-159f3b14399f
+    component_id: sdc.drupalorg.anchor
+    component_version: '5524813695409257'
+    inputs:
+      id: install
+  '1:header_slot:1:615877e7-d710-47c5-ab48-beb389199473':
+    parent_uuid: 27a623ee-c4db-4e03-a4ab-73eb0c6fbc99
+    slot: header_slot
+    uuid: 615877e7-d710-47c5-ab48-beb389199473
+    component_id: sdc.drupalorg.eyebrow
+    component_version: 2ff2015e21e55e15
+    inputs:
+      eyebrow_text: 'Get started'
+      text_color: drupal-dark-blue
+  '1:header_slot:2:705018fe-b559-4bee-9274-7eabb5d50a49':
+    parent_uuid: 27a623ee-c4db-4e03-a4ab-73eb0c6fbc99
+    slot: header_slot
+    uuid: 705018fe-b559-4bee-9274-7eabb5d50a49
+    component_id: sdc.drupalorg.group
+    component_version: a248dae5b5ad03ec
+    inputs:
+      flex_direction: row
+      flex_gap: sm
+      items_align: start
+      flex_align: start
+      radius: sm
+      stretch: false
+  '1:header_slot:2:group_slot:0:c6a8b7dd-4dcd-4080-b0e5-b4dfffd63d50':
+    parent_uuid: 705018fe-b559-4bee-9274-7eabb5d50a49
+    slot: group_slot
+    uuid: c6a8b7dd-4dcd-4080-b0e5-b4dfffd63d50
+    component_id: sdc.drupalorg.heading
+    component_version: 9fc55396fecbab86
+    inputs:
+      heading_text: Install
+      level: 2
+      text_size: heading-responsive-4xl
+      text_color: default
+      align: left
+  '1:header_slot:2:group_slot:1:b4ecb34e-f927-4e48-a089-b11c8c043faa':
+    parent_uuid: 705018fe-b559-4bee-9274-7eabb5d50a49
+    slot: group_slot
+    uuid: b4ecb34e-f927-4e48-a089-b11c8c043faa
+    component_id: sdc.drupalorg.heading
+    component_version: 9fc55396fecbab86
+    inputs:
+      heading_text:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:site_template␝title␞␟value'
+      level: '2'
+      text_size: heading-responsive-4xl
+      text_color: default
+      align: left
+  '1:header_slot:3:725b7661-1e2f-4e89-a327-455bcdcad8ec':
+    parent_uuid: 27a623ee-c4db-4e03-a4ab-73eb0c6fbc99
+    slot: header_slot
+    uuid: 725b7661-1e2f-4e89-a327-455bcdcad8ec
+    component_id: sdc.drupalorg.text
+    component_version: 8bd96e9141226c1b
+    inputs:
+      text:
+        value: '<p>Two ways to start: Try Drupal CMS right from your browser in a sandbox, nothing to download or install. Or you can set up a full local development environment.</p>'
+        format: canvas_html_block
+      text_size: normal
+      text_color: default
+  '1:main_slot:0:0386d81e-5bb4-4350-85c0-5fbedcc3f9eb':
+    parent_uuid: 27a623ee-c4db-4e03-a4ab-73eb0c6fbc99
+    slot: main_slot
+    uuid: 0386d81e-5bb4-4350-85c0-5fbedcc3f9eb
+    component_id: sdc.drupalorg.group
+    component_version: a248dae5b5ad03ec
+    inputs:
+      flex_direction: column
+      flex_gap: md
+      items_align: start
+      flex_align: start
+      radius: lg
+      padding: md
+      background: primary
+      stretch: false
+  '1:main_slot:0:group_slot:0:48c7a950-4e6a-4497-bacc-5c9912f80534':
+    parent_uuid: 0386d81e-5bb4-4350-85c0-5fbedcc3f9eb
+    slot: group_slot
+    uuid: 48c7a950-4e6a-4497-bacc-5c9912f80534
+    component_id: sdc.drupalorg.heading
+    component_version: 9fc55396fecbab86
+    inputs:
+      heading_text: 'Try it in-browser'
+      level: 2
+      text_size: heading-responsive-3xl
+      text_color: inverted
+      align: left
+  '1:main_slot:0:group_slot:1:3229e310-0da4-4baa-bc1f-983b975a06c3':
+    parent_uuid: 0386d81e-5bb4-4350-85c0-5fbedcc3f9eb
+    slot: group_slot
+    uuid: 3229e310-0da4-4baa-bc1f-983b975a06c3
+    component_id: sdc.drupalorg.text
+    component_version: 8bd96e9141226c1b
+    inputs:
+      text:
+        value: '<p>Get started building now, without downloading anything. DrupalForge provides temporary hosting.</p><p>Ready in minutes, full admin access</p>'
+        format: canvas_html_block
+      text_size: text-sm
+      text_color: inverted
+  '1:main_slot:0:group_slot:2:a3b0d08d-9e1b-44ce-accd-2ec70a345ba1':
+    parent_uuid: 0386d81e-5bb4-4350-85c0-5fbedcc3f9eb
+    slot: group_slot
+    uuid: a3b0d08d-9e1b-44ce-accd-2ec70a345ba1
+    component_id: sdc.drupalorg.group
+    component_version: a248dae5b5ad03ec
+    inputs:
+      flex_direction: column
+      flex_gap: sm
+      items_align: start
+      flex_align: start
+      radius: sm
+      stretch: false
+  '1:main_slot:0:group_slot:2:group_slot:0:52c3209e-cbbf-41af-89e7-34aa0a53b598':
+    parent_uuid: a3b0d08d-9e1b-44ce-accd-2ec70a345ba1
+    slot: group_slot
+    uuid: 52c3209e-cbbf-41af-89e7-34aa0a53b598
+    component_id: sdc.drupalorg.group
+    component_version: a248dae5b5ad03ec
+    inputs:
+      flex_direction: row
+      flex_gap: sm
+      items_align: center
+      flex_align: start
+      radius: sm
+      stretch: false
+  '1:main_slot:0:group_slot:2:group_slot:0:group_slot:0:67edd876-9808-4a80-81f2-13c21166168d':
+    parent_uuid: 52c3209e-cbbf-41af-89e7-34aa0a53b598
+    slot: group_slot
+    uuid: 67edd876-9808-4a80-81f2-13c21166168d
+    component_id: sdc.drupalorg.icon
+    component_version: 92628a0376753423
+    inputs:
+      icon: check-circle
+      icon_size: extra-small
+      icon_color: brand-blue
+  '1:main_slot:0:group_slot:2:group_slot:0:group_slot:1:865292a0-8f31-4a2c-9338-46ed7250136b':
+    parent_uuid: 52c3209e-cbbf-41af-89e7-34aa0a53b598
+    slot: group_slot
+    uuid: 865292a0-8f31-4a2c-9338-46ed7250136b
+    component_id: sdc.drupalorg.text
+    component_version: 8bd96e9141226c1b
+    inputs:
+      text:
+        value: '<p>Ready in about 60 seconds</p>'
+        format: canvas_html_block
+      text_size: text-sm
+      text_color: inverted
+  '1:main_slot:0:group_slot:2:group_slot:1:397c25ec-d8f5-4971-9f8d-f3943733fa1f':
+    parent_uuid: a3b0d08d-9e1b-44ce-accd-2ec70a345ba1
+    slot: group_slot
+    uuid: 397c25ec-d8f5-4971-9f8d-f3943733fa1f
+    component_id: sdc.drupalorg.group
+    component_version: a248dae5b5ad03ec
+    inputs:
+      flex_direction: row
+      flex_gap: sm
+      items_align: center
+      flex_align: start
+      radius: sm
+      stretch: false
+  '1:main_slot:0:group_slot:2:group_slot:1:group_slot:0:843bb166-6e9b-4771-81c1-294cead9428b':
+    parent_uuid: 397c25ec-d8f5-4971-9f8d-f3943733fa1f
+    slot: group_slot
+    uuid: 843bb166-6e9b-4771-81c1-294cead9428b
+    component_id: sdc.drupalorg.icon
+    component_version: 92628a0376753423
+    inputs:
+      icon: check-circle
+      icon_size: extra-small
+      icon_color: brand-blue
+  '1:main_slot:0:group_slot:2:group_slot:1:group_slot:1:be6eaab1-9ff1-4205-ae72-30c1e634116f':
+    parent_uuid: 397c25ec-d8f5-4971-9f8d-f3943733fa1f
+    slot: group_slot
+    uuid: be6eaab1-9ff1-4205-ae72-30c1e634116f
+    component_id: sdc.drupalorg.text
+    component_version: 8bd96e9141226c1b
+    inputs:
+      text:
+        value: '<p>Full admin access</p>'
+        format: canvas_html_block
+      text_size: text-sm
+      text_color: inverted
+  '1:main_slot:0:group_slot:2:group_slot:2:1843ceb8-f801-4ccc-9879-f8c1ee5f1569':
+    parent_uuid: a3b0d08d-9e1b-44ce-accd-2ec70a345ba1
+    slot: group_slot
+    uuid: 1843ceb8-f801-4ccc-9879-f8c1ee5f1569
+    component_id: sdc.drupalorg.group
+    component_version: a248dae5b5ad03ec
+    inputs:
+      flex_direction: row
+      flex_gap: sm
+      items_align: center
+      flex_align: start
+      radius: sm
+      stretch: false
+  '1:main_slot:0:group_slot:2:group_slot:2:group_slot:0:cc82ab79-7f6b-4f61-9545-8350c9250931':
+    parent_uuid: 1843ceb8-f801-4ccc-9879-f8c1ee5f1569
+    slot: group_slot
+    uuid: cc82ab79-7f6b-4f61-9545-8350c9250931
+    component_id: sdc.drupalorg.icon
+    component_version: 92628a0376753423
+    inputs:
+      icon: check-circle
+      icon_size: extra-small
+      icon_color: brand-blue
+  '1:main_slot:0:group_slot:2:group_slot:2:group_slot:1:a50fe770-751a-4fd6-9cdd-44a395f97e2d':
+    parent_uuid: 1843ceb8-f801-4ccc-9879-f8c1ee5f1569
+    slot: group_slot
+    uuid: a50fe770-751a-4fd6-9cdd-44a395f97e2d
+    component_id: sdc.drupalorg.text
+    component_version: 8bd96e9141226c1b
+    inputs:
+      text:
+        value: '<p>Nothing to download</p>'
+        format: canvas_html_block
+      text_size: text-sm
+      text_color: inverted
+  '1:main_slot:0:group_slot:3:e4997f21-ad55-4ef3-994e-badd145184bc':
+    parent_uuid: 0386d81e-5bb4-4350-85c0-5fbedcc3f9eb
+    slot: group_slot
+    uuid: e4997f21-ad55-4ef3-994e-badd145184bc
+    component_id: sdc.drupalorg.button
+    component_version: fcadf533340e8f50
+    inputs:
+      variant: drupal-blue
+      label: 'Launch demo site'
+      href:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:site_template␝field_demo_link␞␟uri'
+      icon: arrow-up-right
+      disabled: false
+  '1:main_slot:0:group_slot:4:c8b1dd68-c6c8-4c75-9215-02c54ba5ef73':
+    parent_uuid: 0386d81e-5bb4-4350-85c0-5fbedcc3f9eb
+    slot: group_slot
+    uuid: c8b1dd68-c6c8-4c75-9215-02c54ba5ef73
+    component_id: sdc.drupalorg.text
+    component_version: 8bd96e9141226c1b
+    inputs:
+      text:
+        value: '<p>Opens DrupalForge in a new tab. Free, no account needed, extended trial available.</p>'
+        format: canvas_html_block
+      text_size: text-xs
+      text_color: inverted
+  '1:main_slot:1:49aebf08-b576-4a4d-abee-d3b970beeec4':
+    parent_uuid: 27a623ee-c4db-4e03-a4ab-73eb0c6fbc99
+    slot: main_slot
+    uuid: 49aebf08-b576-4a4d-abee-d3b970beeec4
+    component_id: sdc.drupalorg.group
+    component_version: a248dae5b5ad03ec
+    inputs:
+      flex_direction: column
+      flex_gap: md
+      items_align: start
+      flex_align: start
+      radius: sm
+      stretch: false
+  '1:main_slot:1:group_slot:0:87c9ea2d-908b-437f-973b-0804c73db484':
+    parent_uuid: 49aebf08-b576-4a4d-abee-d3b970beeec4
+    slot: group_slot
+    uuid: 87c9ea2d-908b-437f-973b-0804c73db484
+    component_id: sdc.drupalorg.heading
+    component_version: 9fc55396fecbab86
+    inputs:
+      heading_text: 'Install locally'
+      level: 2
+      text_size: heading-responsive-3xl
+      text_color: default
+      align: left
+  '1:main_slot:1:group_slot:1:c734f563-7fe5-49fa-bb61-efea5214043c':
+    parent_uuid: 49aebf08-b576-4a4d-abee-d3b970beeec4
+    slot: group_slot
+    uuid: c734f563-7fe5-49fa-bb61-efea5214043c
+    component_id: sdc.drupalorg.text
+    component_version: 8bd96e9141226c1b
+    inputs:
+      text:
+        value: '<p>Set up a full local development environment. We recommend using <a href="https://project.pages.drupalcode.org/drupal_cms/get-started/ddev/">DDEV</a> for local development.</p>'
+        format: canvas_html_block
+      text_size: text-sm
+      text_color: default
+  '1:main_slot:1:group_slot:2:cb4e21a2-f84f-47d0-b0da-c693b098e6f3':
+    parent_uuid: 49aebf08-b576-4a4d-abee-d3b970beeec4
+    slot: group_slot
+    uuid: cb4e21a2-f84f-47d0-b0da-c693b098e6f3
+    component_id: sdc.drupalorg.code-command
+    component_version: a8d7a936ecca35fe
+    inputs:
+      command_ddev:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:site_template␝field_ddev_install␞␟value'
+      command_local:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:site_template␝field_bare_install␞␟value'
+      show_switch: true
+  '1:main_slot:1:group_slot:3:cd395e5f-00d0-4b67-87bc-2a39eee46fe9':
+    parent_uuid: 49aebf08-b576-4a4d-abee-d3b970beeec4
+    slot: group_slot
+    uuid: cd395e5f-00d0-4b67-87bc-2a39eee46fe9
+    component_id: sdc.drupalorg.group
+    component_version: a248dae5b5ad03ec
+    inputs:
+      flex_direction: row
+      flex_gap: sm
+      items_align: start
+      flex_align: start
+      radius: sm
+      stretch: false
+  '1:main_slot:1:group_slot:3:group_slot:0:dabd4fdc-f419-40bc-b29b-d237253e8679':
+    parent_uuid: cd395e5f-00d0-4b67-87bc-2a39eee46fe9
+    slot: group_slot
+    uuid: dabd4fdc-f419-40bc-b29b-d237253e8679
+    component_id: sdc.drupalorg.text
+    component_version: 8bd96e9141226c1b
+    inputs:
+      text:
+        value: '<p><a href="https://project.pages.drupalcode.org/drupal_cms/get-started/ddev/"><strong>Full installation guide</strong></a></p>'
+        format: canvas_html_block
+      text_size: text-xs
+      text_color: primary
+  '1:main_slot:1:group_slot:3:group_slot:1:6e145750-7c96-4949-8ac4-a0cdf8fa0939':
+    parent_uuid: cd395e5f-00d0-4b67-87bc-2a39eee46fe9
+    slot: group_slot
+    uuid: 6e145750-7c96-4949-8ac4-a0cdf8fa0939
+    component_id: sdc.drupalorg.icon
+    component_version: 92628a0376753423
+    inputs:
+      icon: arrow-right
+      icon_size: extra-small
+      icon_color: primary
+exposed_slots: {  }

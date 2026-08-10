@@ -44,7 +44,7 @@ component_tree:
   '0:083fb097-30a3-4016-b735-afd5e554a0d3':
     uuid: 083fb097-30a3-4016-b735-afd5e554a0d3
     component_id: sdc.drupalorg.section
-    component_version: 14b39e0eb4b650c6
+    component_version: d5cb71b20de277d5
     inputs:
       width: 100%
       columns: '1 column'
@@ -67,7 +67,7 @@ component_tree:
   '1:e40c9bd4-68e1-442c-ac26-90e16226b652':
     uuid: e40c9bd4-68e1-442c-ac26-90e16226b652
     component_id: sdc.drupalorg.section
-    component_version: 14b39e0eb4b650c6
+    component_version: d5cb71b20de277d5
     inputs:
       width: 70%
       columns: '1 column'
@@ -83,7 +83,7 @@ component_tree:
     slot: main_slot
     uuid: f5db3bd4-e732-4384-8bbd-a3f633e58c4d
     component_id: sdc.drupalorg.heading
-    component_version: 959bd70914eed3e8
+    component_version: 9fc55396fecbab86
     inputs:
       heading_text:
         sourceType: entity-field
@@ -134,7 +134,7 @@ component_tree:
     slot: main_slot
     uuid: 94ce609d-dd6d-4286-9d73-61910a0f52e5
     component_id: sdc.drupalorg.text
-    component_version: 16c79c28a4108f9b
+    component_version: 8bd96e9141226c1b
     inputs:
       text:
         sourceType: entity-field
@@ -156,7 +156,7 @@ component_tree:
   '2:c2cda74c-3059-4f3d-8b21-21e1bf0d73d5':
     uuid: c2cda74c-3059-4f3d-8b21-21e1bf0d73d5
     component_id: sdc.drupalorg.section
-    component_version: 14b39e0eb4b650c6
+    component_version: d5cb71b20de277d5
     inputs:
       width: 90%
       columns: '1 column'
@@ -174,7 +174,7 @@ component_tree:
     slot: header_slot
     uuid: d06c9cd4-4495-47c7-8e92-4de9d87a4725
     component_id: sdc.drupalorg.heading
-    component_version: 959bd70914eed3e8
+    component_version: 9fc55396fecbab86
     inputs:
       heading_text: 'Related posts'
       level: 2
@@ -195,7 +195,7 @@ component_tree:
   '3:dce94466-534a-437e-b0ba-0a6ca7cfd69e':
     uuid: dce94466-534a-437e-b0ba-0a6ca7cfd69e
     component_id: sdc.drupalorg.section
-    component_version: 14b39e0eb4b650c6
+    component_version: d5cb71b20de277d5
     inputs:
       width: 90%
       columns: '1 column'
@@ -235,7 +235,7 @@ component_tree:
     slot: hero_slot
     uuid: f0111a04-cdba-4bad-b570-2f29e1813fe5
     component_id: sdc.drupalorg.heading
-    component_version: 959bd70914eed3e8
+    component_version: 9fc55396fecbab86
     inputs:
       heading_text: 'See what you can build in an afternoon.'
       level: 2
@@ -247,7 +247,7 @@ component_tree:
     slot: hero_slot
     uuid: defe3569-7a50-4225-a116-0a9dd3e099e4
     component_id: sdc.drupalorg.text
-    component_version: 16c79c28a4108f9b
+    component_version: 8bd96e9141226c1b
     inputs:
       text:
         value: '<p class="text-align-center">Spin up a professional site in hours — templates, drag-and-drop and AI agents, ready from day one.</p>'

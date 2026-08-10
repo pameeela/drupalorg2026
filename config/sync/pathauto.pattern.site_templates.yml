@@ -1,0 +1,23 @@
+uuid: 697f7502-e1a9-43dd-b4c0-681765e1ecb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.site_template
+  module:
+    - node
+id: site_templates
+label: 'Site templates'
+type: 'canonical_entities:node'
+pattern: '/site-templates/[node:title]'
+selection_criteria:
+  a12b2625-ed3a-4c1d-8b20-d11b8fcfc524:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      site_template: site_template
+selection_logic: and
+weight: -5
+relationships: {  }

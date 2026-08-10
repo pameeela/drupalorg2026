@@ -1,0 +1,28 @@
+uuid: fa665666-84f2-4cbc-b517-186e3c1b9908
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured_screenshot
+    - media.type.image
+    - node.type.site_template
+id: node.site_template.field_featured_screenshot
+field_name: field_featured_screenshot
+entity_type: node
+bundle: site_template
+label: 'Featured screenshot'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

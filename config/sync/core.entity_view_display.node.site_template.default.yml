@@ -1,0 +1,112 @@
+uuid: 98354b4b-d4d9-4400-90d3-f2c8fc720d6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.site_template.field_bare_install
+    - field.field.node.site_template.field_ddev_install
+    - field.field.node.site_template.field_demo_link
+    - field.field.node.site_template.field_featured_screenshot
+    - field.field.node.site_template.field_live_preview_url
+    - field.field.node.site_template.field_price
+    - field.field.node.site_template.field_seo_analysis
+    - field.field.node.site_template.field_seo_description
+    - field.field.node.site_template.field_seo_image
+    - field.field.node.site_template.field_seo_title
+    - field.field.node.site_template.field_short_description
+    - field.field.node.site_template.field_vertical
+    - node.type.site_template
+  module:
+    - link
+    - user
+id: node.site_template.default
+targetEntityType: node
+bundle: site_template
+mode: default
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_bare_install:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_ddev_install:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_demo_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_featured_screenshot:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_live_preview_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_price:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_short_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_vertical:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_seo_analysis: true
+  field_seo_description: true
+  field_seo_image: true
+  field_seo_title: true
