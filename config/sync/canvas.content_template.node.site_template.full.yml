@@ -248,7 +248,7 @@ component_tree:
     component_version: 8e4dee1f767538b4
     inputs:
       text:
-        value: '<p>Two ways to start: Try Drupal CMS right from your browser in a sandbox, nothing to download or install. Or you can set up a full local development environment.</p>'
+        value: '<p>Choose how to get started: Try Drupal CMS right from your browser in a sandbox, nothing to download or install. Or you can set up a full local development environment.</p>'
         format: canvas_html_block
       text_size: normal
       text_color: default
@@ -287,7 +287,7 @@ component_tree:
     component_version: 8e4dee1f767538b4
     inputs:
       text:
-        value: '<p>Get started building now, without downloading anything. DrupalForge provides temporary hosting.</p><p>Ready in minutes, full admin access</p>'
+        value: '<p><strong>Get started building now, no download required. DrupalForge provides free, temporary hosting, no account required.</strong></p>'
         format: canvas_html_block
       text_size: text-sm
       text_color: light-blue
@@ -335,7 +335,7 @@ component_tree:
     component_version: 8e4dee1f767538b4
     inputs:
       text:
-        value: '<p>Ready in about 60 seconds</p>'
+        value: '<p><strong>Ready in about 60 seconds</strong></p>'
         format: canvas_html_block
       text_size: text-sm
       text_color: inverted
@@ -370,7 +370,7 @@ component_tree:
     component_version: 8e4dee1f767538b4
     inputs:
       text:
-        value: '<p>Full admin access</p>'
+        value: '<p><strong>Full admin access</strong></p>'
         format: canvas_html_block
       text_size: text-sm
       text_color: inverted
@@ -405,7 +405,7 @@ component_tree:
     component_version: 8e4dee1f767538b4
     inputs:
       text:
-        value: '<p>Nothing to download</p>'
+        value: '<p><strong>Live sandbox for collaboration</strong></p>'
         format: canvas_html_block
       text_size: text-sm
       text_color: inverted
@@ -430,9 +430,6 @@ component_tree:
     component_id: sdc.drupalorg.text
     component_version: 8e4dee1f767538b4
     inputs:
-      text:
-        value: '<p>Opens DrupalForge in a new tab. Free, no account needed, extended trial available.</p>'
-        format: canvas_html_block
       text_size: text-xs
       text_color: inverted
   '2:main_slot:1:49aebf08-b576-4a4d-abee-d3b970beeec4':
@@ -468,7 +465,7 @@ component_tree:
     component_version: 8e4dee1f767538b4
     inputs:
       text:
-        value: '<p>Set up a full local development environment. We recommend using <a href="https://project.pages.drupalcode.org/drupal_cms/get-started/ddev/">DDEV</a> for local development.</p>'
+        value: '<p>To start with a full local development environment, we recommend using <a href="https://project.pages.drupalcode.org/drupal_cms/get-started/ddev/">DDEV</a> for easy setup.&nbsp;</p>'
         format: canvas_html_block
       text_size: text-sm
       text_color: default
@@ -494,7 +491,7 @@ component_tree:
     component_version: dab04045f380affe
     inputs:
       variant: blue-link
-      label: 'Full installation guide'
+      label: "Don't have DDEV? Check out the full installation guide"
       href:
         uri: 'https://project.pages.drupalcode.org/drupal_cms/get-started/ddev/'
         options: {  }
