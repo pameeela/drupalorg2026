@@ -20,10 +20,12 @@ props:
         - transparent-inverse
         - white
         - dark
+        - light-blue
       meta:enum:
         transparent: Transparent
         transparent-inverse: Transparent (on dark)
         white: White
         dark: Dark
+        light-blue: Light blue
       examples:
         - transparent

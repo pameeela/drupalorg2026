@@ -44,6 +44,8 @@ props:
       enum:
         - arrow-right
         - arrow-left
+        - arrow-down
+        - arrow-up-right
         - caret-right
         - caret-left
         - download
@@ -51,6 +53,8 @@ props:
       meta:enum:
         arrow-right: Arrow right
         arrow-left: Arrow left
+        arrow-down: Arrow down
+        arrow-up-right: Arrow up right
         caret-right: Caret right
         caret-left: Caret left
         download: Download
