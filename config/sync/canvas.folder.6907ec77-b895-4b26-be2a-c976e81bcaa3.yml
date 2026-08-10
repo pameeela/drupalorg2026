@@ -13,6 +13,7 @@ dependencies:
     - canvas.component.sdc.drupalorg.group
     - canvas.component.sdc.drupalorg.navbar
     - canvas.component.sdc.drupalorg.section
+    - canvas.component.sdc.drupalorg.site-template-preview
     - canvas.component.sdc.drupalorg.slide
     - canvas.component.sdc.drupalorg.tab
     - canvas.component.sdc.drupalorg.tabs
@@ -34,6 +35,7 @@ items:
   - sdc.drupalorg.group
   - sdc.drupalorg.navbar
   - sdc.drupalorg.section
+  - sdc.drupalorg.site-template-preview
   - sdc.drupalorg.slide
   - sdc.drupalorg.tab
   - sdc.drupalorg.tabs

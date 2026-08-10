@@ -1,0 +1,70 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Site template preview
+group: Layout
+status: stable
+props:
+  type: object
+  required:
+    - mode
+    - size
+  properties:
+    media:
+      $ref: json-schema-definitions://canvas.module/image
+      title: Screenshot
+      type: object
+      examples:
+        - src: "https://placehold.co/1440x4000/f3f4f6/12285f?text=Template+screenshot"
+          alt: "Full homepage of the example template"
+          width: 1440
+          height: 4000
+    chrome_url:
+      type: string
+      title: Browser chrome URL
+      description: Shown in the browser chrome address pill (hostname preferred).
+      examples:
+        - "byte.preview.drupal.org"
+    mode:
+      type: string
+      title: Interaction mode
+      enum:
+        - scroll
+        - hover
+        - static
+      meta:enum:
+        scroll: Real scroll (detail page)
+        hover: Hover / focus scroll (browse cards)
+        static: Top crop only
+      default: scroll
+      examples:
+        - scroll
+    size:
+      type: string
+      title: Viewport height
+      enum:
+        - detail
+        - featured
+        - card
+        - mobile
+      meta:enum:
+        detail: Detail (600px / 300px mobile)
+        featured: Featured slab (470px)
+        card: Browse card (300px)
+        mobile: Mobile card (210px)
+      default: detail
+      examples:
+        - detail
+    show_chrome:
+      type: boolean
+      title: Show browser chrome
+      default: true
+      examples:
+        - true
+    caption:
+      type: string
+      title: Caption
+      description: Optional line below the frame (e.g. scroll hint).
+      examples:
+        - "Scroll to explore the full page"
+    preview_classes:
+      type: string
+      title: Additional classes

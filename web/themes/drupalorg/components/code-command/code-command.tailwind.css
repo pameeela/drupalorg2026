@@ -1,0 +1,13 @@
+@layer components;
+
+.code-command__segment[aria-checked="true"] {
+  @apply bg-darkest-blue text-white;
+}
+
+.code-command__segment[aria-checked="false"] {
+  @apply bg-transparent text-dark-gray;
+}
+
+.code-command__segment[aria-checked="false"]:hover {
+  @apply text-darkest-gray;
+}

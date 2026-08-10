@@ -1,0 +1,231 @@
+{% set preview_mode = mode|default('scroll') %}
+{% set preview_size = size|default('detail') %}
+{% set show_browser_chrome = show_chrome ?? true %}
+{% set has_media = media is defined and media is not empty and media.src is defined and media.src is not empty %}
+{% set has_caption = caption is not empty %}
+{% set is_hover_mode = preview_mode == 'hover' %}
+{% set viewport_tabindex = is_hover_mode ? '0' : '-1' %}
+
+{% set additional_classes = preview_classes|default('') %}
+{% if additional_classes is iterable %}
+  {% set additional_classes = additional_classes|join(' ') %}
+{% endif %}
+
+{% set chrome_label =
+  chrome_url
+    |default('')
+    |replace({
+      'https://': '',
+      'http://': ''
+    })
+    |trim('/')
+%}
+
+{% set height_values = {
+  detail: '600px',
+  featured: '470px',
+  card: '300px',
+  mobile: '210px'
+} %}
+{% set height_value = height_values[preview_size]|default('600px') %}
+{% set style_attr = '--stp-height: ' ~ height_value %}
+
+{% set preview =
+  html_cva(
+    base: ['site-template-preview', 'w-full'],
+    variants: {
+      hasCaption: {
+        yes: '',
+        no: ''
+      }
+    }
+  )
+%}
+
+{% set frame =
+  html_cva(base: ['overflow-hidden', 'rounded-xl', 'border', 'border-navy/12', 'bg-white', 'shadow-[0_18px_40px_rgba(10,26,58,0.14)]'])
+%}
+
+{% set chrome =
+  html_cva(base: ['flex', 'h-[38px]', 'shrink-0', 'items-center', 'gap-3', 'border-b', 'border-light-gray', 'bg-lightest-gray', 'px-3'])
+%}
+
+{% set viewport =
+  html_cva(
+    base: ['site-template-preview__viewport', 'relative', 'w-full', 'bg-light-gray'],
+    variants: {
+      mode: {
+        scroll: 'site-template-preview__viewport--scroll overflow-y-auto',
+        hover: 'site-template-preview__viewport--hover overflow-hidden',
+        static: 'site-template-preview__viewport--static overflow-hidden'
+      },
+      size: {
+        detail: 'h-[300px] md:h-[600px]',
+        featured: 'h-[470px]',
+        card: 'h-[300px]',
+        mobile: 'h-[210px]'
+      }
+    }
+  )
+%}
+
+{% set image =
+  html_cva(
+    base: ['site-template-preview__image', 'block', 'w-full', 'max-w-none'],
+    variants: {
+      mode: {
+        scroll: 'h-auto',
+        hover: ['site-template-preview__image--hover', 'absolute', 'inset-x-0', 'top-0'],
+        static: ['absolute', 'inset-x-0', 'top-0', 'h-auto']
+      }
+    }
+  )
+%}
+
+{% set caption_row =
+  html_cva(
+    base: [
+      'mt-3',
+      'flex',
+      'items-center',
+      'justify-center',
+      'gap-1.5',
+      'text-sm',
+      'font-normal',
+      'text-navy',
+      'text-pretty'
+    ]
+  )
+%}
+
+{% set caption_overlay =
+  html_cva(
+    base: [
+      'site-template-preview__caption-overlay',
+      'pointer-events-none',
+      'absolute',
+      'inset-0',
+      'z-10',
+      'm-auto',
+      'flex',
+      'h-fit',
+      'w-fit',
+      'items-center',
+      'justify-center',
+      'gap-1.5',
+      'rounded-full',
+      'bg-white/80',
+      'px-3',
+      'py-1.5',
+      'text-sm',
+      'font-normal',
+      'text-navy',
+      'text-pretty',
+      'shadow-sm',
+      'backdrop-blur-sm'
+    ]
+  )
+%}
+
+{% set viewport_shell = html_cva(base: ['relative']) %}
+
+{% set attributes =
+  attributes.addClass(
+    preview.apply(
+      {
+        hasCaption: has_caption ? 'yes' : 'no'
+      },
+      additional_classes
+    )
+  ).setAttribute(
+    'style',
+    style_attr
+  )
+%}
+
+<div {{ attributes }}>
+  <div class="{{ frame.apply({}) }}">
+    {% if show_browser_chrome %}
+      <div class="{{ chrome.apply({}) }}" aria-hidden="true">
+        <div class="flex items-center gap-1.5">
+          <span class="size-[9px] rounded-full bg-medium-gray"></span>
+          <span class="size-[9px] rounded-full bg-medium-gray"></span>
+          <span class="size-[9px] rounded-full bg-medium-gray"></span>
+        </div>
+        {% if chrome_label is not empty %}
+          <div class="min-w-0 flex-1 truncate rounded-full bg-white px-3 py-1 text-center text-[12px] leading-none text-dark-gray">
+            {{ chrome_label }}
+          </div>
+        {% else %}
+          <div class="min-w-0 flex-1"></div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="{{ viewport_shell.apply({}) }}">
+      <div
+        class="{{
+        viewport.apply({
+          mode: preview_mode,
+          size: preview_size
+        })
+        }}"
+        tabindex="{{ viewport_tabindex }}"
+      >
+        {% if has_media %}
+          {% set image_classes =
+            image.apply({
+              mode: preview_mode
+            })
+          %}
+          {% include 'canvas:image' ignore missing with {
+            src: media.src,
+            alt: media.alt|default(''),
+            class: image_classes,
+            width: media.width,
+            height: media.height,
+            loading: 'lazy'
+          } only %}
+        {% else %}
+          <div class="flex h-full min-h-full items-center justify-center text-sm text-dark-gray">
+            No screenshot
+          </div>
+        {% endif %}
+      </div>
+
+      {% if has_caption %}
+        <div class="{{ caption_overlay.apply({}) }}" aria-hidden="true">
+          {{
+            include(
+              '@drupalorg/components/icon/icon.twig',
+              {
+                icon: 'arrow-down',
+                icon_size: 'extra-extra-small',
+                icon_color: 'brand-blue'
+              },
+              with_context: false
+            )
+          }}
+          <span>{{ caption }}</span>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if has_caption %}
+    <div class="{{ caption_row.apply({}) }}">
+      {{
+        include(
+          '@drupalorg/components/icon/icon.twig',
+          {
+            icon: 'arrow-down',
+            icon_size: 'extra-extra-small',
+            icon_color: 'brand-blue'
+          },
+          with_context: false
+        )
+      }}
+      <span>{{ caption }}</span>
+    </div>
+  {% endif %}
+</div>

@@ -1,0 +1,35 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Code command
+group: Base
+status: stable
+props:
+  type: object
+  required:
+    - command_ddev
+    - command_local
+  properties:
+    command_ddev:
+      type: string
+      title: DDEV command
+      description: Plain-text shell command when Run commands with is set to DDEV.
+      pattern: '(.|\r?\n)*'
+      examples:
+        - "ddev composer require drupal/site_template_byte"
+    command_local:
+      type: string
+      title: Local PHP command
+      description: Plain-text shell command when Run commands with is set to Local PHP.
+      pattern: '(.|\r?\n)*'
+      examples:
+        - "composer require drupal/site_template_byte"
+    show_switch:
+      type: boolean
+      title: Show environment switch
+      description: Show the DDEV / Local PHP control above this block. Turn off on extra commands when one switch already appears on the page.
+      default: true
+      examples:
+        - true
+
+libraryOverrides:
+  js:
+    code-command.js: { attributes: { type: module } }
