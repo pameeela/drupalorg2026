@@ -1,29 +1,55 @@
 import { ComponentType, ComponentInstance } from "../../lib/component.js";
 
-/** Pixels scrolled per second for hover-mode previews. */
+/** Pixels scrolled per second for hover-mode previews (design handoff). */
 const SCROLL_SPEED_PX_PER_SEC = 200;
+/** Cap hover travel so very tall screenshots only preview the top portion. */
+const MAX_HOVER_VIEWPORTS = 2;
 
 class SiteTemplatePreview extends ComponentInstance {
   init() {
-    this.viewport = this.el.querySelector(".site-template-preview__viewport--hover");
-    if (!this.viewport) {
-      return;
-    }
-
-    this.image = this.viewport.querySelector(".site-template-preview__image--hover");
-    if (!this.image) {
-      return;
-    }
-
-    this.updateDuration = this.updateDuration.bind(this);
     this.onImageLoad = this.onImageLoad.bind(this);
+    this.updateDuration = this.updateDuration.bind(this);
+    this.onThumbClick = this.onThumbClick.bind(this);
+    this.onThumbKeydown = this.onThumbKeydown.bind(this);
+
+    this.initHoverScroll();
+    this.initGallery();
+  }
+
+  initHoverScroll() {
+    this.hoverViewport = this.el.querySelector(".site-template-preview__viewport--hover");
+    if (!this.hoverViewport) {
+      return;
+    }
+
+    this.hoverImage = this.hoverViewport.querySelector(".site-template-preview__image--hover");
+    if (!this.hoverImage) {
+      return;
+    }
 
     this.updateDuration();
-    this.image.addEventListener("load", this.onImageLoad);
+    this.hoverImage.addEventListener("load", this.onImageLoad);
 
     this.resizeObserver = new ResizeObserver(() => this.updateDuration());
-    this.resizeObserver.observe(this.viewport);
-    this.resizeObserver.observe(this.image);
+    this.resizeObserver.observe(this.hoverViewport);
+    this.resizeObserver.observe(this.hoverImage);
+  }
+
+  initGallery() {
+    this.scrollViewport = this.el.querySelector("[data-site-template-preview-viewport].site-template-preview__viewport--scroll");
+    this.mainImage = this.el.querySelector(
+      ".site-template-preview__viewport--scroll .site-template-preview__image, .site-template-preview__viewport--scroll img",
+    );
+    this.thumbs = Array.from(this.el.querySelectorAll("[data-site-template-preview-thumb]"));
+
+    if (!this.scrollViewport || !this.mainImage || this.thumbs.length < 2) {
+      return;
+    }
+
+    this.thumbs.forEach((thumb) => {
+      thumb.addEventListener("click", this.onThumbClick);
+      thumb.addEventListener("keydown", this.onThumbKeydown);
+    });
   }
 
   onImageLoad() {
@@ -31,26 +57,95 @@ class SiteTemplatePreview extends ComponentInstance {
   }
 
   updateDuration() {
-    const viewportHeight = this.viewport.clientHeight;
-    const imageHeight = this.image.getBoundingClientRect().height;
+    if (!this.hoverViewport || !this.hoverImage) {
+      return;
+    }
+
+    const viewportHeight = this.hoverViewport.clientHeight;
+    const imageHeight = this.hoverImage.getBoundingClientRect().height;
 
     if (!viewportHeight || !imageHeight) {
       return;
     }
 
-    const distance = Math.max(0, imageHeight - viewportHeight);
-    // Constant px/s — no min/max clamp, or short images crawl and tall ones race.
-    const duration = distance / SCROLL_SPEED_PX_PER_SEC;
+    const fullDistance = Math.max(0, imageHeight - viewportHeight);
+    const maxTravel = viewportHeight * MAX_HOVER_VIEWPORTS;
+    const travel = Math.min(fullDistance, maxTravel);
+    const duration = travel / SCROLL_SPEED_PX_PER_SEC;
 
     this.el.style.setProperty("--stp-height", `${viewportHeight}px`);
+    this.el.style.setProperty("--stp-travel", `${travel}px`);
     this.el.style.setProperty("--stp-duration", `${duration}s`);
   }
 
+  onThumbClick(event) {
+    this.selectThumb(event.currentTarget);
+  }
+
+  onThumbKeydown(event) {
+    if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End"].includes(event.key)) {
+      return;
+    }
+
+    event.preventDefault();
+    const currentIndex = this.thumbs.indexOf(event.currentTarget);
+    if (currentIndex < 0) {
+      return;
+    }
+
+    let nextIndex = currentIndex;
+    if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+      nextIndex = (currentIndex - 1 + this.thumbs.length) % this.thumbs.length;
+    } else if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+      nextIndex = (currentIndex + 1) % this.thumbs.length;
+    } else if (event.key === "Home") {
+      nextIndex = 0;
+    } else if (event.key === "End") {
+      nextIndex = this.thumbs.length - 1;
+    }
+
+    const next = this.thumbs[nextIndex];
+    next.focus();
+    this.selectThumb(next);
+  }
+
+  selectThumb(thumb) {
+    const src = thumb.getAttribute("data-src");
+    if (!src || !this.mainImage) {
+      return;
+    }
+
+    this.mainImage.setAttribute("src", src);
+    this.mainImage.removeAttribute("srcset");
+    this.mainImage.setAttribute("alt", thumb.getAttribute("data-alt") || "");
+
+    const width = thumb.getAttribute("data-width");
+    const height = thumb.getAttribute("data-height");
+    if (width) {
+      this.mainImage.setAttribute("width", width);
+    }
+    if (height) {
+      this.mainImage.setAttribute("height", height);
+    }
+
+    this.scrollViewport.scrollTop = 0;
+
+    this.thumbs.forEach((item) => {
+      const selected = item === thumb;
+      item.setAttribute("aria-selected", selected ? "true" : "false");
+      item.tabIndex = selected ? 0 : -1;
+    });
+  }
+
   remove() {
-    if (this.image) {
-      this.image.removeEventListener("load", this.onImageLoad);
+    if (this.hoverImage) {
+      this.hoverImage.removeEventListener("load", this.onImageLoad);
     }
     this.resizeObserver?.disconnect();
+    this.thumbs?.forEach((thumb) => {
+      thumb.removeEventListener("click", this.onThumbClick);
+      thumb.removeEventListener("keydown", this.onThumbKeydown);
+    });
   }
 }
 

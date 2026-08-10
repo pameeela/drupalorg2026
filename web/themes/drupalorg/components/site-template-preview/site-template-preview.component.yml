@@ -9,14 +9,21 @@ props:
     - size
   properties:
     media:
-      $ref: json-schema-definitions://canvas.module/image
-      title: Screenshot
-      type: object
+      title: Screenshots
+      description: One or more full-page screenshots. First item is the default and is used for browse cards.
+      type: array
+      items:
+        $ref: json-schema-definitions://canvas.module/image
+        type: object
       examples:
-        - src: "https://placehold.co/1440x4000/f3f4f6/12285f?text=Template+screenshot"
-          alt: "Full homepage of the example template"
-          width: 1440
-          height: 4000
+        - - src: "https://placehold.co/1440x4000/f3f4f6/12285f?text=Home"
+            alt: "Full homepage of the example template"
+            width: 1440
+            height: 4000
+          - src: "https://placehold.co/1440x3200/f3f4f6/12285f?text=Features"
+            alt: "Features page of the example template"
+            width: 1440
+            height: 3200
     chrome_url:
       type: string
       title: Browser chrome URL
@@ -48,8 +55,8 @@ props:
       meta:enum:
         detail: Detail (600px / 300px mobile)
         featured: Featured slab (470px)
-        card: Browse card (300px)
-        mobile: Mobile card (210px)
+        card: Browse card (450px)
+        mobile: Mobile card (315px)
       default: detail
       examples:
         - detail

@@ -1,13 +1,13 @@
 @layer components;
 
 .site-template-preview__viewport--hover .site-template-preview__image--hover {
-  /* Duration is set in JS: (imageHeight - viewportHeight) / 400px per second. */
+  /* Travel + duration are set in JS (capped travel at ~4 viewport heights, 400px/s). */
   transition: transform var(--stp-duration, 9s) linear;
 }
 
 .site-template-preview__viewport--hover:hover .site-template-preview__image--hover,
 .site-template-preview__viewport--hover:focus-within .site-template-preview__image--hover {
-  transform: translateY(calc(-100% + var(--stp-height, 300px)));
+  transform: translateY(calc(-1 * var(--stp-travel, 1200px)));
 }
 
 @keyframes site-template-preview-caption-nudge {
@@ -18,7 +18,7 @@
 
   8% {
     opacity: 1;
-    transform: translateY(6px);
+    transform: translateY(8px);
   }
 
   16% {
@@ -28,7 +28,7 @@
 
   24% {
     opacity: 1;
-    transform: translateY(6px);
+    transform: translateY(8px);
   }
 
   32% {
@@ -66,4 +66,12 @@
     animation: none;
     opacity: 0;
   }
+}
+
+.site-template-preview__thumb[aria-selected="true"] {
+  @apply border-2 border-navy;
+}
+
+.site-template-preview__thumb[aria-selected="false"] {
+  @apply border border-light-gray;
 }

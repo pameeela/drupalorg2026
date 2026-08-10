@@ -1,14 +1,33 @@
+{#
+  Full-page screenshot preview: scroll (detail), hover (cards), or static crop.
+  Detail scroll with 2+ screenshots shows a thumbnail strip to swap the main frame.
+#}
+
 {% set preview_mode = mode|default('scroll') %}
 {% set preview_size = size|default('detail') %}
 {% set show_browser_chrome = show_chrome ?? true %}
-{% set has_media = media is defined and media is not empty and media.src is defined and media.src is not empty %}
+
+{# Normalize media: Canvas may pass an image list, or a legacy single image object. #}
+{% set screenshot_list = [] %}
+{% if media is defined and media is not empty %}
+  {% if media.src is defined %}
+    {% set screenshot_list = [media] %}
+  {% elseif media is iterable %}
+    {% set screenshot_list = media %}
+  {% endif %}
+{% endif %}
+
+{% set active_media = screenshot_list|first|default({}) %}
+{% set has_media = active_media.src is defined and active_media.src is not empty %}
+{% set screenshot_count = screenshot_list|length %}
+{% set show_thumb_strip = preview_mode == 'scroll' and screenshot_count > 1 %}
 {% set has_caption = caption is not empty %}
 {% set is_hover_mode = preview_mode == 'hover' %}
 {% set is_card_size = preview_size == 'card' or preview_size == 'mobile' %}
 {% set show_fade_caption = has_caption and not is_card_size %}
 {% set show_chip_caption = has_caption and is_card_size %}
-{% set show_static_caption = has_caption and not is_card_size %}
 {% set viewport_tabindex = is_hover_mode ? '0' : '-1' %}
+{% set has_strip = show_thumb_strip ? 'yes' : 'no' %}
 
 {% set additional_classes = preview_classes|default('') %}
 {% if additional_classes is iterable %}
@@ -28,8 +47,8 @@
 {% set height_values = {
   detail: '600px',
   featured: '470px',
-  card: '300px',
-  mobile: '210px'
+  card: '450px',
+  mobile: '315px'
 } %}
 {% set height_value = height_values[preview_size]|default('600px') %}
 {% set style_attr = '--stp-height: ' ~ height_value %}
@@ -38,8 +57,8 @@
   html_cva(
     base: ['site-template-preview', 'w-full'],
     variants: {
-      hasCaption: {
-        yes: '',
+      hasStrip: {
+        yes: 'flex flex-col gap-6',
         no: ''
       }
     }
@@ -66,8 +85,8 @@
       size: {
         detail: 'h-[300px] md:h-[600px]',
         featured: 'h-[470px]',
-        card: 'h-[300px]',
-        mobile: 'h-[210px]'
+        card: 'h-[450px]',
+        mobile: 'h-[315px]'
       }
     }
   )
@@ -84,10 +103,6 @@
       }
     }
   )
-%}
-
-{% set caption_row =
-  html_cva(base: ['mt-3', 'flex', 'items-center', 'justify-center', 'gap-1.5', 'text-sm', 'font-normal', 'text-navy', 'text-pretty'])
 %}
 
 {% set caption_overlay =
@@ -148,13 +163,43 @@
   )
 %}
 
+{% set thumb_strip = html_cva(base: ['site-template-preview__thumbs', 'flex', 'flex-wrap', 'items-start', 'gap-2']) %}
+
+{% set thumb_button =
+  html_cva(
+    base: [
+      'site-template-preview__thumb',
+      'relative',
+      'h-24',
+      'w-[150px]',
+      'shrink-0',
+      'cursor-pointer',
+      'overflow-hidden',
+      'rounded-md',
+      'bg-light-gray',
+      'p-0',
+      'focus-visible:ring-2',
+      'focus-visible:ring-drupal-blue/50',
+      'focus-visible:outline-none'
+    ]
+  )
+%}
+
+{% set thumb_image = html_cva(base: ['pointer-events-none', 'absolute', 'inset-x-0', 'top-0', 'h-auto', 'w-full', 'max-w-none']) %}
+
 {% set viewport_shell = html_cva(base: ['relative']) %}
+
+{% set image_classes =
+  image.apply({
+    mode: preview_mode
+  })
+%}
 
 {% set attributes =
   attributes.addClass(
     preview.apply(
       {
-        hasCaption: has_caption ? 'yes' : 'no'
+        hasStrip: has_strip
       },
       additional_classes
     )
@@ -192,19 +237,15 @@
         })
         }}"
         tabindex="{{ viewport_tabindex }}"
+        data-site-template-preview-viewport
       >
         {% if has_media %}
-          {% set image_classes =
-            image.apply({
-              mode: preview_mode
-            })
-          %}
           {% include 'canvas:image' ignore missing with {
-            src: media.src,
-            alt: media.alt|default(''),
+            src: active_media.src,
+            alt: active_media.alt|default(''),
             class: image_classes,
-            width: media.width,
-            height: media.height,
+            width: active_media.width,
+            height: active_media.height,
             loading: 'lazy'
           } only %}
         {% else %}
@@ -250,20 +291,38 @@
     </div>
   </div>
 
-  {% if show_static_caption %}
-    <div class="{{ caption_row.apply({}) }}">
-      {{
-        include(
-          '@drupalorg/components/icon/icon.twig',
-          {
-            icon: 'arrow-down',
-            icon_size: 'extra-extra-small',
-            icon_color: 'brand-blue'
-          },
-          with_context: false
-        )
-      }}
-      <span>{{ caption }}</span>
+  {% if show_thumb_strip %}
+    <div class="{{ thumb_strip.apply({}) }}" role="tablist" aria-label="Screenshots">
+      {% for shot in screenshot_list %}
+        {% if shot.src is defined and shot.src is not empty %}
+          {% set thumb_alt = shot.alt|default('Screenshot ' ~ loop.index) %}
+          {% set thumb_label = 'Show screenshot: ' ~ thumb_alt %}
+          {% set thumb_tabindex = loop.first ? '0' : '-1' %}
+          {% set thumb_selected = loop.first ? 'true' : 'false' %}
+          <button
+            type="button"
+            class="{{ thumb_button.apply({}) }}"
+            role="tab"
+            aria-selected="{{ thumb_selected }}"
+            aria-label="{{ thumb_label }}"
+            tabindex="{{ thumb_tabindex }}"
+            data-site-template-preview-thumb
+            data-src="{{ shot.src }}"
+            data-alt="{{ thumb_alt }}"
+            data-width="{{ shot.width|default('') }}"
+            data-height="{{ shot.height|default('') }}"
+          >
+            {% include 'canvas:image' ignore missing with {
+              src: shot.src,
+              alt: '',
+              class: thumb_image.apply({}),
+              width: shot.width,
+              height: shot.height,
+              loading: 'lazy'
+            } only %}
+          </button>
+        {% endif %}
+      {% endfor %}
     </div>
   {% endif %}
 </div>
