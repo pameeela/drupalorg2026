@@ -7,7 +7,7 @@ dependencies:
     - options
   theme:
     - drupalorg
-active_version: 8985aaac808b1e09
+active_version: fcadf533340e8f50
 versioned_properties:
   active:
     settings:
@@ -74,7 +74,7 @@ versioned_properties:
           derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
-  fcadf533340e8f50:
+  8985aaac808b1e09:
     settings:
       prop_field_definitions:
         variant:
@@ -139,7 +139,7 @@ versioned_properties:
           derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
-  8985aaac808b1e09:
+  fcadf533340e8f50:
     settings:
       prop_field_definitions:
         variant:
