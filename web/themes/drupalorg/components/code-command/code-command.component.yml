@@ -4,9 +4,6 @@ group: Base
 status: stable
 props:
   type: object
-  required:
-    - command_ddev
-    - command_local
   properties:
     command_ddev:
       type: string

@@ -4,9 +4,51 @@ status: true
 dependencies:
   theme:
     - drupalorg
-active_version: 906ef14682849e21
+active_version: a8d7a936ecca35fe
 versioned_properties:
   active:
+    settings:
+      prop_field_definitions:
+        command_ddev:
+          required: false
+          field_type: string_long
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textarea
+          default_value:
+            -
+              value: 'ddev composer require drupal/site_template_byte'
+          expression: ℹ︎string_long␟value
+          derived_schema_metadata:
+            string_shape:
+              pattern: '(.|\r?\n)*'
+        command_local:
+          required: false
+          field_type: string_long
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textarea
+          default_value:
+            -
+              value: 'composer require drupal/site_template_byte'
+          expression: ℹ︎string_long␟value
+          derived_schema_metadata:
+            string_shape:
+              pattern: '(.|\r?\n)*'
+        show_switch:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value:
+            -
+              value: true
+          expression: ℹ︎boolean␟value
+          derived_schema_metadata: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+  906ef14682849e21:
     settings:
       prop_field_definitions:
         command_ddev:
@@ -75,48 +117,6 @@ versioned_properties:
           expression: ℹ︎string␟value
           derived_schema_metadata:
             string_shape: {  }
-        show_switch:
-          required: false
-          field_type: boolean
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: boolean_checkbox
-          default_value:
-            -
-              value: true
-          expression: ℹ︎boolean␟value
-          derived_schema_metadata: {  }
-    fallback_metadata:
-      slot_definitions: {  }
-  906ef14682849e21:
-    settings:
-      prop_field_definitions:
-        command_ddev:
-          required: true
-          field_type: string_long
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textarea
-          default_value:
-            -
-              value: 'ddev composer require drupal/site_template_byte'
-          expression: ℹ︎string_long␟value
-          derived_schema_metadata:
-            string_shape:
-              pattern: '(.|\r?\n)*'
-        command_local:
-          required: true
-          field_type: string_long
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textarea
-          default_value:
-            -
-              value: 'composer require drupal/site_template_byte'
-          expression: ℹ︎string_long␟value
-          derived_schema_metadata:
-            string_shape:
-              pattern: '(.|\r?\n)*'
         show_switch:
           required: false
           field_type: boolean

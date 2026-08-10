@@ -9,7 +9,7 @@ id: node.site_template.field_bare_install
 field_name: field_bare_install
 entity_type: node
 bundle: site_template
-label: 'Bare install command'
+label: 'Bare install commands'
 description: ''
 required: false
 translatable: false

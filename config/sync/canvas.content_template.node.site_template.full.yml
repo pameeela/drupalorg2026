@@ -17,6 +17,8 @@ dependencies:
     - canvas.component.sdc.drupalorg.text
     - core.entity_view_mode.node.full
     - field.field.media.image.field_media_image
+    - field.field.node.site_template.field_bare_install
+    - field.field.node.site_template.field_ddev_install
     - field.field.node.site_template.field_demo_link
     - field.field.node.site_template.field_featured_screenshot
     - field.field.node.site_template.field_price
@@ -462,13 +464,14 @@ component_tree:
     slot: group_slot
     uuid: cb4e21a2-f84f-47d0-b0da-c693b098e6f3
     component_id: sdc.drupalorg.code-command
-    component_version: 906ef14682849e21
+    component_version: a8d7a936ecca35fe
     inputs:
-      command_ddev: 'ddev composer require drupal/site_template_byte'
-      command_local: |-
-        mkdir byte && cd byte
-        composer create-project drupal/cms
-        composer require drupal/byte
+      command_ddev:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:site_template␝field_ddev_install␞␟value'
+      command_local:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:site_template␝field_bare_install␞␟value'
       show_switch: true
   '1:main_slot:1:group_slot:3:cd395e5f-00d0-4b67-87bc-2a39eee46fe9':
     parent_uuid: 49aebf08-b576-4a4d-abee-d3b970beeec4
