@@ -1,6 +1,7 @@
 {% set card_style = style|default('classic') %}
 {% set heading_level = level|default(3) %}
 {% set has_media = media.src is not empty %}
+{% set has_eyebrow = eyebrow is not empty %}
 {% set has_text = text is not empty %}
 {% set has_url = url is not empty %}
 {% set has_cta = has_url and cta_text is not empty %}
@@ -103,6 +104,18 @@
       })
       }}"
     >
+      {% if eyebrow is not empty %}
+        {{
+        include(
+          '@drupalorg/components/eyebrow/eyebrow.twig',
+          {
+            eyebrow_text: eyebrow,
+            text_color: 'drupal-dark-blue'
+          },
+          with_context: false
+        )
+        }}
+      {% endif %}
       {% if heading_level == 2 %}
         <h2 class="text-xl font-medium">{{ heading_text }}</h2>
       {% elseif heading_level == 4 %}

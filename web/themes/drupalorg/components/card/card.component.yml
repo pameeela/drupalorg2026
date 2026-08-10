@@ -18,6 +18,9 @@ props:
         featured: Featured
       examples:
         - classic
+    eyebrow:
+      type: string
+      title: Eyebrow
     heading_text:
       type: string
       title: Heading
