@@ -1,0 +1,11 @@
+uuid: 96accd30-76f0-4dde-8f5b-622c36ef421c
+langcode: en
+status: true
+dependencies: {  }
+name: 'Site template'
+type: site_template
+description: 'Starting-point Drupal site template for the marketplace.'
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: false

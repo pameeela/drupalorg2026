@@ -1,0 +1,19 @@
+uuid: 0a793666-9fb0-4a0a-bbcf-f3151b55a920
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_short_description
+    - node.type.site_template
+id: node.site_template.field_short_description
+field_name: field_short_description
+entity_type: node
+bundle: site_template
+label: 'Short description'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

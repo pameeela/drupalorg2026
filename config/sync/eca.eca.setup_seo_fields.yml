@@ -11,6 +11,10 @@ dependencies:
     - field.field.node.page.field_seo_description
     - field.field.node.page.field_seo_image
     - field.field.node.page.field_seo_title
+    - field.field.node.site_template.field_seo_analysis
+    - field.field.node.site_template.field_seo_description
+    - field.field.node.site_template.field_seo_image
+    - field.field.node.site_template.field_seo_title
     - field.storage.node.field_seo_analysis
     - field.storage.node.field_seo_description
     - field.storage.node.field_seo_image

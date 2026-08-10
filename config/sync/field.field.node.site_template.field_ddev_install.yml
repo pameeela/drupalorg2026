@@ -1,0 +1,19 @@
+uuid: 809853f8-8154-47c8-a4a2-0b581a64b8e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ddev_install
+    - node.type.site_template
+id: node.site_template.field_ddev_install
+field_name: field_ddev_install
+entity_type: node
+bundle: site_template
+label: 'DDEV install commands'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

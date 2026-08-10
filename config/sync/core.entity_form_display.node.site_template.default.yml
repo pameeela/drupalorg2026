@@ -1,0 +1,212 @@
+uuid: 6e5118db-792f-4ed1-87fc-ce3a3fca8e39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.site_template.field_bare_install
+    - field.field.node.site_template.field_ddev_install
+    - field.field.node.site_template.field_demo_link
+    - field.field.node.site_template.field_featured_screenshot
+    - field.field.node.site_template.field_live_preview_url
+    - field.field.node.site_template.field_price
+    - field.field.node.site_template.field_seo_analysis
+    - field.field.node.site_template.field_seo_description
+    - field.field.node.site_template.field_seo_image
+    - field.field.node.site_template.field_seo_title
+    - field.field.node.site_template.field_short_description
+    - field.field.node.site_template.field_vertical
+    - node.type.site_template
+    - workflows.workflow.basic_editorial
+  module:
+    - content_moderation
+    - field_group
+    - link
+    - media_library
+    - path
+    - tagify
+    - yoast_seo
+third_party_settings:
+  field_group:
+    group_seo:
+      children:
+        - field_seo_title
+        - field_seo_description
+        - field_seo_image
+        - field_seo_analysis
+      label: 'Search Engine Optimization (SEO) Information'
+      region: content
+      parent_name: ''
+      weight: 50
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: group_seo
+        label_as_html: false
+        open: false
+        description: ''
+        required_fields: false
+id: node.site_template.default
+targetEntityType: node
+bundle: site_template
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bare_install:
+    type: string_textarea
+    weight: 103
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_ddev_install:
+    type: string_textarea
+    weight: 102
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_demo_link:
+    type: link_default
+    weight: 101
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_featured_screenshot:
+    type: media_library_widget
+    weight: 4
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_live_preview_url:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_price:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: Free
+    third_party_settings: {  }
+  field_seo_analysis:
+    type: yoast_seo_widget
+    weight: 18
+    region: content
+    settings:
+      edit_title: false
+      edit_description: false
+      render_theme: null
+      render_view_mode: default
+    third_party_settings: {  }
+  field_seo_description:
+    type: string_textarea
+    weight: 16
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_seo_image:
+    type: media_library_widget
+    weight: 17
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_seo_title:
+    type: string_textfield
+    weight: 15
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_short_description:
+    type: string_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_vertical:
+    type: tagify_select_widget
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      placeholder: ''
+      show_entity_id: 0
+      parent_selection: 1
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 100
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  promote: true
+  publish_on: true
+  publish_state: true
+  sticky: true
+  unpublish_on: true
+  unpublish_state: true

@@ -5,6 +5,7 @@ dependencies:
   config:
     - node.type.blog
     - node.type.page
+    - node.type.site_template
   module:
     - content_moderation
 _core:
@@ -56,4 +57,5 @@ type_settings:
     node:
       - blog
       - page
+      - site_template
   default_moderation_state: draft
