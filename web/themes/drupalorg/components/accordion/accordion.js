@@ -3,8 +3,7 @@ import currentlyInCanvasEditor from "../../lib/currentlyInCanvasEditor.js";
 
 class Accordion extends ComponentInstance {
   // An internal private property to keep up with the current state of the
-  // accordion. The hash makes it so you can't get or set this property outside
-  // of this file.
+  // accordion.
   #savedAsOpen;
 
   static openClass = "accordion--open";
@@ -16,7 +15,7 @@ class Accordion extends ComponentInstance {
 
   init() {
     if (currentlyInCanvasEditor()) {
-      // In Canvas editor, show content by removing collapsed state classes
+      // In Canvas editor, show content by removing collapsed state classes.
       const content = this.el.querySelector(".accordion--content");
       content.classList.remove("h-0", "py-0", "overflow-hidden");
       content.classList.add("h-auto", "py-4", "overflow-visible");
@@ -48,10 +47,15 @@ class Accordion extends ComponentInstance {
     // The previous line enables animations, but we're not ready for them yet.
     this.el.classList.remove(Accordion.animateClass);
 
-    // Remeasure the height on every (debounced) resize event.
+    // Remeasure on viewport width changes.
+    let lastWidth = window.innerWidth;
     let timeout = 0;
 
-    window.addEventListener("resize", (e) => {
+    window.addEventListener("resize", () => {
+      if (window.innerWidth === lastWidth) {
+        return;
+      }
+      lastWidth = window.innerWidth;
       this.el.classList.add("accordion--resizing");
       window.clearTimeout(timeout);
       timeout = window.setTimeout(() => {
@@ -73,17 +77,7 @@ class Accordion extends ComponentInstance {
 
   // This setter makes it so the accordion can be opened and closed just by
   // doing `this.isOpen = true` or `this.isOpen = false` rather than calling a
-  // method. The advantage is that (for example) if you have a boolean variable
-  // `shouldOpen`, you can just do `this.isOpen = shouldOpen` rather than all
-  // this:
-  //
-  // ```js
-  // if(shouldOpen) {
-  //   this.open();
-  // } else {
-  //   this.close();
-  // }
-  // ```Even
+  // method.
   set isOpen(val) {
     if (val) {
       // First do all the DOM manipulation needed to actually open the
@@ -115,32 +109,38 @@ class Accordion extends ComponentInstance {
     }
   }
 
-  // Get the simple boolean we saved in the setter.
+  // Get the simple boolean saved in the setter.
   get isOpen() {
     return this.#savedAsOpen;
   }
 
-  // Measure how tall the content should be when open so we can smoothly animate
-  // to it using CSS.
+  // Measure how tall the content should be when open to smoothly animate it
+  // using CSS. Uses an off-DOM probe so live panels never flash open/closed.
   measureNaturalHeight() {
-    // What we do here should not be seen by ancestor accordions.
-    this.shouldDispatchEvents = false;
-    // Remember what state the accordion started in.
-    const previousState = this.isOpen;
-    // Turn off animations.
-    this.el.classList.remove(Accordion.animateClass);
-    // Open the accordion if it's not already open.
-    this.isOpen = true;
-    // Measure the natural height and make it available to CSS as a custom
-    // property.
-    const height = this.contentContainer.getBoundingClientRect().height;
+    const content = this.contentContainer;
+    const width = content.getBoundingClientRect().width;
+    const probe = content.cloneNode(true);
+
+    probe.removeAttribute("id");
+    probe.setAttribute("aria-hidden", "true");
+    // Match open-state sizing (py-4) without affecting the live panel.
+    probe.style.setProperty("position", "absolute", "important");
+    probe.style.setProperty("left", "0", "important");
+    probe.style.setProperty("top", "0", "important");
+    probe.style.setProperty("visibility", "hidden", "important");
+    probe.style.setProperty("pointer-events", "none", "important");
+    probe.style.setProperty("height", "auto", "important");
+    probe.style.setProperty("max-height", "none", "important");
+    probe.style.setProperty("overflow", "visible", "important");
+    probe.style.setProperty("padding-top", "1rem", "important");
+    probe.style.setProperty("padding-bottom", "1rem", "important");
+    probe.style.setProperty("width", `${width}px`, "important");
+
+    this.el.appendChild(probe);
+    const height = probe.getBoundingClientRect().height;
+    probe.remove();
+
     this.el.style.setProperty("--natural-height", `${height}px`);
-    // Restore the accordion to the state it started in.
-    this.isOpen = previousState;
-    // Re-enable animations.
-    this.el.classList.add(Accordion.animateClass);
-    // Become visible to ancestor accordions again.
-    this.shouldDispatchEvents = true;
   }
 }
 
