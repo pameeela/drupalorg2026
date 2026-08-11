@@ -106,14 +106,14 @@
     >
       {% if eyebrow is not empty %}
         {{
-        include(
-          '@drupalorg/components/eyebrow/eyebrow.twig',
-          {
-            eyebrow_text: eyebrow,
-            text_color: 'drupal-dark-blue'
-          },
-          with_context: false
-        )
+          include(
+            '@drupalorg/components/eyebrow/eyebrow.twig',
+            {
+              eyebrow_text: eyebrow,
+              text_color: 'drupal-dark-blue'
+            },
+            with_context: false
+          )
         }}
       {% endif %}
       {% if heading_level == 2 %}

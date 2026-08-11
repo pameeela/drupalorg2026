@@ -134,6 +134,7 @@ props:
         - light-blue-gradient
         - dark-blue-gradient
         - darkest-blue
+        - character-stream
       meta:enum:
         dark: Navy blue
         light-grey: Light grey
@@ -141,6 +142,7 @@ props:
         light-blue-gradient: Light blue gradient
         dark-blue-gradient: Dark blue gradient
         darkest-blue: Darkest blue
+        character-stream: Character stream
     background_media:
       $ref: json-schema-definitions://canvas.module/image
       title: Background image
@@ -172,3 +174,7 @@ slots:
     title: "Grid"
   footer_slot:
     title: "Footer"
+
+libraryOverrides:
+  js:
+    character-stream.js: {}

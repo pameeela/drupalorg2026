@@ -40,7 +40,8 @@
       },
       backgroundColor: {
         dark: '[&_button]:shadow-none',
-        'darkest-blue': '[&_button]:shadow-none'
+        'darkest-blue': '[&_button]:shadow-none',
+        'character-stream': '[&_button]:shadow-none'
       }
     }
   )
@@ -178,8 +179,12 @@
     {% endblock %}
   {% endif %}
 
-  {# if there is background color (can work with or without background media) #}
-  {% if background_color is not empty %}
+  {# Background color or character stream (can work with or without background media). #}
+  {% if background_color == 'character-stream' %}
+    <div class="absolute inset-0 z-[-1] overflow-hidden bg-darkest-blue">
+      <character-stream scrim="off" intensity="0.5"></character-stream>
+    </div>
+  {% elseif background_color is not empty %}
     <div class="{{ background_classes }}"></div>
   {% endif %}
 

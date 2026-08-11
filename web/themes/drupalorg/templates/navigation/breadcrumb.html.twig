@@ -23,9 +23,7 @@
 
         {% if loop.first %}
           <li class="{{ item_classes }}">
-            <a href="{{ item.url }}" class="no-underline hover:underline hover:underline-offset-2 focus:underline text-dark-blue">
-              Home
-            </a>
+            <a href="{{ item.url }}" class="text-dark-blue no-underline hover:underline hover:underline-offset-2 focus:underline">Home</a>
           </li>
         {% endif %}
 
@@ -43,9 +41,7 @@
               )
             }}
           </li>
-          <li aria-hidden="true">
-            /
-          </li>
+          <li aria-hidden="true">/</li>
         {% endif %}
 
         {# Render breadcrumb item #}
@@ -54,15 +50,15 @@
             <li class="{{ item_classes }} active" aria-current="page">{{ item.text }}</li>
           {% elseif item.url and not is_first %}
             <li class="{{ item_classes }}">
-              <a href="{{ item.url }}" class="no-underline hover:underline hover:underline-offset-2 focus:underline text-dark-blue">{{ item.text }}</a>
+              <a href="{{ item.url }}" class="text-dark-blue no-underline hover:underline hover:underline-offset-2 focus:underline">
+                {{ item.text }}
+              </a>
             </li>
           {% endif %}
 
           {# Add chevron after item (except last) #}
           {% if not loop.last and (not needs_truncation or is_last_two or is_first) %}
-            <li aria-hidden="true">
-              /
-            </li>
+            <li aria-hidden="true">/</li>
           {% endif %}
         {% endif %}
       {% endfor %}
