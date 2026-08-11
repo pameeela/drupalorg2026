@@ -8,6 +8,7 @@ dependencies:
     - canvas.component.sdc.drupalorg.anchor
     - canvas.component.sdc.drupalorg.badge
     - canvas.component.sdc.drupalorg.button
+    - canvas.component.sdc.drupalorg.card-icon
     - canvas.component.sdc.drupalorg.code-command
     - canvas.component.sdc.drupalorg.eyebrow
     - canvas.component.sdc.drupalorg.group
@@ -502,14 +503,13 @@ component_tree:
         options: {  }
       icon: arrow-right
       disabled: false
-  '3:6ed925bd-5bae-4db0-b1b0-3af566b26f2d':
-    uuid: 6ed925bd-5bae-4db0-b1b0-3af566b26f2d
+  '3:5e42d651-3001-464c-ba0d-93b5f20fb791':
+    uuid: 5e42d651-3001-464c-ba0d-93b5f20fb791
     component_id: sdc.drupalorg.section
     component_version: 3f26d8450b99efa8
     inputs:
       width: 100%
-      columns: '1 column'
-      views_columns: 33-33-33
+      columns: '4 columns'
       mobile_columns: '1'
       margin_block_start: default
       margin_block_end: default
@@ -518,7 +518,100 @@ component_tree:
       section_header: true
       center_header: false
       section_footer: true
-  '3:header_slot:0:e35df607-eb0f-4063-98a7-016509044677':
+  '3:header_slot:0:49aec222-fc9b-439b-8072-03dbbd427daf':
+    parent_uuid: 5e42d651-3001-464c-ba0d-93b5f20fb791
+    slot: header_slot
+    uuid: 49aec222-fc9b-439b-8072-03dbbd427daf
+    component_id: sdc.drupalorg.heading
+    component_version: 98abcbae4cf1add5
+    inputs:
+      heading_text: 'Need help?'
+      level: 2
+      text_size: heading-responsive-4xl
+      text_color: default
+      align: left
+  '3:main_slot:0:a9611e71-9c44-4f77-ae58-d1d8626e03c9':
+    parent_uuid: 5e42d651-3001-464c-ba0d-93b5f20fb791
+    slot: main_slot
+    uuid: a9611e71-9c44-4f77-ae58-d1d8626e03c9
+    component_id: sdc.drupalorg.card-icon
+    component_version: 4df7d088dab2c55d
+    inputs:
+      text: 'Developer docs'
+      description:
+        value: '<p>Dive in to the docs to learn how to extend or customize this template.</p>'
+        format: canvas_html_block
+      text_align: left
+      icon: book-open
+      icon_size: medium
+      icon_align: left
+      icon_style: drupal-blue
+  '3:main_slot:1:a7e348cb-a0e9-4b0b-9162-1e8451665765':
+    parent_uuid: 5e42d651-3001-464c-ba0d-93b5f20fb791
+    slot: main_slot
+    uuid: a7e348cb-a0e9-4b0b-9162-1e8451665765
+    component_id: sdc.drupalorg.card-icon
+    component_version: 4df7d088dab2c55d
+    inputs:
+      text: 'Issue queue'
+      description:
+        value: '<p>Found a bug? Check the issue queue to connect with the maintainers.</p>'
+        format: canvas_html_block
+      text_align: left
+      icon: ticket
+      icon_size: medium
+      icon_align: left
+      icon_style: drupal-blue
+  '3:main_slot:2:3e5a776d-c303-4620-98a6-0daa1e4ea036':
+    parent_uuid: 5e42d651-3001-464c-ba0d-93b5f20fb791
+    slot: main_slot
+    uuid: 3e5a776d-c303-4620-98a6-0daa1e4ea036
+    component_id: sdc.drupalorg.card-icon
+    component_version: 4df7d088dab2c55d
+    inputs:
+      text: 'Drupal Slack'
+      description:
+        value: '<p>Get real-time help from Drupal experts around the world.</p>'
+        format: canvas_html_block
+      text_align: left
+      icon: slack-logo
+      icon_size: medium
+      icon_align: left
+      icon_style: drupal-blue
+  '3:main_slot:3:dab88e34-0f64-4570-877f-a82f6c516083':
+    parent_uuid: 5e42d651-3001-464c-ba0d-93b5f20fb791
+    slot: main_slot
+    uuid: dab88e34-0f64-4570-877f-a82f6c516083
+    component_id: sdc.drupalorg.card-icon
+    component_version: 4df7d088dab2c55d
+    inputs:
+      text: 'Find a partner'
+      description:
+        value: '<p>Drupal Certified Partners can help you plan, build, migrate, and launch.</p>'
+        format: canvas_html_block
+      text_align: left
+      icon: shield-check
+      icon_size: medium
+      icon_align: left
+      icon_style: drupal-blue
+  '4:6ed925bd-5bae-4db0-b1b0-3af566b26f2d':
+    uuid: 6ed925bd-5bae-4db0-b1b0-3af566b26f2d
+    component_id: sdc.drupalorg.section
+    component_version: 3f26d8450b99efa8
+    inputs:
+      width: 100%
+      columns: '1 column'
+      views_columns: 33-33-33
+      mobile_columns: '1'
+      margin_block_start: '0'
+      margin_block_end: '0'
+      padding_block_start: default
+      padding_block_end: default
+      background_color: light-blue-gradient
+      section_header: true
+      center_header: false
+      section_footer: true
+  '4:header_slot:0:e35df607-eb0f-4063-98a7-016509044677':
     parent_uuid: 6ed925bd-5bae-4db0-b1b0-3af566b26f2d
     slot: header_slot
     uuid: e35df607-eb0f-4063-98a7-016509044677
@@ -530,7 +623,7 @@ component_tree:
       text_size: heading-responsive-4xl
       text_color: default
       align: left
-  '3:main_slot:0:720fb581-a0c8-49db-8882-ccd179e7e73f':
+  '4:main_slot:0:720fb581-a0c8-49db-8882-ccd179e7e73f':
     parent_uuid: 6ed925bd-5bae-4db0-b1b0-3af566b26f2d
     slot: main_slot
     uuid: 720fb581-a0c8-49db-8882-ccd179e7e73f
