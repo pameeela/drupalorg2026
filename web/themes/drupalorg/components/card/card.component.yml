@@ -47,10 +47,10 @@ props:
       title: Image
       type: object
       examples:
-        - src: "assets/jj-ying-8bghKxNU1j0-unsplash.jpg"
+        - src: "assets/drupal.png"
           width: 1200
           height: 900
-          alt: "Photo by jjying: https://unsplash.com/photos/purple-and-blue-light-digital-wallpaper-8bghKxNU1j0"
+          alt: "Drupal logo on blue gradient"
     url:
       type: string
       title: Button link
