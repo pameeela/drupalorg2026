@@ -22,16 +22,14 @@
     'cursor-pointer',
     'items-center',
     'justify-between',
-    'gap-[7px]',
+    'gap-2',
     'rounded-md',
     'border-b-2',
     'border-b-transparent',
     'bg-transparent',
     'px-2',
     'py-3',
-    'text-left',
-    'font-sans',
-    'text-[15px]',
+    'text-sm',
     'font-medium',
     'text-darkest-gray',
     'transition-colors',
@@ -205,15 +203,15 @@
                 {% set promo_link_item = promo_entity.field_link.isEmpty ? null : promo_entity.field_link[0] %}
                 <aside class="{{ promo_classes }}">
                   {% if promo_entity.field_eyebrow.value %}
-                    <div class="text-[11px] font-medium tracking-[0.6px] text-drupal-blue uppercase">
+                    <div class="text-xs font-semibold tracking-widest text-dark-blue uppercase">
                       {{ promo_entity.field_eyebrow.value }}
                     </div>
                   {% endif %}
-                  <div class="font-heading text-[23px] leading-[1.16] font-medium tracking-[-0.4px] text-pretty text-darkest-blue">
+                  <div class="font-heading text-2xl font-semibold text-darkest-blue">
                     {{ promo_entity.field_heading.value }}
                   </div>
                   {% if promo_entity.field_description.value %}
-                    <div class="text-[14.5px] leading-[1.55] text-pretty text-[#2E3F48]">
+                    <div class="text-sm text-darkest-gray">
                       {{ promo_entity.field_description.value }}
                     </div>
                   {% endif %}
