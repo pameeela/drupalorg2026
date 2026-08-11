@@ -4,9 +4,12 @@
 {% set has_eyebrow = eyebrow is not empty %}
 {% set has_text = text is not empty %}
 {% set has_url = url is not empty %}
-{% set has_cta = has_url and cta_text is not empty %}
+{% set is_arrow_only = arrow_only|default(false) %}
+{% set has_cta = has_url and cta_text is not empty and not is_arrow_only %}
+{% set has_arrow_only = is_arrow_only and has_url %}
 {% set is_featured = card_style == 'featured' %}
 {% set button_variant = is_featured ? 'transparent-white' : 'light-blue' %}
+{% set has_footer_action = has_cta or has_arrow_only ? 'yes' : 'no' %}
 
 {% set card =
   html_cva(
@@ -41,6 +44,18 @@
       hasCta: {
         yes: 'pb-8',
         no: ''
+      }
+    }
+  )
+%}
+
+{% set arrow_only_icon =
+  html_cva(
+    base: ['absolute right-8 bottom-6'],
+    variants: {
+      style: {
+        classic: 'text-dark-blue',
+        featured: 'text-light-blue'
       }
     }
   )
@@ -100,7 +115,7 @@
     <div
       class="{{
       card_text.apply({
-        hasCta: has_cta ? 'yes' : 'no'
+        hasCta: has_footer_action
       })
       }}"
     >
@@ -131,7 +146,28 @@
       {% endif %}
     </div>
 
-    {% if has_cta %}
+    {% if has_arrow_only %}
+      <div
+        class="{{
+        arrow_only_icon.apply({
+          style: card_style
+        })
+        }}"
+      >
+        <span class="inline-block transition duration-300 group-hover:translate-x-1">
+          {{
+            include(
+              '@drupalorg/components/icon/icon.twig',
+              {
+                icon: 'arrow-right',
+                icon_size: 'extra-small'
+              },
+              with_context: false
+            )
+          }}
+        </span>
+      </div>
+    {% elseif has_cta %}
       <div class="pointer-events-auto">
         {{
           include(

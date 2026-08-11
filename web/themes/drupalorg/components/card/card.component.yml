@@ -60,3 +60,11 @@ props:
       title: Button label
       examples:
         - "Drupal for AI Builders"
+    arrow_only:
+      type: boolean
+      title: Icon only
+      description: Show a right arrow in the bottom corner instead of a labeled button. The button label is ignored when enabled.
+      default: false
+      examples:
+        - false
+        - true
