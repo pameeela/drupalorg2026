@@ -1,0 +1,19 @@
+uuid: 32022b81-872f-4880-bbe0-2e71718c9f3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_heading
+    - system.menu.main
+id: menu_link_content.main.field_heading
+field_name: field_heading
+entity_type: menu_link_content
+bundle: main
+label: Heading
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

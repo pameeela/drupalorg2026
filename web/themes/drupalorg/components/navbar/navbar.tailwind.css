@@ -26,18 +26,27 @@
   @apply pb-24 md:pb-0;
 }
 
+/* Keep the whole header above the in-container page dim. */
+header[role="banner"],
+.region-header {
+  position: relative;
+  z-index: 100;
+}
+
 /* External region styling */
 .region-header {
   .navbar--modal-top {
     @apply px-4 lg:px-8;
   }
+
+  @apply border-b border-light-gray/50 bg-white;
 }
 
 /* Branding component styling */
 .navbar--logo,
 .navbar--modal-logo {
   .branding {
-    @apply h-10 md:h-12;
+    @apply h-[38px] md:h-[38px];
     svg,
     img[src$=".svg"] {
       @apply max-h-full;
@@ -45,7 +54,7 @@
   }
 }
 
-/* Dropdown panel — collapsed by default using grid-rows technique */
+/* Legacy simple dropdown (non-mega menus, if any) */
 .dropdown-menu__panel {
   display: grid;
   grid-template-rows: 0fr;
@@ -57,19 +66,15 @@
   min-height: 0;
 }
 
-/* Enable slide transition only after the panel has been opened once.
-   Prevents the close animation from firing on page load. */
 .dropdown-menu:has(.dropdown-menu__expand-button--has-been-opened) .dropdown-menu__panel {
   transition: grid-template-rows 0.3s ease;
 }
 
-/* Expanded state */
 .dropdown-menu.is-open .dropdown-menu__panel {
   grid-template-rows: 1fr;
   visibility: visible;
 }
 
-/* Rotate caret when open; gate transition on --has-been-opened to prevent snap on page load */
 .dropdown-menu:has(.dropdown-menu__expand-button--has-been-opened) .dropdown-menu__expand-button {
   transition: transform 0.3s ease;
 }

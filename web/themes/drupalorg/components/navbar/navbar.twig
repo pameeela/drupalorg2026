@@ -17,15 +17,19 @@
   })
 %}
 
-<div class="navbar relative z-[500] container mx-auto flex justify-between p-2 px-4 md:py-4 lg:px-8">
-  <div class="navbar--logo self-center [&>div]:flex [&>div]:flex-col [&>div]:justify-center">
+{#
+  Desktop: static so mega panels position against .region-header (full width).
+  Mobile: relative for z-index / modal stacking.
+#}
+<div class="navbar relative z-[500] container mx-auto flex h-20 items-center justify-between px-4 md:static md:z-auto lg:px-12">
+  <div class="navbar--logo flex items-center gap-9 self-center [&>div]:flex [&>div]:flex-col [&>div]:justify-center">
     {% block logo %}
       {{ include('@drupalorg/templates/block/block--system-branding-block.html.twig') }}
     {% endblock %}
   </div>
 
   <div
-    class="navbar--menu fixed inset-0 top-[calc(var(--drupal-displace-offset-top,0px)+var(--gin-toolbar-height,0px)-var(--navbar-scroll-top,0px))] grid shrink-1 grow-1 grid-cols-[1fr] grid-rows-[auto_1fr_auto] flex-col items-stretch justify-start bg-background pb-8 md:static md:flex md:h-auto md:flex-row md:items-center md:bg-transparent md:pb-0"
+    class="navbar--menu fixed inset-0 top-[calc(var(--drupal-displace-offset-top,0px)+var(--gin-toolbar-height,0px)-var(--navbar-scroll-top,0px))] grid shrink-1 grow-1 grid-cols-[1fr] grid-rows-[auto_1fr_auto] flex-col items-stretch justify-start overflow-auto bg-background pb-8 md:static md:flex md:h-auto md:flex-1 md:flex-row md:items-center md:justify-between md:gap-9 md:overflow-visible md:bg-transparent md:pb-0"
   >
     <div
       class="navbar--modal-top relative z-[500] col-span-1 col-start-1 row-span-1 row-start-1 container mx-auto flex w-full justify-between p-2 md:hidden"
@@ -53,7 +57,7 @@
     </div>
 
     <div
-      class="navbar--dropdown-menu-wrapper relative col-span-1 col-start-1 row-span-1 row-start-2 container mx-auto min-h-0 w-full flex-1 p-2 px-4 after:pointer-events-none after:absolute after:bottom-0 after:z-3 after:h-24 after:w-full after:bg-linear-to-b after:from-transparent after:to-background after:content-[''] md:p-0 md:after:content-none"
+      class="navbar--dropdown-menu-wrapper relative col-span-1 col-start-1 row-span-1 row-start-2 container mx-auto min-h-0 w-full flex-1 overflow-auto p-2 px-4 after:pointer-events-none after:absolute after:bottom-0 after:z-3 after:h-24 after:w-full after:bg-linear-to-b after:from-transparent after:to-background after:content-[''] md:static md:overflow-visible md:p-0 md:after:content-none"
     >
       <div class="{{ dropdown_menu_classes }}">
         {% block navigation %}

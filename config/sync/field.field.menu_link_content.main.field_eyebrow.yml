@@ -1,0 +1,19 @@
+uuid: 1393b05a-3934-434e-bafa-066e6e284f83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_eyebrow
+    - system.menu.main
+id: menu_link_content.main.field_eyebrow
+field_name: field_eyebrow
+entity_type: menu_link_content
+bundle: main
+label: Eyebrow
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -8,7 +8,7 @@
 {% set has_cta = has_url and cta_text is not empty and not is_arrow_only %}
 {% set has_arrow_only = is_arrow_only and has_url %}
 {% set is_featured = card_style == 'featured' %}
-{% set button_variant = is_featured ? 'transparent-white' : 'light-blue' %}
+{% set button_variant = is_featured ? 'transparent-white' : 'navy-link' %}
 {% set has_footer_action = has_cta or has_arrow_only ? 'yes' : 'no' %}
 
 {% set card =
