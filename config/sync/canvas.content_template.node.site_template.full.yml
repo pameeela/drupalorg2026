@@ -52,7 +52,7 @@ component_tree:
   '1:2ab60f33-9672-483c-9530-b19f4cdcde82':
     uuid: 2ab60f33-9672-483c-9530-b19f4cdcde82
     component_id: sdc.drupalorg.section
-    component_version: d5cb71b20de277d5
+    component_version: 3f26d8450b99efa8
     inputs:
       width: 100%
       columns: '2 columns 67%-33%'
@@ -155,23 +155,37 @@ component_tree:
       text:
         sourceType: entity-field
         expression: 'ℹ︎␜entity:node:site_template␝field_short_description␞␟value'
-  '1:main_slot:1:group_slot:2:44362bf4-c869-4aa5-821d-ed5d7bccd0e8':
+  '1:main_slot:1:group_slot:2:9b60a3e8-b086-4ab2-9853-9dac509297bd':
+    parent_uuid: cd428d6b-6a83-4c31-8839-71fa894861c0
+    slot: group_slot
+    uuid: 9b60a3e8-b086-4ab2-9853-9dac509297bd
+    component_id: sdc.drupalorg.button
+    component_version: 1c40a1a84181621a
+    inputs:
+      variant: primary
+      label: 'Preview this template'
+      icon: arrow-up-right
+      disabled: false
+      full_width: true
+  '1:main_slot:1:group_slot:3:44362bf4-c869-4aa5-821d-ed5d7bccd0e8':
     parent_uuid: cd428d6b-6a83-4c31-8839-71fa894861c0
     slot: group_slot
     uuid: 44362bf4-c869-4aa5-821d-ed5d7bccd0e8
     component_id: sdc.drupalorg.button
-    component_version: dab04045f380affe
+    component_version: 1c40a1a84181621a
     inputs:
-      variant: primary
-      label: 'Install this template'
+      variant: white-outline
+      label: 'How to install this template'
       href:
         uri: '#install'
         options: {  }
+      icon: arrow-down
       disabled: false
+      full_width: true
   '2:27a623ee-c4db-4e03-a4ab-73eb0c6fbc99':
     uuid: 27a623ee-c4db-4e03-a4ab-73eb0c6fbc99
     component_id: sdc.drupalorg.section
-    component_version: d5cb71b20de277d5
+    component_version: 3f26d8450b99efa8
     inputs:
       width: 100%
       columns: '2 columns 33%-67%'
@@ -414,7 +428,7 @@ component_tree:
     slot: group_slot
     uuid: e4997f21-ad55-4ef3-994e-badd145184bc
     component_id: sdc.drupalorg.button
-    component_version: dab04045f380affe
+    component_version: 1c40a1a84181621a
     inputs:
       variant: drupal-blue
       label: 'Launch demo site'
@@ -423,15 +437,6 @@ component_tree:
         expression: 'ℹ︎␜entity:node:site_template␝field_demo_link␞␟uri'
       icon: arrow-up-right
       disabled: false
-  '2:main_slot:0:group_slot:4:c8b1dd68-c6c8-4c75-9215-02c54ba5ef73':
-    parent_uuid: 0386d81e-5bb4-4350-85c0-5fbedcc3f9eb
-    slot: group_slot
-    uuid: c8b1dd68-c6c8-4c75-9215-02c54ba5ef73
-    component_id: sdc.drupalorg.text
-    component_version: 8e4dee1f767538b4
-    inputs:
-      text_size: text-xs
-      text_color: inverted
   '2:main_slot:1:49aebf08-b576-4a4d-abee-d3b970beeec4':
     parent_uuid: 27a623ee-c4db-4e03-a4ab-73eb0c6fbc99
     slot: main_slot
@@ -488,7 +493,7 @@ component_tree:
     slot: group_slot
     uuid: de73d1fc-dc1d-4df3-b5bf-44da341aa808
     component_id: sdc.drupalorg.button
-    component_version: dab04045f380affe
+    component_version: 1c40a1a84181621a
     inputs:
       variant: blue-link
       label: "Don't have DDEV? Check out the full installation guide"
@@ -500,7 +505,7 @@ component_tree:
   '3:6ed925bd-5bae-4db0-b1b0-3af566b26f2d':
     uuid: 6ed925bd-5bae-4db0-b1b0-3af566b26f2d
     component_id: sdc.drupalorg.section
-    component_version: d5cb71b20de277d5
+    component_version: 3f26d8450b99efa8
     inputs:
       width: 100%
       columns: '1 column'

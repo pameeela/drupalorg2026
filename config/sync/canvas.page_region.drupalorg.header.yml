@@ -26,10 +26,10 @@ component_tree:
     slot: links
     uuid: 117719f5-2683-457d-901b-a7d61f5e96f8
     component_id: sdc.drupalorg.button
-    component_version: dab04045f380affe
+    component_version: 1c40a1a84181621a
     inputs:
       variant: primary
-      label: 'Try Drupal'
+      label: 'Try it now'
       icon: arrow-right
       disabled: false
   '0:logo:0:c16dbf4a-0bde-4be0-994b-b55a034308d0':

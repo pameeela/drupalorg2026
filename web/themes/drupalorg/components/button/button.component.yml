@@ -72,3 +72,11 @@ props:
       examples:
         - false
         - true
+    full_width:
+      type: boolean
+      title: Full width
+      description: Stretch the button to fill its container.
+      default: false
+      examples:
+        - false
+        - true
