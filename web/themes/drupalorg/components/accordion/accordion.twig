@@ -2,7 +2,7 @@
 {% set content_id = 'accordion--content'|clean_unique_id %}
 {% set heading_level = heading_level|default('3') %}
 
-{% set section = html_cva(base: ['accordion', 'overflow-hidden', 'border-b border-border', 'bg-clip-padding', 'bg-background']) %}
+{% set section = html_cva(base: ['accordion', 'overflow-hidden', 'border-b border-light-gray', 'bg-clip-padding', 'bg-background']) %}
 
 {% set section_classes = section.apply({}) %}
 
@@ -11,8 +11,9 @@
     base: [
       'accordion--title',
       'flex w-full cursor-pointer items-center justify-between',
-      'bg-background transition duration-500 hover:bg-light-gray',
-      'p-4 text-left text-xl'
+      'bg-background transition-[background-color] duration-500 hover:bg-lightest-gray',
+      'p-4 text-left text-xl',
+      'focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-drupal-blue focus-visible:outline-solid'
     ]
   )
 %}

@@ -10,11 +10,12 @@
 {% set is_featured = card_style == 'featured' %}
 {% set button_variant = is_featured ? 'transparent-white' : 'navy-link' %}
 {% set has_footer_action = has_cta or has_arrow_only ? 'yes' : 'no' %}
+{% set heading_id = 'card-heading'|clean_unique_id %}
 
 {% set card =
   html_cva(
     base: [
-      'group relative flex flex-col overflow-clip shadow-lg transition duration-500 hover:-translate-y-1 hover:shadow-xl in-[.views-row]:h-full'
+      'group relative flex flex-col overflow-clip shadow-lg transition-[transform,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-xl in-[.views-row]:h-full'
     ],
     variants: {
       style: {
@@ -44,6 +45,21 @@
       hasCta: {
         yes: 'pb-8',
         no: ''
+      }
+    }
+  )
+%}
+
+{% set overlay_link =
+  html_cva(
+    base: [
+      'absolute inset-0 z-10',
+      'focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-drupal-blue focus-visible:outline-solid'
+    ],
+    variants: {
+      style: {
+        classic: 'rounded-lg',
+        featured: 'rounded-2xl'
       }
     }
   )
@@ -101,10 +117,6 @@
     </div>
   {% endif %}
 
-  {% if has_url %}
-    <a href="{{ url }}" class="absolute inset-0" aria-hidden="true" tabindex="-1"></a>
-  {% endif %}
-
   <div
     class="{{
     card_content.apply({
@@ -132,11 +144,11 @@
         }}
       {% endif %}
       {% if heading_level == 2 %}
-        <h2 class="text-xl font-medium">{{ heading_text }}</h2>
+        <h2 id="{{ heading_id }}" class="text-xl font-medium">{{ heading_text }}</h2>
       {% elseif heading_level == 4 %}
-        <h4 class="text-xl font-medium">{{ heading_text }}</h4>
+        <h4 id="{{ heading_id }}" class="text-xl font-medium">{{ heading_text }}</h4>
       {% else %}
-        <h3 class="text-xl font-medium">{{ heading_text }}</h3>
+        <h3 id="{{ heading_id }}" class="text-xl font-medium">{{ heading_text }}</h3>
       {% endif %}
 
       {% if has_text %}
@@ -168,13 +180,12 @@
         </span>
       </div>
     {% elseif has_cta %}
-      <div class="pointer-events-auto">
+      <div aria-hidden="true" inert>
         {{
           include(
             '@drupalorg/components/button/button.twig',
             {
               label: cta_text,
-              href: url,
               variant: button_variant,
               icon: 'arrow-right'
             },
@@ -184,4 +195,18 @@
       </div>
     {% endif %}
   </div>
+
+  {% if has_url %}
+    <a
+      href="{{ url }}"
+      class="{{
+      overlay_link.apply({
+        style: card_style
+      })
+      }}"
+      aria-labelledby="{{ heading_id }}"
+    >
+
+    </a>
+  {% endif %}
 </div>

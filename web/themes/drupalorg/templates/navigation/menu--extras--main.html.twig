@@ -29,12 +29,12 @@
     'bg-transparent',
     'px-2',
     'py-3',
-    'text-sm',
+    'ext-sm',
     'font-medium',
     'text-darkest-gray',
     'transition-colors',
     'duration-150',
-    'hover:bg-lightest-blue',
+    'hover:bg-lightest-gray',
     'group-[.is-open]:text-navy',
     'md:rounded-none',
     'md:justify-center',
@@ -70,9 +70,9 @@
     'grid',
     'gap-8',
     'bg-white',
-    'px-4',
-    'py-6',
-    'lg:px-12',
+    'px-2',
+    'py-4',
+    'md:px-12',
     'md:grid-cols-[1fr_auto]',
     'md:gap-10',
     'md:pt-10',
@@ -84,7 +84,7 @@
 
 {% set column_classes = 'flex min-w-0 flex-col flex-1 gap-[30px]' %}
 {% set group_classes_base = 'flex min-w-0 flex-col gap-[18px]' %}
-{% set group_label_classes = 'text-[11px] font-medium tracking-[0.6px] text-[#8a93a0] uppercase' %}
+{% set group_label_classes = 'text-[11px] font-medium tracking-[0.6px] text-dark-gray/90 uppercase' %}
 {% set links_classes = 'flex flex-col gap-5' %}
 {% set links_compact_classes = 'flex flex-col gap-[11px]' %}
 
@@ -115,7 +115,6 @@
     'py-3',
     'text-[15px]',
     'font-medium',
-    'text-darkest-gray',
     'no-underline',
     'hover:bg-lightest-blue',
     'md:px-3.5',
@@ -203,11 +202,11 @@
                 {% set promo_link_item = promo_entity.field_link.isEmpty ? null : promo_entity.field_link[0] %}
                 <aside class="{{ promo_classes }}">
                   {% if promo_entity.field_eyebrow.value %}
-                    <div class="text-xs font-semibold tracking-widest text-dark-blue uppercase">
+                    <div class="text-xs font-semibold tracking-wide text-dark-blue uppercase">
                       {{ promo_entity.field_eyebrow.value }}
                     </div>
                   {% endif %}
-                  <div class="font-heading text-2xl font-semibold text-darkest-blue">
+                  <div class="font-heading text-xl font-semibold tracking-tight text-darkest-blue">
                     {{ promo_entity.field_heading.value }}
                   </div>
                   {% if promo_entity.field_description.value %}

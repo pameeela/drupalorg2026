@@ -30,6 +30,27 @@
   db_offline ? 'db-offline'
 ] %}
 {% set html_classes = scheme|default('light') == 'dark' ? ['dark'] : [] %}
+{% set skip_link_classes =
+  [
+    'sr-only',
+    'focus:not-sr-only',
+    'focus:!absolute',
+    'focus:top-[calc(var(--drupal-displace-offset-top,0px)+0.5rem)]',
+    'focus:left-[calc(var(--drupal-displace-offset-left,0px)+0.5rem)]',
+    'focus:z-[1000]',
+    'focus:inline-flex',
+    'focus:rounded-md',
+    'focus:bg-white',
+    'focus:px-4',
+    'focus:py-2',
+    'focus:font-medium',
+    'focus:text-navy',
+    'focus:outline-2',
+    'focus:outline-offset-2',
+    'focus:outline-solid',
+    'focus:outline-drupal-blue'
+  ]|join(' ')
+%}
 <!DOCTYPE html>
 <html {{ html_attributes.addClass(html_classes) }}>
   <head>
@@ -46,7 +67,7 @@
       Keyboard navigation/accessibility link to main content section in
       page.html.twig.
     #}
-    <a href="#main-content" class="visually-hidden focusable skip-link">{{ 'Skip to main content'|t }}</a>
+    <a href="#main-content" class="{{ skip_link_classes }}">{{ 'Skip to main content'|t }}</a>
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}

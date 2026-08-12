@@ -41,8 +41,8 @@
   }}"
 >
   {% if background_video.src is not empty %}
-    <div class="pointer-events-none absolute inset-0" aria-hidden="true">
-      <video src="{{ background_video.src }}" autoplay muted loop playsinline class="h-full w-full object-cover"></video>
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true" inert>
+      <video src="{{ background_video.src }}" autoplay muted loop playsinline tabindex="-1" class="h-full w-full object-cover"></video>
     </div>
   {% endif %}
 
@@ -94,7 +94,7 @@
   {# Screenshot scrolls up from below the sticky content #}
   {% if image.src is not empty %}
     <div class="relative z-10 container mx-auto px-4 lg:px-8">
-      <div class="mx-auto pb-12 md:max-w-2xl md:pb-15 xl:max-w-6xl">
+      <div class="mx-auto w-full max-w-4xl pb-12 md:pb-15 xl:max-w-6xl">
         <div class="overflow-hidden rounded-xl bg-white shadow-[0px_12px_24px_-4px_rgba(18,26,38,0.12),0px_4px_8px_-4px_rgba(18,26,38,0.05)]">
           {% include 'canvas:image' ignore missing with {
             src: image.src,

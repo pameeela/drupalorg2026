@@ -15,7 +15,7 @@
 {% set meta = link_item.entity is not empty ? link_item.entity.description.value|default('') : '' %}
 
 {% if is_nolink %}
-  <span class="text-sm text-dark-gray">{{ link_title }}</span>
+  <span class="text-sm text-darkest-gray/90">{{ link_title }}</span>
 {% elseif compact %}
   <a href="{{ link_item.url }}" class="inline-flex items-baseline gap-[7px] text-[14.5px] font-medium text-dark-blue no-underline hover:underline">
     {{ link_title }}
