@@ -1,7 +1,7 @@
 @layer components;
 
 .site-template-preview__viewport--hover .site-template-preview__image--hover {
-  /* Travel + duration are set in JS (capped travel at ~4 viewport heights, 400px/s). */
+  /* Travel + duration are set in JS. */
   transition: transform var(--stp-duration, 9s) linear;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .site-template-preview__caption-overlay {
-  /* Nudge early, hold readable, then fade — 4s total after 0.4s delay */
+  /* Nudge early, hold readable, then fade — 4s total after 1.5s delay */
   animation: site-template-preview-caption-nudge 4s ease-in-out 1.5s 1 both;
 }
 
