@@ -15,7 +15,7 @@
 
 /* Child component styling that can't be moved to Twig */
 .navbar--links .button.button {
-  @apply mx-8 w-[calc(100%-var(--spacing)*16)] md:m-auto md:w-auto;
+  @apply w-full max-w-full md:m-auto md:w-auto;
 }
 
 .navbar--dropdown-menu .dropdown-menu {
