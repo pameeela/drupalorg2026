@@ -4,42 +4,7 @@
   {% set additional_classes = additional_classes|join(' ') %}
 {% endif %}
 
-{% set hero_overlap_navbar = overlap_navbar|default(false) ? 'yes' : 'no' %}
-
-{% set section_variants =
-  html_cva(
-    base: ['cq-full relative'],
-    variants: {
-      overlapNavbar: {
-        yes: 'mt-[calc(var(--navbar-height)*-1)]',
-        no: ''
-      }
-    }
-  )
-%}
-
-{% set content_variants =
-  html_cva(
-    base: ['flex flex-col items-center gap-6 pb-14 text-center md:gap-8 xl:pb-16'],
-    variants: {
-      overlapNavbar: {
-        yes: ['pt-[calc(var(--navbar-height)+5rem)]', 'md:pt-[calc(var(--navbar-height)+7rem)]', 'xl:pt-[calc(var(--navbar-height)+168px)]'],
-        no: 'pt-20 md:pt-28 xl:pt-[168px]'
-      }
-    }
-  )
-%}
-
-<section
-  class="{{
-  section_variants.apply(
-    {
-      overlapNavbar: hero_overlap_navbar
-    },
-    additional_classes
-  )
-  }}"
->
+<section class="cq-full relative {{ additional_classes }}">
   {% if background_video.src is not empty %}
     <div class="pointer-events-none absolute inset-0" aria-hidden="true" inert>
       <video src="{{ background_video.src }}" autoplay muted loop playsinline tabindex="-1" class="h-full w-full object-cover"></video>
@@ -49,13 +14,7 @@
   {# Content sticks at top while image scrolls into view from below #}
   <div class="sticky top-0 overflow-hidden">
     <div class="relative z-10 container mx-auto px-4 lg:px-8">
-      <div
-        class="{{
-        content_variants.apply({
-          overlapNavbar: hero_overlap_navbar
-        })
-        }}"
-      >
+      <div class="flex flex-col items-center gap-6 pt-20 pb-14 text-center md:gap-8 md:pt-28 xl:pt-[168px] xl:pb-16">
         {% if heading %}
           {{
             include(

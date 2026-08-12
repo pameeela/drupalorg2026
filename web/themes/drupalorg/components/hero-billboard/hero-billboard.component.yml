@@ -70,13 +70,6 @@ props:
           alt: "Green blue gradient placeholder image"
           width: 1920
           height: 1344
-    overlap_navbar:
-      type: boolean
-      title: Overlap header
-      description: Enable this to place it behind the header, if it is the first item on the page.
-      default: false
-      examples:
-        - false
 
 slots:
   hero_slot:

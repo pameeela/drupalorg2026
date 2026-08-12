@@ -29,13 +29,6 @@ props:
           alt: "Drupal CMS screenshot"
           width: 1120
           height: 662
-    overlap_navbar:
-      type: boolean
-      title: Overlap header
-      description: Enable this to place it behind the header, if it is the first item on the page.
-      default: false
-      examples:
-        - false
 
 slots:
   actions:

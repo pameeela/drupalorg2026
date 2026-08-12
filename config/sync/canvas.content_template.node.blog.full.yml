@@ -220,7 +220,6 @@ component_tree:
       object_position: center
       media:
         target_id: '11'
-      overlap_navbar: false
   '3:main_slot:0:hero_slot:0:0828d200-a8d8-457d-b05b-49cbd9ba24d8':
     parent_uuid: 74d03bcb-c658-4310-9d32-43c6b1749434
     slot: hero_slot

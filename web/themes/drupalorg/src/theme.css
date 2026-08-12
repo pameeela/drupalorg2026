@@ -52,11 +52,4 @@
   --radius: 0.5rem;
   --tracking-normal: 0em;
   --spacing: 0.25rem;
-
-  /* Set navbar height for hero billboard overlay */
-  --navbar-height: calc(var(--spacing) * 17);
-
-  @media (min-width: 768px) {
-    --navbar-height: calc(var(--spacing) * 20);
-  }
 }
