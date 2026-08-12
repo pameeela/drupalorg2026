@@ -188,7 +188,7 @@ component_tree:
     component_id: sdc.drupalorg.section
     component_version: 3f26d8450b99efa8
     inputs:
-      width: 100%
+      width: 90%
       columns: '2 columns 33%-67%'
       mobile_columns: '1'
       margin_block_start: default
@@ -508,7 +508,7 @@ component_tree:
     component_id: sdc.drupalorg.section
     component_version: 3f26d8450b99efa8
     inputs:
-      width: 80%
+      width: 90%
       columns: '4 columns'
       mobile_columns: '1'
       margin_block_start: default

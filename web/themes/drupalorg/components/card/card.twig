@@ -144,11 +144,11 @@
         }}
       {% endif %}
       {% if heading_level == 2 %}
-        <h2 id="{{ heading_id }}" class="text-xl font-medium">{{ heading_text }}</h2>
+        <h2 id="{{ heading_id }}" class="text-xl text-navy">{{ heading_text }}</h2>
       {% elseif heading_level == 4 %}
-        <h4 id="{{ heading_id }}" class="text-xl font-medium">{{ heading_text }}</h4>
+        <h4 id="{{ heading_id }}" class="text-xl text-navy">{{ heading_text }}</h4>
       {% else %}
-        <h3 id="{{ heading_id }}" class="text-xl font-medium">{{ heading_text }}</h3>
+        <h3 id="{{ heading_id }}" class="text-xl text-navy">{{ heading_text }}</h3>
       {% endif %}
 
       {% if has_text %}
