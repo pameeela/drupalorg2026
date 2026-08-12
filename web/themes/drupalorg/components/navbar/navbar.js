@@ -3,6 +3,7 @@ import { measureScrollbarAndObserve } from "../../lib/measureScrollbar.js";
 
 class Navbar extends ComponentInstance {
   #savedAsOpen = false;
+  #scrollRaf = 0;
 
   init() {
     this.closeButton = this.el.querySelector(".navbar--hide-menu");
@@ -11,47 +12,55 @@ class Navbar extends ComponentInstance {
 
     measureScrollbarAndObserve(this.el.querySelector(".navbar--dropdown-menu"));
 
+    this.onKeydown = (e) => {
+      if (e.key !== "Escape" || !this.#savedAsOpen || this.desktopMQ.matches) {
+        return;
+      }
+
+      const megaOpen = window.drupalorgComponents?.megaMenu?.instances?.some((menu) => menu.openItem);
+      if (megaOpen) {
+        return;
+      }
+
+      e.preventDefault();
+      this.closeDrawer({ restoreFocus: true });
+    };
+
     this.menuButton.addEventListener("click", () => {
-      this.menu.querySelectorAll(".dropdown-menu__expand-button--has-been-opened").forEach((button) => {
-        button.classList.remove("dropdown-menu__expand-button--has-been-opened");
-      });
       this.closeMegaMenus();
       this.isOpen = true;
     });
 
     this.closeButton.addEventListener("click", () => {
-      this.isOpen = false;
+      this.closeDrawer({ restoreFocus: true });
     });
 
-    // Keep up with scroll amount for mobile menu positioning.
-    const scrollHandler = this.measureScrollTop.bind(this);
-    const desktopMQ = window.matchMedia("(min-width: 48rem)");
+    this.onScroll = this.measureScrollTop.bind(this);
+    this.desktopMQ = window.matchMedia("(min-width: 48rem)");
 
-    // Attach on page load only if less than desktop width AND navbar is visible.
-    if (!desktopMQ.matches && this.el.getBoundingClientRect().bottom > 0) {
-      scrollHandler();
-      window.addEventListener("scroll", scrollHandler);
+    if (!this.desktopMQ.matches && this.el.getBoundingClientRect().bottom > 0) {
+      this.measureScrollTop();
+      this.listenScroll();
     }
 
-    // Respond to window width changes, also checking scroll position.
-    desktopMQ.addEventListener("change", (e) => {
+    this.desktopMQ.addEventListener("change", (e) => {
       if (!e.matches && this.el.getBoundingClientRect().bottom > 0) {
-        scrollHandler();
-        window.addEventListener("scroll", scrollHandler);
+        this.measureScrollTop();
+        this.listenScroll();
       } else {
-        window.removeEventListener("scroll", scrollHandler);
+        this.unlistenScroll();
         this.closeMegaMenus();
+        this.isOpen = false;
       }
     });
 
-    // Respond to scroll position changes, also checking window width.
     const intersectionObserver = new IntersectionObserver((entries) => {
       for (const entry of entries) {
-        if (entry.isIntersecting && !desktopMQ.matches) {
-          scrollHandler();
-          window.addEventListener("scroll", scrollHandler);
+        if (entry.isIntersecting && !this.desktopMQ.matches) {
+          this.measureScrollTop();
+          this.listenScroll();
         } else {
-          window.removeEventListener("scroll", scrollHandler);
+          this.unlistenScroll();
         }
       }
     });
@@ -59,29 +68,74 @@ class Navbar extends ComponentInstance {
     intersectionObserver.observe(this.el);
   }
 
+  listenScroll() {
+    if (this.scrollBound) {
+      return;
+    }
+
+    window.addEventListener("scroll", this.onScroll, { passive: true });
+    this.scrollBound = true;
+  }
+
+  unlistenScroll() {
+    if (!this.scrollBound) {
+      return;
+    }
+
+    window.removeEventListener("scroll", this.onScroll);
+    this.scrollBound = false;
+  }
+
   closeMegaMenus() {
-    this.el.querySelectorAll("[data-mega-menu-item].is-open").forEach((item) => {
-      const trigger = item.querySelector("[data-mega-menu-trigger]");
-      const panel = item.querySelector("[data-mega-menu-panel]");
-      item.classList.remove("is-open");
-      if (trigger) trigger.setAttribute("aria-expanded", "false");
-      if (panel) panel.hidden = true;
-    });
-    document.getElementById("mega-menu-dim")?.remove();
+    window.drupalorgComponents?.megaMenu?.instances?.forEach((menu) => menu.closeAll());
+  }
+
+  closeDrawer({ restoreFocus = false } = {}) {
+    this.isOpen = false;
+    if (restoreFocus && !this.desktopMQ.matches) {
+      this.menuButton.focus();
+    }
+  }
+
+  bindDrawerListeners() {
+    if (this.drawerBound) {
+      return;
+    }
+
+    document.addEventListener("keydown", this.onKeydown);
+    this.drawerBound = true;
+  }
+
+  unbindDrawerListeners() {
+    if (!this.drawerBound) {
+      return;
+    }
+
+    document.removeEventListener("keydown", this.onKeydown);
+    this.drawerBound = false;
   }
 
   set isOpen(value) {
-    if (value) {
+    const next = !!value;
+    if (next === this.#savedAsOpen) {
+      return;
+    }
+
+    if (next) {
       this.menu.classList.add("navbar--menu--open");
       this.menu.querySelector("a, button")?.focus();
       document.documentElement.classList.add("navbar-modal-open");
+      this.menuButton.setAttribute("aria-expanded", "true");
+      this.bindDrawerListeners();
     } else {
       this.menu.classList.remove("navbar--menu--open");
       document.documentElement.classList.remove("navbar-modal-open");
+      this.menuButton.setAttribute("aria-expanded", "false");
+      this.unbindDrawerListeners();
       this.closeMegaMenus();
     }
 
-    this.#savedAsOpen = !!value;
+    this.#savedAsOpen = next;
   }
 
   get isOpen() {
@@ -89,57 +143,14 @@ class Navbar extends ComponentInstance {
   }
 
   measureScrollTop() {
-    document.documentElement.style.setProperty("--navbar-scroll-top", `${window.scrollY}px`);
-  }
-}
+    if (this.#scrollRaf) {
+      return;
+    }
 
-class DropdownMenu extends ComponentInstance {
-  init() {
-    this.button = this.el.querySelector(".dropdown-menu__expand-button");
-    this.isOpen = false;
-    if (!this.button) return;
-
-    const desktopMQ = window.matchMedia("(min-width: 48rem)");
-
-    this.el.addEventListener("mouseenter", () => {
-      if (desktopMQ.matches) {
-        this.open();
-      }
+    this.#scrollRaf = requestAnimationFrame(() => {
+      this.#scrollRaf = 0;
+      document.documentElement.style.setProperty("--navbar-scroll-top", `${window.scrollY}px`);
     });
-
-    this.el.addEventListener("mouseleave", () => {
-      if (desktopMQ.matches) {
-        this.close();
-      }
-    });
-
-    this.button.addEventListener("click", (e) => {
-      e.stopPropagation();
-      if (this.isOpen) {
-        this.close();
-      } else {
-        this.open();
-      }
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!desktopMQ.matches && !this.el.contains(e.target)) {
-        this.close();
-      }
-    });
-  }
-
-  open() {
-    this.el.classList.add("is-open");
-    this.button.setAttribute("aria-expanded", "true");
-    this.button.classList.add("dropdown-menu__expand-button--has-been-opened");
-    this.isOpen = true;
-  }
-
-  close() {
-    this.el.classList.remove("is-open");
-    this.button.setAttribute("aria-expanded", "false");
-    this.isOpen = false;
   }
 }
 
@@ -152,48 +163,66 @@ class MegaMenu extends ComponentInstance {
   static closeDelay = 140;
 
   init() {
-    this.items = Array.from(this.el.querySelectorAll("[data-mega-menu-item]"));
+    this.items = Array.from(this.el.querySelectorAll("[data-mega-menu-item]"))
+      .map((el) => ({
+        el,
+        trigger: el.querySelector("[data-mega-menu-trigger]"),
+        panel: el.querySelector("[data-mega-menu-panel]"),
+      }))
+      .filter((item) => item.trigger && item.panel);
+
     this.desktopMQ = window.matchMedia("(min-width: 48rem)");
     this.closeTimer = null;
     this.openTimer = null;
     this.pendingItem = null;
     this.openItem = null;
+    this.dim = null;
+    this.header = this.el.closest("header") || this.el.closest(".region-header") || this.el.closest(".navbar");
+    this.pageBound = false;
+
+    this.onKeydown = (e) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        this.closeAll({ restoreFocus: true });
+      }
+    };
+    this.onDocumentClick = (e) => {
+      if (!this.el.contains(e.target)) {
+        this.closeAll();
+      }
+    };
 
     this.items.forEach((item) => {
-      const trigger = item.querySelector("[data-mega-menu-trigger]");
-      const panel = item.querySelector("[data-mega-menu-panel]");
-      if (!trigger || !panel) return;
-
-      trigger.addEventListener("click", (e) => {
+      item.trigger.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
         this.clearOpenTimer();
         this.clearCloseTimer();
-        if (item.classList.contains("is-open")) {
+        if (this.openItem === item) {
           this.close(item);
         } else {
           this.open(item);
         }
       });
 
-      item.addEventListener("mouseenter", () => {
+      item.el.addEventListener("mouseenter", () => {
         if (!this.desktopMQ.matches) return;
         this.clearCloseTimer();
         this.scheduleOpen(item);
       });
 
-      item.addEventListener("mouseleave", () => {
+      item.el.addEventListener("mouseleave", () => {
         if (!this.desktopMQ.matches) return;
-        // Cancel a pending open if the pointer only brushed this trigger.
         if (this.pendingItem === item) {
           this.clearOpenTimer();
         }
       });
     });
 
-    // Leave grace across the whole mega menu (triggers + panels).
     this.el.addEventListener("mouseleave", () => {
       if (!this.desktopMQ.matches) return;
+      if (this.hasFocusInside()) return;
       this.clearOpenTimer();
       this.scheduleClose();
     });
@@ -202,19 +231,39 @@ class MegaMenu extends ComponentInstance {
       this.clearCloseTimer();
     });
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        this.closeAll();
+    this.el.addEventListener("focusout", (e) => {
+      if (this.el.contains(e.relatedTarget)) {
+        return;
       }
-    });
 
-    document.addEventListener("click", (e) => {
-      if (!this.el.contains(e.target)) {
-        this.closeAll();
-      }
+      requestAnimationFrame(() => {
+        if (!this.hasFocusInside()) {
+          this.closeAll();
+        }
+      });
     });
 
     this.desktopMQ.addEventListener("change", () => this.closeAll());
+  }
+
+  bindPageListeners() {
+    if (this.pageBound) {
+      return;
+    }
+
+    document.addEventListener("keydown", this.onKeydown);
+    document.addEventListener("click", this.onDocumentClick);
+    this.pageBound = true;
+  }
+
+  unbindPageListeners() {
+    if (!this.pageBound) {
+      return;
+    }
+
+    document.removeEventListener("keydown", this.onKeydown);
+    document.removeEventListener("click", this.onDocumentClick);
+    this.pageBound = false;
   }
 
   clearCloseTimer() {
@@ -235,8 +284,6 @@ class MegaMenu extends ComponentInstance {
   scheduleOpen(item) {
     this.clearCloseTimer();
 
-    // Pointer is back on the already-open item (e.g. its panel) — cancel any
-    // pending switch from brushing a neighbour on the way down.
     if (this.openItem === item) {
       this.clearOpenTimer();
       return;
@@ -251,58 +298,76 @@ class MegaMenu extends ComponentInstance {
     }, MegaMenu.openDelay);
   }
 
+  hasFocusInside() {
+    return this.el.contains(document.activeElement);
+  }
+
   scheduleClose() {
     this.clearCloseTimer();
-    this.closeTimer = window.setTimeout(() => this.closeAll(), MegaMenu.closeDelay);
+    this.closeTimer = window.setTimeout(() => {
+      if (this.hasFocusInside()) {
+        return;
+      }
+      this.closeAll();
+    }, MegaMenu.closeDelay);
+  }
+
+  ensureDim() {
+    if (this.dim?.isConnected) {
+      return this.dim;
+    }
+
+    const dim = document.createElement("div");
+    dim.id = "mega-menu-dim";
+    dim.hidden = true;
+    dim.className =
+      "pointer-events-none fixed inset-0 top-[var(--mega-menu-offset-top,80px)] z-40 bg-[rgba(10,26,58,0.16)] opacity-100 transition-opacity duration-200 motion-reduce:transition-none";
+    dim.setAttribute("aria-hidden", "true");
+    const host = document.querySelector(".layout-container") || document.body;
+    host.appendChild(dim);
+    this.dim = dim;
+    return dim;
   }
 
   setDim(on) {
-    const header = this.el.closest("header") || this.el.closest(".region-header") || this.el.closest(".navbar");
-    const top = header ? Math.round(header.getBoundingClientRect().bottom) : 80;
-    document.documentElement.style.setProperty("--mega-menu-offset-top", `${top}px`);
-
-    let dim = document.getElementById("mega-menu-dim");
-    if (on) {
-      if (!dim) {
-        dim = document.createElement("div");
-        dim.id = "mega-menu-dim";
-        dim.className =
-          "pointer-events-none fixed inset-0 top-[var(--mega-menu-offset-top,80px)] z-40 bg-[rgba(10,26,58,0.16)] opacity-100 transition-opacity duration-200 motion-reduce:transition-none";
-        dim.setAttribute("aria-hidden", "true");
-        // Stay inside .layout-container so z-index competes with the header,
-        // not above the whole page shell (which was greying out the panel).
-        const host = document.querySelector(".layout-container") || document.body;
-        host.appendChild(dim);
+    if (!on) {
+      if (this.dim) {
+        this.dim.hidden = true;
       }
-    } else {
-      dim?.remove();
+      this.unbindPageListeners();
+      return;
     }
+
+    const dim = this.ensureDim();
+    const top = this.header ? Math.round(this.header.getBoundingClientRect().bottom) : 80;
+    document.documentElement.style.setProperty("--mega-menu-offset-top", `${top}px`);
+    dim.hidden = false;
+    this.bindPageListeners();
   }
 
   open(item) {
     this.clearOpenTimer();
     this.clearCloseTimer();
-    this.items.forEach((other) => {
-      if (other !== item) this.close(other, false);
-    });
 
-    const trigger = item.querySelector("[data-mega-menu-trigger]");
-    const panel = item.querySelector("[data-mega-menu-panel]");
-    item.classList.add("is-open");
-    trigger?.setAttribute("aria-expanded", "true");
-    if (panel) panel.hidden = false;
+    if (this.openItem && this.openItem !== item) {
+      this.close(this.openItem, false);
+    }
+
+    item.el.classList.add("is-open");
+    item.trigger.setAttribute("aria-expanded", "true");
+    item.panel.hidden = false;
     this.openItem = item;
     if (this.desktopMQ.matches) {
       this.setDim(true);
+    } else {
+      this.bindPageListeners();
     }
   }
 
   close(item, updateDim = true) {
-    const trigger = item.querySelector("[data-mega-menu-trigger]");
-    const panel = item.querySelector("[data-mega-menu-panel]");
-    item.classList.remove("is-open");
-    trigger?.setAttribute("aria-expanded", "false");
-    if (panel) panel.hidden = true;
+    item.el.classList.remove("is-open");
+    item.trigger.setAttribute("aria-expanded", "false");
+    item.panel.hidden = true;
     if (this.openItem === item) {
       this.openItem = null;
     }
@@ -311,15 +376,24 @@ class MegaMenu extends ComponentInstance {
     }
   }
 
-  closeAll() {
+  closeAll({ restoreFocus = false } = {}) {
+    const trigger = restoreFocus && this.hasFocusInside() ? this.openItem?.trigger : null;
     this.clearOpenTimer();
     this.clearCloseTimer();
-    this.items.forEach((item) => this.close(item, false));
+    if (this.openItem) {
+      this.close(this.openItem, false);
+    }
     this.openItem = null;
     this.setDim(false);
+    trigger?.focus();
+  }
+
+  remove() {
+    this.closeAll();
+    this.dim?.remove();
+    this.dim = null;
   }
 }
 
-window.dropdownMenu = new ComponentType(DropdownMenu, "dropdownMenu", ".dropdown-menu");
 window.megaMenu = new ComponentType(MegaMenu, "megaMenu", "[data-mega-menu]");
 window.navbar = new ComponentType(Navbar, "navbar", ".navbar");

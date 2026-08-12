@@ -8,14 +8,14 @@
 {% set has_cta = has_url and cta_text is not empty and not is_arrow_only %}
 {% set has_arrow_only = is_arrow_only and has_url %}
 {% set is_featured = card_style == 'featured' %}
-{% set button_variant = is_featured ? 'transparent-white' : 'navy-link' %}
+{% set button_variant = is_featured ? 'light-blue-link' : 'navy-link' %}
 {% set has_footer_action = has_cta or has_arrow_only ? 'yes' : 'no' %}
 {% set heading_id = 'card-heading'|clean_unique_id %}
 
 {% set card =
   html_cva(
     base: [
-      'group relative flex flex-col overflow-clip shadow-lg transition-[transform,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-xl in-[.views-row]:h-full'
+      'group relative flex flex-col overflow-clip shadow-lg transition duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl in-[.views-row]:h-full'
     ],
     variants: {
       style: {
@@ -28,7 +28,7 @@
 
 {% set card_content =
   html_cva(
-    base: 'pointer-events-none relative flex flex-col',
+    base: 'pointer-events-none relative flex flex-col gap-5',
     variants: {
       style: {
         classic: 'flex-1 justify-between p-8',
@@ -38,13 +38,15 @@
   )
 %}
 
-{% set card_text =
+{% set card_text = html_cva(base: 'flex flex-col gap-3') %}
+
+{% set heading_style =
   html_cva(
-    base: 'flex flex-col gap-3',
+    base: 'text-xl',
     variants: {
-      hasCta: {
-        yes: 'pb-8',
-        no: ''
+      style: {
+        featured: 'text-lightest-blue',
+        classic: 'text-navy'
       }
     }
   )
@@ -75,6 +77,12 @@
       }
     }
   )
+%}
+
+{% set heading_classes =
+  heading_style.apply({
+    style: card_style
+  })
 %}
 
 <div
@@ -144,11 +152,11 @@
         }}
       {% endif %}
       {% if heading_level == 2 %}
-        <h2 id="{{ heading_id }}" class="text-xl text-navy">{{ heading_text }}</h2>
+        <h2 id="{{ heading_id }}" class="{{ heading_classes }}">{{ heading_text }}</h2>
       {% elseif heading_level == 4 %}
-        <h4 id="{{ heading_id }}" class="text-xl text-navy">{{ heading_text }}</h4>
+        <h4 id="{{ heading_id }}" class="{{ heading_classes }}">{{ heading_text }}</h4>
       {% else %}
-        <h3 id="{{ heading_id }}" class="text-xl text-navy">{{ heading_text }}</h3>
+        <h3 id="{{ heading_id }}" class="{{ heading_classes }}">{{ heading_text }}</h3>
       {% endif %}
 
       {% if has_text %}

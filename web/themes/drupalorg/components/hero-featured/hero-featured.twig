@@ -13,7 +13,7 @@
 
   {# Content sticks at top while image scrolls into view from below #}
   <div class="sticky top-0 overflow-hidden">
-    <div class="relative z-10 container mx-auto px-4 lg:px-8">
+    <div class="relative z-10 container mx-auto px-4 lg:px-12">
       <div class="flex flex-col items-center gap-6 pt-20 pb-14 text-center md:gap-8 md:pt-28 xl:pt-[168px] xl:pb-16">
         {% if heading %}
           {{
@@ -52,7 +52,7 @@
 
   {# Screenshot scrolls up from below the sticky content #}
   {% if image.src is not empty %}
-    <div class="relative z-10 container mx-auto px-4 lg:px-8">
+    <div class="relative z-10 container mx-auto px-4 lg:px-12">
       <div class="mx-auto w-full max-w-4xl pb-12 md:pb-15 xl:max-w-6xl">
         <div class="overflow-hidden rounded-xl bg-white shadow-[0px_12px_24px_-4px_rgba(18,26,38,0.12),0px_4px_8px_-4px_rgba(18,26,38,0.05)]">
           {% include 'canvas:image' ignore missing with {

@@ -29,6 +29,7 @@
   </div>
 
   <div
+    id="navbar-main-menu"
     class="navbar--menu fixed inset-0 top-[calc(var(--drupal-displace-offset-top,0px)+var(--gin-toolbar-height,0px)-var(--navbar-scroll-top,0px))] grid max-w-full min-w-0 shrink-1 grow-1 grid-cols-[1fr] grid-rows-[auto_1fr_auto] flex-col items-stretch justify-start overflow-x-hidden overflow-y-auto bg-white pb-8 md:static md:flex md:h-auto md:flex-1 md:flex-row md:items-center md:justify-between md:gap-9 md:overflow-visible md:bg-transparent md:pb-0"
   >
     <div
@@ -41,7 +42,8 @@
       </div>
 
       <button
-        class="navbar--hide-menu flex h-[44px] w-[44px] flex-0 cursor-pointer items-center justify-center p-2 md:hidden"
+        type="button"
+        class="navbar--hide-menu flex h-[44px] w-[44px] flex-0 cursor-pointer items-center justify-center p-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-drupal-blue md:hidden"
         aria-label="{{ 'Hide menu'|t }}"
       >
         {{
@@ -98,7 +100,13 @@
   </div>
 
   <div class="navbar--hamburger-container flex min-h-[44px] min-w-[44px] shrink-0 grow-0 items-center justify-center md:hidden">
-    <button class="navbar--hamburger flex items-center justify-center" aria-label="{{ 'Show menu'|t }}">
+    <button
+      type="button"
+      class="navbar--hamburger flex items-center justify-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-drupal-blue"
+      aria-label="{{ 'Show menu'|t }}"
+      aria-expanded="false"
+      aria-controls="navbar-main-menu"
+    >
       {{
         include(
           '@drupalorg/components/icon/icon.twig',

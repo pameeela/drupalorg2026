@@ -1,26 +1,24 @@
 {#
 /**
  * @file
- * Single mega-menu destination link (level 3, or level 2 fallback).
+ * Single mega-menu destination link (level 3).
  *
  * Expects:
  * - link_item: menu item array
- * - compact: boolean — denser “By industry” style
  */
 #}
 {% set link_title = link_item.title %}
-{% set is_nolink = link_item.url.isRouted and link_item.url.routeName == '<nolink>' %}
 {% set is_external = link_item.url.external ?? false %}
 {% set description = link_item.entity is not empty ? link_item.entity.field_description.value|default('') : '' %}
-{% set meta = link_item.entity is not empty ? link_item.entity.description.value|default('') : '' %}
 
-{% if is_nolink %}
-  <span class="text-sm text-darkest-gray/90">{{ link_title }}</span>
-{% elseif compact %}
-  <a href="{{ link_item.url }}" class="inline-flex items-baseline gap-[7px] text-[14.5px] font-medium text-dark-blue no-underline hover:underline">
+<a
+  href="{{ link_item.url }}"
+  class="flex flex-col gap-1 rounded-sm no-underline hover:no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-drupal-blue"
+>
+  <span class="inline-flex items-baseline gap-1.5 font-medium text-dark-blue transition duration-300 hover:text-navy">
     {{ link_title }}
     {% if is_external %}
-      <span class="inline-flex opacity-70" aria-hidden="true">
+      <span class="inline-flex" aria-hidden="true">
         {{
           include(
             '@drupalorg/components/icon/icon.twig',
@@ -32,29 +30,10 @@
           )
         }}
       </span>
+      <span class="sr-only">{{ '(external link)'|t }}</span>
     {% endif %}
-  </a>
-{% else %}
-  <a href="{{ link_item.url }}" class="flex flex-col gap-1 rounded-md no-underline hover:no-underline">
-    <span class="inline-flex items-baseline gap-[7px] text-base leading-[1.3] font-medium text-dark-blue">
-      {{ link_title }}
-      {% if is_external %}
-        <span class="inline-flex opacity-75" aria-hidden="true">
-          {{
-            include(
-              '@drupalorg/components/icon/icon.twig',
-              {
-                icon: 'arrow-up-right',
-                icon_size: 'extra-extra-small'
-              },
-              with_context: false
-            )
-          }}
-        </span>
-      {% endif %}
-    </span>
-    {% if description %}
-      <span class="text-sm leading-normal text-pretty text-dark-gray">{{ description }}</span>
-    {% endif %}
-  </a>
-{% endif %}
+  </span>
+  {% if description %}
+    <span class="text-sm text-dark-gray">{{ description }}</span>
+  {% endif %}
+</a>

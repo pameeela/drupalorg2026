@@ -4,17 +4,17 @@
 
 {% set tile =
   html_cva(
-    base: ['@container relative rounded-lg p-4 transition transition-transform duration-300 hover:-translate-y-1 sm:p-5 lg:p-8'],
+    base: ['@container relative rounded-lg p-4 transition duration-300 ease-in-out hover:-translate-y-1 sm:p-5 lg:p-8'],
     variants: {
       hasUrl: {
-        yes: 'group cursor-pointer hover:scale-103',
+        yes: 'group cursor-pointer',
         no: ''
       },
       backgroundColor: {
         primary: 'bg-navy text-white transition duration-300 hover:bg-navy/80',
-        white: 'border border-medium-gray bg-white text-navy hover:border-drupal-blue hover:bg-white/90 hover:text-darkest-gray/90',
+        white: 'border border-medium-gray bg-white text-navy transition duration-300 hover:border-drupal-blue hover:bg-white/90 hover:text-darkest-gray/90',
         navy: 'bg-navy text-white transition duration-300 hover:bg-lightest-gray/80',
-        noColor: 'border border-medium-gray bg-none text-darkest-gray hover:border-drupal-blue'
+        noColor: 'border border-medium-gray bg-none text-darkest-gray transition duration-300 hover:border-drupal-blue hover:shadow-md'
       },
       tileSize: {
         square: 'aspect-square',
@@ -113,8 +113,26 @@
 {% set heading_classes = ['text-md font-semibold @xl:text-xl'] %}
 {% set description_classes = ['mt-1 font-body text-sm @xl:text-md [&>*:first-child]:mt-0 [&>*:last-child]:mb-0'] %}
 
+{% set inner_content =
+  html_cva(
+    base: ['flex h-full flex-col'],
+    variants: {
+      hasUrl: {
+        yes: 'transition duration-300 ease-in-out group-hover:scale-103',
+        no: ''
+      }
+    }
+  )
+%}
+
 <div class="{{ tile_classes }}">
-  <div class="flex h-full flex-col">
+  <div
+    class="{{
+    inner_content.apply({
+      hasUrl: has_url
+    })
+    }}"
+  >
     {% if icon %}
       <div class="{{ icon_container_classes }} mb-2">
         <div class="{{ icon_style_classes }}">

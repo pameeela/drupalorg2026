@@ -6,14 +6,13 @@
  * Tree contract (editorial):
  * - Level 1 (Product, Solutions, …): <nolink> triggers. Optional promo fields
  *   on this item (eyebrow, heading, description, link) render in the panel.
- * - Level 2: <nolink> group labels (columns). Add class "compact" for dense lists.
+ * - Level 2: <nolink> group labels (columns).
  * - Level 3: real destination links; optional field_description body copy.
- *
- * Until level-2 groups exist, level-2 leaf links render in a single column.
  */
 #}
 {% set menu_label = menu_label|default('Main navigation'|t) %}
 
+{# Top level links #}
 {% set trigger_classes =
   [
     'relative',
@@ -34,14 +33,14 @@
     'transition-colors',
     'duration-150',
     'hover:bg-lightest-gray',
-    'group-[.is-open]:text-navy',
-    'md:rounded-none',
+    'group-[.is-open]/mega:text-navy',
     'md:justify-center',
     'md:px-3',
     'md:py-7',
     'md:hover:border-b-drupal-blue',
     'md:hover:bg-transparent',
-    'md:group-[.is-open]:border-b-drupal-blue'
+    'md:group-[.is-open]/mega:border-b-drupal-blue',
+    'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-drupal-blue'
   ]|join(' ')
 %}
 
@@ -53,8 +52,6 @@
     'md:right-0',
     'md:left-0',
     'md:z-[501]',
-    'md:w-full',
-    'md:max-w-none',
     'md:border-t',
     'md:border-b',
     'md:border-light-gray/50',
@@ -82,11 +79,10 @@
 
 {% set columns_classes = ['flex', 'min-w-0', 'flex-col', 'gap-8', 'md:flex-row', 'md:flex-wrap', 'md:gap-10']|join(' ') %}
 
-{% set column_classes = 'flex min-w-0 flex-col flex-1 gap-[30px]' %}
-{% set group_classes_base = 'flex min-w-0 flex-col gap-[18px]' %}
-{% set group_label_classes = 'text-[11px] font-medium tracking-[0.6px] text-dark-gray/90 uppercase' %}
-{% set links_classes = 'flex flex-col gap-5' %}
-{% set links_compact_classes = 'flex flex-col gap-[11px]' %}
+{% set column_classes = 'flex min-w-0 flex-col flex-1 gap-6' %}
+{% set group_classes_base = 'flex min-w-0 flex-col gap-4' %}
+{% set group_label_classes = 'text-[11px] font-medium text-dark-gray/90 uppercase' %}
+{% set links_classes = 'flex flex-col gap-4' %}
 
 {% set promo_classes =
   [
@@ -105,146 +101,99 @@
   ]|join(' ')
 %}
 
-{% set top_link_classes =
-  [
-    'inline-flex',
-    'w-full',
-    'items-center',
-    'px-2',
-    'py-3',
-    'text-[15px]',
-    'font-medium',
-    'no-underline',
-    'hover:bg-lightest-blue',
-    'md:px-3.5',
-    'md:py-7',
-    'md:hover:bg-transparent',
-    'md:hover:text-navy'
-  ]|join(' ')
-%}
-
 <nav aria-label="{{ menu_label }}" data-mega-menu>
   <ul class="m-0 flex list-none flex-col gap-1 p-0 md:flex-row md:items-center md:gap-1 md:ps-6">
     {% for item in items %}
       {% set title = item.title %}
       {% set panel_id = (title ~ '-mega-panel-' ~ loop.index)|clean_id %}
-      {% set has_children = item.below is not empty %}
-      {% set is_nolink = item.url.isRouted and item.url.routeName == '<nolink>' %}
       {% set promo_entity = item.entity is defined and item.entity is not empty ? item.entity : null %}
       {% set has_promo = promo_entity and promo_entity.field_heading.value is not empty %}
 
-      {% if has_children %}
-        <li class="group relative md:static" data-mega-menu-item>
-          <button type="button" class="{{ trigger_classes }}" aria-expanded="false" aria-controls="{{ panel_id }}" data-mega-menu-trigger>
-            <span>{{ title }}</span>
-            <span
-              class="inline-flex opacity-55 transition-transform duration-[160ms] group-[.is-open]:rotate-180 motion-reduce:transition-none"
-              aria-hidden="true"
-            >
-              {{
-                include(
-                  '@drupalorg/components/icon/icon.twig',
-                  {
-                    icon: 'caret-down',
-                    icon_size: 'extra-extra-small'
-                  },
-                  with_context: false
-                )
-              }}
-            </span>
-          </button>
+      <li class="group/mega relative md:static" data-mega-menu-item>
+        <button
+          type="button"
+          id="{{ panel_id }}-trigger"
+          class="{{ trigger_classes }}"
+          aria-expanded="false"
+          aria-controls="{{ panel_id }}"
+          data-mega-menu-trigger
+        >
+          <span>{{ title }}</span>
+          <span
+            class="inline-flex opacity-55 transition-transform duration-[160ms] group-[.is-open]/mega:rotate-180 motion-reduce:transition-none"
+            aria-hidden="true"
+          >
+            {{
+              include(
+                '@drupalorg/components/icon/icon.twig',
+                {
+                  icon: 'caret-down',
+                  icon_size: 'extra-extra-small'
+                },
+                with_context: false
+              )
+            }}
+          </span>
+        </button>
 
-          <div id="{{ panel_id }}" class="{{ panel_classes }}" data-mega-menu-panel hidden>
-            <div class="{{ panel_body_classes }}">
-              <div class="{{ columns_classes }}">
-                {#
-                  for…if…else: render group columns when any child has descendants;
-                  otherwise fall back to a flat list (2-level menus).
-                #}
-                {% for child in item.below|filter(child => child.below is not empty) %}
-                  {% set child_attr_classes = child.attributes.class is defined and child.attributes.class is iterable ? child.attributes.class : []
-                  %}
-                  {% set is_compact = 'compact' in child_attr_classes %}
-                  {% set child_links_classes = is_compact ? links_compact_classes : links_classes %}
-                  <div class="{{ column_classes }}">
-                    <div class="{{ group_classes_base }}">
-                      <div class="{{ group_label_classes }}">
-                        {{ child.title }}
-                      </div>
-                      <div class="{{ child_links_classes }}">
-                        {% for link_item in child.below %}
-                          {% include '@drupalorg/templates/navigation/mega-menu-link.html.twig' with {
-                            link_item: link_item,
-                            compact: is_compact
-                          } only %}
-                        {% endfor %}
-                      </div>
+        <div id="{{ panel_id }}" class="{{ panel_classes }}" role="region" aria-labelledby="{{ panel_id }}-trigger" data-mega-menu-panel hidden>
+          <div class="{{ panel_body_classes }}">
+            <div class="{{ columns_classes }}">
+              {% for child in item.below %}
+                {% set group_label_id = (panel_id ~ '-' ~ child.title ~ '-' ~ loop.index)|clean_id %}
+                <div class="{{ column_classes }}" role="group" aria-labelledby="{{ group_label_id }}">
+                  <div class="{{ group_classes_base }}">
+                    <div id="{{ group_label_id }}" class="{{ group_label_classes }}">
+                      {{ child.title }}
+                    </div>
+                    <div class="{{ links_classes }}">
+                      {% for link_item in child.below %}
+                        {% include '@drupalorg/templates/navigation/mega-menu-link.html.twig' with {
+                          link_item: link_item
+                        } only %}
+                      {% endfor %}
                     </div>
                   </div>
-                {% else %}
-                  {% if item.below %}
-                    <div class="{{ column_classes }}">
-                      <div class="{{ links_classes }}">
-                        {% for link_item in item.below %}
-                          {% include '@drupalorg/templates/navigation/mega-menu-link.html.twig' with {
-                            link_item: link_item,
-                            compact: false
-                          } only %}
-                        {% endfor %}
-                      </div>
-                    </div>
-                  {% endif %}
-                {% endfor %}
-              </div>
-
-              {% if has_promo %}
-                {% set promo_link_item = promo_entity.field_link.isEmpty ? null : promo_entity.field_link[0] %}
-                <aside class="{{ promo_classes }}">
-                  {% if promo_entity.field_eyebrow.value %}
-                    <div class="text-xs font-semibold tracking-wide text-dark-blue uppercase">
-                      {{ promo_entity.field_eyebrow.value }}
-                    </div>
-                  {% endif %}
-                  <div class="font-heading text-xl font-semibold tracking-tight text-darkest-blue">
-                    {{ promo_entity.field_heading.value }}
-                  </div>
-                  {% if promo_entity.field_description.value %}
-                    <div class="text-sm text-darkest-gray">
-                      {{ promo_entity.field_description.value }}
-                    </div>
-                  {% endif %}
-                  {% if promo_link_item %}
-                    <a
-                      href="{{ promo_link_item.url }}"
-                      class="mt-1 inline-flex items-center gap-2 text-sm font-medium text-dark-blue no-underline hover:underline"
-                    >
-                      {{ promo_link_item.title|default('Learn more'|t) }}
-                      {{
-                        include(
-                          '@drupalorg/components/icon/icon.twig',
-                          {
-                            icon: 'arrow-right',
-                            icon_size: 'extra-extra-small'
-                          },
-                          with_context: false
-                        )
-                      }}
-                    </a>
-                  {% endif %}
-                </aside>
-              {% endif %}
+                </div>
+              {% endfor %}
             </div>
+
+            {% if has_promo %}
+              {% set promo_link_item = promo_entity.field_link.isEmpty ? null : promo_entity.field_link[0] %}
+              <div class="{{ promo_classes }}">
+                {% if promo_entity.field_eyebrow.value %}
+                  <div class="text-xs font-semibold tracking-wide text-dark-blue uppercase">
+                    {{ promo_entity.field_eyebrow.value }}
+                  </div>
+                {% endif %}
+                <div class="font-heading text-xl font-semibold tracking-tight text-darkest-blue">
+                  {{ promo_entity.field_heading.value }}
+                </div>
+                {% if promo_entity.field_description.value %}
+                  <div class="text-sm text-darkest-gray">
+                    {{ promo_entity.field_description.value }}
+                  </div>
+                {% endif %}
+                {% if promo_link_item %}
+                  {{
+                    include(
+                      '@drupalorg/components/button/button.twig',
+                      {
+                        variant: 'blue-link',
+                        label: promo_link_item.title|default('Learn more'|t),
+                        href: promo_link_item.url,
+                        icon: 'arrow-right',
+                        btn_classes: 'mt-1'
+                      },
+                      with_context: false
+                    )
+                  }}
+                {% endif %}
+              </div>
+            {% endif %}
           </div>
-        </li>
-      {% else %}
-        <li>
-          {% if is_nolink %}
-            <span class="px-3.5 py-7 text-[15px] font-semibold text-darkest-gray">{{ title }}</span>
-          {% else %}
-            <a href="{{ item.url }}" class="{{ top_link_classes }}">{{ title }}</a>
-          {% endif %}
-        </li>
-      {% endif %}
+        </div>
+      </li>
     {% endfor %}
   </ul>
 </nav>
