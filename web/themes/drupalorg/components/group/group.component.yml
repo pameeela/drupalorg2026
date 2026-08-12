@@ -98,11 +98,19 @@ props:
       type: string
       title: Background color
       enum:
-        - primary
-        - secondary
+        - navy
+        - light-grey
+        - light-blue
+        - light-blue-gradient
+        - dark-blue-gradient
+        - darkest-blue
       meta:enum:
-        primary: Brand navy
-        secondary: Secondary
+        dark: Brand navy
+        light-grey: Light grey
+        light-blue: Light blue
+        light-blue-gradient: Light blue gradient
+        dark-blue-gradient: Dark blue gradient
+        darkest-blue: Darkest blue
     stretch:
       type: boolean
       title: Stretch group to fit container

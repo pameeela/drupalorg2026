@@ -280,7 +280,7 @@ component_tree:
       flex_align: start
       radius: lg
       padding: md
-      background: primary
+      background: navy
       stretch: false
   '2:main_slot:0:group_slot:0:48c7a950-4e6a-4497-bacc-5c9912f80534':
     parent_uuid: 0386d81e-5bb4-4350-85c0-5fbedcc3f9eb
