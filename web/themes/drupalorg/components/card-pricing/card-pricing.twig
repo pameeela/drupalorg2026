@@ -6,8 +6,8 @@
     base: ['group relative flex flex-col gap-4 rounded-sm p-5 shadow-lg transition-colors duration-300 md:gap-6 xl:gap-7 2xl:p-8'],
     variants: {
       promoted: {
-        no: ['bg-card text-card-foreground'],
-        yes: ['bg-primary text-primary-foreground hover:bg-primary/80']
+        no: ['bg-white text-dark-gray'],
+        yes: ['bg-navy text-white hover:bg-navy/80']
       }
     }
   )
@@ -71,7 +71,7 @@
   </div>
 
   {% if block('richtext') is defined and text is not empty %}
-    <div class="{{ features_hover_bg }} rich-text border-t border-foreground/50 pt-4 text-inherit md:pt-6 2xl:pt-7 [&_li]:text-base [&_ul]:my-0">
+    <div class="{{ features_hover_bg }} rich-text border-t border-darkest-gray/50 pt-4 text-inherit md:pt-6 2xl:pt-7 [&_li]:text-base [&_ul]:my-0">
       {% block richtext %}
         {{
           include(

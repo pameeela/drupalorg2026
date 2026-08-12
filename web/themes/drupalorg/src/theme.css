@@ -2,14 +2,8 @@
  * @file theme.css
  * Color foundation and theme variables for Drupalorg.
  *
- * Structure:
- *   1. Primitive palette — the raw brand colors from the Figma design system.
- *      These are the canonical "new variable names" and can be referenced
- *      directly in components (e.g. bg-brand-blue-300, text-darkest-gray).
- *   2. Semantic tokens — shadcn/ui-compatible roles (background, foreground,
- *      primary, card, ...) re-based onto the primitives. Existing components
- *      keep using these (bg-primary, text-foreground, ...) and migrate to
- *      primitive names gradually.
+ * Primitive palette — the raw brand colors from the Figma design system.
+ * Reference these directly in components (e.g. bg-navy, text-darkest-gray).
  *
  * You can customize these values without rebuilding the compiled CSS. Copy this
  * file to your web root, so it sits next to index.php, and clear Drupal's
@@ -30,21 +24,6 @@
   --dark-gray: #646675;
   --darkest-gray: #1f2937;
   --white: #ffffff;
-
-  /* ===== Semantic tokens ===== */
-  --background: var(--white);
-  --foreground: var(--darkest-gray);
-  --card: var(--white);
-  --card-foreground: var(--dark-gray);
-  --primary: var(--drupal-navy);
-  --primary-foreground: var(--white);
-  --secondary: var(--lightest-gray);
-  --secondary-foreground: var(--darkest-gray);
-  --destructive: var(--color-red-600);
-  --destructive-foreground: var(--white);
-  --success: var(--color-green-600);
-  --border: var(--medium-gray);
-  --input: var(--light-gray);
 
   --font-heading: "ZTGatha", "Helvetica Neue", Arial, Helvetica, sans-serif;
   --font-sans: "Noto Sans", Arial, Helvetica, sans-serif;

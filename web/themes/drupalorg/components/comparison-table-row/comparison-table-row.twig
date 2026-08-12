@@ -1,17 +1,17 @@
 {% set col_count = (column_count|default(2)) + 0 %}
-{% set cell_classes = 'px-5 py-3 border-b border-b-border/60' %}
+{% set cell_classes = 'px-5 py-3 border-b border-b-medium-gray/60' %}
 {% set container_classes = 'flex items-center gap-1' %}
 
 {% set color_map = {
   'brand-blue': 'var(--color-drupal-blue)',
-  primary: 'var(--color-primary)',
+  primary: 'var(--color-navy)',
   white: 'white',
-  destructive: 'var(--color-destructive)',
-  success: 'var(--color-success)'
+  destructive: 'var(--color-red-600)',
+  success: 'var(--color-green-600)'
 } %}
 
 <tr>
-  <th scope="row" class="border-b border-b-border/60 px-5 py-3 text-left font-medium">{{ row_label }}</th>
+  <th scope="row" class="border-b border-b-medium-gray/60 px-5 py-3 text-left font-medium">{{ row_label }}</th>
 
   {% if col_count >= 1 %}
     <td class="{{ cell_classes }}">
