@@ -37,11 +37,6 @@
         small: 'pb-10',
         default: 'pb-20',
         large: 'pb-32'
-      },
-      backgroundColor: {
-        dark: '[&_button]:shadow-none',
-        'darkest-blue': '[&_button]:shadow-none',
-        'character-stream': '[&_button]:shadow-none'
       }
     }
   )
@@ -49,7 +44,6 @@
 
 {% set section_classes =
   section.apply({
-    backgroundColor: background_color|default('noColor'),
     marginBlockStart: margin_block_start,
     marginBlockEnd: margin_block_end,
     paddingBlockStart: padding_block_start,
