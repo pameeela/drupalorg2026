@@ -90,6 +90,7 @@
 @layer base {
   body {
     @apply font-normal text-darkest-gray antialiased;
+    font-optical-sizing: auto;
   }
 
   p {
