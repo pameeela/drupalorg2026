@@ -1,0 +1,27 @@
+uuid: fc2cdf7f-35d2-4d8b-a705-de744dbf420f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_component_type
+field_name: field_component_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: code_components
+      label: 'Code components'
+    -
+      value: single_directory_components
+      label: 'Single directory components'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 2
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

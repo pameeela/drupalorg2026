@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.site_template.field_bare_install
+    - field.field.node.site_template.field_component_type
+    - field.field.node.site_template.field_content_types
     - field.field.node.site_template.field_ddev_install
     - field.field.node.site_template.field_demo_link
     - field.field.node.site_template.field_featured_screenshot
@@ -14,10 +16,12 @@ dependencies:
     - field.field.node.site_template.field_seo_image
     - field.field.node.site_template.field_seo_title
     - field.field.node.site_template.field_short_description
+    - field.field.node.site_template.field_technology
     - field.field.node.site_template.field_vertical
     - node.type.site_template
   module:
     - link
+    - options
     - user
 id: node.site_template.default
 targetEntityType: node
@@ -35,6 +39,21 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_component_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_content_types:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
     region: content
   field_ddev_install:
     type: basic_string
@@ -91,6 +110,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_technology:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
     region: content
   field_vertical:
     type: entity_reference_label

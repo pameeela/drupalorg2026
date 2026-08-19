@@ -1,7 +1,7 @@
 "$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
 name: Plain text
-status: obsolete
 group: Base
+status: obsolete
 props:
   type: object
   properties:
@@ -10,3 +10,24 @@ props:
       title: Text
       examples:
         - "Enter your text here"
+    text_size:
+      type: string
+      title: Text size
+      enum:
+        - text-xs
+        - text-sm
+        - normal
+        - text-lg
+        - text-xl
+        - text-2xl
+        - text-3xl
+      meta:enum:
+        text-xs: 12px
+        text-sm: 14px
+        normal: 16px (default)
+        text-lg: 18px
+        text-xl: 20px
+        text-2xl: 24px
+        text-3xl: 32px
+      examples:
+        - normal

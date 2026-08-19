@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.site_template.field_bare_install
+    - field.field.node.site_template.field_component_type
+    - field.field.node.site_template.field_content_types
     - field.field.node.site_template.field_ddev_install
     - field.field.node.site_template.field_demo_link
     - field.field.node.site_template.field_featured_screenshot
@@ -14,6 +16,7 @@ dependencies:
     - field.field.node.site_template.field_seo_image
     - field.field.node.site_template.field_seo_title
     - field.field.node.site_template.field_short_description
+    - field.field.node.site_template.field_technology
     - field.field.node.site_template.field_vertical
     - node.type.site_template
     - workflows.workflow.basic_editorial
@@ -64,6 +67,18 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_component_type:
+    type: options_buttons
+    weight: 105
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_content_types:
+    type: options_buttons
+    weight: 106
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_ddev_install:
     type: string_textarea
@@ -144,6 +159,12 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_technology:
+    type: options_select
+    weight: 104
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_vertical:
     type: tagify_select_widget

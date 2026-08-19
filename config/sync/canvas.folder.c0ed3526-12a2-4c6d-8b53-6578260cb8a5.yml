@@ -9,6 +9,8 @@ dependencies:
     - canvas.component.sdc.drupalorg.blockquote
     - canvas.component.sdc.drupalorg.button
     - canvas.component.sdc.drupalorg.code-command
+    - canvas.component.sdc.drupalorg.component-type
+    - canvas.component.sdc.drupalorg.content-type
     - canvas.component.sdc.drupalorg.divider
     - canvas.component.sdc.drupalorg.eyebrow
     - canvas.component.sdc.drupalorg.heading
@@ -31,6 +33,8 @@ items:
   - sdc.drupalorg.blockquote
   - sdc.drupalorg.button
   - sdc.drupalorg.code-command
+  - sdc.drupalorg.component-type
+  - sdc.drupalorg.content-type
   - sdc.drupalorg.divider
   - sdc.drupalorg.eyebrow
   - sdc.drupalorg.heading

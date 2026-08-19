@@ -1,0 +1,25 @@
+{% set icons = {
+  'Code components': 'code',
+  'Single directory components': 'folder'
+} %}
+{% set item_classes = 'flex items-center gap-2 text-sm' %}
+
+<div class="flex flex-col">
+  {% for item in items %}
+    {% if icons[item] is defined %}
+      <div class="{{ item_classes }}">
+        {{
+          include(
+            '@drupalorg/components/icon/icon.twig',
+            {
+              icon: icons[item],
+              icon_size: 'extra-extra-small'
+            },
+            with_context: false
+          )
+        }}
+        <span>{{ item }}</span>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
