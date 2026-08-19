@@ -1,9 +1,8 @@
 import { ComponentType, ComponentInstance } from "../../lib/component.js";
+import currentlyInCanvasEditor from "../../lib/currentlyInCanvasEditor.js";
 
 /** Pixels scrolled per second for hover-mode previews (design handoff). */
 const SCROLL_SPEED_PX_PER_SEC = 200;
-/** Cap hover travel so very tall screenshots only preview the top portion. */
-const MAX_HOVER_VIEWPORTS = 2;
 
 class SiteTemplatePreview extends ComponentInstance {
   init() {
@@ -11,6 +10,10 @@ class SiteTemplatePreview extends ComponentInstance {
     this.updateDuration = this.updateDuration.bind(this);
     this.onThumbClick = this.onThumbClick.bind(this);
     this.onThumbKeydown = this.onThumbKeydown.bind(this);
+    this.onActivate = this.onActivate.bind(this);
+    this.onAnimationEnd = this.onAnimationEnd.bind(this);
+
+    this.playbackFinished = false;
 
     this.initHoverScroll();
     this.initGallery();
@@ -29,10 +32,26 @@ class SiteTemplatePreview extends ComponentInstance {
 
     this.updateDuration();
     this.hoverImage.addEventListener("load", this.onImageLoad);
+    this.hoverImage.addEventListener("animationend", this.onAnimationEnd);
 
     this.resizeObserver = new ResizeObserver(() => this.updateDuration());
     this.resizeObserver.observe(this.hoverViewport);
     this.resizeObserver.observe(this.hoverImage);
+
+    if (currentlyInCanvasEditor()) {
+      return;
+    }
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      this.hoverViewport.removeAttribute("role");
+      this.hoverViewport.removeAttribute("aria-pressed");
+      this.hoverViewport.removeAttribute("aria-label");
+      this.hoverViewport.tabIndex = -1;
+      return;
+    }
+
+    this.hoverViewport.addEventListener("click", this.onActivate);
+    this.hoverViewport.addEventListener("keydown", this.onActivate);
   }
 
   initGallery() {
@@ -56,6 +75,59 @@ class SiteTemplatePreview extends ComponentInstance {
     this.updateDuration();
   }
 
+  onActivate(event) {
+    if (event.type === "keydown" && event.key !== "Enter" && event.key !== " ") {
+      return;
+    }
+
+    if (event.type === "keydown") {
+      event.preventDefault();
+    }
+
+    this.togglePlayback();
+  }
+
+  togglePlayback() {
+    if (this.el.classList.contains("is-playing")) {
+      this.stopPlayback();
+      return;
+    }
+
+    if (this.playbackFinished) {
+      this.restartAnimation();
+      this.playbackFinished = false;
+    }
+
+    this.startPlayback();
+  }
+
+  startPlayback() {
+    this.el.classList.add("is-playing");
+    this.hoverViewport.setAttribute("aria-pressed", "true");
+    this.hoverViewport.setAttribute("aria-label", "Stop preview");
+  }
+
+  stopPlayback() {
+    this.el.classList.remove("is-playing");
+    this.hoverViewport.setAttribute("aria-pressed", "false");
+    this.hoverViewport.setAttribute("aria-label", "Play preview");
+  }
+
+  restartAnimation() {
+    this.hoverImage.style.animation = "none";
+    void this.hoverImage.offsetHeight;
+    this.hoverImage.style.removeProperty("animation");
+  }
+
+  onAnimationEnd(event) {
+    if (event.animationName !== "site-template-preview-scroll") {
+      return;
+    }
+
+    this.playbackFinished = true;
+    this.stopPlayback();
+  }
+
   updateDuration() {
     if (!this.hoverViewport || !this.hoverImage) {
       return;
@@ -68,9 +140,7 @@ class SiteTemplatePreview extends ComponentInstance {
       return;
     }
 
-    const fullDistance = Math.max(0, imageHeight - viewportHeight);
-    const maxTravel = viewportHeight * MAX_HOVER_VIEWPORTS;
-    const travel = Math.min(fullDistance, maxTravel);
+    const travel = Math.max(0, imageHeight - viewportHeight);
     const duration = travel / SCROLL_SPEED_PX_PER_SEC;
 
     this.el.style.setProperty("--stp-height", `${viewportHeight}px`);
@@ -140,6 +210,11 @@ class SiteTemplatePreview extends ComponentInstance {
   remove() {
     if (this.hoverImage) {
       this.hoverImage.removeEventListener("load", this.onImageLoad);
+      this.hoverImage.removeEventListener("animationend", this.onAnimationEnd);
+    }
+    if (this.hoverViewport) {
+      this.hoverViewport.removeEventListener("click", this.onActivate);
+      this.hoverViewport.removeEventListener("keydown", this.onActivate);
     }
     this.resizeObserver?.disconnect();
     this.thumbs?.forEach((thumb) => {

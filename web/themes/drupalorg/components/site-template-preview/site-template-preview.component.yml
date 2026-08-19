@@ -39,7 +39,7 @@ props:
         - static
       meta:enum:
         scroll: Real scroll (detail page)
-        hover: Hover / focus scroll (browse cards)
+        hover: Tap to scroll/stop (browse cards)
         static: Top crop only
       default: scroll
       examples:
@@ -69,9 +69,10 @@ props:
     caption:
       type: string
       title: Caption
-      description: Optional line below the frame (e.g. scroll hint).
+      description: Optional line below the frame (e.g. scroll or play hint).
       examples:
         - "Scroll to explore the full page"
+        - "Tap to scroll"
     preview_classes:
       type: string
       title: Additional classes

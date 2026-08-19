@@ -52,7 +52,7 @@ component_tree:
       mode: hover
       size: card
       show_chrome: false
-      caption: 'Hover to scroll'
+      caption: 'Tap to scroll'
   '0:group_slot:1:d0a61fec-a1ad-401c-a8ae-a2299c6936ae':
     parent_uuid: 829d667a-9904-41a7-b62a-5495e23f7241
     slot: group_slot

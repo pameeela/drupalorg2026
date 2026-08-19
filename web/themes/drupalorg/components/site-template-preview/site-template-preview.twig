@@ -1,5 +1,5 @@
 {#
-  Full-page screenshot preview: scroll (detail), hover (cards), or static crop.
+  Full-page screenshot preview: scroll (detail), hover tap-to-play (cards), or static crop.
   Detail scroll with 2+ screenshots shows a thumbnail strip to swap the main frame.
 #}
 
@@ -79,7 +79,15 @@
     variants: {
       mode: {
         scroll: 'site-template-preview__viewport--scroll overflow-y-auto',
-        hover: 'site-template-preview__viewport--hover overflow-hidden',
+        hover: [
+          'site-template-preview__viewport--hover',
+          'cursor-pointer',
+          'overflow-hidden',
+          'select-none',
+          'focus-visible:ring-2',
+          'focus-visible:ring-inset',
+          'focus-visible:ring-drupal-blue/50'
+        ],
         static: 'site-template-preview__viewport--static overflow-hidden'
       },
       size: {
@@ -186,6 +194,18 @@
 
 {% set thumb_image = html_cva(base: ['pointer-events-none', 'absolute', 'inset-x-0', 'top-0', 'h-auto', 'w-full', 'max-w-none']) %}
 
+{% set caption_hint =
+  html_cva(
+    base: ['site-template-preview__hint', 'inline-flex', 'items-center', 'gap-1.5'],
+    variants: {
+      state: {
+        idle: 'site-template-preview__hint--idle',
+        playing: 'site-template-preview__hint--playing'
+      }
+    }
+  )
+%}
+
 {% set viewport_shell = html_cva(base: ['relative']) %}
 
 {% set image_classes =
@@ -193,6 +213,26 @@
     mode: preview_mode
   })
 %}
+
+{% set viewport_attributes =
+  create_attribute().addClass(
+    viewport.apply({
+      mode: preview_mode,
+      size: preview_size
+    })
+  ).setAttribute(
+    'tabindex',
+    viewport_tabindex
+  ).setAttribute(
+    'data-site-template-preview-viewport',
+    true
+  )
+%}
+{% if is_hover_mode %}
+  {% set viewport_attributes =
+    viewport_attributes.setAttribute('role', 'button').setAttribute('aria-pressed', 'false').setAttribute('aria-label', 'Play preview')
+  %}
+{% endif %}
 
 {% set attributes =
   attributes.addClass(
@@ -228,16 +268,7 @@
     {% endif %}
 
     <div class="{{ viewport_shell.apply({}) }}">
-      <div
-        class="{{
-        viewport.apply({
-          mode: preview_mode,
-          size: preview_size
-        })
-        }}"
-        tabindex="{{ viewport_tabindex }}"
-        data-site-template-preview-viewport
-      >
+      <div {{ viewport_attributes }}>
         {% if has_media %}
           {% include 'canvas:image' ignore missing with {
             src: active_media.src,
@@ -256,35 +287,95 @@
 
       {% if show_fade_caption %}
         <div class="{{ caption_overlay.apply({}) }}" aria-hidden="true">
-          {{
-            include(
-              '@drupalorg/components/icon/icon.twig',
-              {
-                icon: 'arrow-down',
-                icon_size: 'extra-extra-small',
-                icon_color: 'brand-blue'
-              },
-              with_context: false
-            )
-          }}
-          <span>{{ caption }}</span>
+          <span
+            class="{{
+            caption_hint.apply({
+              state: 'idle'
+            })
+            }}"
+          >
+            {{
+              include(
+                '@drupalorg/components/icon/icon.twig',
+                {
+                  icon: 'arrow-down',
+                  icon_size: 'extra-extra-small',
+                  icon_color: 'brand-blue'
+                },
+                with_context: false
+              )
+            }}
+            <span>{{ caption }}</span>
+          </span>
+          {% if is_hover_mode %}
+            <span
+              class="{{
+              caption_hint.apply({
+                state: 'playing'
+              })
+              }}"
+            >
+              {{
+                include(
+                  '@drupalorg/components/icon/icon.twig',
+                  {
+                    icon: 'pause',
+                    icon_size: 'extra-extra-small',
+                    icon_color: 'brand-blue'
+                  },
+                  with_context: false
+                )
+              }}
+              <span>Tap to stop</span>
+            </span>
+          {% endif %}
         </div>
       {% endif %}
 
       {% if show_chip_caption %}
         <div class="{{ caption_chip.apply({}) }}" aria-hidden="true">
-          {{
-            include(
-              '@drupalorg/components/icon/icon.twig',
-              {
-                icon: 'arrow-down',
-                icon_size: 'extra-extra-small',
-                icon_color: 'white'
-              },
-              with_context: false
-            )
-          }}
-          <span>{{ caption }}</span>
+          <span
+            class="{{
+            caption_hint.apply({
+              state: 'idle'
+            })
+            }}"
+          >
+            {{
+              include(
+                '@drupalorg/components/icon/icon.twig',
+                {
+                  icon: 'arrow-down',
+                  icon_size: 'extra-extra-small',
+                  icon_color: 'white'
+                },
+                with_context: false
+              )
+            }}
+            <span>{{ caption }}</span>
+          </span>
+          {% if is_hover_mode %}
+            <span
+              class="{{
+              caption_hint.apply({
+                state: 'playing'
+              })
+              }}"
+            >
+              {{
+                include(
+                  '@drupalorg/components/icon/icon.twig',
+                  {
+                    icon: 'pause',
+                    icon_size: 'extra-extra-small',
+                    icon_color: 'white'
+                  },
+                  with_context: false
+                )
+              }}
+              <span>Tap to stop</span>
+            </span>
+          {% endif %}
         </div>
       {% endif %}
     </div>

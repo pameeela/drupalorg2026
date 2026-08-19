@@ -1,13 +1,35 @@
 @layer components;
 
-.site-template-preview__viewport--hover .site-template-preview__image--hover {
-  /* Travel + duration are set in JS. */
-  transition: transform var(--stp-duration, 9s) linear;
+@keyframes site-template-preview-scroll {
+  to {
+    transform: translateY(calc(-1 * var(--stp-travel, 1200px)));
+  }
 }
 
-.site-template-preview__viewport--hover:hover .site-template-preview__image--hover,
-.site-template-preview__viewport--hover:focus-within .site-template-preview__image--hover {
-  transform: translateY(calc(-1 * var(--stp-travel, 1200px)));
+.site-template-preview__viewport--hover {
+  touch-action: manipulation;
+}
+
+.site-template-preview__viewport--hover .site-template-preview__image--hover {
+  /* Travel + duration are set in JS. Playback is toggled with .is-playing. */
+  animation: site-template-preview-scroll var(--stp-duration, 9s) linear forwards;
+  animation-play-state: paused;
+}
+
+.site-template-preview.is-playing .site-template-preview__image--hover {
+  animation-play-state: running;
+}
+
+.site-template-preview__hint--playing {
+  display: none;
+}
+
+.site-template-preview.is-playing .site-template-preview__hint--idle {
+  display: none;
+}
+
+.site-template-preview.is-playing .site-template-preview__hint--playing {
+  display: inline-flex;
 }
 
 @keyframes site-template-preview-caption-nudge {
@@ -54,12 +76,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .site-template-preview__viewport--hover .site-template-preview__image--hover {
-    transition: none;
-  }
-
-  .site-template-preview__viewport--hover:hover .site-template-preview__image--hover,
-  .site-template-preview__viewport--hover:focus-within .site-template-preview__image--hover {
-    transform: none;
+    animation: none;
   }
 
   .site-template-preview__caption-overlay {
