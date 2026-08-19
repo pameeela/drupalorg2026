@@ -1,5 +1,5 @@
 langcode: en
-dialog_mode: silent
+dialog_mode: notice
 auto_decorate_final_html: true
 auto_decorate_js_alter: true
 auto_decorate_page_attachments: true

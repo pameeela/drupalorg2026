@@ -1,10 +1,10 @@
-uuid: f3c612a0-bf18-4e7f-b5ad-d7ba49e04a0b
+uuid: c21b7014-a33f-424e-81f1-a7aa9d87534f
 langcode: en
-status: true
+status: false
 dependencies: {  }
 _core:
-  default_config_hash: OAiL5l_V06GUX3aAGAdo5W3RQd-4JG0fXs8L60sfJrY
-id: ga
+  default_config_hash: VdibtFj4X5ekW1PpEJx9ujvGgbz_v8oXOpZi2hi2OaA
+id: ga_consent_mode
 label: 'Google Analytics'
 description: 'Tracks online visits of the website as a service.'
 default: false
@@ -30,13 +30,11 @@ contextual_consent_only: null
 contextual_consent_text: null
 info_url: 'https://marketingplatform.google.com/intl/de/about/analytics/'
 privacy_policy_url: 'https://policies.google.com/privacy'
-javascripts:
-  - analytics.js
+javascripts: {  }
 callback_code: ''
 on_init: ''
-on_accept: ''
-on_decline: ''
+on_accept: "gtag('consent', 'update', {\r\n  'analytics_storage': 'granted'\r\n});"
+on_decline: "gtag('consent', 'update', {\r\n  'analytics_storage': 'denied'\r\n});"
 wrapper_identifier: {  }
-attachments:
-  - ga4_google_analytics
+attachments: {  }
 weight: 1

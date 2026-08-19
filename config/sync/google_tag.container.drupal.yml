@@ -1,0 +1,31 @@
+uuid: 38637999-c3df-4791-a2ac-28135f112114
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+_core:
+  default_config_hash: xgVmP5HxZgrmNT_y7vNIORrCtihSYkx1bIhNilDUI_0
+id: drupal
+label: Drupal
+weight: 0
+tag_container_ids:
+  - GTM-W36H8DW
+advanced_settings:
+  consent_mode: false
+dimensions_metrics: {  }
+conditions:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/admin*\r\n/batch*\r\n/node/add*\r\n/node/*/edit\r\n/node/*/delete\r\n/user/*/edit*\r\n/user/*/cancel*\r\n/taxonomy/term/*/edit\r\n/taxonomy/term/*/delete"
+events:
+  search: {  }
+  custom: {  }
+  generate_lead:
+    value: ''
+    currency: ''
+  login:
+    method: CMS
+  sign_up:
+    method: CMS
