@@ -1,0 +1,44 @@
+uuid: 22de834b-0338-416c-99dc-a68d03d78bfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.drupalorg.button
+    - canvas.component.sdc.drupalorg.cta
+  module:
+    - options
+id: trydrupalctabig
+label: 'Try Drupal CTA Big'
+component_tree:
+  '0:actions:0:1db15e50-d456-4f10-8a6b-0d8490c9b9f8':
+    parent_uuid: ce26db08-27de-4f5c-b30a-4cfbd7a242ea
+    slot: actions
+    uuid: 1db15e50-d456-4f10-8a6b-0d8490c9b9f8
+    component_id: sdc.drupalorg.button
+    component_version: 1c40a1a84181621a
+    inputs:
+      variant: white
+      label: 'Try it free'
+      icon: caret-right
+      disabled: false
+  '0:actions:1:95659dba-e42a-40bd-a3c4-6b11f345c9cc':
+    parent_uuid: ce26db08-27de-4f5c-b30a-4cfbd7a242ea
+    slot: actions
+    uuid: 95659dba-e42a-40bd-a3c4-6b11f345c9cc
+    component_id: sdc.drupalorg.button
+    component_version: 1c40a1a84181621a
+    inputs:
+      variant: transparent-white
+      label: 'Watch the demo'
+      icon: arrow-right
+      disabled: false
+  '0:ce26db08-27de-4f5c-b30a-4cfbd7a242ea':
+    uuid: ce26db08-27de-4f5c-b30a-4cfbd7a242ea
+    component_id: sdc.drupalorg.cta
+    component_version: e3d7e89f0f08fe41
+    inputs:
+      heading_text: 'Try Drupal CMS in your browser'
+      level: 2
+      text: 'No install. No credit card. A working site in minutes.'
+      text_align: center
+      background_color: primary
