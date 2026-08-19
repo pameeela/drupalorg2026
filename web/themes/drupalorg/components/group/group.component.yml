@@ -45,10 +45,12 @@ props:
         - start
         - center
         - end
+        - grow
       meta:enum:
         start: Start
         center: Center
         end: End
+        grow: Space between
       default: "start"
       examples:
         - "start"
