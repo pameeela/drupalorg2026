@@ -1,9 +1,10 @@
 {% set has_radius = radius is not empty ? 'yes' : 'no' %}
 {% set has_url = url is not empty ? 'yes' : 'no' %}
+{% set full = full_width ? 'yes' : 'no' %}
 
 {% set image_container =
   html_cva(
-    base: 'cq-full w-full',
+    base: 'w-full',
     variants: {
       size: {
         '2:1': 'aspect-2/1',
@@ -11,6 +12,10 @@
         '3:2': 'aspect-3/2',
         '4:3': 'aspect-4/3',
         '1:1': 'aspect-1/1'
+      },
+      fullWidth: {
+        yes: 'cq-full',
+        no: ''
       },
       hasRadius: {
         yes: 'overflow-hidden',
@@ -29,7 +34,8 @@
   image_container.apply({
     size: size,
     hasRadius: has_radius,
-    radius: radius
+    radius: radius,
+    fullWidth: full
   })
 %}
 

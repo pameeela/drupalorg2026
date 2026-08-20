@@ -51,3 +51,8 @@ props:
       type: string
       title: Link
       format: uri-reference
+    full_width:
+      type: boolean
+      title: Full width
+      examples:
+        - false
