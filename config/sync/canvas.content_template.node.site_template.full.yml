@@ -222,7 +222,7 @@ component_tree:
     component_version: 8e4dee1f767538b4
     inputs:
       text:
-        value: '<p><strong>Technology</strong></p>'
+        value: '<p><strong>Front end</strong></p>'
         format: canvas_html_block
       text_size: text-sm
       text_color: default

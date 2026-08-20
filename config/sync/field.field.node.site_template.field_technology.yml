@@ -10,7 +10,7 @@ id: node.site_template.field_technology
 field_name: field_technology
 entity_type: node
 bundle: site_template
-label: Technology
+label: 'Front end'
 description: ''
 required: false
 translatable: false

@@ -2,11 +2,49 @@ uuid: 9ae195da-9bc6-453a-b3d0-83534bf6ccca
 langcode: en
 status: true
 dependencies:
+  module:
+    - canvas_icon_picker
   theme:
     - drupalorg
-active_version: 1835b2d6fb61038f
+active_version: d9aa26cb4bfe91bc
 versioned_properties:
   active:
+    settings:
+      prop_field_definitions:
+        title:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'One-click site templates'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        icon:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings:
+            allowed_icon_pack:
+              - phosphor
+          field_widget: canvas_icon_picker
+          default_value:
+            -
+              value: squares-four
+          expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
+    fallback_metadata:
+      slot_definitions:
+        content:
+          title: Content
+          description: 'Left column — heading-supporting text and calls to action.'
+        media:
+          title: Media
+          description: 'Right column — image, video, or other media.'
+  1835b2d6fb61038f:
     settings:
       prop_field_definitions:
         title:
