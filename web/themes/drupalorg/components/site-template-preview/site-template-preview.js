@@ -1,7 +1,7 @@
 import { ComponentType, ComponentInstance } from "../../lib/component.js";
 import currentlyInCanvasEditor from "../../lib/currentlyInCanvasEditor.js";
 
-/** Pixels scrolled per second for hover-mode previews (design handoff). */
+/* Pixels scrolled per second for card previews. */
 const SCROLL_SPEED_PX_PER_SEC = 200;
 
 class SiteTemplatePreview extends ComponentInstance {
