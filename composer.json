@@ -28,6 +28,7 @@
         "drupal/autosave_form": "^1.10.0",
         "drupal/bpmn_io": "^3.0.4",
         "drupal/canvas": "^1.3.2",
+        "drupal/canvas_icon_picker": "^1.0",
         "drupal/captcha": "^2.0.10",
         "drupal/checklistapi": "^2.1.7",
         "drupal/coffee": "^2.0.1",

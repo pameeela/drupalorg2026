@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a1490b4075ddb3571ec9cb7e2a52d47",
+    "content-hash": "3627392c2721639a058d435606a7b589",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2033,6 +2033,56 @@
             "homepage": "https://www.drupal.org/project/canvas",
             "support": {
                 "source": "https://git.drupalcode.org/project/canvas"
+            }
+        },
+        {
+            "name": "drupal/canvas_icon_picker",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/canvas_icon_picker.git",
+                "reference": "1.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/canvas_icon_picker-1.0.2.zip",
+                "reference": "1.0.2",
+                "shasum": "d62a7382e57b71cd46651d5a410961b4bdee6dec"
+            },
+            "require": {
+                "drupal/canvas": "^1.0",
+                "drupal/core": "^11.1 || ^12"
+            },
+            "require-dev": {
+                "drupal/custom_elements": "^3.4",
+                "drupal/simple_oauth": "^6.1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.2",
+                    "datestamp": "1786658254",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "aaronchristian",
+                    "homepage": "https://www.drupal.org/user/445890"
+                }
+            ],
+            "description": "Visual icon picker for Drupal Canvas string props, backed by core's Icon API.",
+            "homepage": "https://www.drupal.org/project/canvas_icon_picker",
+            "support": {
+                "source": "https://git.drupalcode.org/project/canvas_icon_picker",
+                "issues": "https://www.drupal.org/project/issues/canvas_icon_picker"
             }
         },
         {
