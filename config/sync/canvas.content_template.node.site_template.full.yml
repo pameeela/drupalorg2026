@@ -14,9 +14,11 @@ dependencies:
     - canvas.component.sdc.drupalorg.content-type
     - canvas.component.sdc.drupalorg.divider
     - canvas.component.sdc.drupalorg.eyebrow
+    - canvas.component.sdc.drupalorg.grid
     - canvas.component.sdc.drupalorg.group
     - canvas.component.sdc.drupalorg.heading
     - canvas.component.sdc.drupalorg.icon
+    - canvas.component.sdc.drupalorg.image
     - canvas.component.sdc.drupalorg.plain-text
     - canvas.component.sdc.drupalorg.section
     - canvas.component.sdc.drupalorg.site-template-preview
@@ -25,7 +27,10 @@ dependencies:
     - field.field.media.image.field_media_image
     - field.field.node.site_template.field_bare_install
     - field.field.node.site_template.field_component_type
+    - field.field.node.site_template.field_content
     - field.field.node.site_template.field_content_types
+    - field.field.node.site_template.field_creator
+    - field.field.node.site_template.field_css_framework
     - field.field.node.site_template.field_ddev_install
     - field.field.node.site_template.field_demo_link
     - field.field.node.site_template.field_featured_screenshot
@@ -33,11 +38,15 @@ dependencies:
     - field.field.node.site_template.field_price
     - field.field.node.site_template.field_short_description
     - field.field.node.site_template.field_technology
+    - field.field.taxonomy_term.site_template_creator.field_logo
     - filter.format.canvas_html_block
+    - filter.format.content_format
     - image.style.canvas_parametrized_width
     - media.type.image
     - node.type.site_template
     - taxonomy.vocabulary.site_template_content_types
+    - taxonomy.vocabulary.site_template_creator
+    - taxonomy.vocabulary.site_template_css_framework
     - taxonomy.vocabulary.site_template_technology
   module:
     - file
@@ -62,13 +71,13 @@ component_tree:
   '1:2ab60f33-9672-483c-9530-b19f4cdcde82':
     uuid: 2ab60f33-9672-483c-9530-b19f4cdcde82
     component_id: sdc.drupalorg.section
-    component_version: 3f26d8450b99efa8
+    component_version: cc56651b3b3c5dd8
     inputs:
       width: 100%
       columns: '2 columns 67%-33%'
       mobile_columns: '1'
       margin_block_start: default
-      margin_block_end: default
+      margin_block_end: small
       padding_block_start: '0'
       padding_block_end: '0'
       section_header: false
@@ -271,7 +280,7 @@ component_tree:
     inputs:
       text:
         sourceType: entity-field
-        expression: 'ℹ︎␜entity:node:site_template␝field_technology␞␟entity␜␜entity:taxonomy_term␝name␞␟value'
+        expression: 'ℹ︎␜entity:node:site_template␝field_css_framework␞␟entity␜␜entity:taxonomy_term␝name␞␟value'
       text_size: text-sm
   '1:main_slot:1:group_slot:7:8c1ff702-8dc1-4af2-84da-6f49df756c47':
     parent_uuid: cd428d6b-6a83-4c31-8839-71fa894861c0
@@ -368,21 +377,62 @@ component_tree:
         format: canvas_html_block
       text_size: text-sm
       text_color: default
-  '1:main_slot:1:group_slot:9:group_slot:1:33e67221-2f0e-4c18-9fb3-34affe936eb0':
+  '1:main_slot:1:group_slot:9:group_slot:1:2dcfad7c-a01e-48f7-82fc-bdd9f20bcad3':
     parent_uuid: d1e23da2-3863-4e68-890b-9ac0658ba175
     slot: group_slot
-    uuid: 33e67221-2f0e-4c18-9fb3-34affe936eb0
-    component_id: sdc.drupalorg.plain-text
-    component_version: 1440083e37d8ffc4
+    uuid: 2dcfad7c-a01e-48f7-82fc-bdd9f20bcad3
+    component_id: sdc.drupalorg.grid
+    component_version: d3e0565623935449
+    inputs:
+      width: 100%
+      columns: '2 columns'
+      mobile_columns: '1'
+  '1:main_slot:1:group_slot:9:group_slot:1:main_slot:0:9b56c8aa-a4e0-4101-9cd3-677468636e20':
+    parent_uuid: 2dcfad7c-a01e-48f7-82fc-bdd9f20bcad3
+    slot: main_slot
+    uuid: 9b56c8aa-a4e0-4101-9cd3-677468636e20
+    component_id: sdc.drupalorg.image
+    component_version: feea616d6e840187
+    inputs:
+      media:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:site_template␝field_creator␞␟entity␜␜entity:taxonomy_term:site_template_creator␝field_logo␞␟entity␜␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}'
+      radius: small
+      url:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:site_template␝field_creator␞␟url'
+      full_width: false
+  '2:4648b64d-fb90-4fea-a192-e6b12293bfaa':
+    uuid: 4648b64d-fb90-4fea-a192-e6b12293bfaa
+    component_id: sdc.drupalorg.section
+    component_version: cc56651b3b3c5dd8
+    inputs:
+      width: 100%
+      columns: '2 columns'
+      mobile_columns: '1'
+      margin_block_start: '0'
+      margin_block_end: '0'
+      padding_block_start: '0'
+      padding_block_end: '0'
+      section_header: false
+      center_header: false
+      section_footer: false
+  '2:main_slot:0:3ef9b9e5-f32e-493e-a89f-8dd43b88c9f9':
+    parent_uuid: 4648b64d-fb90-4fea-a192-e6b12293bfaa
+    slot: main_slot
+    uuid: 3ef9b9e5-f32e-493e-a89f-8dd43b88c9f9
+    component_id: sdc.drupalorg.text
+    component_version: 8e4dee1f767538b4
     inputs:
       text:
         sourceType: entity-field
-        expression: 'ℹ︎␜entity:node:site_template␝field_technology␞␟entity␜␜entity:taxonomy_term␝name␞␟value'
-      text_size: text-sm
-  '2:27a623ee-c4db-4e03-a4ab-73eb0c6fbc99':
+        expression: 'ℹ︎␜entity:node:site_template␝field_content␞␟processed'
+      text_size: normal
+      text_color: default
+  '3:27a623ee-c4db-4e03-a4ab-73eb0c6fbc99':
     uuid: 27a623ee-c4db-4e03-a4ab-73eb0c6fbc99
     component_id: sdc.drupalorg.section
-    component_version: 3f26d8450b99efa8
+    component_version: cc56651b3b3c5dd8
     inputs:
       width: 90%
       columns: '2 columns 33%-67%'
@@ -395,7 +445,7 @@ component_tree:
       section_header: true
       center_header: false
       section_footer: true
-  '2:header_slot:0:f51e0504-8d34-4ab9-82cf-159f3b14399f':
+  '3:header_slot:0:f51e0504-8d34-4ab9-82cf-159f3b14399f':
     parent_uuid: 27a623ee-c4db-4e03-a4ab-73eb0c6fbc99
     slot: header_slot
     uuid: f51e0504-8d34-4ab9-82cf-159f3b14399f
@@ -403,7 +453,7 @@ component_tree:
     component_version: '5524813695409257'
     inputs:
       id: install
-  '2:header_slot:1:615877e7-d710-47c5-ab48-beb389199473':
+  '3:header_slot:1:615877e7-d710-47c5-ab48-beb389199473':
     parent_uuid: 27a623ee-c4db-4e03-a4ab-73eb0c6fbc99
     slot: header_slot
     uuid: 615877e7-d710-47c5-ab48-beb389199473
@@ -412,7 +462,7 @@ component_tree:
     inputs:
       eyebrow_text: 'Get started'
       text_color: drupal-dark-blue
-  '2:header_slot:2:705018fe-b559-4bee-9274-7eabb5d50a49':
+  '3:header_slot:2:705018fe-b559-4bee-9274-7eabb5d50a49':
     parent_uuid: 27a623ee-c4db-4e03-a4ab-73eb0c6fbc99
     slot: header_slot
     uuid: 705018fe-b559-4bee-9274-7eabb5d50a49
@@ -425,7 +475,7 @@ component_tree:
       flex_align: start
       radius: sm
       stretch: false
-  '2:header_slot:2:group_slot:0:c6a8b7dd-4dcd-4080-b0e5-b4dfffd63d50':
+  '3:header_slot:2:group_slot:0:c6a8b7dd-4dcd-4080-b0e5-b4dfffd63d50':
     parent_uuid: 705018fe-b559-4bee-9274-7eabb5d50a49
     slot: group_slot
     uuid: c6a8b7dd-4dcd-4080-b0e5-b4dfffd63d50
@@ -437,7 +487,7 @@ component_tree:
       text_size: heading-responsive-4xl
       text_color: default
       align: left
-  '2:header_slot:2:group_slot:1:b4ecb34e-f927-4e48-a089-b11c8c043faa':
+  '3:header_slot:2:group_slot:1:b4ecb34e-f927-4e48-a089-b11c8c043faa':
     parent_uuid: 705018fe-b559-4bee-9274-7eabb5d50a49
     slot: group_slot
     uuid: b4ecb34e-f927-4e48-a089-b11c8c043faa
@@ -451,7 +501,7 @@ component_tree:
       text_size: heading-responsive-4xl
       text_color: default
       align: left
-  '2:header_slot:3:725b7661-1e2f-4e89-a327-455bcdcad8ec':
+  '3:header_slot:3:725b7661-1e2f-4e89-a327-455bcdcad8ec':
     parent_uuid: 27a623ee-c4db-4e03-a4ab-73eb0c6fbc99
     slot: header_slot
     uuid: 725b7661-1e2f-4e89-a327-455bcdcad8ec
@@ -463,7 +513,7 @@ component_tree:
         format: canvas_html_block
       text_size: normal
       text_color: default
-  '2:main_slot:0:0386d81e-5bb4-4350-85c0-5fbedcc3f9eb':
+  '3:main_slot:0:0386d81e-5bb4-4350-85c0-5fbedcc3f9eb':
     parent_uuid: 27a623ee-c4db-4e03-a4ab-73eb0c6fbc99
     slot: main_slot
     uuid: 0386d81e-5bb4-4350-85c0-5fbedcc3f9eb
@@ -478,7 +528,7 @@ component_tree:
       padding: md
       background: navy
       stretch: false
-  '2:main_slot:0:group_slot:0:48c7a950-4e6a-4497-bacc-5c9912f80534':
+  '3:main_slot:0:group_slot:0:48c7a950-4e6a-4497-bacc-5c9912f80534':
     parent_uuid: 0386d81e-5bb4-4350-85c0-5fbedcc3f9eb
     slot: group_slot
     uuid: 48c7a950-4e6a-4497-bacc-5c9912f80534
@@ -490,7 +540,7 @@ component_tree:
       text_size: heading-responsive-3xl
       text_color: inverted
       align: left
-  '2:main_slot:0:group_slot:1:3229e310-0da4-4baa-bc1f-983b975a06c3':
+  '3:main_slot:0:group_slot:1:3229e310-0da4-4baa-bc1f-983b975a06c3':
     parent_uuid: 0386d81e-5bb4-4350-85c0-5fbedcc3f9eb
     slot: group_slot
     uuid: 3229e310-0da4-4baa-bc1f-983b975a06c3
@@ -502,7 +552,7 @@ component_tree:
         format: canvas_html_block
       text_size: text-sm
       text_color: light-blue
-  '2:main_slot:0:group_slot:2:a3b0d08d-9e1b-44ce-accd-2ec70a345ba1':
+  '3:main_slot:0:group_slot:2:a3b0d08d-9e1b-44ce-accd-2ec70a345ba1':
     parent_uuid: 0386d81e-5bb4-4350-85c0-5fbedcc3f9eb
     slot: group_slot
     uuid: a3b0d08d-9e1b-44ce-accd-2ec70a345ba1
@@ -515,7 +565,7 @@ component_tree:
       flex_align: start
       radius: sm
       stretch: false
-  '2:main_slot:0:group_slot:2:group_slot:0:52c3209e-cbbf-41af-89e7-34aa0a53b598':
+  '3:main_slot:0:group_slot:2:group_slot:0:52c3209e-cbbf-41af-89e7-34aa0a53b598':
     parent_uuid: a3b0d08d-9e1b-44ce-accd-2ec70a345ba1
     slot: group_slot
     uuid: 52c3209e-cbbf-41af-89e7-34aa0a53b598
@@ -528,7 +578,7 @@ component_tree:
       flex_align: start
       radius: sm
       stretch: false
-  '2:main_slot:0:group_slot:2:group_slot:0:group_slot:0:67edd876-9808-4a80-81f2-13c21166168d':
+  '3:main_slot:0:group_slot:2:group_slot:0:group_slot:0:67edd876-9808-4a80-81f2-13c21166168d':
     parent_uuid: 52c3209e-cbbf-41af-89e7-34aa0a53b598
     slot: group_slot
     uuid: 67edd876-9808-4a80-81f2-13c21166168d
@@ -538,7 +588,7 @@ component_tree:
       icon: check-circle
       icon_size: extra-small
       icon_color: brand-blue
-  '2:main_slot:0:group_slot:2:group_slot:0:group_slot:1:865292a0-8f31-4a2c-9338-46ed7250136b':
+  '3:main_slot:0:group_slot:2:group_slot:0:group_slot:1:865292a0-8f31-4a2c-9338-46ed7250136b':
     parent_uuid: 52c3209e-cbbf-41af-89e7-34aa0a53b598
     slot: group_slot
     uuid: 865292a0-8f31-4a2c-9338-46ed7250136b
@@ -550,7 +600,7 @@ component_tree:
         format: canvas_html_block
       text_size: text-sm
       text_color: inverted
-  '2:main_slot:0:group_slot:2:group_slot:1:397c25ec-d8f5-4971-9f8d-f3943733fa1f':
+  '3:main_slot:0:group_slot:2:group_slot:1:397c25ec-d8f5-4971-9f8d-f3943733fa1f':
     parent_uuid: a3b0d08d-9e1b-44ce-accd-2ec70a345ba1
     slot: group_slot
     uuid: 397c25ec-d8f5-4971-9f8d-f3943733fa1f
@@ -563,7 +613,7 @@ component_tree:
       flex_align: start
       radius: sm
       stretch: false
-  '2:main_slot:0:group_slot:2:group_slot:1:group_slot:0:843bb166-6e9b-4771-81c1-294cead9428b':
+  '3:main_slot:0:group_slot:2:group_slot:1:group_slot:0:843bb166-6e9b-4771-81c1-294cead9428b':
     parent_uuid: 397c25ec-d8f5-4971-9f8d-f3943733fa1f
     slot: group_slot
     uuid: 843bb166-6e9b-4771-81c1-294cead9428b
@@ -573,7 +623,7 @@ component_tree:
       icon: check-circle
       icon_size: extra-small
       icon_color: brand-blue
-  '2:main_slot:0:group_slot:2:group_slot:1:group_slot:1:be6eaab1-9ff1-4205-ae72-30c1e634116f':
+  '3:main_slot:0:group_slot:2:group_slot:1:group_slot:1:be6eaab1-9ff1-4205-ae72-30c1e634116f':
     parent_uuid: 397c25ec-d8f5-4971-9f8d-f3943733fa1f
     slot: group_slot
     uuid: be6eaab1-9ff1-4205-ae72-30c1e634116f
@@ -585,7 +635,7 @@ component_tree:
         format: canvas_html_block
       text_size: text-sm
       text_color: inverted
-  '2:main_slot:0:group_slot:2:group_slot:2:1843ceb8-f801-4ccc-9879-f8c1ee5f1569':
+  '3:main_slot:0:group_slot:2:group_slot:2:1843ceb8-f801-4ccc-9879-f8c1ee5f1569':
     parent_uuid: a3b0d08d-9e1b-44ce-accd-2ec70a345ba1
     slot: group_slot
     uuid: 1843ceb8-f801-4ccc-9879-f8c1ee5f1569
@@ -598,7 +648,7 @@ component_tree:
       flex_align: start
       radius: sm
       stretch: false
-  '2:main_slot:0:group_slot:2:group_slot:2:group_slot:0:cc82ab79-7f6b-4f61-9545-8350c9250931':
+  '3:main_slot:0:group_slot:2:group_slot:2:group_slot:0:cc82ab79-7f6b-4f61-9545-8350c9250931':
     parent_uuid: 1843ceb8-f801-4ccc-9879-f8c1ee5f1569
     slot: group_slot
     uuid: cc82ab79-7f6b-4f61-9545-8350c9250931
@@ -608,7 +658,7 @@ component_tree:
       icon: check-circle
       icon_size: extra-small
       icon_color: brand-blue
-  '2:main_slot:0:group_slot:2:group_slot:2:group_slot:1:a50fe770-751a-4fd6-9cdd-44a395f97e2d':
+  '3:main_slot:0:group_slot:2:group_slot:2:group_slot:1:a50fe770-751a-4fd6-9cdd-44a395f97e2d':
     parent_uuid: 1843ceb8-f801-4ccc-9879-f8c1ee5f1569
     slot: group_slot
     uuid: a50fe770-751a-4fd6-9cdd-44a395f97e2d
@@ -620,7 +670,7 @@ component_tree:
         format: canvas_html_block
       text_size: text-sm
       text_color: inverted
-  '2:main_slot:0:group_slot:3:e4997f21-ad55-4ef3-994e-badd145184bc':
+  '3:main_slot:0:group_slot:3:e4997f21-ad55-4ef3-994e-badd145184bc':
     parent_uuid: 0386d81e-5bb4-4350-85c0-5fbedcc3f9eb
     slot: group_slot
     uuid: e4997f21-ad55-4ef3-994e-badd145184bc
@@ -634,7 +684,7 @@ component_tree:
         expression: 'ℹ︎␜entity:node:site_template␝field_demo_link␞␟uri'
       icon: arrow-up-right
       disabled: false
-  '2:main_slot:1:49aebf08-b576-4a4d-abee-d3b970beeec4':
+  '3:main_slot:1:49aebf08-b576-4a4d-abee-d3b970beeec4':
     parent_uuid: 27a623ee-c4db-4e03-a4ab-73eb0c6fbc99
     slot: main_slot
     uuid: 49aebf08-b576-4a4d-abee-d3b970beeec4
@@ -647,7 +697,7 @@ component_tree:
       flex_align: start
       radius: sm
       stretch: false
-  '2:main_slot:1:group_slot:0:87c9ea2d-908b-437f-973b-0804c73db484':
+  '3:main_slot:1:group_slot:0:87c9ea2d-908b-437f-973b-0804c73db484':
     parent_uuid: 49aebf08-b576-4a4d-abee-d3b970beeec4
     slot: group_slot
     uuid: 87c9ea2d-908b-437f-973b-0804c73db484
@@ -659,7 +709,7 @@ component_tree:
       text_size: heading-responsive-3xl
       text_color: default
       align: left
-  '2:main_slot:1:group_slot:1:c734f563-7fe5-49fa-bb61-efea5214043c':
+  '3:main_slot:1:group_slot:1:c734f563-7fe5-49fa-bb61-efea5214043c':
     parent_uuid: 49aebf08-b576-4a4d-abee-d3b970beeec4
     slot: group_slot
     uuid: c734f563-7fe5-49fa-bb61-efea5214043c
@@ -671,7 +721,7 @@ component_tree:
         format: canvas_html_block
       text_size: text-sm
       text_color: default
-  '2:main_slot:1:group_slot:2:cb4e21a2-f84f-47d0-b0da-c693b098e6f3':
+  '3:main_slot:1:group_slot:2:cb4e21a2-f84f-47d0-b0da-c693b098e6f3':
     parent_uuid: 49aebf08-b576-4a4d-abee-d3b970beeec4
     slot: group_slot
     uuid: cb4e21a2-f84f-47d0-b0da-c693b098e6f3
@@ -685,7 +735,7 @@ component_tree:
         sourceType: entity-field
         expression: 'ℹ︎␜entity:node:site_template␝field_bare_install␞␟value'
       show_switch: true
-  '2:main_slot:1:group_slot:3:de73d1fc-dc1d-4df3-b5bf-44da341aa808':
+  '3:main_slot:1:group_slot:3:de73d1fc-dc1d-4df3-b5bf-44da341aa808':
     parent_uuid: 49aebf08-b576-4a4d-abee-d3b970beeec4
     slot: group_slot
     uuid: de73d1fc-dc1d-4df3-b5bf-44da341aa808
@@ -699,10 +749,10 @@ component_tree:
         options: {  }
       icon: arrow-right
       disabled: false
-  '3:91f6c18a-43ff-4289-ae94-8027c074eb20':
+  '4:91f6c18a-43ff-4289-ae94-8027c074eb20':
     uuid: 91f6c18a-43ff-4289-ae94-8027c074eb20
     component_id: sdc.drupalorg.section
-    component_version: 3f26d8450b99efa8
+    component_version: cc56651b3b3c5dd8
     inputs:
       width: 90%
       columns: '4 columns'
@@ -714,7 +764,7 @@ component_tree:
       section_header: true
       center_header: false
       section_footer: true
-  '3:header_slot:0:ff2abed5-ce1d-4f07-b3de-35bebbc704fb':
+  '4:header_slot:0:ff2abed5-ce1d-4f07-b3de-35bebbc704fb':
     parent_uuid: 91f6c18a-43ff-4289-ae94-8027c074eb20
     slot: header_slot
     uuid: ff2abed5-ce1d-4f07-b3de-35bebbc704fb
@@ -726,7 +776,7 @@ component_tree:
       text_size: heading-responsive-4xl
       text_color: default
       align: left
-  '3:main_slot:0:b693757e-3f15-453b-924a-e76551a65bea':
+  '4:main_slot:0:b693757e-3f15-453b-924a-e76551a65bea':
     parent_uuid: 91f6c18a-43ff-4289-ae94-8027c074eb20
     slot: main_slot
     uuid: b693757e-3f15-453b-924a-e76551a65bea
@@ -742,7 +792,7 @@ component_tree:
       icon_size: medium
       icon_align: left
       icon_style: drupal-blue
-  '3:main_slot:1:497e04eb-ae29-49ad-84d3-831b1d974317':
+  '4:main_slot:1:497e04eb-ae29-49ad-84d3-831b1d974317':
     parent_uuid: 91f6c18a-43ff-4289-ae94-8027c074eb20
     slot: main_slot
     uuid: 497e04eb-ae29-49ad-84d3-831b1d974317
@@ -758,7 +808,7 @@ component_tree:
       icon_size: medium
       icon_align: left
       icon_style: drupal-blue
-  '3:main_slot:2:60e1e26a-32e2-4532-86ee-e44b4074f089':
+  '4:main_slot:2:60e1e26a-32e2-4532-86ee-e44b4074f089':
     parent_uuid: 91f6c18a-43ff-4289-ae94-8027c074eb20
     slot: main_slot
     uuid: 60e1e26a-32e2-4532-86ee-e44b4074f089
@@ -774,7 +824,7 @@ component_tree:
       icon_size: medium
       icon_align: left
       icon_style: drupal-blue
-  '3:main_slot:3:a8cdddcf-d64f-4729-926a-ae849616c20f':
+  '4:main_slot:3:a8cdddcf-d64f-4729-926a-ae849616c20f':
     parent_uuid: 91f6c18a-43ff-4289-ae94-8027c074eb20
     slot: main_slot
     uuid: a8cdddcf-d64f-4729-926a-ae849616c20f
@@ -790,10 +840,10 @@ component_tree:
       icon_size: medium
       icon_align: left
       icon_style: drupal-blue
-  '4:6ed925bd-5bae-4db0-b1b0-3af566b26f2d':
+  '5:6ed925bd-5bae-4db0-b1b0-3af566b26f2d':
     uuid: 6ed925bd-5bae-4db0-b1b0-3af566b26f2d
     component_id: sdc.drupalorg.section
-    component_version: 3f26d8450b99efa8
+    component_version: cc56651b3b3c5dd8
     inputs:
       width: 100%
       columns: '1 column'
@@ -807,7 +857,7 @@ component_tree:
       section_header: true
       center_header: false
       section_footer: true
-  '4:header_slot:0:e35df607-eb0f-4063-98a7-016509044677':
+  '5:header_slot:0:e35df607-eb0f-4063-98a7-016509044677':
     parent_uuid: 6ed925bd-5bae-4db0-b1b0-3af566b26f2d
     slot: header_slot
     uuid: e35df607-eb0f-4063-98a7-016509044677
@@ -819,7 +869,7 @@ component_tree:
       text_size: heading-responsive-4xl
       text_color: default
       align: left
-  '4:main_slot:0:720fb581-a0c8-49db-8882-ccd179e7e73f':
+  '5:main_slot:0:720fb581-a0c8-49db-8882-ccd179e7e73f':
     parent_uuid: 6ed925bd-5bae-4db0-b1b0-3af566b26f2d
     slot: main_slot
     uuid: 720fb581-a0c8-49db-8882-ccd179e7e73f
