@@ -20,8 +20,6 @@ props:
     title:
       type: string
       title: Title
-      examples:
-        - "Convivial Gov"
     description:
       type: string
       title: Description
