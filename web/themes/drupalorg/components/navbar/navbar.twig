@@ -21,7 +21,7 @@
   Desktop: static so mega panels position against .region-header (full width).
   Mobile: relative for z-index / modal stacking.
 #}
-<div class="navbar relative z-[500] container mx-auto flex h-14 md:h-20 items-center justify-between px-4 md:static md:z-auto lg:px-12">
+<div class="navbar relative z-[500] container mx-auto flex h-14 items-center justify-between px-4 md:static md:z-auto md:h-20 lg:px-12">
   <div class="navbar--logo flex items-center gap-9 self-center [&>div]:flex [&>div]:flex-col [&>div]:justify-center">
     {% block logo %}
       {{ include('@drupalorg/templates/block/block--system-branding-block.html.twig') }}

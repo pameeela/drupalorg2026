@@ -11,7 +11,7 @@ props:
     icon:
       type: string
       title: Icon name
-      x-canvas-icon: ['phosphor']
+      x-canvas-icon: ["phosphor"]
       description: 'The ID of an icon from the <a href="https://phosphoricons.com" target="_blank">Phosphor Icons</a> library.'
       default: "rocket"
       examples:
