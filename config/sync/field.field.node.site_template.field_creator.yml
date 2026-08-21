@@ -1,0 +1,29 @@
+uuid: 3d92a4fa-cc9f-45cd-9c92-d7efecc58b4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_creator
+    - node.type.site_template
+    - taxonomy.vocabulary.site_template_creator
+id: node.site_template.field_creator
+field_name: field_creator
+entity_type: node
+bundle: site_template
+label: Creator
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      site_template_creator: site_template_creator
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

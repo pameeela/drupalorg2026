@@ -6,8 +6,11 @@ dependencies:
     - field.field.node.site_template.field_bare_install
     - field.field.node.site_template.field_component_type
     - field.field.node.site_template.field_content_types
+    - field.field.node.site_template.field_creator
+    - field.field.node.site_template.field_css_framework
     - field.field.node.site_template.field_ddev_install
     - field.field.node.site_template.field_demo_link
+    - field.field.node.site_template.field_featured
     - field.field.node.site_template.field_featured_screenshot
     - field.field.node.site_template.field_live_preview_url
     - field.field.node.site_template.field_price
@@ -80,6 +83,34 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_creator:
+    type: tagify_entity_reference_autocomplete_widget
+    weight: 107
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      placeholder: ''
+      suggestions_dropdown: 1
+      show_entity_id: 0
+      show_info_label: 0
+      info_label: ''
+      parent_selection: 1
+    third_party_settings: {  }
+  field_css_framework:
+    type: tagify_entity_reference_autocomplete_widget
+    weight: 108
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      placeholder: ''
+      suggestions_dropdown: 1
+      show_entity_id: 0
+      show_info_label: 0
+      info_label: ''
+      parent_selection: 1
+    third_party_settings: {  }
   field_ddev_install:
     type: string_textarea
     weight: 102
@@ -95,6 +126,13 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+    third_party_settings: {  }
+  field_featured:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_featured_screenshot:
     type: media_library_widget

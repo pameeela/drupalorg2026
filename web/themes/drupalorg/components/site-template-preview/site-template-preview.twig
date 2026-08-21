@@ -1,5 +1,5 @@
 {#
-  Full-page screenshot preview: scroll (detail), hover tap-to-play (cards), or static crop.
+  Full-page screenshot preview: real scroll (detail) or tap to scroll (cards).
   Detail scroll with 2+ screenshots shows a thumbnail strip to swap the main frame.
 #}
 
@@ -23,7 +23,7 @@
 {% set show_thumb_strip = preview_mode == 'scroll' and screenshot_count > 1 %}
 {% set has_caption = caption is not empty %}
 {% set is_hover_mode = preview_mode == 'hover' %}
-{% set is_card_size = preview_size == 'card' or preview_size == 'mobile' %}
+{% set is_card_size = preview_size == 'card' %}
 {% set show_fade_caption = has_caption and not is_card_size %}
 {% set show_chip_caption = has_caption and is_card_size %}
 {% set viewport_tabindex = is_hover_mode ? '0' : '-1' %}
@@ -46,9 +46,7 @@
 
 {% set height_values = {
   detail: '600px',
-  featured: '470px',
-  card: '450px',
-  mobile: '315px'
+  card: '450px'
 } %}
 {% set height_value = height_values[preview_size]|default('600px') %}
 {% set style_attr = '--stp-height: ' ~ height_value %}
@@ -87,14 +85,11 @@
           'focus-visible:ring-2',
           'focus-visible:ring-inset',
           'focus-visible:ring-drupal-blue/50'
-        ],
-        static: 'site-template-preview__viewport--static overflow-hidden'
+        ]
       },
       size: {
         detail: 'h-[300px] md:h-[600px]',
-        featured: 'h-[470px]',
-        card: 'h-[450px]',
-        mobile: 'h-[315px]'
+        card: 'h-[450px]'
       }
     }
   )
@@ -106,8 +101,7 @@
     variants: {
       mode: {
         scroll: 'h-auto',
-        hover: ['site-template-preview__image--hover', 'absolute', 'inset-x-0', 'top-0'],
-        static: ['absolute', 'inset-x-0', 'top-0', 'h-auto']
+        hover: ['site-template-preview__image--hover', 'absolute', 'inset-x-0', 'top-0']
       }
     }
   )

@@ -1,7 +1,16 @@
 uuid: 9a355d71-50c2-4beb-8947-8b8dae51bc03
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - canvas.component.sdc.drupalorg.card
+    - canvas.component.sdc.drupalorg.card-article
+    - canvas.component.sdc.drupalorg.card-article-featured
+    - canvas.component.sdc.drupalorg.card-icon
+    - canvas.component.sdc.drupalorg.card-logo
+    - canvas.component.sdc.drupalorg.card-pricing
+    - canvas.component.sdc.drupalorg.card-site-template-compact
+    - canvas.component.sdc.drupalorg.card-testimonial
 name: Card
 configEntityTypeId: component
 weight: 0
@@ -12,4 +21,5 @@ items:
   - sdc.drupalorg.card-icon
   - sdc.drupalorg.card-logo
   - sdc.drupalorg.card-pricing
+  - sdc.drupalorg.card-site-template-compact
   - sdc.drupalorg.card-testimonial

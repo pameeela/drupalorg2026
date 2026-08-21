@@ -10,6 +10,7 @@ dependencies:
     - canvas.component.block.views_block.articles-articles_related
     - canvas.component.block.views_block.recent_pages-block_recent_pages
     - canvas.component.block.views_block.site_templates-site_templates_all
+    - canvas.component.block.views_block.site_templates-site_templates_other
     - canvas.component.block.views_block.site_templates-site_templates_related
 name: 'Lists (Views)'
 configEntityTypeId: component
@@ -22,4 +23,5 @@ items:
   - block.views_block.articles-articles_related
   - block.views_block.recent_pages-block_recent_pages
   - block.views_block.site_templates-site_templates_all
+  - block.views_block.site_templates-site_templates_other
   - block.views_block.site_templates-site_templates_related

@@ -27,7 +27,7 @@ props:
     chrome_url:
       type: string
       title: Browser chrome URL
-      description: Shown in the browser chrome address pill (hostname preferred).
+      description: Shown in the browser chrome address pill.
       examples:
         - "byte.preview.drupal.org"
     mode:
@@ -36,11 +36,9 @@ props:
       enum:
         - scroll
         - hover
-        - static
       meta:enum:
-        scroll: Real scroll (detail page)
-        hover: Tap to scroll/stop (browse cards)
-        static: Top crop only
+        scroll: Full scroll (detail page)
+        hover: Tap to scroll (browse cards)
       default: scroll
       examples:
         - scroll
@@ -49,14 +47,10 @@ props:
       title: Viewport height
       enum:
         - detail
-        - featured
         - card
-        - mobile
       meta:enum:
         detail: Detail (600px / 300px mobile)
-        featured: Featured slab (470px)
         card: Browse card (450px)
-        mobile: Mobile card (315px)
       default: detail
       examples:
         - detail
@@ -69,13 +63,8 @@ props:
     caption:
       type: string
       title: Caption
-      description: Optional line below the frame (e.g. scroll or play hint).
       examples:
         - "Scroll to explore the full page"
-        - "Tap to scroll"
-    preview_classes:
-      type: string
-      title: Additional classes
 
 libraryOverrides:
   js:

@@ -1,0 +1,29 @@
+uuid: 1a3bf27c-a178-477e-a9db-b05cbc9a4eab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_css_framework
+    - node.type.site_template
+    - taxonomy.vocabulary.site_template_css_framework
+id: node.site_template.field_css_framework
+field_name: field_css_framework
+entity_type: node
+bundle: site_template
+label: 'CSS framework'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      site_template_css_framework: site_template_css_framework
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

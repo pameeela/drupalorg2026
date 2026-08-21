@@ -1,0 +1,45 @@
+uuid: 14ee732b-3bd6-463c-a3a4-b03cc34aa7e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.site_template_creator.field_logo
+    - field.field.taxonomy_term.site_template_creator.field_website
+    - taxonomy.vocabulary.site_template_creator
+  module:
+    - link
+    - text
+id: taxonomy_term.site_template_creator.default
+targetEntityType: taxonomy_term
+bundle: site_template_creator
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_logo:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_website:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

@@ -1,0 +1,35 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Site template compact
+group: Card
+props:
+  type: object
+  required:
+    - title
+  properties:
+    media:
+      title: Screenshots
+      type: array
+      items:
+        $ref: json-schema-definitions://canvas.module/image
+        type: object
+      examples:
+        - - src: "https://placehold.co/560x448/f3f4f6/12285f?text=Screenshot"
+            alt: "Homepage of the example template"
+            width: 560
+            height: 448
+    title:
+      type: string
+      title: Title
+      examples:
+        - "Convivial Gov"
+    description:
+      type: string
+      title: Description
+      pattern: "(.|\\r?\\n)*"
+    price:
+      type: string
+      title: Price
+    url:
+      type: string
+      title: Link
+      format: uri-reference

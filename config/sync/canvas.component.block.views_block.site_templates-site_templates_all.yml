@@ -6,9 +6,20 @@ dependencies:
     - views.view.site_templates
   module:
     - views
-active_version: dd6c00f296ed896d
+active_version: 5a0752e76e21d3dd
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: 'views_block:site_templates-site_templates_all'
+        label: 'Site templates: Featured templates'
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+  dd6c00f296ed896d:
     settings:
       default_settings:
         id: 'views_block:site_templates-site_templates_all'
@@ -30,7 +41,7 @@ versioned_properties:
         items_per_page: null
     fallback_metadata:
       slot_definitions: null
-label: 'Site templates: All templates'
+label: 'Site templates: Featured templates'
 id: block.views_block.site_templates-site_templates_all
 provider: views
 source: block

@@ -6,8 +6,11 @@ dependencies:
     - field.field.node.site_template.field_bare_install
     - field.field.node.site_template.field_component_type
     - field.field.node.site_template.field_content_types
+    - field.field.node.site_template.field_creator
+    - field.field.node.site_template.field_css_framework
     - field.field.node.site_template.field_ddev_install
     - field.field.node.site_template.field_demo_link
+    - field.field.node.site_template.field_featured
     - field.field.node.site_template.field_featured_screenshot
     - field.field.node.site_template.field_live_preview_url
     - field.field.node.site_template.field_price
@@ -55,6 +58,22 @@ content:
     third_party_settings: {  }
     weight: 106
     region: content
+  field_creator:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_css_framework:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
   field_ddev_install:
     type: basic_string
     label: above
@@ -73,6 +92,16 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_featured:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 103
     region: content
   field_featured_screenshot:
     type: entity_reference_entity_view

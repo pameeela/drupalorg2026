@@ -1,0 +1,23 @@
+uuid: 8ab9ff8c-dfac-4b6a-a60c-9d40b49feb7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_website
+    - taxonomy.vocabulary.site_template_creator
+  module:
+    - link
+id: taxonomy_term.site_template_creator.field_website
+field_name: field_website
+entity_type: taxonomy_term
+bundle: site_template_creator
+label: Website
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

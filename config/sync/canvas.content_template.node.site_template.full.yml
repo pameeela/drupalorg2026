@@ -92,7 +92,7 @@ component_tree:
     slot: group_slot
     uuid: 31c372c7-9282-4de2-a165-21d5369a4ac8
     component_id: sdc.drupalorg.site-template-preview
-    component_version: aa37703795a9c4df
+    component_version: 11ebb8d130e6cd65
     inputs:
       media:
         sourceType: entity-field

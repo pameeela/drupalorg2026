@@ -1,0 +1,26 @@
+uuid: f920b5e0-16a8-46c8-bed0-d3899763dae5
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.site_templates
+  module:
+    - views
+active_version: 78dc556238fc0045
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'views_block:site_templates-site_templates_other'
+        label: 'Site templates: Other templates'
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+label: 'Site templates: Other templates'
+id: block.views_block.site_templates-site_templates_other
+provider: views
+source: block
+source_local_id: 'views_block:site_templates-site_templates_other'

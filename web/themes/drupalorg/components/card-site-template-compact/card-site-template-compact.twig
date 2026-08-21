@@ -1,0 +1,71 @@
+{#
+  Compact site template card: thumbnail beside the title, price and description.
+#}
+
+{# Normalize media: Canvas may pass an image list, or a single image object. #}
+{% set screenshot_list = [] %}
+{% if media is defined and media is not empty %}
+  {% if media.src is defined %}
+    {% set screenshot_list = [media] %}
+  {% elseif media is iterable %}
+    {% set screenshot_list = media %}
+  {% endif %}
+{% endif %}
+
+{% set active_media = screenshot_list|first|default({}) %}
+{% set has_media = active_media.src is defined and active_media.src is not empty %}
+{% set has_url = url is not empty ? 'yes' : 'no' %}
+
+{% set card =
+  html_cva(
+    base: ['group relative flex items-stretch gap-4 rounded-lg border border-light-gray bg-white p-4'],
+    variants: {
+      hasUrl: {
+        yes: 'cursor-pointer transition duration-300 hover:scale-103 hover:shadow-md',
+        no: ''
+      }
+    }
+  )
+%}
+
+<article
+  class="{{
+  card.apply({
+    hasUrl: has_url
+  })
+  }}"
+>
+  {% if has_media %}
+    <div class="aspect-[5/4] w-28 shrink-0 overflow-hidden rounded-md border border-light-gray bg-lightest-gray">
+      {% include 'canvas:image' ignore missing with {
+        src: active_media.src,
+        alt: active_media.alt,
+        class: 'h-full w-full object-cover object-top',
+        width: active_media.width,
+        height: active_media.height,
+        sizes: '112px'
+      } only %}
+    </div>
+  {% endif %}
+
+  <div class="flex min-w-0 flex-1 flex-col gap-1.5">
+    <div class="flex items-start justify-between gap-3">
+      <h3 class="text-base font-semibold text-navy">
+        {% if url is not empty %}
+          <a href="{{ url }}" class="after:absolute after:inset-0 after:content-['']">{{ title }}</a>
+        {% else %}
+          {{ title }}
+        {% endif %}
+      </h3>
+      {% if price is not empty %}
+        <span class="shrink-0 font-body text-sm text-darkest-gray">{{ price }}</span>
+      {% endif %}
+    </div>
+
+    {% if description is not empty %}
+      <p class="mb-0 line-clamp-3 font-body text-sm font-light text-dark-gray">
+        {{ description }}
+      </p>
+    {% endif %}
+  </div>
+</article>

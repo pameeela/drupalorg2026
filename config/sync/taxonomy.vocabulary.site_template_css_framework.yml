@@ -1,0 +1,25 @@
+uuid: f4f1d49a-ee2f-4ad8-8c6c-bb051efe41f7
+langcode: en
+status: true
+dependencies:
+  module:
+    - scheduler
+third_party_settings:
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    show_message_after_update: true
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+name: 'Site template CSS framework'
+vid: site_template_css_framework
+description: null
+weight: 0
+new_revision: false
