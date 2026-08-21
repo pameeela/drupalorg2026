@@ -1,5 +1,6 @@
 {#
-  Compact site template card: thumbnail beside the title, price and description.
+  Compact site template card: thumbnail beside the title, price and description,
+  except at tablet widths where the narrower card stacks the image above them.
 #}
 
 {# Normalize media: Canvas may pass an image list, or a single image object. #}
@@ -18,7 +19,7 @@
 
 {% set card =
   html_cva(
-    base: ['group relative flex items-stretch gap-4 rounded-lg border border-light-gray bg-white p-4'],
+    base: ['group relative flex items-stretch gap-4 rounded-lg border border-light-gray bg-white p-4 md:flex-col lg:flex-row'],
     variants: {
       hasUrl: {
         yes: 'cursor-pointer transition duration-300 hover:scale-103 hover:shadow-md',
@@ -36,14 +37,14 @@
   }}"
 >
   {% if has_media %}
-    <div class="aspect-[5/4] w-28 shrink-0 overflow-hidden rounded-md border border-light-gray bg-lightest-gray">
+    <div class="aspect-[5/4] w-28 shrink-0 overflow-hidden rounded-md border border-light-gray bg-lightest-gray md:w-full lg:w-28">
       {% include 'canvas:image' ignore missing with {
         src: active_media.src,
         alt: active_media.alt,
         class: 'h-full w-full object-cover object-top',
         width: active_media.width,
         height: active_media.height,
-        sizes: '112px'
+        sizes: '(min-width: 1024px) 112px, (min-width: 768px) 50vw, 112px'
       } only %}
     </div>
   {% endif %}
