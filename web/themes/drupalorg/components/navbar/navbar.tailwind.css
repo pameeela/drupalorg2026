@@ -42,7 +42,7 @@ header[role="banner"],
 .navbar--logo,
 .navbar--modal-logo {
   .branding {
-    @apply h-[38px] md:h-[38px];
+    @apply h-[30px] md:h-[38px];
     svg,
     img[src$=".svg"] {
       @apply max-h-full;
