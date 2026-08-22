@@ -10,10 +10,12 @@ field_name: field_bare_install
 entity_type: node
 bundle: site_template
 label: 'Bare install commands'
-description: "mkdir xxx && cd xxx \r\ncomposer create-project drupal/cms \r\ncomposer require drupal/xxx\r\ndrush si ../recipes/xxx -y "
+description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: "mkdir xxx && cd xxx \r\ncomposer create-project drupal/cms \r\ncomposer require drupal/xxx\r\ndrush si ../recipes/xxx -y "
 default_value_callback: ''
 settings: {  }
 field_type: string_long
