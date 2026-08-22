@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.site_template.field_bare_install
+    - field.field.node.site_template.field_buy_link
     - field.field.node.site_template.field_component_type
     - field.field.node.site_template.field_content
     - field.field.node.site_template.field_content_types
@@ -13,8 +14,11 @@ dependencies:
     - field.field.node.site_template.field_demo_link
     - field.field.node.site_template.field_featured
     - field.field.node.site_template.field_featured_screenshot
+    - field.field.node.site_template.field_free_or_paid
+    - field.field.node.site_template.field_issue_queue
     - field.field.node.site_template.field_live_preview_url
     - field.field.node.site_template.field_price
+    - field.field.node.site_template.field_purchase_instructions
     - field.field.node.site_template.field_seo_analysis
     - field.field.node.site_template.field_seo_description
     - field.field.node.site_template.field_seo_image
@@ -44,6 +48,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_buy_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 111
     region: content
   field_component_type:
     type: list_default
@@ -121,6 +137,28 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
+  field_free_or_paid:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_issue_queue:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 112
+    region: content
   field_live_preview_url:
     type: link
     label: above
@@ -141,6 +179,13 @@ content:
       link_rel: canonical
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_purchase_instructions:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 110
     region: content
   field_short_description:
     type: basic_string

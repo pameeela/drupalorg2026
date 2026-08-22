@@ -1,0 +1,21 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Conditional wrapper
+group: Layout
+status: stable
+props:
+  type: object
+  properties:
+    value:
+      type: string
+      title: Value
+      description: Map this to a field, such as Price.
+    match_value:
+      type: string
+      title: Show the first block when the value is
+      description: Compared with the value above, ignoring capitalisation and surrounding spaces.
+
+slots:
+  conditional_slot:
+    title: Content when it matches
+  fallback_slot:
+    title: Content when it does not match

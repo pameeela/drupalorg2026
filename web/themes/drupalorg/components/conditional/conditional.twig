@@ -1,0 +1,18 @@
+{#
+  Renders one of two blocks of content depending on how a mapped field compares
+  with the match value. There is no wrapper element, so the component stays
+  transparent to flex and grid parents.
+#}
+
+{% set compared_value = value|default('')|trim|lower %}
+{% set expected_value = match_value|default('Free')|trim|lower %}
+
+{% if compared_value == expected_value %}
+  {% block conditional_slot %}
+
+  {% endblock %}
+{% else %}
+  {% block fallback_slot %}
+
+  {% endblock %}
+{% endif %}

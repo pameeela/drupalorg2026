@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.featured
     - field.field.node.site_template.field_bare_install
+    - field.field.node.site_template.field_buy_link
     - field.field.node.site_template.field_component_type
     - field.field.node.site_template.field_content
     - field.field.node.site_template.field_content_types
@@ -14,8 +15,11 @@ dependencies:
     - field.field.node.site_template.field_demo_link
     - field.field.node.site_template.field_featured
     - field.field.node.site_template.field_featured_screenshot
+    - field.field.node.site_template.field_free_or_paid
+    - field.field.node.site_template.field_issue_queue
     - field.field.node.site_template.field_live_preview_url
     - field.field.node.site_template.field_price
+    - field.field.node.site_template.field_purchase_instructions
     - field.field.node.site_template.field_seo_analysis
     - field.field.node.site_template.field_seo_description
     - field.field.node.site_template.field_seo_image
@@ -61,6 +65,7 @@ content:
     region: content
 hidden:
   field_bare_install: true
+  field_buy_link: true
   field_component_type: true
   field_content_types: true
   field_creator: true
@@ -68,8 +73,11 @@ hidden:
   field_ddev_install: true
   field_demo_link: true
   field_featured_screenshot: true
+  field_free_or_paid: true
+  field_issue_queue: true
   field_live_preview_url: true
   field_price: true
+  field_purchase_instructions: true
   field_seo_analysis: true
   field_seo_description: true
   field_seo_image: true

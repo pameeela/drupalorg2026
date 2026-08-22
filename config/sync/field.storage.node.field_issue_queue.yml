@@ -1,0 +1,19 @@
+uuid: a115b366-049b-4d2c-b867-929beb269351
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_issue_queue
+field_name: field_issue_queue
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

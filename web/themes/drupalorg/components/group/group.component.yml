@@ -107,7 +107,7 @@ props:
         - dark-blue-gradient
         - darkest-blue
       meta:enum:
-        dark: Brand navy
+        navy: Brand navy
         light-grey: Light grey
         light-blue: Light blue
         light-blue-gradient: Light blue gradient

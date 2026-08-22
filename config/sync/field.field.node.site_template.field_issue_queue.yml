@@ -1,0 +1,23 @@
+uuid: ac01e1d2-93f1-412d-ab58-9e0ac76d6897
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_issue_queue
+    - node.type.site_template
+  module:
+    - link
+id: node.site_template.field_issue_queue
+field_name: field_issue_queue
+entity_type: node
+bundle: site_template
+label: 'Issue queue / Support link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

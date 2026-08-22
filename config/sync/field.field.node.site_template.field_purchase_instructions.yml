@@ -1,0 +1,24 @@
+uuid: 5e9fbea8-71dd-4b18-a0b7-22216e08347f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_purchase_instructions
+    - filter.format.content_format
+    - node.type.site_template
+  module:
+    - text
+id: node.site_template.field_purchase_instructions
+field_name: field_purchase_instructions
+entity_type: node
+bundle: site_template
+label: 'Purchase instructions'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - content_format
+field_type: text_long

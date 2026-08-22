@@ -1,0 +1,21 @@
+uuid: f7a645d0-dfb2-4c8b-bb59-ac0186f3ec5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_free_or_paid
+    - node.type.site_template
+id: node.site_template.field_free_or_paid
+field_name: field_free_or_paid
+entity_type: node
+bundle: site_template
+label: 'This is a paid template'
+description: 'If this is a paid template, toggle this to display alternative installation instructions'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

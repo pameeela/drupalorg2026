@@ -1,18 +1,15 @@
 langcode: en
 consentModal:
   title: 'Use of personal data and cookies'
-  description: |
-    Please choose the services and 3rd party applications we would like to use.
+  description: "Please choose the services and 3rd party applications we would like to use.\r\n"
   privacyPolicy:
     name: 'privacy policy'
-    text: |
-      To learn more, please read our {privacyPolicy}.
-    url: 'internal:/privacy-policy'
+    text: "To learn more, please read our {privacyPolicy}.\r\n"
+    url: 'https://www.drupal.org/privacy'
 consentNotice:
   title: 'Use of personal data and cookies'
   changeDescription: 'There were changes since your last visit, please update your consent.'
-  description: |
-    We use cookies and process personal data for the following purposes: {purposes}.
+  description: "We use cookies and process personal data for the following purposes: {purposes}.\r\n"
   learnMore: Customize
 ok: Accept
 save: Save

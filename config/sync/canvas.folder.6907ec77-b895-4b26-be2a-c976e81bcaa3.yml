@@ -8,6 +8,7 @@ dependencies:
     - canvas.component.sdc.drupalorg.carousel-tabs
     - canvas.component.sdc.drupalorg.comparison-table
     - canvas.component.sdc.drupalorg.comparison-table-row
+    - canvas.component.sdc.drupalorg.conditional
     - canvas.component.sdc.drupalorg.footer
     - canvas.component.sdc.drupalorg.grid
     - canvas.component.sdc.drupalorg.group
@@ -30,6 +31,7 @@ items:
   - sdc.drupalorg.carousel-tabs
   - sdc.drupalorg.comparison-table
   - sdc.drupalorg.comparison-table-row
+  - sdc.drupalorg.conditional
   - sdc.drupalorg.footer
   - sdc.drupalorg.grid
   - sdc.drupalorg.group
