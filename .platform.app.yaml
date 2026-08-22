@@ -140,7 +140,9 @@ web:
 # access:
 
 # Variables to control the environment. More information: https://docs.platform.sh/create-apps/app-reference.html#variables
-#variables:
+variables:
+  php:
+    memory_limit: 256M
 
 # Outbound firewall rules for the application. More information: https://docs.platform.sh/create-apps/app-reference.html#firewall
 # firewall:
