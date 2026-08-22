@@ -43,6 +43,7 @@ dependencies:
     - field.field.node.site_template.field_short_description
     - field.field.node.site_template.field_technology
     - field.field.taxonomy_term.site_template_creator.field_logo
+    - field.field.taxonomy_term.site_template_creator.field_website
     - filter.format.canvas_html_block
     - filter.format.content_format
     - image.style.canvas_parametrized_width
@@ -81,7 +82,7 @@ component_tree:
       columns: '2 columns 67%-33%'
       mobile_columns: '1'
       margin_block_start: small
-      margin_block_end: small
+      margin_block_end: default
       padding_block_start: '0'
       padding_block_end: '0'
       section_header: false
@@ -178,19 +179,7 @@ component_tree:
       text:
         sourceType: entity-field
         expression: 'ℹ︎␜entity:node:site_template␝field_short_description␞␟value'
-  '1:main_slot:1:group_slot:2:9b60a3e8-b086-4ab2-9853-9dac509297bd':
-    parent_uuid: cd428d6b-6a83-4c31-8839-71fa894861c0
-    slot: group_slot
-    uuid: 9b60a3e8-b086-4ab2-9853-9dac509297bd
-    component_id: sdc.drupalorg.button
-    component_version: 1c40a1a84181621a
-    inputs:
-      variant: primary
-      label: 'Preview this template'
-      icon: arrow-up-right
-      disabled: false
-      full_width: true
-  '1:main_slot:1:group_slot:3:44362bf4-c869-4aa5-821d-ed5d7bccd0e8':
+  '1:main_slot:1:group_slot:2:44362bf4-c869-4aa5-821d-ed5d7bccd0e8':
     parent_uuid: cd428d6b-6a83-4c31-8839-71fa894861c0
     slot: group_slot
     uuid: 44362bf4-c869-4aa5-821d-ed5d7bccd0e8
@@ -205,7 +194,7 @@ component_tree:
       icon: arrow-down
       disabled: false
       full_width: true
-  '1:main_slot:1:group_slot:4:184845ef-3908-4e69-a6e8-0eec76a73db1':
+  '1:main_slot:1:group_slot:3:184845ef-3908-4e69-a6e8-0eec76a73db1':
     parent_uuid: cd428d6b-6a83-4c31-8839-71fa894861c0
     slot: group_slot
     uuid: 184845ef-3908-4e69-a6e8-0eec76a73db1
@@ -214,7 +203,7 @@ component_tree:
     inputs:
       color: light-gray
       margin: small
-  '1:main_slot:1:group_slot:5:5143ca65-eb1b-4e99-b212-4ffb70441c49':
+  '1:main_slot:1:group_slot:4:5143ca65-eb1b-4e99-b212-4ffb70441c49':
     parent_uuid: cd428d6b-6a83-4c31-8839-71fa894861c0
     slot: group_slot
     uuid: 5143ca65-eb1b-4e99-b212-4ffb70441c49
@@ -224,7 +213,7 @@ component_tree:
       width: 100%
       columns: '2 columns'
       mobile_columns: '1'
-  '1:main_slot:1:group_slot:5:main_slot:0:3b0a2443-c3ad-44d4-93b5-19626ce53634':
+  '1:main_slot:1:group_slot:4:main_slot:0:3b0a2443-c3ad-44d4-93b5-19626ce53634':
     parent_uuid: 5143ca65-eb1b-4e99-b212-4ffb70441c49
     slot: main_slot
     uuid: 3b0a2443-c3ad-44d4-93b5-19626ce53634
@@ -237,7 +226,7 @@ component_tree:
       flex_align: start
       radius: sm
       stretch: false
-  '1:main_slot:1:group_slot:5:main_slot:0:group_slot:0:7c123e65-4577-4ba2-9cda-507d0618c4fa':
+  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:0:7c123e65-4577-4ba2-9cda-507d0618c4fa':
     parent_uuid: 3b0a2443-c3ad-44d4-93b5-19626ce53634
     slot: group_slot
     uuid: 7c123e65-4577-4ba2-9cda-507d0618c4fa
@@ -250,7 +239,7 @@ component_tree:
       flex_align: center
       radius: sm
       stretch: true
-  '1:main_slot:1:group_slot:5:main_slot:0:group_slot:0:group_slot:0:6374ea27-e955-48bc-92e1-34aca9544997':
+  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:0:group_slot:0:6374ea27-e955-48bc-92e1-34aca9544997':
     parent_uuid: 7c123e65-4577-4ba2-9cda-507d0618c4fa
     slot: group_slot
     uuid: 6374ea27-e955-48bc-92e1-34aca9544997
@@ -262,7 +251,7 @@ component_tree:
         format: canvas_html_block
       text_size: text-sm
       text_color: default
-  '1:main_slot:1:group_slot:5:main_slot:0:group_slot:0:group_slot:1:73ce7ebd-72dc-482f-981d-572842671a51':
+  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:0:group_slot:1:73ce7ebd-72dc-482f-981d-572842671a51':
     parent_uuid: 7c123e65-4577-4ba2-9cda-507d0618c4fa
     slot: group_slot
     uuid: 73ce7ebd-72dc-482f-981d-572842671a51
@@ -273,7 +262,7 @@ component_tree:
         sourceType: entity-field
         expression: 'ℹ︎␜entity:node:site_template␝field_technology␞␟entity␜␜entity:taxonomy_term␝name␞␟value'
       text_size: text-sm
-  '1:main_slot:1:group_slot:5:main_slot:0:group_slot:0:group_slot:2:17d3caca-3c6c-4d33-b2dd-e85d2cdf33cd':
+  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:0:group_slot:2:17d3caca-3c6c-4d33-b2dd-e85d2cdf33cd':
     parent_uuid: 7c123e65-4577-4ba2-9cda-507d0618c4fa
     slot: group_slot
     uuid: 17d3caca-3c6c-4d33-b2dd-e85d2cdf33cd
@@ -286,7 +275,7 @@ component_tree:
       flex_align: center
       radius: sm
       stretch: true
-  '1:main_slot:1:group_slot:5:main_slot:0:group_slot:0:group_slot:2:group_slot:0:3524d4a6-a02c-4e4f-92d1-fa96f0d72282':
+  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:0:group_slot:2:group_slot:0:3524d4a6-a02c-4e4f-92d1-fa96f0d72282':
     parent_uuid: 17d3caca-3c6c-4d33-b2dd-e85d2cdf33cd
     slot: group_slot
     uuid: 3524d4a6-a02c-4e4f-92d1-fa96f0d72282
@@ -298,7 +287,7 @@ component_tree:
         format: canvas_html_block
       text_size: text-sm
       text_color: default
-  '1:main_slot:1:group_slot:5:main_slot:0:group_slot:0:group_slot:2:group_slot:1:16d08743-ba27-4655-a5b9-d6b8eda06c1a':
+  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:0:group_slot:2:group_slot:1:16d08743-ba27-4655-a5b9-d6b8eda06c1a':
     parent_uuid: 17d3caca-3c6c-4d33-b2dd-e85d2cdf33cd
     slot: group_slot
     uuid: 16d08743-ba27-4655-a5b9-d6b8eda06c1a
@@ -309,7 +298,7 @@ component_tree:
         sourceType: entity-field
         expression: 'ℹ︎␜entity:node:site_template␝field_css_framework␞␟entity␜␜entity:taxonomy_term␝name␞␟value'
       text_size: text-sm
-  '1:main_slot:1:group_slot:5:main_slot:0:group_slot:0:group_slot:3:8c1ff702-8dc1-4af2-84da-6f49df756c47':
+  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:0:group_slot:3:8c1ff702-8dc1-4af2-84da-6f49df756c47':
     parent_uuid: 7c123e65-4577-4ba2-9cda-507d0618c4fa
     slot: group_slot
     uuid: 8c1ff702-8dc1-4af2-84da-6f49df756c47
@@ -322,7 +311,7 @@ component_tree:
       flex_align: start
       radius: sm
       stretch: true
-  '1:main_slot:1:group_slot:5:main_slot:0:group_slot:0:group_slot:3:group_slot:0:eff4be7a-3314-446e-93a8-971e762de1d3':
+  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:0:group_slot:3:group_slot:0:eff4be7a-3314-446e-93a8-971e762de1d3':
     parent_uuid: 8c1ff702-8dc1-4af2-84da-6f49df756c47
     slot: group_slot
     uuid: eff4be7a-3314-446e-93a8-971e762de1d3
@@ -334,7 +323,7 @@ component_tree:
         format: canvas_html_block
       text_size: text-sm
       text_color: default
-  '1:main_slot:1:group_slot:5:main_slot:0:group_slot:0:group_slot:3:group_slot:1:9dfe8959-f489-436f-b2d9-8528d4f84578':
+  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:0:group_slot:3:group_slot:1:9dfe8959-f489-436f-b2d9-8528d4f84578':
     parent_uuid: 8c1ff702-8dc1-4af2-84da-6f49df756c47
     slot: group_slot
     uuid: 9dfe8959-f489-436f-b2d9-8528d4f84578
@@ -344,7 +333,7 @@ component_tree:
       items:
         sourceType: entity-field
         expression: 'ℹ︎␜entity:node:site_template␝field_component_type␞␟label'
-  '1:main_slot:1:group_slot:5:main_slot:0:group_slot:0:group_slot:4:03ed4391-b166-482b-8869-ee7c3d245e7a':
+  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:0:group_slot:4:03ed4391-b166-482b-8869-ee7c3d245e7a':
     parent_uuid: 7c123e65-4577-4ba2-9cda-507d0618c4fa
     slot: group_slot
     uuid: 03ed4391-b166-482b-8869-ee7c3d245e7a
@@ -357,7 +346,7 @@ component_tree:
       flex_align: center
       radius: sm
       stretch: true
-  '1:main_slot:1:group_slot:5:main_slot:0:group_slot:0:group_slot:4:group_slot:0:70a5c5d8-8b16-4e4f-a13e-3d83ec9381a8':
+  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:0:group_slot:4:group_slot:0:70a5c5d8-8b16-4e4f-a13e-3d83ec9381a8':
     parent_uuid: 03ed4391-b166-482b-8869-ee7c3d245e7a
     slot: group_slot
     uuid: 70a5c5d8-8b16-4e4f-a13e-3d83ec9381a8
@@ -369,7 +358,7 @@ component_tree:
         format: canvas_html_block
       text_size: text-sm
       text_color: default
-  '1:main_slot:1:group_slot:5:main_slot:0:group_slot:0:group_slot:4:group_slot:1:1eabd843-76b9-4c07-9eef-7ce9c6b28a1c':
+  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:0:group_slot:4:group_slot:1:1eabd843-76b9-4c07-9eef-7ce9c6b28a1c':
     parent_uuid: 03ed4391-b166-482b-8869-ee7c3d245e7a
     slot: group_slot
     uuid: 1eabd843-76b9-4c07-9eef-7ce9c6b28a1c
@@ -379,7 +368,7 @@ component_tree:
       items:
         sourceType: entity-field
         expression: 'ℹ︎␜entity:node:site_template␝field_content_types␞␟entity␜␜entity:taxonomy_term␝name␞␟value'
-  '1:main_slot:1:group_slot:5:main_slot:1:d1e23da2-3863-4e68-890b-9ac0658ba175':
+  '1:main_slot:1:group_slot:4:main_slot:1:d1e23da2-3863-4e68-890b-9ac0658ba175':
     parent_uuid: 5143ca65-eb1b-4e99-b212-4ffb70441c49
     slot: main_slot
     uuid: d1e23da2-3863-4e68-890b-9ac0658ba175
@@ -392,7 +381,7 @@ component_tree:
       flex_align: start
       radius: sm
       stretch: true
-  '1:main_slot:1:group_slot:5:main_slot:1:group_slot:0:24f934d8-9174-4995-9444-a1a4e45db717':
+  '1:main_slot:1:group_slot:4:main_slot:1:group_slot:0:24f934d8-9174-4995-9444-a1a4e45db717':
     parent_uuid: d1e23da2-3863-4e68-890b-9ac0658ba175
     slot: group_slot
     uuid: 24f934d8-9174-4995-9444-a1a4e45db717
@@ -404,7 +393,7 @@ component_tree:
         format: canvas_html_block
       text_size: text-sm
       text_color: default
-  '1:main_slot:1:group_slot:5:main_slot:1:group_slot:1:9b56c8aa-a4e0-4101-9cd3-677468636e20':
+  '1:main_slot:1:group_slot:4:main_slot:1:group_slot:1:9b56c8aa-a4e0-4101-9cd3-677468636e20':
     parent_uuid: d1e23da2-3863-4e68-890b-9ac0658ba175
     slot: group_slot
     uuid: 9b56c8aa-a4e0-4101-9cd3-677468636e20
@@ -417,7 +406,7 @@ component_tree:
       radius: small
       url:
         sourceType: entity-field
-        expression: 'ℹ︎␜entity:node:site_template␝field_creator␞␟url'
+        expression: 'ℹ︎␜entity:node:site_template␝field_creator␞␟entity␜␜entity:taxonomy_term:site_template_creator␝field_website␞␟uri'
       full_width: false
   '2:4648b64d-fb90-4fea-a192-e6b12293bfaa':
     uuid: 4648b64d-fb90-4fea-a192-e6b12293bfaa
