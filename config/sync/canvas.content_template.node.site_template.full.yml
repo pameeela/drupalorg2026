@@ -75,7 +75,7 @@ component_tree:
   '1:2ab60f33-9672-483c-9530-b19f4cdcde82':
     uuid: 2ab60f33-9672-483c-9530-b19f4cdcde82
     component_id: sdc.drupalorg.section
-    component_version: cc56651b3b3c5dd8
+    component_version: 6df0ebebde418023
     inputs:
       width: 100%
       columns: '2 columns 67%-33%'
@@ -422,10 +422,10 @@ component_tree:
   '2:4648b64d-fb90-4fea-a192-e6b12293bfaa':
     uuid: 4648b64d-fb90-4fea-a192-e6b12293bfaa
     component_id: sdc.drupalorg.section
-    component_version: cc56651b3b3c5dd8
+    component_version: 6df0ebebde418023
     inputs:
       width: 90%
-      columns: '2 columns'
+      columns: '2 columns 60%-40%'
       mobile_columns: '1'
       margin_block_start: '0'
       margin_block_end: '0'
@@ -456,8 +456,9 @@ component_tree:
       flex_direction: column
       flex_gap: sm
       items_align: start
-      flex_align: center
+      flex_align: start
       radius: sm
+      stretch: false
   '2:main_slot:1:group_slot:0:0916d919-ab6c-420f-b97b-b07b5dac823c':
     parent_uuid: c1794bd5-f63f-4da1-9c70-e9659a1242a8
     slot: group_slot
@@ -729,7 +730,7 @@ component_tree:
     slot: conditional_slot
     uuid: 27a623ee-c4db-4e03-a4ab-73eb0c6fbc99
     component_id: sdc.drupalorg.section
-    component_version: cc56651b3b3c5dd8
+    component_version: 6df0ebebde418023
     inputs:
       width: 90%
       columns: '2 columns 33%-67%'
@@ -1116,7 +1117,7 @@ component_tree:
     slot: fallback_slot
     uuid: 479178e3-7823-40a6-b98f-16bf09f1a89c
     component_id: sdc.drupalorg.section
-    component_version: cc56651b3b3c5dd8
+    component_version: 6df0ebebde418023
     inputs:
       width: 90%
       columns: '2 columns 33%-67%'
@@ -1501,7 +1502,7 @@ component_tree:
   '4:91f6c18a-43ff-4289-ae94-8027c074eb20':
     uuid: 91f6c18a-43ff-4289-ae94-8027c074eb20
     component_id: sdc.drupalorg.section
-    component_version: cc56651b3b3c5dd8
+    component_version: 6df0ebebde418023
     inputs:
       width: 90%
       columns: '4 columns'
@@ -1601,7 +1602,7 @@ component_tree:
   '5:6ed925bd-5bae-4db0-b1b0-3af566b26f2d':
     uuid: 6ed925bd-5bae-4db0-b1b0-3af566b26f2d
     component_id: sdc.drupalorg.section
-    component_version: cc56651b3b3c5dd8
+    component_version: 6df0ebebde418023
     inputs:
       width: 100%
       columns: '1 column'
