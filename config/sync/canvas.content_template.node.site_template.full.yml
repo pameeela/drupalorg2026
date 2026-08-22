@@ -234,7 +234,7 @@ component_tree:
     component_version: d1ce9ddf35db63e0
     inputs:
       flex_direction: column
-      flex_gap: sm
+      flex_gap: md
       items_align: start
       flex_align: center
       radius: sm

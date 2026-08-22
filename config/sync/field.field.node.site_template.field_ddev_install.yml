@@ -13,7 +13,9 @@ label: 'DDEV install commands'
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: "mkdir xxx && cd xxx \r\nddev config --project-type=drupal11 --docroot=web \r\nddev composer create-project drupal/cms \r\nddev composer require drupal/xxx \r\nddev drush si ../recipes/xxx -y"
 default_value_callback: ''
 settings: {  }
 field_type: string_long
