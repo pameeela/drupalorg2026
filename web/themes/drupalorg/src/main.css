@@ -3,8 +3,8 @@
 @import "../components/navbar/navbar.tailwind.css";
 @import "../components/anchor/anchor.tailwind.css";
 @import "../components/carousel-tabs/carousel-tabs.tailwind.css";
-@import "../components/site-template-preview/site-template-preview.tailwind.css";
-@import "../components/code-command/code-command.tailwind.css";
+@import "../components/scroll-stack/scroll-stack.tailwind.css";
+
 @theme inline {
   --color-darkest-blue: var(--drupal-darkest-blue);
   --color-navy: var(--drupal-navy);
@@ -151,8 +151,8 @@
   }
 
   sup {
-    font-size: 60%;
     top: -0.5em;
+    font-size: 60%;
     /* ^ match normalize to avoid conflicts. */
   }
 
@@ -225,8 +225,8 @@
   }
 
   .form-required::after {
-    @apply ml-1 text-red-500;
     content: "*";
+    @apply ml-1 text-red-500;
   }
 
   input[type="text"],
@@ -240,9 +240,9 @@
   input[type="time"],
   textarea,
   select {
-    @apply w-full border-0 border-b bg-transparent text-base outline-none;
     /* @todo Add p-1.5 when this is fixed in Canvas: https://www.drupal.org/i/3572963. */
     padding: calc(var(--spacing) * 1.5);
+    @apply w-full border-0 border-b bg-transparent text-base outline-none;
   }
 
   input[type="text"]:focus,
