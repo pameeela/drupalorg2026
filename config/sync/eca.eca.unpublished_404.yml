@@ -11,12 +11,13 @@ dependencies:
 third_party_settings:
   modeler_api:
     modeler_id: bpmn_io
+    data: 'hash:fb153ebb550c7b82d9a6e4aa764fb8d3'
     label: 'Unpublished 404'
 _core:
   default_config_hash: TJ-U2elc6F8o0jtbcdAnvlAeg1fUrJfPqnhtmuGSavM
 id: unpublished_404
 weight: 0
-template: null
+template: false
 events:
   kernel__exception_status_code_exception:
     plugin: 'kernel:exception_status_code'
@@ -74,6 +75,7 @@ actions:
       token_name: node
       request: 2
       parameter_name: node
+      raw_value: false
     successors:
       -
         id: eca_throw_exception_exception
@@ -84,5 +86,5 @@ actions:
     configuration:
       exception_type: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
       response_message: ''
-      log_exception: true
+      log_exception: false
     successors: {  }
