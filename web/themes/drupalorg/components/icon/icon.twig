@@ -1,11 +1,15 @@
 {#
-  Icon component using SVG icons from the Phosphor icon pack.
+Icon component using SVG icons from the Phosphor icon pack.
 
-  @param icon (string) - The icon ID from the Phosphor icon library (e.g., 'rocket', 'arrow-right')
-  @param icon_size (string) - Size enum: 'extra-small', 'small', 'medium', 'large', 'extra-large'
-  @param icon_color (string) - Optional color enum (defaults to 'currentColor')
-  @param alt (string) - Optional alt text for accessibility (leave empty for decorative icons)
+@param icon (string) - The icon ID from the Phosphor icon library (e.g., 'rocket', 'arrow-right')
+@param icon_size (string) - Size enum: 'extra-small', 'small', 'medium', 'large', 'extra-large'
+@param icon_color (string) - Optional color enum (defaults to 'currentColor')
+@param alt (string) - Optional alt text for accessibility (leave empty for decorative icons)
 #}
+
+{% set icon_parts = icon|split(':') %}
+{% set icon_pack = icon_parts|length > 1 ? icon_parts|first : 'phosphor' %}
+{% set icon_name = icon_parts|last %}
 
 {% set size_map = {
   'extra-extra-small': 16,
@@ -29,14 +33,14 @@
 
 <div class="min-w:{{ resolved_size }}">
   {{
-    icon(
-      'phosphor',
-      icon,
-      {
-        size: resolved_size,
-        color: resolved_color,
-        alt: alt|default('')
-      }
-    )
+  icon(
+    icon_pack,
+    icon_name,
+    {
+      size: resolved_size,
+      color: resolved_color,
+      alt: alt|default('')
+    }
+  )
   }}
 </div>
