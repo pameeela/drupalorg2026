@@ -3,13 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - canvas.component.sdc.drupalorg.author-date
-    - canvas.component.sdc.drupalorg.badge
-    - canvas.component.sdc.drupalorg.button
-    - canvas.component.sdc.drupalorg.group
-    - canvas.component.sdc.drupalorg.heading
-    - canvas.component.sdc.drupalorg.hero-side-by-side
-    - canvas.component.sdc.drupalorg.plain-text
+    - canvas.component.sdc.drupalorg_theme.author-date
+    - canvas.component.sdc.drupalorg_theme.badge
+    - canvas.component.sdc.drupalorg_theme.button
+    - canvas.component.sdc.drupalorg_theme.group
+    - canvas.component.sdc.drupalorg_theme.heading
+    - canvas.component.sdc.drupalorg_theme.hero-side-by-side
+    - canvas.component.sdc.drupalorg_theme.plain-text
     - core.entity_view_mode.node.hero
     - field.field.media.image.field_media_image
     - field.field.node.blog.field_category
@@ -33,7 +33,7 @@ content_entity_type_view_mode: hero
 component_tree:
   '0:d678ea13-4b36-498d-be6d-10875e0c1f76':
     uuid: d678ea13-4b36-498d-be6d-10875e0c1f76
-    component_id: sdc.drupalorg.hero-side-by-side
+    component_id: sdc.drupalorg_theme.hero-side-by-side
     component_version: 134543b92be69eb8
     inputs:
       hero_flex_gap: large
@@ -51,7 +51,7 @@ component_tree:
     parent_uuid: d678ea13-4b36-498d-be6d-10875e0c1f76
     slot: hero_slot
     uuid: 9934eb33-ebc5-4f22-bd70-e23c68d45daf
-    component_id: sdc.drupalorg.heading
+    component_id: sdc.drupalorg_theme.heading
     component_version: 9fc55396fecbab86
     inputs:
       heading_text:
@@ -65,7 +65,7 @@ component_tree:
     parent_uuid: d678ea13-4b36-498d-be6d-10875e0c1f76
     slot: hero_slot
     uuid: 1898c3a4-9e9a-4b17-ae60-cbcda109dc31
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: row
@@ -78,7 +78,7 @@ component_tree:
     parent_uuid: 1898c3a4-9e9a-4b17-ae60-cbcda109dc31
     slot: group_slot
     uuid: 00432008-8290-4ca8-a93b-873e85548672
-    component_id: sdc.drupalorg.author-date
+    component_id: sdc.drupalorg_theme.author-date
     component_version: 51851caa6c65d550
     inputs:
       author:
@@ -92,7 +92,7 @@ component_tree:
     parent_uuid: 1898c3a4-9e9a-4b17-ae60-cbcda109dc31
     slot: group_slot
     uuid: 17110caf-ec55-4311-ac11-cd2b49a1edf1
-    component_id: sdc.drupalorg.badge
+    component_id: sdc.drupalorg_theme.badge
     component_version: d86e02390d856974
     inputs:
       label:
@@ -103,7 +103,7 @@ component_tree:
     parent_uuid: d678ea13-4b36-498d-be6d-10875e0c1f76
     slot: hero_slot
     uuid: d6a2f473-cf7f-42ed-a59b-692e1e1fcc1b
-    component_id: sdc.drupalorg.plain-text
+    component_id: sdc.drupalorg_theme.plain-text
     component_version: 85b6ce75d344b10b
     inputs:
       text:
@@ -113,7 +113,7 @@ component_tree:
     parent_uuid: d678ea13-4b36-498d-be6d-10875e0c1f76
     slot: hero_slot
     uuid: 0d6d4551-2dc4-42a1-b17e-14581a311163
-    component_id: sdc.drupalorg.button
+    component_id: sdc.drupalorg_theme.button
     component_version: 8985aaac808b1e09
     inputs:
       variant: drupal-blue

@@ -1,0 +1,118 @@
+{% set center = center_header ? 'yes' : 'no' %}
+
+{% set header_cva =
+  html_cva(
+    base: ['tabs__header flex flex-col gap-2 [&_h2]:max-w-2xl [&_h3]:max-w-2xl [&_p]:max-w-2xl'],
+    variants: {
+      center: {
+        yes: 'mx-auto items-center text-center',
+        no: ''
+      }
+    }
+  )
+%}
+
+<section class="tabs flex flex-col gap-8">
+  {% if block('header') is defined %}
+    <div
+      class="{{
+      header_cva.apply({
+        center: center_header
+      })
+      }}"
+    >
+      {% block header %}
+        {% include '@drupalorg_theme/components/badge/badge.twig' with {
+          label: 'Why Drupal CMS',
+          style: 'transparent'
+        } only %}
+        <h2>Launch professional websites in hours, not weeks.</h2>
+      {% endblock %}
+    </div>
+  {% endif %}
+
+  {# Populated by tabs.js: each Tab's nav button is hoisted in here. Hidden
+     until JS runs so the no-JS / Canvas-editor fallback shows stacked panels. #}
+  <div class="tabs__tablist flex hidden flex-wrap gap-x-12 gap-y-2 border-b border-medium-gray" role="tablist"></div>
+
+  <div class="tabs__panels flex flex-col gap-8">
+    {% block tabs %}
+      {% embed 'drupalorg_theme:tab'
+        with {
+          title: 'One-click site templates',
+          icon: 'squares-four'
+        }
+      %}
+        {% block content %}
+          <p class="font-body text-base font-light text-dark-gray">
+            Start with a one-click site template. Customise it with intuitive visual building tools. Go live with industry-specific best practices
+            baked in and a suite of AI agents working alongside you from day one.
+          </p>
+          <div class="flex flex-wrap items-center gap-6">
+            {% include '@drupalorg_theme/components/button/button.twig' with {
+              label: 'Template Library',
+              href: '#',
+              variant: 'primary',
+              icon: 'arrow-right'
+            } only %}
+            <a href="#" class="text-sm font-medium text-darkest-gray">Try Drupal Now</a>
+          </div>
+        {% endblock %}
+        {% block media %}
+          <div class="aspect-video w-full rounded-lg bg-light-gray"></div>
+        {% endblock %}
+      {% endembed %}
+
+      {% embed 'drupalorg_theme:tab'
+        with {
+          title: 'AI agents from day one',
+          icon: 'sparkle'
+        }
+      %}
+        {% block content %}
+          <p class="font-body text-base font-light text-dark-gray">
+            A suite of AI agents works alongside you from the very first day, helping you build, edit, and manage your site through natural
+            conversation.
+          </p>
+          <div class="flex flex-wrap items-center gap-6">
+            {% include '@drupalorg_theme/components/button/button.twig' with {
+              label: 'Explore AI',
+              href: '#',
+              variant: 'primary',
+              icon: 'arrow-right'
+            } only %}
+            <a href="#" class="text-sm font-medium text-darkest-gray">Try Drupal Now</a>
+          </div>
+        {% endblock %}
+        {% block media %}
+          <div class="aspect-video w-full rounded-lg bg-light-gray"></div>
+        {% endblock %}
+      {% endembed %}
+
+      {% embed 'drupalorg_theme:tab'
+        with {
+          title: 'No ceiling',
+          icon: 'infinity'
+        }
+      %}
+        {% block content %}
+          <p class="font-body text-base font-light text-dark-gray">
+            Start simple and scale without limits. Drupal grows with you — from a first site to the most ambitious digital platforms in the world.
+          </p>
+          <div class="flex flex-wrap items-center gap-6">
+            {% include '@drupalorg_theme/components/button/button.twig' with {
+              label: 'See what Drupal can do',
+              href: '#',
+              variant: 'primary',
+              icon: 'arrow-right'
+            } only %}
+            <a href="#" class="text-sm font-medium text-darkest-gray">Try Drupal Now</a>
+          </div>
+        {% endblock %}
+        {% block media %}
+          <div class="aspect-video w-full rounded-lg bg-light-gray"></div>
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  </div>
+</section>

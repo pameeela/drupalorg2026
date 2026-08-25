@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - canvas.component.sdc.drupalorg.card-article-featured
+    - canvas.component.sdc.drupalorg_theme.card-article-featured
     - core.entity_view_mode.node.featured
     - field.field.media.image.field_media_image
     - field.field.node.blog.field_category
@@ -25,7 +25,7 @@ content_entity_type_view_mode: featured
 component_tree:
   '0:795d2843-7041-4cb4-94e5-22139ced6f35':
     uuid: 795d2843-7041-4cb4-94e5-22139ced6f35
-    component_id: sdc.drupalorg.card-article-featured
+    component_id: sdc.drupalorg_theme.card-article-featured
     component_version: 80a382ad99db38fa
     inputs:
       title:

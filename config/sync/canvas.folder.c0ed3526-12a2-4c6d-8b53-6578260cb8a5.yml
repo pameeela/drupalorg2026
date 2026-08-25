@@ -3,23 +3,23 @@ langcode: en
 status: true
 dependencies:
   config:
-    - canvas.component.sdc.drupalorg.anchor
-    - canvas.component.sdc.drupalorg.author-date
-    - canvas.component.sdc.drupalorg.badge
-    - canvas.component.sdc.drupalorg.blockquote
-    - canvas.component.sdc.drupalorg.button
-    - canvas.component.sdc.drupalorg.code-command
-    - canvas.component.sdc.drupalorg.component-type
-    - canvas.component.sdc.drupalorg.content-type
-    - canvas.component.sdc.drupalorg.divider
-    - canvas.component.sdc.drupalorg.eyebrow
-    - canvas.component.sdc.drupalorg.heading
-    - canvas.component.sdc.drupalorg.icon
-    - canvas.component.sdc.drupalorg.image
-    - canvas.component.sdc.drupalorg.plain-text
-    - canvas.component.sdc.drupalorg.stat-counter
-    - canvas.component.sdc.drupalorg.text
-    - canvas.component.sdc.drupalorg.video
+    - canvas.component.sdc.drupalorg_theme.anchor
+    - canvas.component.sdc.drupalorg_theme.author-date
+    - canvas.component.sdc.drupalorg_theme.badge
+    - canvas.component.sdc.drupalorg_theme.blockquote
+    - canvas.component.sdc.drupalorg_theme.button
+    - canvas.component.sdc.drupalorg_theme.code-command
+    - canvas.component.sdc.drupalorg_theme.component-type
+    - canvas.component.sdc.drupalorg_theme.content-type
+    - canvas.component.sdc.drupalorg_theme.divider
+    - canvas.component.sdc.drupalorg_theme.eyebrow
+    - canvas.component.sdc.drupalorg_theme.heading
+    - canvas.component.sdc.drupalorg_theme.icon
+    - canvas.component.sdc.drupalorg_theme.image
+    - canvas.component.sdc.drupalorg_theme.plain-text
+    - canvas.component.sdc.drupalorg_theme.stat-counter
+    - canvas.component.sdc.drupalorg_theme.text
+    - canvas.component.sdc.drupalorg_theme.video
     - canvas.component.sdc.mercury.button
     - canvas.component.sdc.mercury.heading
     - canvas.component.sdc.mercury.text
@@ -27,23 +27,23 @@ name: Base
 configEntityTypeId: component
 weight: 0
 items:
-  - sdc.drupalorg.anchor
-  - sdc.drupalorg.author-date
-  - sdc.drupalorg.badge
-  - sdc.drupalorg.blockquote
-  - sdc.drupalorg.button
-  - sdc.drupalorg.code-command
-  - sdc.drupalorg.component-type
-  - sdc.drupalorg.content-type
-  - sdc.drupalorg.divider
-  - sdc.drupalorg.eyebrow
-  - sdc.drupalorg.heading
-  - sdc.drupalorg.icon
-  - sdc.drupalorg.image
-  - sdc.drupalorg.plain-text
-  - sdc.drupalorg.stat-counter
-  - sdc.drupalorg.text
-  - sdc.drupalorg.video
+  - sdc.drupalorg_theme.anchor
+  - sdc.drupalorg_theme.author-date
+  - sdc.drupalorg_theme.badge
+  - sdc.drupalorg_theme.blockquote
+  - sdc.drupalorg_theme.button
+  - sdc.drupalorg_theme.code-command
+  - sdc.drupalorg_theme.component-type
+  - sdc.drupalorg_theme.content-type
+  - sdc.drupalorg_theme.divider
+  - sdc.drupalorg_theme.eyebrow
+  - sdc.drupalorg_theme.heading
+  - sdc.drupalorg_theme.icon
+  - sdc.drupalorg_theme.image
+  - sdc.drupalorg_theme.plain-text
+  - sdc.drupalorg_theme.stat-counter
+  - sdc.drupalorg_theme.text
+  - sdc.drupalorg_theme.video
   - sdc.mercury.button
   - sdc.mercury.heading
   - sdc.mercury.text

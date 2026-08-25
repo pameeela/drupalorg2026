@@ -1,0 +1,70 @@
+{# Normalize additional classes #}
+{% set additional_classes = classes|default('') %}
+{% if additional_classes is iterable %}
+  {% set additional_classes = additional_classes|join(' ') %}
+{% endif %}
+
+<section class="cq-full relative {{ additional_classes }}">
+  {% if background_video.src is not empty %}
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true" inert>
+      <video src="{{ background_video.src }}" autoplay muted loop playsinline tabindex="-1" class="h-full w-full object-cover"></video>
+    </div>
+  {% endif %}
+
+  {# Content sticks at top while image scrolls into view from below #}
+  <div class="sticky top-0 overflow-hidden">
+    <div class="relative z-10 container mx-auto px-4 lg:px-12">
+      <div class="flex flex-col items-center gap-6 pt-20 pb-14 text-center md:gap-8 md:pt-28 xl:pt-[168px] xl:pb-16">
+        {% if heading %}
+          {{
+            include(
+              'drupalorg_theme:heading',
+              {
+                heading_text: heading,
+                level: 2,
+                align: 'center',
+                text_color: 'default',
+                url: '',
+                text_size: 'heading-responsive-7xl',
+                heading_classes: 'tracking-[-0.04em] max-w-3xl'
+              },
+              with_context: false
+            )
+          }}
+        {% endif %}
+
+        {% if body %}
+          <p class="max-w-2xl text-xl">
+            {{ body }}
+          </p>
+        {% endif %}
+
+        {% if block('actions') is defined %}
+          <div class="flex flex-wrap items-center justify-center gap-3.5">
+            {% block actions %}
+
+            {% endblock %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {# Screenshot scrolls up from below the sticky content #}
+  {% if image.src is not empty %}
+    <div class="relative z-10 container mx-auto px-4 lg:px-12">
+      <div class="mx-auto w-full max-w-4xl pb-12 md:pb-15 xl:max-w-6xl">
+        <div class="overflow-hidden rounded-xl bg-white shadow-[0px_12px_24px_-4px_rgba(18,26,38,0.12),0px_4px_8px_-4px_rgba(18,26,38,0.05)]">
+          {% include 'canvas:image' ignore missing with {
+            src: image.src,
+            alt: image.alt,
+            width: image.width,
+            height: image.height,
+            loading: 'eager',
+            class: 'block h-auto w-full'
+          } only %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</section>

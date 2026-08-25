@@ -3,15 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - canvas.component.sdc.drupalorg.badge
-    - canvas.component.sdc.drupalorg.button
-    - canvas.component.sdc.drupalorg.grid
-    - canvas.component.sdc.drupalorg.group
-    - canvas.component.sdc.drupalorg.heading
-    - canvas.component.sdc.drupalorg.hero-side-by-side
-    - canvas.component.sdc.drupalorg.section
-    - canvas.component.sdc.drupalorg.stat-counter
-    - canvas.component.sdc.drupalorg.text
+    - canvas.component.sdc.drupalorg_theme.badge
+    - canvas.component.sdc.drupalorg_theme.button
+    - canvas.component.sdc.drupalorg_theme.grid
+    - canvas.component.sdc.drupalorg_theme.group
+    - canvas.component.sdc.drupalorg_theme.heading
+    - canvas.component.sdc.drupalorg_theme.hero-side-by-side
+    - canvas.component.sdc.drupalorg_theme.section
+    - canvas.component.sdc.drupalorg_theme.stat-counter
+    - canvas.component.sdc.drupalorg_theme.text
     - filter.format.canvas_html_block
   module:
     - options
@@ -21,7 +21,7 @@ label: 'Customer Story'
 component_tree:
   '0:923ea6dd-25bf-4ee2-bb58-3d29156d15cb':
     uuid: 923ea6dd-25bf-4ee2-bb58-3d29156d15cb
-    component_id: sdc.drupalorg.section
+    component_id: sdc.drupalorg_theme.section
     component_version: 14b39e0eb4b650c6
     inputs:
       width: 100%
@@ -39,7 +39,7 @@ component_tree:
     parent_uuid: 923ea6dd-25bf-4ee2-bb58-3d29156d15cb
     slot: main_slot
     uuid: c7ae0b40-7657-456d-9b49-6b88a7813b46
-    component_id: sdc.drupalorg.hero-side-by-side
+    component_id: sdc.drupalorg_theme.hero-side-by-side
     component_version: 134543b92be69eb8
     inputs:
       hero_flex_gap: large
@@ -75,12 +75,12 @@ component_tree:
               type: integer
           required:
             - src
-        componentId: sdc.drupalorg.hero-side-by-side
+        componentId: sdc.drupalorg_theme.hero-side-by-side
   '0:main_slot:0:hero_slot:0:ba745fe1-ab3f-4734-9af0-7443c6e3b1e8':
     parent_uuid: c7ae0b40-7657-456d-9b49-6b88a7813b46
     slot: hero_slot
     uuid: ba745fe1-ab3f-4734-9af0-7443c6e3b1e8
-    component_id: sdc.drupalorg.heading
+    component_id: sdc.drupalorg_theme.heading
     component_version: 1e24c13cc69b948e
     inputs:
       heading_text: '[Example Organisation] publishes three times more content with Drupal CMS'
@@ -92,7 +92,7 @@ component_tree:
     parent_uuid: c7ae0b40-7657-456d-9b49-6b88a7813b46
     slot: hero_slot
     uuid: 715ce734-0625-4287-a7a7-99829db364aa
-    component_id: sdc.drupalorg.badge
+    component_id: sdc.drupalorg_theme.badge
     component_version: d86e02390d856974
     inputs:
       label: 'Customer story'
@@ -101,7 +101,7 @@ component_tree:
     parent_uuid: c7ae0b40-7657-456d-9b49-6b88a7813b46
     slot: hero_slot
     uuid: 6323e89a-ac0a-418c-904c-76aa5e1f8290
-    component_id: sdc.drupalorg.grid
+    component_id: sdc.drupalorg_theme.grid
     component_version: d3e0565623935449
     inputs:
       width: 100%
@@ -111,7 +111,7 @@ component_tree:
     parent_uuid: 6323e89a-ac0a-418c-904c-76aa5e1f8290
     slot: main_slot
     uuid: 44b295d2-81e7-42e5-a974-c3efdada737b
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: column
@@ -122,7 +122,7 @@ component_tree:
     parent_uuid: 44b295d2-81e7-42e5-a974-c3efdada737b
     slot: group_slot
     uuid: 6769f7b3-986c-4fdf-92ed-e506f924936c
-    component_id: sdc.drupalorg.heading
+    component_id: sdc.drupalorg_theme.heading
     component_version: 1e24c13cc69b948e
     inputs:
       heading_text: 'Same day'
@@ -134,7 +134,7 @@ component_tree:
     parent_uuid: 44b295d2-81e7-42e5-a974-c3efdada737b
     slot: group_slot
     uuid: 93eb2fa7-5923-4c8e-ac71-1539c717054f
-    component_id: sdc.drupalorg.text
+    component_id: sdc.drupalorg_theme.text
     component_version: 8bd96e9141226c1b
     inputs:
       text:
@@ -146,7 +146,7 @@ component_tree:
     parent_uuid: 6323e89a-ac0a-418c-904c-76aa5e1f8290
     slot: main_slot
     uuid: 46ed90b2-6ab0-40fe-a0b5-42db67a6d998
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: column
@@ -157,7 +157,7 @@ component_tree:
     parent_uuid: 46ed90b2-6ab0-40fe-a0b5-42db67a6d998
     slot: group_slot
     uuid: d5653ebe-8f6c-4aec-b2ea-d6ee2cb92511
-    component_id: sdc.drupalorg.stat-counter
+    component_id: sdc.drupalorg_theme.stat-counter
     component_version: e9702c30cfb1ba55
     inputs:
       value: 85
@@ -168,7 +168,7 @@ component_tree:
     parent_uuid: 46ed90b2-6ab0-40fe-a0b5-42db67a6d998
     slot: group_slot
     uuid: eaf20d4f-6282-4265-bfe9-1db6702726b8
-    component_id: sdc.drupalorg.text
+    component_id: sdc.drupalorg_theme.text
     component_version: 8bd96e9141226c1b
     inputs:
       text:
@@ -180,7 +180,7 @@ component_tree:
     parent_uuid: 6323e89a-ac0a-418c-904c-76aa5e1f8290
     slot: main_slot
     uuid: 82f1c418-ec5f-4879-b851-03a696fd0806
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: column
@@ -192,7 +192,7 @@ component_tree:
     parent_uuid: 82f1c418-ec5f-4879-b851-03a696fd0806
     slot: group_slot
     uuid: 64aa6bb4-169d-4b6b-ae8a-c3e09714da9a
-    component_id: sdc.drupalorg.stat-counter
+    component_id: sdc.drupalorg_theme.stat-counter
     component_version: e9702c30cfb1ba55
     inputs:
       value: 3
@@ -203,7 +203,7 @@ component_tree:
     parent_uuid: 82f1c418-ec5f-4879-b851-03a696fd0806
     slot: group_slot
     uuid: ba9788af-c6a5-4593-a94d-47fad80dfec5
-    component_id: sdc.drupalorg.text
+    component_id: sdc.drupalorg_theme.text
     component_version: 8bd96e9141226c1b
     inputs:
       text:
@@ -215,7 +215,7 @@ component_tree:
     parent_uuid: c7ae0b40-7657-456d-9b49-6b88a7813b46
     slot: hero_slot
     uuid: 8f6b4292-1fba-4bbb-8411-ad1bcc708fcc
-    component_id: sdc.drupalorg.text
+    component_id: sdc.drupalorg_theme.text
     component_version: 8bd96e9141226c1b
     inputs:
       text:
@@ -227,7 +227,7 @@ component_tree:
     parent_uuid: c7ae0b40-7657-456d-9b49-6b88a7813b46
     slot: hero_slot
     uuid: a9a7be7a-34cf-48de-b6b9-7bec1e10dacd
-    component_id: sdc.drupalorg.button
+    component_id: sdc.drupalorg_theme.button
     component_version: 8985aaac808b1e09
     inputs:
       variant: light-blue

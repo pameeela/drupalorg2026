@@ -3,11 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - canvas.component.sdc.drupalorg.card-icon
-    - canvas.component.sdc.drupalorg.eyebrow
-    - canvas.component.sdc.drupalorg.grid
-    - canvas.component.sdc.drupalorg.heading
-    - canvas.component.sdc.drupalorg.section
+    - canvas.component.sdc.drupalorg_theme.card-icon
+    - canvas.component.sdc.drupalorg_theme.eyebrow
+    - canvas.component.sdc.drupalorg_theme.grid
+    - canvas.component.sdc.drupalorg_theme.heading
+    - canvas.component.sdc.drupalorg_theme.section
     - filter.format.canvas_html_block
   module:
     - options
@@ -17,7 +17,7 @@ label: 'Where Drupal Wins - Blue'
 component_tree:
   '0:2bdd4469-757b-4788-aa33-146bc31e3409':
     uuid: 2bdd4469-757b-4788-aa33-146bc31e3409
-    component_id: sdc.drupalorg.section
+    component_id: sdc.drupalorg_theme.section
     component_version: 14b39e0eb4b650c6
     inputs:
       width: 90%
@@ -36,7 +36,7 @@ component_tree:
     parent_uuid: 2bdd4469-757b-4788-aa33-146bc31e3409
     slot: header_slot
     uuid: d90eb804-6250-4547-a073-f0cd313a90a7
-    component_id: sdc.drupalorg.eyebrow
+    component_id: sdc.drupalorg_theme.eyebrow
     component_version: 2ff2015e21e55e15
     inputs:
       eyebrow_text: 'WHERE DRUPAL WINS'
@@ -45,7 +45,7 @@ component_tree:
     parent_uuid: 2bdd4469-757b-4788-aa33-146bc31e3409
     slot: header_slot
     uuid: 9a0dcb31-d316-4987-8696-9980d1eafe54
-    component_id: sdc.drupalorg.heading
+    component_id: sdc.drupalorg_theme.heading
     component_version: 1e24c13cc69b948e
     inputs:
       heading_text: 'The differences that matter '
@@ -57,7 +57,7 @@ component_tree:
     parent_uuid: 2bdd4469-757b-4788-aa33-146bc31e3409
     slot: main_slot
     uuid: 2d66ca3a-cb1e-41a1-99aa-2b0e20472908
-    component_id: sdc.drupalorg.grid
+    component_id: sdc.drupalorg_theme.grid
     component_version: d3e0565623935449
     inputs:
       width: 100%
@@ -67,7 +67,7 @@ component_tree:
     parent_uuid: 2d66ca3a-cb1e-41a1-99aa-2b0e20472908
     slot: main_slot
     uuid: b61fcbc1-a068-46a1-b5bf-fc2f08a019c5
-    component_id: sdc.drupalorg.card-icon
+    component_id: sdc.drupalorg_theme.card-icon
     component_version: 4df7d088dab2c55d
     inputs:
       background_color: white
@@ -84,7 +84,7 @@ component_tree:
     parent_uuid: 2d66ca3a-cb1e-41a1-99aa-2b0e20472908
     slot: main_slot
     uuid: bac012fa-49ca-4d60-bcde-29ca3605e9fb
-    component_id: sdc.drupalorg.card-icon
+    component_id: sdc.drupalorg_theme.card-icon
     component_version: 4df7d088dab2c55d
     inputs:
       background_color: white
@@ -101,7 +101,7 @@ component_tree:
     parent_uuid: 2d66ca3a-cb1e-41a1-99aa-2b0e20472908
     slot: main_slot
     uuid: 21698bed-3c00-4259-bd6e-918d25542b65
-    component_id: sdc.drupalorg.card-icon
+    component_id: sdc.drupalorg_theme.card-icon
     component_version: 4df7d088dab2c55d
     inputs:
       background_color: white
@@ -118,7 +118,7 @@ component_tree:
     parent_uuid: 2bdd4469-757b-4788-aa33-146bc31e3409
     slot: main_slot
     uuid: 9a48cf8f-cbd5-406b-b10e-4595eb903275
-    component_id: sdc.drupalorg.grid
+    component_id: sdc.drupalorg_theme.grid
     component_version: d3e0565623935449
     inputs:
       width: 100%
@@ -128,7 +128,7 @@ component_tree:
     parent_uuid: 9a48cf8f-cbd5-406b-b10e-4595eb903275
     slot: main_slot
     uuid: 9eeb2a65-5171-41c8-bd66-8fd2acab3f64
-    component_id: sdc.drupalorg.card-icon
+    component_id: sdc.drupalorg_theme.card-icon
     component_version: 4df7d088dab2c55d
     inputs:
       background_color: white
@@ -145,7 +145,7 @@ component_tree:
     parent_uuid: 9a48cf8f-cbd5-406b-b10e-4595eb903275
     slot: main_slot
     uuid: b544fa0f-d053-4371-a46a-3fde62f8f4a6
-    component_id: sdc.drupalorg.card-icon
+    component_id: sdc.drupalorg_theme.card-icon
     component_version: 4df7d088dab2c55d
     inputs:
       background_color: white
@@ -162,7 +162,7 @@ component_tree:
     parent_uuid: 9a48cf8f-cbd5-406b-b10e-4595eb903275
     slot: main_slot
     uuid: 51aa6092-7088-4ebc-bccc-f38b55b01bff
-    component_id: sdc.drupalorg.card-icon
+    component_id: sdc.drupalorg_theme.card-icon
     component_version: 4df7d088dab2c55d
     inputs:
       background_color: white

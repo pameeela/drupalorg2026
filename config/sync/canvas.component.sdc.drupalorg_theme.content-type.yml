@@ -1,0 +1,29 @@
+uuid: 823691b6-feff-47e5-80b0-46caee25cf8f
+langcode: en
+status: false
+dependencies:
+  theme:
+    - drupalorg_theme
+active_version: 00cfae2e293cdaab
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        items:
+          required: false
+          field_type: string
+          cardinality: -1
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Content type'
+id: sdc.drupalorg_theme.content-type
+provider: drupalorg_theme
+source: sdc
+source_local_id: 'drupalorg_theme:content-type'

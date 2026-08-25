@@ -3,12 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - canvas.component.sdc.drupalorg.button
-    - canvas.component.sdc.drupalorg.group
-    - canvas.component.sdc.drupalorg.heading
-    - canvas.component.sdc.drupalorg.image
-    - canvas.component.sdc.drupalorg.section
-    - canvas.component.sdc.drupalorg.text
+    - canvas.component.sdc.drupalorg_theme.button
+    - canvas.component.sdc.drupalorg_theme.group
+    - canvas.component.sdc.drupalorg_theme.heading
+    - canvas.component.sdc.drupalorg_theme.image
+    - canvas.component.sdc.drupalorg_theme.section
+    - canvas.component.sdc.drupalorg_theme.text
     - filter.format.canvas_html_block
   module:
     - options
@@ -18,7 +18,7 @@ label: 'Drupal Certified Partner'
 component_tree:
   '0:bc08d186-9fe2-40d5-911b-c27e988e3535':
     uuid: bc08d186-9fe2-40d5-911b-c27e988e3535
-    component_id: sdc.drupalorg.section
+    component_id: sdc.drupalorg_theme.section
     component_version: 14b39e0eb4b650c6
     inputs:
       width: 70%
@@ -35,7 +35,7 @@ component_tree:
     parent_uuid: bc08d186-9fe2-40d5-911b-c27e988e3535
     slot: main_slot
     uuid: 0befcece-c8e2-4cac-9580-e76f78655cc1
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: column
@@ -47,7 +47,7 @@ component_tree:
     parent_uuid: 0befcece-c8e2-4cac-9580-e76f78655cc1
     slot: group_slot
     uuid: b471e392-af1f-4491-aaf8-ad2abd2647ac
-    component_id: sdc.drupalorg.heading
+    component_id: sdc.drupalorg_theme.heading
     component_version: 959bd70914eed3e8
     inputs:
       heading_text: 'Need help getting started?'
@@ -59,7 +59,7 @@ component_tree:
     parent_uuid: 0befcece-c8e2-4cac-9580-e76f78655cc1
     slot: group_slot
     uuid: 54817ce1-89f7-4a8d-8b1c-f9450f58bec1
-    component_id: sdc.drupalorg.text
+    component_id: sdc.drupalorg_theme.text
     component_version: 16c79c28a4108f9b
     inputs:
       text:
@@ -71,7 +71,7 @@ component_tree:
     parent_uuid: 0befcece-c8e2-4cac-9580-e76f78655cc1
     slot: group_slot
     uuid: 64399f8e-40c9-482a-9ea5-4ce0901364bd
-    component_id: sdc.drupalorg.button
+    component_id: sdc.drupalorg_theme.button
     component_version: 8985aaac808b1e09
     inputs:
       variant: white-outline
@@ -82,7 +82,7 @@ component_tree:
     parent_uuid: bc08d186-9fe2-40d5-911b-c27e988e3535
     slot: main_slot
     uuid: b446eb44-33cc-445b-8393-3a99f53d6b3f
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: column
@@ -94,7 +94,7 @@ component_tree:
     parent_uuid: b446eb44-33cc-445b-8393-3a99f53d6b3f
     slot: group_slot
     uuid: 25032abe-e591-42cb-9b0d-2bc5e89a5c3a
-    component_id: sdc.drupalorg.image
+    component_id: sdc.drupalorg_theme.image
     component_version: d77451010df91d0e
     inputs:
       media:
@@ -122,6 +122,6 @@ component_tree:
               type: integer
           required:
             - src
-        componentId: sdc.drupalorg.image
+        componentId: sdc.drupalorg_theme.image
       size: '1:1'
       radius: large

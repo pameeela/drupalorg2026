@@ -3,12 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - canvas.component.sdc.drupalorg.badge
-    - canvas.component.sdc.drupalorg.button
-    - canvas.component.sdc.drupalorg.group
-    - canvas.component.sdc.drupalorg.heading
-    - canvas.component.sdc.drupalorg.plain-text
-    - canvas.component.sdc.drupalorg.site-template-preview
+    - canvas.component.sdc.drupalorg_theme.badge
+    - canvas.component.sdc.drupalorg_theme.button
+    - canvas.component.sdc.drupalorg_theme.group
+    - canvas.component.sdc.drupalorg_theme.heading
+    - canvas.component.sdc.drupalorg_theme.plain-text
+    - canvas.component.sdc.drupalorg_theme.site-template-preview
     - core.entity_view_mode.node.card
     - field.field.media.image.field_media_image
     - field.field.node.site_template.field_featured_screenshot
@@ -29,7 +29,7 @@ content_entity_type_view_mode: card
 component_tree:
   '0:829d667a-9904-41a7-b62a-5495e23f7241':
     uuid: 829d667a-9904-41a7-b62a-5495e23f7241
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: d1ce9ddf35db63e0
     inputs:
       flex_direction: column
@@ -42,7 +42,7 @@ component_tree:
     parent_uuid: 829d667a-9904-41a7-b62a-5495e23f7241
     slot: group_slot
     uuid: 35ba6b15-815a-427d-9586-23deeda7694d
-    component_id: sdc.drupalorg.site-template-preview
+    component_id: sdc.drupalorg_theme.site-template-preview
     component_version: 11ebb8d130e6cd65
     inputs:
       media:
@@ -57,7 +57,7 @@ component_tree:
     parent_uuid: 829d667a-9904-41a7-b62a-5495e23f7241
     slot: group_slot
     uuid: d0a61fec-a1ad-401c-a8ae-a2299c6936ae
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: d1ce9ddf35db63e0
     inputs:
       flex_direction: column
@@ -70,7 +70,7 @@ component_tree:
     parent_uuid: d0a61fec-a1ad-401c-a8ae-a2299c6936ae
     slot: group_slot
     uuid: 6f852470-6bd3-4d4b-a984-ae7dbf14985f
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: d1ce9ddf35db63e0
     inputs:
       flex_direction: row
@@ -83,7 +83,7 @@ component_tree:
     parent_uuid: 6f852470-6bd3-4d4b-a984-ae7dbf14985f
     slot: group_slot
     uuid: df8d2ac0-ce38-4483-9f8c-260429f1c560
-    component_id: sdc.drupalorg.heading
+    component_id: sdc.drupalorg_theme.heading
     component_version: 98abcbae4cf1add5
     inputs:
       heading_text:
@@ -100,7 +100,7 @@ component_tree:
     parent_uuid: 6f852470-6bd3-4d4b-a984-ae7dbf14985f
     slot: group_slot
     uuid: cde68e48-f6ec-457d-a062-329f23481110
-    component_id: sdc.drupalorg.badge
+    component_id: sdc.drupalorg_theme.badge
     component_version: cf658701f300b03b
     inputs:
       label:
@@ -111,7 +111,7 @@ component_tree:
     parent_uuid: d0a61fec-a1ad-401c-a8ae-a2299c6936ae
     slot: group_slot
     uuid: 379f06f4-aa07-46b4-b6f1-1769d306cbd4
-    component_id: sdc.drupalorg.plain-text
+    component_id: sdc.drupalorg_theme.plain-text
     component_version: 1440083e37d8ffc4
     inputs:
       text:
@@ -121,7 +121,7 @@ component_tree:
     parent_uuid: d0a61fec-a1ad-401c-a8ae-a2299c6936ae
     slot: group_slot
     uuid: 76fa0163-099d-43d8-9f84-3f41c618e4a2
-    component_id: sdc.drupalorg.button
+    component_id: sdc.drupalorg_theme.button
     component_version: 1c40a1a84181621a
     inputs:
       variant: navy-link

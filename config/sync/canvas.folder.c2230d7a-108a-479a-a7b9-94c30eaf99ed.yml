@@ -3,17 +3,17 @@ langcode: en
 status: true
 dependencies:
   config:
-    - canvas.component.sdc.drupalorg.cta
-    - canvas.component.sdc.drupalorg.hero-billboard
-    - canvas.component.sdc.drupalorg.hero-featured
-    - canvas.component.sdc.drupalorg.hero-side-by-side
+    - canvas.component.sdc.drupalorg_theme.cta
+    - canvas.component.sdc.drupalorg_theme.hero-billboard
+    - canvas.component.sdc.drupalorg_theme.hero-featured
+    - canvas.component.sdc.drupalorg_theme.hero-side-by-side
     - canvas.component.sdc.mercury.cta
 name: Hero
 configEntityTypeId: component
 weight: 0
 items:
-  - sdc.drupalorg.cta
-  - sdc.drupalorg.hero-billboard
-  - sdc.drupalorg.hero-featured
-  - sdc.drupalorg.hero-side-by-side
+  - sdc.drupalorg_theme.cta
+  - sdc.drupalorg_theme.hero-billboard
+  - sdc.drupalorg_theme.hero-featured
+  - sdc.drupalorg_theme.hero-side-by-side
   - sdc.mercury.cta

@@ -3,14 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - canvas.component.sdc.drupalorg.button
-    - canvas.component.sdc.drupalorg.eyebrow
-    - canvas.component.sdc.drupalorg.grid
-    - canvas.component.sdc.drupalorg.group
-    - canvas.component.sdc.drupalorg.heading
-    - canvas.component.sdc.drupalorg.hero-side-by-side
-    - canvas.component.sdc.drupalorg.section
-    - canvas.component.sdc.drupalorg.text
+    - canvas.component.sdc.drupalorg_theme.button
+    - canvas.component.sdc.drupalorg_theme.eyebrow
+    - canvas.component.sdc.drupalorg_theme.grid
+    - canvas.component.sdc.drupalorg_theme.group
+    - canvas.component.sdc.drupalorg_theme.heading
+    - canvas.component.sdc.drupalorg_theme.hero-side-by-side
+    - canvas.component.sdc.drupalorg_theme.section
+    - canvas.component.sdc.drupalorg_theme.text
     - field.field.media.image.field_media_image
     - field.field.media.svg_image.field_media_svg_image
     - filter.format.canvas_html_block
@@ -30,7 +30,7 @@ label: 'Customer Story'
 component_tree:
   '0:995bb5ad-1fe2-48dc-8cd6-a166499900d6':
     uuid: 995bb5ad-1fe2-48dc-8cd6-a166499900d6
-    component_id: sdc.drupalorg.section
+    component_id: sdc.drupalorg_theme.section
     component_version: 14b39e0eb4b650c6
     inputs:
       width: 100%
@@ -48,7 +48,7 @@ component_tree:
     parent_uuid: 995bb5ad-1fe2-48dc-8cd6-a166499900d6
     slot: main_slot
     uuid: f9fe3a47-baa1-4a14-8f96-11a651cce206
-    component_id: sdc.drupalorg.hero-side-by-side
+    component_id: sdc.drupalorg_theme.hero-side-by-side
     component_version: 134543b92be69eb8
     inputs:
       hero_flex_gap: large
@@ -65,7 +65,7 @@ component_tree:
     parent_uuid: f9fe3a47-baa1-4a14-8f96-11a651cce206
     slot: hero_slot
     uuid: ed32284c-009c-49ac-9337-5ee8dd495b67
-    component_id: sdc.drupalorg.eyebrow
+    component_id: sdc.drupalorg_theme.eyebrow
     component_version: 2ff2015e21e55e15
     inputs:
       eyebrow_text: 'switcher story'
@@ -74,7 +74,7 @@ component_tree:
     parent_uuid: f9fe3a47-baa1-4a14-8f96-11a651cce206
     slot: hero_slot
     uuid: 028dd68e-6f1d-4c3e-b2a9-c2abdc2cd61d
-    component_id: sdc.drupalorg.heading
+    component_id: sdc.drupalorg_theme.heading
     component_version: 1e24c13cc69b948e
     inputs:
       heading_text: 'DamFailures.org moved from WordPress to Drupal CMS in six weeks'
@@ -86,7 +86,7 @@ component_tree:
     parent_uuid: f9fe3a47-baa1-4a14-8f96-11a651cce206
     slot: hero_slot
     uuid: baacd46b-79e8-48c3-bda8-5a6399f70fd7
-    component_id: sdc.drupalorg.text
+    component_id: sdc.drupalorg_theme.text
     component_version: 8bd96e9141226c1b
     inputs:
       text:
@@ -98,7 +98,7 @@ component_tree:
     parent_uuid: f9fe3a47-baa1-4a14-8f96-11a651cce206
     slot: hero_slot
     uuid: 61d780e3-25ef-4d25-bf27-5bcf46b3faf0
-    component_id: sdc.drupalorg.grid
+    component_id: sdc.drupalorg_theme.grid
     component_version: d3e0565623935449
     inputs:
       width: 100%
@@ -108,7 +108,7 @@ component_tree:
     parent_uuid: 61d780e3-25ef-4d25-bf27-5bcf46b3faf0
     slot: main_slot
     uuid: ca75f08f-f9ed-41b4-bd38-712c6626044e
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: column
@@ -120,7 +120,7 @@ component_tree:
     parent_uuid: ca75f08f-f9ed-41b4-bd38-712c6626044e
     slot: group_slot
     uuid: 659b28d0-6827-4baf-a7dc-38e14a22698c
-    component_id: sdc.drupalorg.heading
+    component_id: sdc.drupalorg_theme.heading
     component_version: 1e24c13cc69b948e
     inputs:
       heading_text: '98'
@@ -132,7 +132,7 @@ component_tree:
     parent_uuid: ca75f08f-f9ed-41b4-bd38-712c6626044e
     slot: group_slot
     uuid: 7a43c4e8-c8b9-4a23-a365-f66acdb5c8f5
-    component_id: sdc.drupalorg.text
+    component_id: sdc.drupalorg_theme.text
     component_version: 8bd96e9141226c1b
     inputs:
       text:
@@ -144,7 +144,7 @@ component_tree:
     parent_uuid: 61d780e3-25ef-4d25-bf27-5bcf46b3faf0
     slot: main_slot
     uuid: 5f15abea-3521-4dfb-9072-81f70f9d54bf
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: column
@@ -156,7 +156,7 @@ component_tree:
     parent_uuid: 5f15abea-3521-4dfb-9072-81f70f9d54bf
     slot: group_slot
     uuid: 0c07d6ce-7283-4150-af8b-d44bb0c4943e
-    component_id: sdc.drupalorg.heading
+    component_id: sdc.drupalorg_theme.heading
     component_version: 1e24c13cc69b948e
     inputs:
       heading_text: '6 weeks'
@@ -168,7 +168,7 @@ component_tree:
     parent_uuid: 5f15abea-3521-4dfb-9072-81f70f9d54bf
     slot: group_slot
     uuid: 8d2e4b96-deee-4b47-a81e-fbcab537dfed
-    component_id: sdc.drupalorg.text
+    component_id: sdc.drupalorg_theme.text
     component_version: 8bd96e9141226c1b
     inputs:
       text:
@@ -180,7 +180,7 @@ component_tree:
     parent_uuid: 61d780e3-25ef-4d25-bf27-5bcf46b3faf0
     slot: main_slot
     uuid: c75c32fe-991d-42b8-9fe2-43fb7638a37f
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: column
@@ -192,7 +192,7 @@ component_tree:
     parent_uuid: c75c32fe-991d-42b8-9fe2-43fb7638a37f
     slot: group_slot
     uuid: 2416c10b-9361-432d-97fa-b462b3a4d4da
-    component_id: sdc.drupalorg.heading
+    component_id: sdc.drupalorg_theme.heading
     component_version: 1e24c13cc69b948e
     inputs:
       heading_text: 'Day one'
@@ -204,7 +204,7 @@ component_tree:
     parent_uuid: c75c32fe-991d-42b8-9fe2-43fb7638a37f
     slot: group_slot
     uuid: c7dbaa2b-d43e-4917-9230-2f08bc260648
-    component_id: sdc.drupalorg.text
+    component_id: sdc.drupalorg_theme.text
     component_version: 8bd96e9141226c1b
     inputs:
       text:
@@ -216,7 +216,7 @@ component_tree:
     parent_uuid: f9fe3a47-baa1-4a14-8f96-11a651cce206
     slot: hero_slot
     uuid: 950226c3-6b8b-4672-89dc-97909d85a8f9
-    component_id: sdc.drupalorg.button
+    component_id: sdc.drupalorg_theme.button
     component_version: 8985aaac808b1e09
     inputs:
       variant: white-outline
