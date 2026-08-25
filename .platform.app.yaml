@@ -165,7 +165,7 @@ hooks:
     # No services are available but the disk is writeable.
     build: |
         set -e
-        cd web/themes/drupalorg
+        cd web/themes/drupalorg_theme
         npm ci
         npm run build
     # The deploy hook runs after your application has been deployed and started.
