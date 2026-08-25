@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - canvas.component.sdc.drupalorg.button
-    - canvas.component.sdc.drupalorg.cta
-    - canvas.component.sdc.drupalorg.text
+    - canvas.component.sdc.drupalorg_theme.button
+    - canvas.component.sdc.drupalorg_theme.cta
+    - canvas.component.sdc.drupalorg_theme.text
     - filter.format.canvas_html_block
   module:
     - options
@@ -15,7 +15,7 @@ label: 'Hero CTA pattern_home'
 component_tree:
   '0:68681ebc-0254-407c-9a28-76efb484d7a7':
     uuid: 68681ebc-0254-407c-9a28-76efb484d7a7
-    component_id: sdc.drupalorg.cta
+    component_id: sdc.drupalorg_theme.cta
     component_version: e3d7e89f0f08fe41
     inputs:
       heading_text: 'Easy to start. Impossible to outgrow.'
@@ -26,7 +26,7 @@ component_tree:
     parent_uuid: 68681ebc-0254-407c-9a28-76efb484d7a7
     slot: actions
     uuid: b2161d7b-30c8-43db-b614-e474cd7153a4
-    component_id: sdc.drupalorg.button
+    component_id: sdc.drupalorg_theme.button
     component_version: 8985aaac808b1e09
     inputs:
       variant: primary
@@ -37,7 +37,7 @@ component_tree:
     parent_uuid: 68681ebc-0254-407c-9a28-76efb484d7a7
     slot: actions
     uuid: e8a967fc-ac17-4a6a-a026-c4b92f4d7ad9
-    component_id: sdc.drupalorg.text
+    component_id: sdc.drupalorg_theme.text
     component_version: 8bd96e9141226c1b
     inputs:
       text:

@@ -6,11 +6,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A Composer-managed **Drupal CMS 11** site (PHP 8.4) — a new **marketing site for
 drupal.org** built to match Figma designs. Local development runs on **DDEV**
-(project name `drupalorg`, docroot `web`, nginx-fpm). The bulk of the custom work
-lives in the custom theme at `web/themes/drupalorg`.
+(project name `drupalorg_theme`, docroot `web`, nginx-fpm). The bulk of the custom work
+lives in the custom theme at `web/themes/drupalorg_theme`.
 
 **The theme is a fork of the Mercury theme** (note `generator: mercury` in
-`drupalorg.info.yml`). The working approach: **adapt Mercury's existing components
+`drupalorg_theme.info.yml`). The working approach: **adapt Mercury's existing components
 to match the Figma designs, and create new components only where Mercury doesn't
 already provide one.** When building UI, check for an existing Mercury-derived
 component to adapt before authoring a new one; the Figma designs are the source of
@@ -31,7 +31,7 @@ Config management:
 
 After requiring a module: `ddev composer require drupal/<project>` → `ddev drush pm:enable --yes <name>` → `ddev drush cr`.
 
-## Theme development (`web/themes/drupalorg`)
+## Theme development (`web/themes/drupalorg_theme`)
 
 This is where almost all front-end work happens. The theme is **component-based
 (Drupal SDC)** and styled with **Tailwind CSS v4** (CSS-first config, no JS config
@@ -69,15 +69,15 @@ new utility classes require a rebuild.
   (`drupal/canvas`) from standard node rendering. `src/RenderCallbacks.php` is a
   pre-render callback registered on the `component` element (e.g. normalizing the
   `hero-blog` date prop).
-- **Icons**: Phosphor icon set, configured in `drupalorg.icons.yml`, SVGs under
+- **Icons**: Phosphor icon set, configured in `drupalorg_theme.icons.yml`, SVGs under
   `icons/phosphor/`.
-- **Libraries**: `drupalorg.libraries.yml`. The `global` library is always
+- **Libraries**: `drupalorg_theme.libraries.yml`. The `global` library is always
   attached; `build/main.min.css` is marked `minified`/`preprocess: false` so it
   isn't re-minified or aggregated.
 
 ### Component coding rules (strictly enforced)
 
-Full detail is in `web/themes/drupalorg/AGENTS.md` — read it before editing
+Full detail is in `web/themes/drupalorg_theme/AGENTS.md` — read it before editing
 components. Key rules:
 
 - **Never put conditionals or `{% if %}`/`{% for %}` inside HTML attributes**
@@ -97,7 +97,7 @@ components. Key rules:
 ## Repository conventions & guardrails
 
 - Custom code goes in `web/modules/custom` and `web/themes/custom` (the active theme
-  is the top-level `web/themes/drupalorg`). Do **not** edit Drupal core or contrib
+  is the top-level `web/themes/drupalorg_theme`). Do **not** edit Drupal core or contrib
   projects in place.
 - Do not commit `vendor/`, uploaded files under `web/sites/*/files`, secrets, or
   machine-local overrides (`.env`, `settings.local.php`, `.ddev/config.local.yaml`).

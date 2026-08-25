@@ -3,23 +3,23 @@ langcode: en
 status: true
 dependencies:
   config:
-    - canvas.component.sdc.drupalorg.card
-    - canvas.component.sdc.drupalorg.card-article
-    - canvas.component.sdc.drupalorg.card-article-featured
-    - canvas.component.sdc.drupalorg.card-icon
-    - canvas.component.sdc.drupalorg.card-logo
-    - canvas.component.sdc.drupalorg.card-pricing
-    - canvas.component.sdc.drupalorg.card-site-template-compact
-    - canvas.component.sdc.drupalorg.card-testimonial
+    - canvas.component.sdc.drupalorg_theme.card
+    - canvas.component.sdc.drupalorg_theme.card-article
+    - canvas.component.sdc.drupalorg_theme.card-article-featured
+    - canvas.component.sdc.drupalorg_theme.card-icon
+    - canvas.component.sdc.drupalorg_theme.card-logo
+    - canvas.component.sdc.drupalorg_theme.card-pricing
+    - canvas.component.sdc.drupalorg_theme.card-site-template-compact
+    - canvas.component.sdc.drupalorg_theme.card-testimonial
 name: Card
 configEntityTypeId: component
 weight: 0
 items:
-  - sdc.drupalorg.card
-  - sdc.drupalorg.card-article
-  - sdc.drupalorg.card-article-featured
-  - sdc.drupalorg.card-icon
-  - sdc.drupalorg.card-logo
-  - sdc.drupalorg.card-pricing
-  - sdc.drupalorg.card-site-template-compact
-  - sdc.drupalorg.card-testimonial
+  - sdc.drupalorg_theme.card
+  - sdc.drupalorg_theme.card-article
+  - sdc.drupalorg_theme.card-article-featured
+  - sdc.drupalorg_theme.card-icon
+  - sdc.drupalorg_theme.card-logo
+  - sdc.drupalorg_theme.card-pricing
+  - sdc.drupalorg_theme.card-site-template-compact
+  - sdc.drupalorg_theme.card-testimonial

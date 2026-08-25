@@ -1,0 +1,220 @@
+{% set card_style = style|default('classic') %}
+{% set heading_level = level|default(3) %}
+{% set has_media = media.src is not empty %}
+{% set has_eyebrow = eyebrow is not empty %}
+{% set has_text = text is not empty %}
+{% set has_url = url is not empty %}
+{% set is_arrow_only = arrow_only|default(false) %}
+{% set has_cta = has_url and cta_text is not empty and not is_arrow_only %}
+{% set has_arrow_only = is_arrow_only and has_url %}
+{% set is_featured = card_style == 'featured' %}
+{% set button_variant = is_featured ? 'light-blue-link' : 'navy-link' %}
+{% set has_footer_action = has_cta or has_arrow_only ? 'yes' : 'no' %}
+{% set heading_id = 'card-heading'|clean_unique_id %}
+
+{% set card =
+  html_cva(
+    base: [
+      'group relative flex flex-col overflow-clip shadow-lg transition duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl in-[.views-row]:h-full'
+    ],
+    variants: {
+      style: {
+        classic: 'rounded-lg bg-white',
+        featured: 'min-h-[480px] justify-end rounded-2xl bg-darkest-gray text-white'
+      }
+    }
+  )
+%}
+
+{% set card_content =
+  html_cva(
+    base: 'pointer-events-none relative flex flex-col gap-5',
+    variants: {
+      style: {
+        classic: 'flex-1 justify-between p-8',
+        featured: 'bg-gradient-to-t from-darkest-blue via-darkest-blue/85 to-transparent p-8'
+      }
+    }
+  )
+%}
+
+{% set card_text = html_cva(base: 'flex flex-col gap-3') %}
+
+{% set heading_style =
+  html_cva(
+    base: 'text-xl',
+    variants: {
+      style: {
+        featured: 'text-lightest-blue',
+        classic: 'text-navy'
+      }
+    }
+  )
+%}
+
+{% set overlay_link =
+  html_cva(
+    base: [
+      'absolute inset-0 z-10',
+      'focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-drupal-blue focus-visible:outline-solid'
+    ],
+    variants: {
+      style: {
+        classic: 'rounded-lg',
+        featured: 'rounded-2xl'
+      }
+    }
+  )
+%}
+
+{% set arrow_only_icon =
+  html_cva(
+    base: ['absolute right-8 bottom-6'],
+    variants: {
+      style: {
+        classic: 'text-dark-blue',
+        featured: 'text-light-blue'
+      }
+    }
+  )
+%}
+
+{% set heading_classes =
+  heading_style.apply({
+    style: card_style
+  })
+%}
+
+<div
+  class="{{
+  card.apply(
+    {
+      style: card_style
+    },
+    card_classes|default('')
+  )
+  }}"
+>
+  {% if is_featured %}
+    {# Full-bleed background image with a dark gradient scrim for text legibility. #}
+    {% if has_media %}
+      <div class="absolute inset-0">
+        {% include 'canvas:image' ignore missing with {
+          src: media.src,
+          alt: media.alt,
+          class: 'size-full object-cover transition duration-300 ease-in-out group-hover:scale-110',
+          width: media.width,
+          height: media.height,
+          sizes: '100vw'
+        } only %}
+      </div>
+    {% endif %}
+  {% elseif has_media %}
+    {# Framed image sitting above the content. #}
+    <div class="w-full px-1 pt-1">
+      <div class="aspect-[1619/971] w-full overflow-hidden rounded-sm">
+        {% include 'canvas:image' ignore missing with {
+          src: media.src,
+          alt: media.alt,
+          class: 'object-cover w-full h-full transition duration-300 ease-in-out group-hover:scale-110',
+          width: media.width,
+          height: media.height,
+          sizes: '100vw'
+        } only %}
+      </div>
+    </div>
+  {% endif %}
+
+  <div
+    class="{{
+    card_content.apply({
+      style: card_style
+    })
+    }}"
+  >
+    <div
+      class="{{
+      card_text.apply({
+        hasCta: has_footer_action
+      })
+      }}"
+    >
+      {% if eyebrow is not empty %}
+        {{
+          include(
+            '@drupalorg_theme/components/eyebrow/eyebrow.twig',
+            {
+              eyebrow_text: eyebrow,
+              text_color: 'drupal-dark-blue'
+            },
+            with_context: false
+          )
+        }}
+      {% endif %}
+      {% if heading_level == 2 %}
+        <h2 id="{{ heading_id }}" class="{{ heading_classes }}">{{ heading_text }}</h2>
+      {% elseif heading_level == 4 %}
+        <h4 id="{{ heading_id }}" class="{{ heading_classes }}">{{ heading_text }}</h4>
+      {% else %}
+        <h3 id="{{ heading_id }}" class="{{ heading_classes }}">{{ heading_text }}</h3>
+      {% endif %}
+
+      {% if has_text %}
+        <p class="mb-0 font-body text-base font-light">
+          {{ text }}
+        </p>
+      {% endif %}
+    </div>
+
+    {% if has_arrow_only %}
+      <div
+        class="{{
+        arrow_only_icon.apply({
+          style: card_style
+        })
+        }}"
+      >
+        <span class="inline-block transition duration-300 group-hover:translate-x-1">
+          {{
+            include(
+              '@drupalorg_theme/components/icon/icon.twig',
+              {
+                icon: 'arrow-right',
+                icon_size: 'extra-small'
+              },
+              with_context: false
+            )
+          }}
+        </span>
+      </div>
+    {% elseif has_cta %}
+      <div aria-hidden="true" inert>
+        {{
+          include(
+            '@drupalorg_theme/components/button/button.twig',
+            {
+              label: cta_text,
+              variant: button_variant,
+              icon: 'arrow-right'
+            },
+            with_context: false
+          )
+        }}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if has_url %}
+    <a
+      href="{{ url }}"
+      class="{{
+      overlay_link.apply({
+        style: card_style
+      })
+      }}"
+      aria-labelledby="{{ heading_id }}"
+    >
+
+    </a>
+  {% endif %}
+</div>

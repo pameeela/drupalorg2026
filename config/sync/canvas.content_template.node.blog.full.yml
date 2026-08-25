@@ -5,14 +5,14 @@ dependencies:
   config:
     - canvas.component.block.system_breadcrumb_block
     - canvas.component.block.views_block.articles-articles_related
-    - canvas.component.sdc.drupalorg.author-date
-    - canvas.component.sdc.drupalorg.badge
-    - canvas.component.sdc.drupalorg.button
-    - canvas.component.sdc.drupalorg.group
-    - canvas.component.sdc.drupalorg.heading
-    - canvas.component.sdc.drupalorg.hero-billboard
-    - canvas.component.sdc.drupalorg.section
-    - canvas.component.sdc.drupalorg.text
+    - canvas.component.sdc.drupalorg_theme.author-date
+    - canvas.component.sdc.drupalorg_theme.badge
+    - canvas.component.sdc.drupalorg_theme.button
+    - canvas.component.sdc.drupalorg_theme.group
+    - canvas.component.sdc.drupalorg_theme.heading
+    - canvas.component.sdc.drupalorg_theme.hero-billboard
+    - canvas.component.sdc.drupalorg_theme.section
+    - canvas.component.sdc.drupalorg_theme.text
     - core.entity_view_mode.node.full
     - field.field.media.image.field_media_image
     - field.field.media.svg_image.field_media_svg_image
@@ -43,7 +43,7 @@ content_entity_type_view_mode: full
 component_tree:
   '0:083fb097-30a3-4016-b735-afd5e554a0d3':
     uuid: 083fb097-30a3-4016-b735-afd5e554a0d3
-    component_id: sdc.drupalorg.section
+    component_id: sdc.drupalorg_theme.section
     component_version: d5cb71b20de277d5
     inputs:
       width: 100%
@@ -66,7 +66,7 @@ component_tree:
       label_display: '0'
   '1:e40c9bd4-68e1-442c-ac26-90e16226b652':
     uuid: e40c9bd4-68e1-442c-ac26-90e16226b652
-    component_id: sdc.drupalorg.section
+    component_id: sdc.drupalorg_theme.section
     component_version: d5cb71b20de277d5
     inputs:
       width: 70%
@@ -82,7 +82,7 @@ component_tree:
     parent_uuid: e40c9bd4-68e1-442c-ac26-90e16226b652
     slot: main_slot
     uuid: f5db3bd4-e732-4384-8bbd-a3f633e58c4d
-    component_id: sdc.drupalorg.heading
+    component_id: sdc.drupalorg_theme.heading
     component_version: 9fc55396fecbab86
     inputs:
       heading_text:
@@ -96,7 +96,7 @@ component_tree:
     parent_uuid: e40c9bd4-68e1-442c-ac26-90e16226b652
     slot: main_slot
     uuid: a7b2c664-6b46-4eb0-af73-dd986b031941
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: row
@@ -108,7 +108,7 @@ component_tree:
     parent_uuid: a7b2c664-6b46-4eb0-af73-dd986b031941
     slot: group_slot
     uuid: 714b6932-2bdd-4b65-b3c4-de55cbba5d20
-    component_id: sdc.drupalorg.author-date
+    component_id: sdc.drupalorg_theme.author-date
     component_version: 51851caa6c65d550
     inputs:
       author:
@@ -122,7 +122,7 @@ component_tree:
     parent_uuid: a7b2c664-6b46-4eb0-af73-dd986b031941
     slot: group_slot
     uuid: d0536b6c-c397-47eb-a9ea-109cda8f8642
-    component_id: sdc.drupalorg.badge
+    component_id: sdc.drupalorg_theme.badge
     component_version: d86e02390d856974
     inputs:
       label:
@@ -133,7 +133,7 @@ component_tree:
     parent_uuid: e40c9bd4-68e1-442c-ac26-90e16226b652
     slot: main_slot
     uuid: 94ce609d-dd6d-4286-9d73-61910a0f52e5
-    component_id: sdc.drupalorg.text
+    component_id: sdc.drupalorg_theme.text
     component_version: 8bd96e9141226c1b
     inputs:
       text:
@@ -145,7 +145,7 @@ component_tree:
     parent_uuid: e40c9bd4-68e1-442c-ac26-90e16226b652
     slot: main_slot
     uuid: d854bef6-a0ce-4142-a138-88e71a259598
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: row
@@ -155,7 +155,7 @@ component_tree:
       radius: sm
   '2:c2cda74c-3059-4f3d-8b21-21e1bf0d73d5':
     uuid: c2cda74c-3059-4f3d-8b21-21e1bf0d73d5
-    component_id: sdc.drupalorg.section
+    component_id: sdc.drupalorg_theme.section
     component_version: d5cb71b20de277d5
     inputs:
       width: 90%
@@ -173,7 +173,7 @@ component_tree:
     parent_uuid: c2cda74c-3059-4f3d-8b21-21e1bf0d73d5
     slot: header_slot
     uuid: d06c9cd4-4495-47c7-8e92-4de9d87a4725
-    component_id: sdc.drupalorg.heading
+    component_id: sdc.drupalorg_theme.heading
     component_version: 9fc55396fecbab86
     inputs:
       heading_text: 'Related posts'
@@ -194,7 +194,7 @@ component_tree:
       items_per_page: null
   '3:dce94466-534a-437e-b0ba-0a6ca7cfd69e':
     uuid: dce94466-534a-437e-b0ba-0a6ca7cfd69e
-    component_id: sdc.drupalorg.section
+    component_id: sdc.drupalorg_theme.section
     component_version: d5cb71b20de277d5
     inputs:
       width: 90%
@@ -211,7 +211,7 @@ component_tree:
     parent_uuid: dce94466-534a-437e-b0ba-0a6ca7cfd69e
     slot: main_slot
     uuid: 74d03bcb-c658-4310-9d32-43c6b1749434
-    component_id: sdc.drupalorg.hero-billboard
+    component_id: sdc.drupalorg_theme.hero-billboard
     component_version: 69e1345b50b2f63c
     inputs:
       height: large
@@ -225,7 +225,7 @@ component_tree:
     parent_uuid: 74d03bcb-c658-4310-9d32-43c6b1749434
     slot: hero_slot
     uuid: 0828d200-a8d8-457d-b05b-49cbd9ba24d8
-    component_id: sdc.drupalorg.badge
+    component_id: sdc.drupalorg_theme.badge
     component_version: d86e02390d856974
     inputs:
       label: 'Get started'
@@ -234,7 +234,7 @@ component_tree:
     parent_uuid: 74d03bcb-c658-4310-9d32-43c6b1749434
     slot: hero_slot
     uuid: f0111a04-cdba-4bad-b570-2f29e1813fe5
-    component_id: sdc.drupalorg.heading
+    component_id: sdc.drupalorg_theme.heading
     component_version: 9fc55396fecbab86
     inputs:
       heading_text: 'See what you can build in an afternoon.'
@@ -246,7 +246,7 @@ component_tree:
     parent_uuid: 74d03bcb-c658-4310-9d32-43c6b1749434
     slot: hero_slot
     uuid: defe3569-7a50-4225-a116-0a9dd3e099e4
-    component_id: sdc.drupalorg.text
+    component_id: sdc.drupalorg_theme.text
     component_version: 8bd96e9141226c1b
     inputs:
       text:
@@ -258,7 +258,7 @@ component_tree:
     parent_uuid: 74d03bcb-c658-4310-9d32-43c6b1749434
     slot: hero_slot
     uuid: 7034b9fd-d9fe-4fbb-b881-039a00b611f1
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: row
@@ -271,7 +271,7 @@ component_tree:
     parent_uuid: 7034b9fd-d9fe-4fbb-b881-039a00b611f1
     slot: group_slot
     uuid: 982d1acf-d971-4777-85cb-8a348b01203b
-    component_id: sdc.drupalorg.button
+    component_id: sdc.drupalorg_theme.button
     component_version: 8985aaac808b1e09
     inputs:
       variant: white
@@ -282,7 +282,7 @@ component_tree:
     parent_uuid: 7034b9fd-d9fe-4fbb-b881-039a00b611f1
     slot: group_slot
     uuid: 84655ea5-0cda-440c-9b3d-86ee630dde75
-    component_id: sdc.drupalorg.button
+    component_id: sdc.drupalorg_theme.button
     component_version: 8985aaac808b1e09
     inputs:
       variant: transparent-white

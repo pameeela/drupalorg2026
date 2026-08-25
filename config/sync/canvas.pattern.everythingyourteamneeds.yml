@@ -3,11 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - canvas.component.sdc.drupalorg.badge
-    - canvas.component.sdc.drupalorg.card
-    - canvas.component.sdc.drupalorg.group
-    - canvas.component.sdc.drupalorg.heading
-    - canvas.component.sdc.drupalorg.section
+    - canvas.component.sdc.drupalorg_theme.badge
+    - canvas.component.sdc.drupalorg_theme.card
+    - canvas.component.sdc.drupalorg_theme.group
+    - canvas.component.sdc.drupalorg_theme.heading
+    - canvas.component.sdc.drupalorg_theme.section
     - field.field.media.image.field_media_image
     - field.field.media.svg_image.field_media_svg_image
     - image.style.canvas_parametrized_width
@@ -30,7 +30,7 @@ label: 'Everything your team needs (3 options)'
 component_tree:
   '0:7e3a62b0-4361-4734-9ce0-c0d048a25b26':
     uuid: 7e3a62b0-4361-4734-9ce0-c0d048a25b26
-    component_id: sdc.drupalorg.section
+    component_id: sdc.drupalorg_theme.section
     component_version: 14b39e0eb4b650c6
     inputs:
       width: 100%
@@ -47,7 +47,7 @@ component_tree:
     parent_uuid: 7e3a62b0-4361-4734-9ce0-c0d048a25b26
     slot: header_slot
     uuid: 8645cae1-0aa7-49bc-9560-d19c5cd68f0a
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: column
@@ -59,7 +59,7 @@ component_tree:
     parent_uuid: 8645cae1-0aa7-49bc-9560-d19c5cd68f0a
     slot: group_slot
     uuid: 2f5aebd3-7768-4e0c-a35a-8f4927ab558c
-    component_id: sdc.drupalorg.badge
+    component_id: sdc.drupalorg_theme.badge
     component_version: d86e02390d856974
     inputs:
       label: "What's inside"
@@ -68,7 +68,7 @@ component_tree:
     parent_uuid: 8645cae1-0aa7-49bc-9560-d19c5cd68f0a
     slot: group_slot
     uuid: c7345e69-4811-4e9c-af4e-183aa32403f6
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: column
@@ -79,7 +79,7 @@ component_tree:
     parent_uuid: c7345e69-4811-4e9c-af4e-183aa32403f6
     slot: group_slot
     uuid: e1ad7990-8a84-4feb-9c39-626ee5889443
-    component_id: sdc.drupalorg.heading
+    component_id: sdc.drupalorg_theme.heading
     component_version: 1e24c13cc69b948e
     inputs:
       heading_text: 'Everything your team needs to build, publish, and grow.'
@@ -91,7 +91,7 @@ component_tree:
     parent_uuid: 7e3a62b0-4361-4734-9ce0-c0d048a25b26
     slot: main_slot
     uuid: b4907bc6-54bd-4714-80aa-dce6b1fc97ab
-    component_id: sdc.drupalorg.card
+    component_id: sdc.drupalorg_theme.card
     component_version: 5be6453c79688432
     inputs:
       style: classic
@@ -108,7 +108,7 @@ component_tree:
     parent_uuid: 7e3a62b0-4361-4734-9ce0-c0d048a25b26
     slot: main_slot
     uuid: b5bec7ee-01ec-427b-afcb-c923b5b15d9c
-    component_id: sdc.drupalorg.card
+    component_id: sdc.drupalorg_theme.card
     component_version: 5be6453c79688432
     inputs:
       style: classic
@@ -125,7 +125,7 @@ component_tree:
     parent_uuid: 7e3a62b0-4361-4734-9ce0-c0d048a25b26
     slot: main_slot
     uuid: ae4333c7-0d27-493d-a733-1df9838625e8
-    component_id: sdc.drupalorg.card
+    component_id: sdc.drupalorg_theme.card
     component_version: 5be6453c79688432
     inputs:
       style: classic

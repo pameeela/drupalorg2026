@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - canvas.component.sdc.drupalorg.card-logo
-    - canvas.component.sdc.drupalorg.heading
-    - canvas.component.sdc.drupalorg.ticker
+    - canvas.component.sdc.drupalorg_theme.card-logo
+    - canvas.component.sdc.drupalorg_theme.heading
+    - canvas.component.sdc.drupalorg_theme.ticker
     - field.field.media.image.field_media_image
     - field.field.media.svg_image.field_media_svg_image
     - image.style.canvas_parametrized_width
@@ -33,7 +33,7 @@ label: 'Trusted By Ticker'
 component_tree:
   '0:1763601c-1fe6-43ff-81c4-3b4e88c53202':
     uuid: 1763601c-1fe6-43ff-81c4-3b4e88c53202
-    component_id: sdc.drupalorg.ticker
+    component_id: sdc.drupalorg_theme.ticker
     component_version: e5fae936fe944697
     inputs:
       columns: '6'
@@ -42,7 +42,7 @@ component_tree:
     parent_uuid: 1763601c-1fe6-43ff-81c4-3b4e88c53202
     slot: header
     uuid: 73e57e93-5049-4399-9c98-d0b9eb9ecde4
-    component_id: sdc.drupalorg.heading
+    component_id: sdc.drupalorg_theme.heading
     component_version: 959bd70914eed3e8
     inputs:
       heading_text: "Trusted by organisations that can't afford to get it wrong."
@@ -54,7 +54,7 @@ component_tree:
     parent_uuid: 1763601c-1fe6-43ff-81c4-3b4e88c53202
     slot: items
     uuid: 96ea666c-e715-4434-8538-a985e18fa286
-    component_id: sdc.drupalorg.card-logo
+    component_id: sdc.drupalorg_theme.card-logo
     component_version: 3287ec41c68a61f9
     inputs:
       media:
@@ -64,7 +64,7 @@ component_tree:
     parent_uuid: 1763601c-1fe6-43ff-81c4-3b4e88c53202
     slot: items
     uuid: 227cfe25-0d24-40cd-bef4-c311b609fddb
-    component_id: sdc.drupalorg.card-logo
+    component_id: sdc.drupalorg_theme.card-logo
     component_version: 3287ec41c68a61f9
     inputs:
       media:
@@ -74,7 +74,7 @@ component_tree:
     parent_uuid: 1763601c-1fe6-43ff-81c4-3b4e88c53202
     slot: items
     uuid: 4cd5e8f3-82ce-48a3-a3d4-41ded6f2aeb6
-    component_id: sdc.drupalorg.card-logo
+    component_id: sdc.drupalorg_theme.card-logo
     component_version: 3287ec41c68a61f9
     inputs:
       media:
@@ -84,7 +84,7 @@ component_tree:
     parent_uuid: 1763601c-1fe6-43ff-81c4-3b4e88c53202
     slot: items
     uuid: fb052750-c402-4eb6-a6da-e8a3a5ab3b86
-    component_id: sdc.drupalorg.card-logo
+    component_id: sdc.drupalorg_theme.card-logo
     component_version: 3287ec41c68a61f9
     inputs:
       media:
@@ -94,7 +94,7 @@ component_tree:
     parent_uuid: 1763601c-1fe6-43ff-81c4-3b4e88c53202
     slot: items
     uuid: 29972a84-1396-4f62-a9e5-69d177f9a6be
-    component_id: sdc.drupalorg.card-logo
+    component_id: sdc.drupalorg_theme.card-logo
     component_version: 3287ec41c68a61f9
     inputs:
       media:
@@ -104,7 +104,7 @@ component_tree:
     parent_uuid: 1763601c-1fe6-43ff-81c4-3b4e88c53202
     slot: items
     uuid: 2e1a1aea-3d7d-4b5c-abf0-81569eb09563
-    component_id: sdc.drupalorg.card-logo
+    component_id: sdc.drupalorg_theme.card-logo
     component_version: 3287ec41c68a61f9
     inputs:
       media:

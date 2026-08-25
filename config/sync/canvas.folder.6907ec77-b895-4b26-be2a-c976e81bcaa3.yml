@@ -3,22 +3,22 @@ langcode: en
 status: true
 dependencies:
   config:
-    - canvas.component.sdc.drupalorg.accordion
-    - canvas.component.sdc.drupalorg.accordion-container
-    - canvas.component.sdc.drupalorg.carousel-tabs
-    - canvas.component.sdc.drupalorg.comparison-table
-    - canvas.component.sdc.drupalorg.comparison-table-row
-    - canvas.component.sdc.drupalorg.conditional
-    - canvas.component.sdc.drupalorg.footer
-    - canvas.component.sdc.drupalorg.grid
-    - canvas.component.sdc.drupalorg.group
-    - canvas.component.sdc.drupalorg.navbar
-    - canvas.component.sdc.drupalorg.section
-    - canvas.component.sdc.drupalorg.site-template-preview
-    - canvas.component.sdc.drupalorg.slide
-    - canvas.component.sdc.drupalorg.tab
-    - canvas.component.sdc.drupalorg.tabs
-    - canvas.component.sdc.drupalorg.ticker
+    - canvas.component.sdc.drupalorg_theme.accordion
+    - canvas.component.sdc.drupalorg_theme.accordion-container
+    - canvas.component.sdc.drupalorg_theme.carousel-tabs
+    - canvas.component.sdc.drupalorg_theme.comparison-table
+    - canvas.component.sdc.drupalorg_theme.comparison-table-row
+    - canvas.component.sdc.drupalorg_theme.conditional
+    - canvas.component.sdc.drupalorg_theme.footer
+    - canvas.component.sdc.drupalorg_theme.grid
+    - canvas.component.sdc.drupalorg_theme.group
+    - canvas.component.sdc.drupalorg_theme.navbar
+    - canvas.component.sdc.drupalorg_theme.section
+    - canvas.component.sdc.drupalorg_theme.site-template-preview
+    - canvas.component.sdc.drupalorg_theme.slide
+    - canvas.component.sdc.drupalorg_theme.tab
+    - canvas.component.sdc.drupalorg_theme.tabs
+    - canvas.component.sdc.drupalorg_theme.ticker
     - canvas.component.sdc.mercury.footer
     - canvas.component.sdc.mercury.navbar
     - canvas.component.sdc.mercury.section
@@ -26,22 +26,22 @@ name: Layout
 configEntityTypeId: component
 weight: 0
 items:
-  - sdc.drupalorg.accordion
-  - sdc.drupalorg.accordion-container
-  - sdc.drupalorg.carousel-tabs
-  - sdc.drupalorg.comparison-table
-  - sdc.drupalorg.comparison-table-row
-  - sdc.drupalorg.conditional
-  - sdc.drupalorg.footer
-  - sdc.drupalorg.grid
-  - sdc.drupalorg.group
-  - sdc.drupalorg.navbar
-  - sdc.drupalorg.section
-  - sdc.drupalorg.site-template-preview
-  - sdc.drupalorg.slide
-  - sdc.drupalorg.tab
-  - sdc.drupalorg.tabs
-  - sdc.drupalorg.ticker
+  - sdc.drupalorg_theme.accordion
+  - sdc.drupalorg_theme.accordion-container
+  - sdc.drupalorg_theme.carousel-tabs
+  - sdc.drupalorg_theme.comparison-table
+  - sdc.drupalorg_theme.comparison-table-row
+  - sdc.drupalorg_theme.conditional
+  - sdc.drupalorg_theme.footer
+  - sdc.drupalorg_theme.grid
+  - sdc.drupalorg_theme.group
+  - sdc.drupalorg_theme.navbar
+  - sdc.drupalorg_theme.section
+  - sdc.drupalorg_theme.site-template-preview
+  - sdc.drupalorg_theme.slide
+  - sdc.drupalorg_theme.tab
+  - sdc.drupalorg_theme.tabs
+  - sdc.drupalorg_theme.ticker
   - sdc.mercury.footer
   - sdc.mercury.navbar
   - sdc.mercury.section

@@ -3,14 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - canvas.component.sdc.drupalorg.badge
-    - canvas.component.sdc.drupalorg.button
-    - canvas.component.sdc.drupalorg.eyebrow
-    - canvas.component.sdc.drupalorg.group
-    - canvas.component.sdc.drupalorg.heading
-    - canvas.component.sdc.drupalorg.image
-    - canvas.component.sdc.drupalorg.section
-    - canvas.component.sdc.drupalorg.text
+    - canvas.component.sdc.drupalorg_theme.badge
+    - canvas.component.sdc.drupalorg_theme.button
+    - canvas.component.sdc.drupalorg_theme.eyebrow
+    - canvas.component.sdc.drupalorg_theme.group
+    - canvas.component.sdc.drupalorg_theme.heading
+    - canvas.component.sdc.drupalorg_theme.image
+    - canvas.component.sdc.drupalorg_theme.section
+    - canvas.component.sdc.drupalorg_theme.text
     - filter.format.canvas_html_block
   module:
     - options
@@ -20,7 +20,7 @@ label: 'Partner Recognition'
 component_tree:
   '0:9b91d25c-dc53-4285-a6dd-b1ed4fb7411a':
     uuid: 9b91d25c-dc53-4285-a6dd-b1ed4fb7411a
-    component_id: sdc.drupalorg.section
+    component_id: sdc.drupalorg_theme.section
     component_version: 14b39e0eb4b650c6
     inputs:
       width: 70%
@@ -37,7 +37,7 @@ component_tree:
     parent_uuid: 9b91d25c-dc53-4285-a6dd-b1ed4fb7411a
     slot: main_slot
     uuid: da59fb37-2fbc-4329-bf55-73b999d87caa
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: column
@@ -49,7 +49,7 @@ component_tree:
     parent_uuid: da59fb37-2fbc-4329-bf55-73b999d87caa
     slot: group_slot
     uuid: 915aafdc-f2b9-4b63-b78b-ddc803719a1f
-    component_id: sdc.drupalorg.eyebrow
+    component_id: sdc.drupalorg_theme.eyebrow
     component_version: 2ff2015e21e55e15
     inputs:
       eyebrow_text: 'Expert content by'
@@ -58,7 +58,7 @@ component_tree:
     parent_uuid: da59fb37-2fbc-4329-bf55-73b999d87caa
     slot: group_slot
     uuid: a6b04999-3dde-4f61-8687-f0e21a514ada
-    component_id: sdc.drupalorg.heading
+    component_id: sdc.drupalorg_theme.heading
     component_version: 1e24c13cc69b948e
     inputs:
       heading_text: '[Agency name]'
@@ -70,7 +70,7 @@ component_tree:
     parent_uuid: da59fb37-2fbc-4329-bf55-73b999d87caa
     slot: group_slot
     uuid: 066a7ebf-e870-4925-88dd-a6238fbe864e
-    component_id: sdc.drupalorg.badge
+    component_id: sdc.drupalorg_theme.badge
     component_version: d86e02390d856974
     inputs:
       label: 'Platinum Parter'
@@ -79,7 +79,7 @@ component_tree:
     parent_uuid: da59fb37-2fbc-4329-bf55-73b999d87caa
     slot: group_slot
     uuid: 60bdfbe4-3fd9-4425-a23b-dc50e83bb281
-    component_id: sdc.drupalorg.text
+    component_id: sdc.drupalorg_theme.text
     component_version: 8bd96e9141226c1b
     inputs:
       text:
@@ -91,7 +91,7 @@ component_tree:
     parent_uuid: da59fb37-2fbc-4329-bf55-73b999d87caa
     slot: group_slot
     uuid: 35e4443e-f87b-446a-8581-cd2987ad3ea5
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: row
@@ -104,7 +104,7 @@ component_tree:
     parent_uuid: 35e4443e-f87b-446a-8581-cd2987ad3ea5
     slot: group_slot
     uuid: b2d68ffb-0a99-461e-826e-bf67b9b23e76
-    component_id: sdc.drupalorg.button
+    component_id: sdc.drupalorg_theme.button
     component_version: 8985aaac808b1e09
     inputs:
       variant: white-outline
@@ -115,7 +115,7 @@ component_tree:
     parent_uuid: 35e4443e-f87b-446a-8581-cd2987ad3ea5
     slot: group_slot
     uuid: cbecc7db-2da3-4854-96b5-94e9fee870ee
-    component_id: sdc.drupalorg.button
+    component_id: sdc.drupalorg_theme.button
     component_version: 8985aaac808b1e09
     inputs:
       variant: drupal-blue
@@ -126,7 +126,7 @@ component_tree:
     parent_uuid: 9b91d25c-dc53-4285-a6dd-b1ed4fb7411a
     slot: main_slot
     uuid: 25613de9-a69e-4d79-8dbf-169395408de8
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: column
@@ -137,7 +137,7 @@ component_tree:
     parent_uuid: 25613de9-a69e-4d79-8dbf-169395408de8
     slot: group_slot
     uuid: a7e8fd88-936a-462e-9528-4bb5612ebcfe
-    component_id: sdc.drupalorg.image
+    component_id: sdc.drupalorg_theme.image
     component_version: d77451010df91d0e
     inputs:
       media:
@@ -165,6 +165,6 @@ component_tree:
               type: integer
           required:
             - src
-        componentId: sdc.drupalorg.image
+        componentId: sdc.drupalorg_theme.image
       size: '4:3'
       radius: small

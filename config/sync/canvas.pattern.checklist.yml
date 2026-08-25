@@ -3,10 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - canvas.component.sdc.drupalorg.group
-    - canvas.component.sdc.drupalorg.heading
-    - canvas.component.sdc.drupalorg.icon
-    - canvas.component.sdc.drupalorg.text
+    - canvas.component.sdc.drupalorg_theme.group
+    - canvas.component.sdc.drupalorg_theme.heading
+    - canvas.component.sdc.drupalorg_theme.icon
+    - canvas.component.sdc.drupalorg_theme.text
     - filter.format.canvas_html_block
   module:
     - options
@@ -16,7 +16,7 @@ label: Checklist
 component_tree:
   '0:21629786-3717-4b92-8852-947cf5042baa':
     uuid: 21629786-3717-4b92-8852-947cf5042baa
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: 0afd9c88a0c89c60
     inputs:
       flex_direction: column
@@ -28,7 +28,7 @@ component_tree:
     parent_uuid: 21629786-3717-4b92-8852-947cf5042baa
     slot: group_slot
     uuid: d0800be7-2838-43d6-8f56-2dda3e87c60a
-    component_id: sdc.drupalorg.heading
+    component_id: sdc.drupalorg_theme.heading
     component_version: ffda3448819379a1
     inputs:
       heading_text: 'Your heading goes here'
@@ -40,7 +40,7 @@ component_tree:
     parent_uuid: 21629786-3717-4b92-8852-947cf5042baa
     slot: group_slot
     uuid: c0252e00-24a2-412a-9205-074062a42e45
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: 0afd9c88a0c89c60
     inputs:
       flex_direction: row
@@ -52,7 +52,7 @@ component_tree:
     parent_uuid: c0252e00-24a2-412a-9205-074062a42e45
     slot: group_slot
     uuid: 12d790ed-60cf-48d5-b914-e043ecac4955
-    component_id: sdc.drupalorg.icon
+    component_id: sdc.drupalorg_theme.icon
     component_version: a661fc77ee2b7c4a
     inputs:
       icon: check-circle
@@ -62,7 +62,7 @@ component_tree:
     parent_uuid: c0252e00-24a2-412a-9205-074062a42e45
     slot: group_slot
     uuid: ec71b221-d0ae-44e2-bad1-63018bb4d254
-    component_id: sdc.drupalorg.text
+    component_id: sdc.drupalorg_theme.text
     component_version: 16c79c28a4108f9b
     inputs:
       text:
@@ -74,7 +74,7 @@ component_tree:
     parent_uuid: 21629786-3717-4b92-8852-947cf5042baa
     slot: group_slot
     uuid: b8a89c20-130b-49d4-b254-1cb53ab71b67
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: 0afd9c88a0c89c60
     inputs:
       flex_direction: row
@@ -86,7 +86,7 @@ component_tree:
     parent_uuid: b8a89c20-130b-49d4-b254-1cb53ab71b67
     slot: group_slot
     uuid: 1c3ac75f-37bd-43b3-ad68-38147e050792
-    component_id: sdc.drupalorg.icon
+    component_id: sdc.drupalorg_theme.icon
     component_version: a661fc77ee2b7c4a
     inputs:
       icon: x-circle
@@ -96,7 +96,7 @@ component_tree:
     parent_uuid: b8a89c20-130b-49d4-b254-1cb53ab71b67
     slot: group_slot
     uuid: f88585f5-0c12-41bf-8fa2-19d77b77ade7
-    component_id: sdc.drupalorg.text
+    component_id: sdc.drupalorg_theme.text
     component_version: 16c79c28a4108f9b
     inputs:
       text:

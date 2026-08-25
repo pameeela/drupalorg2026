@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - canvas.component.sdc.drupalorg.card-article
+    - canvas.component.sdc.drupalorg_theme.card-article
     - core.entity_view_mode.node.card
     - field.field.node.blog.field_category
     - field.field.node.blog.field_description
@@ -20,7 +20,7 @@ content_entity_type_view_mode: card
 component_tree:
   '0:c218d9ae-4423-437d-969a-938de38ffe69':
     uuid: c218d9ae-4423-437d-969a-938de38ffe69
-    component_id: sdc.drupalorg.card-article
+    component_id: sdc.drupalorg_theme.card-article
     component_version: 94da69efd1a42d5d
     inputs:
       title:

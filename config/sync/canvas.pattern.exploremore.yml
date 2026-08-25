@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - canvas.component.sdc.drupalorg.card-icon
-    - canvas.component.sdc.drupalorg.heading
-    - canvas.component.sdc.drupalorg.section
+    - canvas.component.sdc.drupalorg_theme.card-icon
+    - canvas.component.sdc.drupalorg_theme.heading
+    - canvas.component.sdc.drupalorg_theme.section
     - filter.format.canvas_html_block
   module:
     - options
@@ -15,7 +15,7 @@ label: 'Explore More'
 component_tree:
   '0:9fe563cf-39a1-48c7-a511-a1983ad3b877':
     uuid: 9fe563cf-39a1-48c7-a511-a1983ad3b877
-    component_id: sdc.drupalorg.section
+    component_id: sdc.drupalorg_theme.section
     component_version: 14b39e0eb4b650c6
     inputs:
       width: 100%
@@ -31,7 +31,7 @@ component_tree:
     parent_uuid: 9fe563cf-39a1-48c7-a511-a1983ad3b877
     slot: header_slot
     uuid: 0fdd1ff5-9231-42a4-ab28-f19794d97a28
-    component_id: sdc.drupalorg.heading
+    component_id: sdc.drupalorg_theme.heading
     component_version: 959bd70914eed3e8
     inputs:
       heading_text: 'Explore more'
@@ -43,7 +43,7 @@ component_tree:
     parent_uuid: 9fe563cf-39a1-48c7-a511-a1983ad3b877
     slot: main_slot
     uuid: c91522b2-3c79-4bb0-9089-19115633075b
-    component_id: sdc.drupalorg.card-icon
+    component_id: sdc.drupalorg_theme.card-icon
     component_version: 4df7d088dab2c55d
     inputs:
       text: 'Your heading here'
@@ -57,7 +57,7 @@ component_tree:
     parent_uuid: 9fe563cf-39a1-48c7-a511-a1983ad3b877
     slot: main_slot
     uuid: e285ed39-4ac4-4648-bda2-5a1a579ecfda
-    component_id: sdc.drupalorg.card-icon
+    component_id: sdc.drupalorg_theme.card-icon
     component_version: 4df7d088dab2c55d
     inputs:
       text: 'Your heading here'
@@ -71,7 +71,7 @@ component_tree:
     parent_uuid: 9fe563cf-39a1-48c7-a511-a1983ad3b877
     slot: main_slot
     uuid: 16aaf556-fb39-4f38-99c7-9eddc044d057
-    component_id: sdc.drupalorg.card-icon
+    component_id: sdc.drupalorg_theme.card-icon
     component_version: 4df7d088dab2c55d
     inputs:
       text: 'Your heading here'

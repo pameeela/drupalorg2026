@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - canvas.component.sdc.drupalorg.card-site-template-compact
+    - canvas.component.sdc.drupalorg_theme.card-site-template-compact
     - core.entity_view_mode.node.compact_card
     - field.field.media.image.field_media_image
     - field.field.node.site_template.field_featured_screenshot
@@ -23,7 +23,7 @@ content_entity_type_view_mode: compact_card
 component_tree:
   '0:167570d6-6dfd-4305-ba18-e81c07438997':
     uuid: 167570d6-6dfd-4305-ba18-e81c07438997
-    component_id: sdc.drupalorg.card-site-template-compact
+    component_id: sdc.drupalorg_theme.card-site-template-compact
     component_version: fb45b6bed467d9e2
     inputs:
       media:

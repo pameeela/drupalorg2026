@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - canvas.component.sdc.drupalorg.button
-    - canvas.component.sdc.drupalorg.cta
+    - canvas.component.sdc.drupalorg_theme.button
+    - canvas.component.sdc.drupalorg_theme.cta
   module:
     - options
 id: trydrupalctabig
@@ -14,7 +14,7 @@ component_tree:
     parent_uuid: ce26db08-27de-4f5c-b30a-4cfbd7a242ea
     slot: actions
     uuid: 1db15e50-d456-4f10-8a6b-0d8490c9b9f8
-    component_id: sdc.drupalorg.button
+    component_id: sdc.drupalorg_theme.button
     component_version: 1c40a1a84181621a
     inputs:
       variant: white
@@ -25,7 +25,7 @@ component_tree:
     parent_uuid: ce26db08-27de-4f5c-b30a-4cfbd7a242ea
     slot: actions
     uuid: 95659dba-e42a-40bd-a3c4-6b11f345c9cc
-    component_id: sdc.drupalorg.button
+    component_id: sdc.drupalorg_theme.button
     component_version: 1c40a1a84181621a
     inputs:
       variant: transparent-white
@@ -34,7 +34,7 @@ component_tree:
       disabled: false
   '0:ce26db08-27de-4f5c-b30a-4cfbd7a242ea':
     uuid: ce26db08-27de-4f5c-b30a-4cfbd7a242ea
-    component_id: sdc.drupalorg.cta
+    component_id: sdc.drupalorg_theme.cta
     component_version: e3d7e89f0f08fe41
     inputs:
       heading_text: 'Try Drupal CMS in your browser'

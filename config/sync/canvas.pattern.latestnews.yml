@@ -5,10 +5,10 @@ dependencies:
   config:
     - canvas.component.block.views_block.articles-articles_featured
     - canvas.component.block.views_block.articles-articles_latest
-    - canvas.component.sdc.drupalorg.badge
-    - canvas.component.sdc.drupalorg.button
-    - canvas.component.sdc.drupalorg.group
-    - canvas.component.sdc.drupalorg.section
+    - canvas.component.sdc.drupalorg_theme.badge
+    - canvas.component.sdc.drupalorg_theme.button
+    - canvas.component.sdc.drupalorg_theme.group
+    - canvas.component.sdc.drupalorg_theme.section
   module:
     - link
     - options
@@ -17,7 +17,7 @@ label: 'Latest news'
 component_tree:
   '0:d5af4583-ed7b-445a-bc72-4c0861184658':
     uuid: d5af4583-ed7b-445a-bc72-4c0861184658
-    component_id: sdc.drupalorg.section
+    component_id: sdc.drupalorg_theme.section
     component_version: 14b39e0eb4b650c6
     inputs:
       width: 100%
@@ -34,7 +34,7 @@ component_tree:
     parent_uuid: d5af4583-ed7b-445a-bc72-4c0861184658
     slot: header_slot
     uuid: 13872f36-4c94-4a17-bc08-06a88649071a
-    component_id: sdc.drupalorg.group
+    component_id: sdc.drupalorg_theme.group
     component_version: a248dae5b5ad03ec
     inputs:
       flex_direction: row
@@ -47,7 +47,7 @@ component_tree:
     parent_uuid: 13872f36-4c94-4a17-bc08-06a88649071a
     slot: group_slot
     uuid: f21dfb84-8249-4641-9c81-a08952e6fd35
-    component_id: sdc.drupalorg.badge
+    component_id: sdc.drupalorg_theme.badge
     component_version: d86e02390d856974
     inputs:
       label: 'Latest from Drupal'
@@ -56,7 +56,7 @@ component_tree:
     parent_uuid: 13872f36-4c94-4a17-bc08-06a88649071a
     slot: group_slot
     uuid: b4982d91-e80d-4da8-b711-b528affef3da
-    component_id: sdc.drupalorg.button
+    component_id: sdc.drupalorg_theme.button
     component_version: 8985aaac808b1e09
     inputs:
       variant: drupal-blue
