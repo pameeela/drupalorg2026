@@ -102,9 +102,7 @@ props:
         - primary
         - drupal-blue
         - primary_background
-        - secondary_background
       meta:enum:
         primary: Brand navy
         drupal-blue: Drupal blue
         primary_background: Drupal blue with background
-        secondary_background: Gray with background

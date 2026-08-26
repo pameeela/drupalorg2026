@@ -7,7 +7,7 @@ dependencies:
     - options
   theme:
     - drupalorg_theme
-active_version: cf658701f300b03b
+active_version: 835aefeb7ca5d41a
 versioned_properties:
   active:
     settings:
@@ -38,7 +38,7 @@ versioned_properties:
           derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
-  d86e02390d856974:
+  cf658701f300b03b:
     settings:
       prop_field_definitions:
         label:
@@ -67,7 +67,7 @@ versioned_properties:
           derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
-  cf658701f300b03b:
+  d86e02390d856974:
     settings:
       prop_field_definitions:
         label:

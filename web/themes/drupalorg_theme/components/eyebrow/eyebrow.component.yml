@@ -19,15 +19,15 @@ props:
         - default
         - inverted
         - primary
-        - drupal-blue
         - drupal-dark-blue
-        - dark-gray
+        - drupal-blue
+        - light-purple
       meta:enum:
-        default: Default
-        inverted: Inverted text
+        default: Dark gray
+        inverted: White
         primary: Brand navy
-        drupal-blue: Drupal blue
         drupal-dark-blue: Drupal dark blue
-        dark-gray: Dark gray
+        drupal-blue: Drupal blue (only use on navy)
+        light-purple: Light purple (only use on navy)
       examples:
         - drupal-dark-blue

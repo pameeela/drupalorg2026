@@ -16,6 +16,7 @@ props:
         - white-outline
         - light-blue
         - drupal-blue
+        - light-purple
         - transparent-white
         - transparent-navy
         - navy-link
@@ -26,6 +27,7 @@ props:
         white-outline: White with outline
         light-blue: Light blue
         drupal-blue: Drupal blue
+        light-purple: Light purple
         transparent-white: Transparent white
         transparent-navy: Transparent navy
         navy-link: Navy link
