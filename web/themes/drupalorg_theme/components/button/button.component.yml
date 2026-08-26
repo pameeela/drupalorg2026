@@ -17,8 +17,6 @@ props:
         - light-blue
         - drupal-blue
         - light-purple
-        - dark-purple
-        - dark-purple-invert
         - transparent-white
         - transparent-navy
         - navy-link
@@ -30,8 +28,6 @@ props:
         light-blue: Light blue
         drupal-blue: Drupal blue
         light-purple: Light purple
-        dark-purple: Dark purple
-        dark-purple-invert: Dark purple inverted
         transparent-white: Transparent white
         transparent-navy: Transparent navy
         navy-link: Navy link
