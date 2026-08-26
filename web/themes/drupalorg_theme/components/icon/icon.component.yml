@@ -43,9 +43,11 @@ props:
         - white
         - destructive
         - success
+        - dark-purple
       meta:enum:
         brand-blue: Drupal blue
         primary: Brand navy
+        dark-purple: Dark purple
         white: White
         destructive: Red
         success: Green

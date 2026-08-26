@@ -101,10 +101,12 @@ props:
       enum:
         - primary
         - drupal-blue
+        - purple
         - primary_background
-        - secondary_background
+        - purple-background
       meta:enum:
         primary: Brand navy
         drupal-blue: Drupal blue
+        purple: Purple
         primary_background: Drupal blue with background
-        secondary_background: Gray with background
+        purple-background: Purple with background

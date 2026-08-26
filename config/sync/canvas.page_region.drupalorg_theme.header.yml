@@ -26,7 +26,7 @@ component_tree:
     slot: links
     uuid: 117719f5-2683-457d-901b-a7d61f5e96f8
     component_id: sdc.drupalorg_theme.button
-    component_version: 1c40a1a84181621a
+    component_version: a1e293f6d711ea79
     inputs:
       variant: primary
       label: 'Try it now'

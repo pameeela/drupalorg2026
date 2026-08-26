@@ -7,7 +7,7 @@ dependencies:
     - options
   theme:
     - drupalorg_theme
-active_version: cf658701f300b03b
+active_version: 375860019326842c
 versioned_properties:
   active:
     settings:
@@ -38,7 +38,7 @@ versioned_properties:
           derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
-  d86e02390d856974:
+  333451e6eebf6d52:
     settings:
       prop_field_definitions:
         label:
@@ -68,6 +68,35 @@ versioned_properties:
     fallback_metadata:
       slot_definitions: {  }
   cf658701f300b03b:
+    settings:
+      prop_field_definitions:
+        label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Why Drupal CMS'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        style:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: transparent
+          expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+  d86e02390d856974:
     settings:
       prop_field_definitions:
         label:
