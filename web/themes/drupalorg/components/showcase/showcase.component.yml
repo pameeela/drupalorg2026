@@ -1,0 +1,36 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Showcase
+description: A row of cards revealed by a scroll-driven effect. Below the md breakpoint the effect is skipped and the cards fall back to a plain single-column stack.
+status: stable
+group: Display
+props:
+  type: object
+  properties:
+    reveal:
+      type: string
+      title: Reveal type
+      description: Scroll-driven reveal applied on md and up. Below md the cards always stack.
+      enum:
+        - none
+        - center_spread
+      meta:enum:
+        none: None
+        center_spread: Centre spread
+      default: center_spread
+      examples:
+        - center_spread
+    columns:
+      type: string
+      title: Columns
+      description: Column count on md and up. Mobile is always a single column.
+      enum:
+        - "2 columns"
+        - "3 columns"
+        - "4 columns"
+      default: "3 columns"
+      examples:
+        - "3 columns"
+
+slots:
+  main_slot:
+    title: "Cards"

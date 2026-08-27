@@ -202,7 +202,16 @@
         {% endif %}
       {% endif %}
 
-      <div class="{{ grid_classes }}" {{stagger_items ? 'data-stagger-items' : ''}}>
+      {# Conditionals can't live inside an attribute, so build the attribute bag first. #}
+      {% set grid_attributes =
+        create_attribute({
+          class: grid_classes
+        })
+      %}
+      {% if stagger_items %}
+        {% set grid_attributes = grid_attributes.setAttribute('data-stagger-items', '') %}
+      {% endif %}
+      <div {{ grid_attributes }}>
         {% block main_slot %}
 
         {% endblock %}

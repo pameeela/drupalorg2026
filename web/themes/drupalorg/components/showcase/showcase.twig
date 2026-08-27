@@ -1,0 +1,28 @@
+{% set showcase =
+  html_cva(
+    base: ['grid w-full min-w-0 grid-cols-1 gap-8', '[&>*]:w-full [&>*]:min-w-0'],
+    variants: {
+      columns: {
+        '2 columns': 'md:grid-cols-2',
+        '3 columns': 'md:grid-cols-3',
+        '4 columns': 'sm:grid-cols-2 md:grid-cols-4'
+      }
+    }
+  )
+%}
+
+{% set showcase_classes =
+  showcase.apply({
+    columns: columns|default('3 columns')
+  })
+%}
+
+{% set _reveal = reveal|default('center_spread') %}
+
+<section class="{{ showcase_classes }}" data-reveal="{{ _reveal }}">
+  {% block main_slot %}
+
+  {% endblock %}
+
+  {{ attach_library('drupalorg/motion') }}
+</section>

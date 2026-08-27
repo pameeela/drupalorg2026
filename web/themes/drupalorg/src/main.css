@@ -3,7 +3,6 @@
 @import "../components/navbar/navbar.tailwind.css";
 @import "../components/anchor/anchor.tailwind.css";
 @import "../components/carousel-tabs/carousel-tabs.tailwind.css";
-@import "../components/scroll-stack/scroll-stack.tailwind.css";
 
 @theme inline {
   --color-darkest-blue: var(--drupal-darkest-blue);

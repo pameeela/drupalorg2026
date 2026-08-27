@@ -1,4 +1,5 @@
 import { animate, inView, scroll, stagger } from "motion";
+import currentlyInCanvasEditor from "../lib/currentlyInCanvasEditor.js";
 
 const animatableElements = document.querySelectorAll("[data-animation]");
 
@@ -159,7 +160,7 @@ once("stat-counter", "[data-counter]").forEach((el) => {
 once("stagger-items", "[data-stagger-items]").forEach((stagger_container) => {
   const items = Array.from(stagger_container.children);
   if (items.length === 0) return;
-  
+
   // Set initial hidden state
   items.forEach((item) => {
     item.style.opacity = "0";
@@ -199,6 +200,16 @@ once("stagger-items", "[data-stagger-items]").forEach((stagger_container) => {
 });
 
 document.querySelectorAll("[data-scroll-stack]").forEach((el) => {
+  // In the Canvas editor, skip the scroll-driven effect entirely. Otherwise the
+  // persistent scroll() subscription below keeps re-writing each card's inline
+  // transform on every scroll, and cleanup in the component JS can't cancel it.
+  if (currentlyInCanvasEditor()) return;
+
+  // Below md — and under reduced motion — the cards flow as a plain single-column
+  // stack at their natural size. The static layout is pure CSS, so just bail.
+  if (prefersReducedMotion) return;
+  if (window.innerWidth < 768) return;
+
   const header = el.querySelector(".scroll-stack__header");
   const item_wrapper = el.querySelector(".stack-items");
   if (!item_wrapper || !header) return;
@@ -209,17 +220,17 @@ document.querySelectorAll("[data-scroll-stack]").forEach((el) => {
   // First card is visible immediately; each subsequent card needs one viewport of scroll.
   el.style.height = `${items.length * 100}vh`;
 
-  header.style.position = "sticky";
-  header.style.top = "0";
-  header.style.height = "100vh";
-  header.style.display = "flex";
-  header.style.alignItems = "center";
+  // The heading is pinned to the top of the viewport by the component's own
+  // `sticky top-0 z-50` classes; we only need its height to size the card stage.
+  const headerHeight = header.getBoundingClientRect().height;
 
-  // Stack items becomes a sticky full-viewport container; cards are absolutely
-  // positioned inside it so they can stack on top of each other.
+  // The cards share a sticky stage that fills the viewport below the heading, so
+  // they never slide under it. Cards are absolutely positioned within the stage
+  // so they can overlap, and keep their own height rather than filling it.
+  const stageHeight = window.innerHeight - headerHeight;
   item_wrapper.style.position = "sticky";
-  item_wrapper.style.top = "0";
-  item_wrapper.style.height = "100vh";
+  item_wrapper.style.top = `${headerHeight}px`;
+  item_wrapper.style.height = `${stageHeight}px`;
   item_wrapper.style.overflow = "hidden";
 
   // Read all heights before touching the layout — making earlier items absolute
@@ -230,10 +241,13 @@ document.querySelectorAll("[data-scroll-stack]").forEach((el) => {
     item.style.position = "absolute";
     item.style.left = "0";
     item.style.right = "0";
-    item.style.top = `calc(50vh - ${cardHeights[index] / 2}px)`;
+    // Cards keep their intrinsic height and are centred in the stage rather than
+    // stretched to it.
+    item.style.marginInline = "auto";
+    item.style.top = `${Math.max(0, (stageHeight - cardHeights[index]) / 2)}px`;
     item.style.zIndex = index + 1;
     // First card is visible immediately as a scroll hint; the rest start off-screen below.
-    item.style.transform = index === 0 ? "translateY(0)" : "translateY(100vh)";
+    item.style.transform = index === 0 ? "translateY(0)" : `translateY(${stageHeight}px)`;
     item.classList.remove("transition", "duration-500", "ease-out");
   });
 
@@ -246,12 +260,12 @@ document.querySelectorAll("[data-scroll-stack]").forEach((el) => {
         const segmentStart = index * segmentSize;
         const segmentEnd = segmentStart + segmentSize;
         if (progress < segmentStart) {
-          item.style.transform = "translateY(100vh)";
+          item.style.transform = `translateY(${stageHeight}px)`;
         } else if (progress >= segmentEnd) {
           item.style.transform = "translateY(0)";
         } else {
           const itemProgress = Math.min(1, (progress - segmentStart) / segmentSize);
-          item.style.transform = `translateY(${(1 - itemProgress) * 100}vh)`;
+          item.style.transform = `translateY(${(1 - itemProgress) * stageHeight}px)`;
         }
       });
     },
@@ -261,8 +275,12 @@ document.querySelectorAll("[data-scroll-stack]").forEach((el) => {
 
 document.querySelectorAll('[data-reveal="center_spread"]').forEach((el) => {
   if (currentlyInCanvasEditor()) return;
+  // Below md — and under reduced motion — the cards fall back to the plain
+  // single-column stack the component's CSS grid already renders. No transforms
+  // are applied, so nothing needs undoing.
+  if (prefersReducedMotion) return;
   if (window.innerWidth < 768) return;
-  
+
   const children = Array.from(el.children);
   if (children.length === 0) return;
 
@@ -298,92 +316,5 @@ document.querySelectorAll('[data-reveal="center_spread"]').forEach((el) => {
       });
     },
     { target: el, offset: ["start end", "end end"] },
-  );
-});
-
-// Hero gallery: the first card fills the viewport then shrinks into the centre
-// cell, while the remaining cards fade + scale into the grid around it from the
-// centre outward. The static centred grid is pure CSS, so this only runs the
-// enhancement.
-document.querySelectorAll("[data-gallery-reveal]").forEach((el) => {
-  // Skip in the Canvas editor — a persistent scroll() subscription would keep
-  // re-writing inline styles the component JS can't cancel (matches scroll-stack).
-  if (currentlyInCanvasEditor()) return;
-  // Mobile + reduced motion fall back to the static CSS grid.
-  if (prefersReducedMotion) return;
-  if (window.innerWidth < 768) return;
-
-  const content = el.querySelector(".hero-gallery__content");
-  const grid = el.querySelector(".hero-gallery__grid");
-  if (!content || !grid) return;
-
-  // First card is the hero (centre cell, scales to fill); the rest are tiles.
-  const tiles = Array.from(grid.children);
-  const hero = tiles[0];
-  const cards = tiles.slice(1);
-  if (!hero || cards.length === 0) return;
-
-  el.style.height = "240vh";
-
-  const ease = cubicBezier(0.16, 1, 0.3, 1);
-  const lerp = (a, b, t) => a + (b - a) * t;
-  const clamp01 = (t) => Math.min(1, Math.max(0, t));
-
-  // Measure-before-mutate: the hero's cell size, the stage (container) size, and
-  // each card's distance from the grid centre (drives the concentric reveal).
-  const heroRect = hero.getBoundingClientRect();
-  const stageRect = content.getBoundingClientRect();
-  const gridRect = grid.getBoundingClientRect();
-  const cx = gridRect.left + gridRect.width / 2;
-  const cy = gridRect.top + gridRect.height / 2;
-  // For each card: the vector from its resting cell to the grid centre. Cards
-  // start stacked at the centre (behind the hero) and slide out to their cell.
-  const offsets = cards.map((card) => {
-    const r = card.getBoundingClientRect();
-    const dx = cx - (r.left + r.width / 2);
-    const dy = cy - (r.top + r.height / 2);
-    return { dx, dy, dist: Math.hypot(dx, dy) };
-  });
-  const maxDistance = Math.max(...offsets.map((o) => o.dist), 1);
-
-  // Scale the hero needs to cover its container (stage) from its cell size.
-  const fillScale = Math.max((stageRect.width - 32) / heroRect.width, (stageRect.height - 32) / heroRect.height);
-  const heroEnd = 0.5; // hero finishes shrinking at the halfway point
-
-  // Strip the cards' Tailwind transition classes so their built-in easing doesn't
-  // fight (and lag behind) the scroll-driven opacity + scale updates below.
-  // Matches the scroll-stack / center_spread blocks.
-  hero.classList.remove("transition", "duration-500", "ease-out");
-
-  // Enhanced start state, set synchronously to avoid a flash of the resolved grid
-  // before the first scroll callback fires.
-  hero.style.scale = String(fillScale);
-  cards.forEach((card, index) => {
-    card.classList.remove("transition", "duration-500", "ease-out");
-    card.style.opacity = "0";
-    card.style.scale = "0";
-    // Stacked at the grid centre, hidden behind the hero (z-index 2).
-    card.style.translate = `${offsets[index].dx}px ${offsets[index].dy}px`;
-  });
-
-  scroll(
-    (progress) => {
-      const s = ease(clamp01(progress / heroEnd));
-      hero.style.scale = String(lerp(fillScale, 1, s));
-
-      cards.forEach((card, index) => {
-        const { dx, dy, dist } = offsets[index];
-        // Nearer the centre = earlier window; farther = later (centre-outward).
-        const norm = dist / maxDistance;
-        const start = 0.1 + norm * 0.4;
-        const end = start + 0.4;
-        const t = ease(clamp01((progress - start) / (end - start)));
-        card.style.opacity = String(t);
-        card.style.scale = String(t);
-        // Slide from the centre out to the resting cell as it scales in.
-        card.style.translate = `${dx * (1 - t)}px ${dy * (1 - t)}px`;
-      });
-    },
-    { target: el, offset: ["start start", "end end"] },
   );
 });
