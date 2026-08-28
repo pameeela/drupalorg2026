@@ -1,0 +1,28 @@
+{#
+  Shell for a site template card: the screenshot sits above the details, with the
+  CTA held at the foot of the card. The card stretches to the height of its row,
+  so the CTAs line up across a row however long the titles above them run.
+
+  Each slot is wrapped so that it stays a single flex child, which keeps the gap
+  between the areas regardless of how many layout elements are placed in one.
+#}
+
+<div class="mb-4 flex w-full min-w-0 grow flex-col gap-4 self-stretch">
+  <div class="min-w-0">
+    {% block screenshot_slot %}
+
+    {% endblock %}
+  </div>
+
+  <div class="min-w-0">
+    {% block details_slot %}
+
+    {% endblock %}
+  </div>
+
+  <div class="mt-auto min-w-0">
+    {% block cta_slot %}
+
+    {% endblock %}
+  </div>
+</div>

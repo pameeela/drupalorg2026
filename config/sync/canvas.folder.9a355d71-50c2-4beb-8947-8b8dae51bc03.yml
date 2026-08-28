@@ -10,6 +10,7 @@ dependencies:
     - canvas.component.sdc.drupalorg_theme.card-logo
     - canvas.component.sdc.drupalorg_theme.card-pricing
     - canvas.component.sdc.drupalorg_theme.card-site-template-compact
+    - canvas.component.sdc.drupalorg_theme.card-site-template-container
     - canvas.component.sdc.drupalorg_theme.card-testimonial
 name: Card
 configEntityTypeId: component
@@ -22,4 +23,5 @@ items:
   - sdc.drupalorg_theme.card-logo
   - sdc.drupalorg_theme.card-pricing
   - sdc.drupalorg_theme.card-site-template-compact
+  - sdc.drupalorg_theme.card-site-template-container
   - sdc.drupalorg_theme.card-testimonial

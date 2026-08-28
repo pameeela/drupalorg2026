@@ -163,7 +163,7 @@ component_tree:
     slot: group_slot
     uuid: 5e67ab0b-5837-46fe-92c3-35d4fe737ab0
     component_id: sdc.drupalorg_theme.badge
-    component_version: cf658701f300b03b
+    component_version: 835aefeb7ca5d41a
     inputs:
       label:
         sourceType: entity-field
@@ -184,7 +184,7 @@ component_tree:
     slot: group_slot
     uuid: 44362bf4-c869-4aa5-821d-ed5d7bccd0e8
     component_id: sdc.drupalorg_theme.button
-    component_version: 1c40a1a84181621a
+    component_version: caf080cde37b41e3
     inputs:
       variant: white-outline
       label: 'How to install this template'
@@ -234,7 +234,6 @@ component_tree:
     component_version: d1ce9ddf35db63e0
     inputs:
       flex_direction: column
-      flex_gap: md
       items_align: start
       flex_align: center
       radius: sm
@@ -262,20 +261,19 @@ component_tree:
         sourceType: entity-field
         expression: 'ℹ︎␜entity:node:site_template␝field_technology␞␟entity␜␜entity:taxonomy_term␝name␞␟value'
       text_size: text-sm
-  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:0:group_slot:2:17d3caca-3c6c-4d33-b2dd-e85d2cdf33cd':
-    parent_uuid: 7c123e65-4577-4ba2-9cda-507d0618c4fa
+  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:1:17d3caca-3c6c-4d33-b2dd-e85d2cdf33cd':
+    parent_uuid: 3b0a2443-c3ad-44d4-93b5-19626ce53634
     slot: group_slot
     uuid: 17d3caca-3c6c-4d33-b2dd-e85d2cdf33cd
     component_id: sdc.drupalorg_theme.group
     component_version: d1ce9ddf35db63e0
     inputs:
       flex_direction: column
-      flex_gap: sm
       items_align: start
       flex_align: center
       radius: sm
       stretch: true
-  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:0:group_slot:2:group_slot:0:3524d4a6-a02c-4e4f-92d1-fa96f0d72282':
+  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:1:group_slot:0:3524d4a6-a02c-4e4f-92d1-fa96f0d72282':
     parent_uuid: 17d3caca-3c6c-4d33-b2dd-e85d2cdf33cd
     slot: group_slot
     uuid: 3524d4a6-a02c-4e4f-92d1-fa96f0d72282
@@ -287,7 +285,7 @@ component_tree:
         format: canvas_html_block
       text_size: text-sm
       text_color: default
-  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:0:group_slot:2:group_slot:1:16d08743-ba27-4655-a5b9-d6b8eda06c1a':
+  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:1:group_slot:1:16d08743-ba27-4655-a5b9-d6b8eda06c1a':
     parent_uuid: 17d3caca-3c6c-4d33-b2dd-e85d2cdf33cd
     slot: group_slot
     uuid: 16d08743-ba27-4655-a5b9-d6b8eda06c1a
@@ -298,55 +296,19 @@ component_tree:
         sourceType: entity-field
         expression: 'ℹ︎␜entity:node:site_template␝field_css_framework␞␟entity␜␜entity:taxonomy_term␝name␞␟value'
       text_size: text-sm
-  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:0:group_slot:3:8c1ff702-8dc1-4af2-84da-6f49df756c47':
-    parent_uuid: 7c123e65-4577-4ba2-9cda-507d0618c4fa
-    slot: group_slot
-    uuid: 8c1ff702-8dc1-4af2-84da-6f49df756c47
-    component_id: sdc.drupalorg_theme.group
-    component_version: d1ce9ddf35db63e0
-    inputs:
-      flex_direction: column
-      flex_gap: sm
-      items_align: start
-      flex_align: start
-      radius: sm
-      stretch: true
-  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:0:group_slot:3:group_slot:0:eff4be7a-3314-446e-93a8-971e762de1d3':
-    parent_uuid: 8c1ff702-8dc1-4af2-84da-6f49df756c47
-    slot: group_slot
-    uuid: eff4be7a-3314-446e-93a8-971e762de1d3
-    component_id: sdc.drupalorg_theme.text
-    component_version: 8e4dee1f767538b4
-    inputs:
-      text:
-        value: '<p><strong>Component type</strong></p>'
-        format: canvas_html_block
-      text_size: text-sm
-      text_color: default
-  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:0:group_slot:3:group_slot:1:9dfe8959-f489-436f-b2d9-8528d4f84578':
-    parent_uuid: 8c1ff702-8dc1-4af2-84da-6f49df756c47
-    slot: group_slot
-    uuid: 9dfe8959-f489-436f-b2d9-8528d4f84578
-    component_id: sdc.drupalorg_theme.component-type
-    component_version: 4de258da0a5944be
-    inputs:
-      items:
-        sourceType: entity-field
-        expression: 'ℹ︎␜entity:node:site_template␝field_component_type␞␟label'
-  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:0:group_slot:4:03ed4391-b166-482b-8869-ee7c3d245e7a':
-    parent_uuid: 7c123e65-4577-4ba2-9cda-507d0618c4fa
+  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:2:03ed4391-b166-482b-8869-ee7c3d245e7a':
+    parent_uuid: 3b0a2443-c3ad-44d4-93b5-19626ce53634
     slot: group_slot
     uuid: 03ed4391-b166-482b-8869-ee7c3d245e7a
     component_id: sdc.drupalorg_theme.group
     component_version: d1ce9ddf35db63e0
     inputs:
       flex_direction: column
-      flex_gap: sm
       items_align: start
       flex_align: center
       radius: sm
       stretch: true
-  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:0:group_slot:4:group_slot:0:70a5c5d8-8b16-4e4f-a13e-3d83ec9381a8':
+  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:2:group_slot:0:70a5c5d8-8b16-4e4f-a13e-3d83ec9381a8':
     parent_uuid: 03ed4391-b166-482b-8869-ee7c3d245e7a
     slot: group_slot
     uuid: 70a5c5d8-8b16-4e4f-a13e-3d83ec9381a8
@@ -358,7 +320,7 @@ component_tree:
         format: canvas_html_block
       text_size: text-sm
       text_color: default
-  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:0:group_slot:4:group_slot:1:1eabd843-76b9-4c07-9eef-7ce9c6b28a1c':
+  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:2:group_slot:1:1eabd843-76b9-4c07-9eef-7ce9c6b28a1c':
     parent_uuid: 03ed4391-b166-482b-8869-ee7c3d245e7a
     slot: group_slot
     uuid: 1eabd843-76b9-4c07-9eef-7ce9c6b28a1c
@@ -368,6 +330,40 @@ component_tree:
       items:
         sourceType: entity-field
         expression: 'ℹ︎␜entity:node:site_template␝field_content_types␞␟entity␜␜entity:taxonomy_term␝name␞␟value'
+  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:3:8c1ff702-8dc1-4af2-84da-6f49df756c47':
+    parent_uuid: 3b0a2443-c3ad-44d4-93b5-19626ce53634
+    slot: group_slot
+    uuid: 8c1ff702-8dc1-4af2-84da-6f49df756c47
+    component_id: sdc.drupalorg_theme.group
+    component_version: d1ce9ddf35db63e0
+    inputs:
+      flex_direction: column
+      items_align: start
+      flex_align: start
+      radius: sm
+      stretch: true
+  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:3:group_slot:0:eff4be7a-3314-446e-93a8-971e762de1d3':
+    parent_uuid: 8c1ff702-8dc1-4af2-84da-6f49df756c47
+    slot: group_slot
+    uuid: eff4be7a-3314-446e-93a8-971e762de1d3
+    component_id: sdc.drupalorg_theme.text
+    component_version: 8e4dee1f767538b4
+    inputs:
+      text:
+        value: '<p><strong>Component type</strong></p>'
+        format: canvas_html_block
+      text_size: text-sm
+      text_color: default
+  '1:main_slot:1:group_slot:4:main_slot:0:group_slot:3:group_slot:1:9dfe8959-f489-436f-b2d9-8528d4f84578':
+    parent_uuid: 8c1ff702-8dc1-4af2-84da-6f49df756c47
+    slot: group_slot
+    uuid: 9dfe8959-f489-436f-b2d9-8528d4f84578
+    component_id: sdc.drupalorg_theme.component-type
+    component_version: 4de258da0a5944be
+    inputs:
+      items:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:site_template␝field_component_type␞␟label'
   '1:main_slot:1:group_slot:4:main_slot:1:d1e23da2-3863-4e68-890b-9ac0658ba175':
     parent_uuid: 5143ca65-eb1b-4e99-b212-4ffb70441c49
     slot: main_slot
@@ -455,7 +451,7 @@ component_tree:
     component_id: sdc.drupalorg_theme.heading
     component_version: 98abcbae4cf1add5
     inputs:
-      heading_text: 'All Drupal CMS site templates include'
+      heading_text: 'All Drupal CMS site templates include:'
       level: 2
       text_size: heading-responsive-2xl
       text_color: default
@@ -745,7 +741,7 @@ component_tree:
     slot: header_slot
     uuid: 615877e7-d710-47c5-ab48-beb389199473
     component_id: sdc.drupalorg_theme.eyebrow
-    component_version: 2ff2015e21e55e15
+    component_version: 7db9f09ae1513d1e
     inputs:
       eyebrow_text: 'Get started'
       text_color: drupal-dark-blue
@@ -962,7 +958,7 @@ component_tree:
     slot: group_slot
     uuid: e4997f21-ad55-4ef3-994e-badd145184bc
     component_id: sdc.drupalorg_theme.button
-    component_version: 1c40a1a84181621a
+    component_version: caf080cde37b41e3
     inputs:
       variant: drupal-blue
       label: 'Launch demo site'
@@ -1038,7 +1034,7 @@ component_tree:
     slot: group_slot
     uuid: 5ffa31ea-86fd-41b0-b34c-e2977248354e
     component_id: sdc.drupalorg_theme.button
-    component_version: 1c40a1a84181621a
+    component_version: caf080cde37b41e3
     inputs:
       variant: blue-link
       label: "Don't have DDEV? Check out the full installation guide"
@@ -1089,7 +1085,7 @@ component_tree:
     slot: group_slot
     uuid: ccdfc36a-06fc-4699-ab0b-d9d9fdd99b0b
     component_id: sdc.drupalorg_theme.button
-    component_version: 1c40a1a84181621a
+    component_version: caf080cde37b41e3
     inputs:
       variant: primary
       label:
@@ -1132,7 +1128,7 @@ component_tree:
     slot: header_slot
     uuid: aaeddef9-67e4-45fe-8b46-17eb94b3deb5
     component_id: sdc.drupalorg_theme.eyebrow
-    component_version: 2ff2015e21e55e15
+    component_version: 7db9f09ae1513d1e
     inputs:
       eyebrow_text: 'Get started'
       text_color: drupal-dark-blue
@@ -1349,7 +1345,7 @@ component_tree:
     slot: group_slot
     uuid: 77acd107-1729-4a23-b857-c40afbd66e62
     component_id: sdc.drupalorg_theme.button
-    component_version: 1c40a1a84181621a
+    component_version: caf080cde37b41e3
     inputs:
       variant: drupal-blue
       label: 'Launch demo site'
@@ -1425,7 +1421,7 @@ component_tree:
     slot: group_slot
     uuid: 1e496d65-5dff-46a4-8084-038d1347c4bf
     component_id: sdc.drupalorg_theme.button
-    component_version: 1c40a1a84181621a
+    component_version: caf080cde37b41e3
     inputs:
       variant: blue-link
       label: "Don't have DDEV? Check out the full installation guide"
@@ -1476,7 +1472,7 @@ component_tree:
     slot: group_slot
     uuid: 052a7bea-e6cd-474d-9f9a-cfd0bbd43141
     component_id: sdc.drupalorg_theme.button
-    component_version: 1c40a1a84181621a
+    component_version: caf080cde37b41e3
     inputs:
       variant: primary
       label:

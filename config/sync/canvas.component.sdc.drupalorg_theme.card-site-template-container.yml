@@ -1,0 +1,35 @@
+uuid: 2d86d67d-ce67-40f2-9632-7e8bb97a58ba
+langcode: en
+status: false
+dependencies:
+  theme:
+    - drupalorg_theme
+active_version: caaf4d35781e4c5b
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions: {  }
+    fallback_metadata:
+      slot_definitions:
+        screenshot_slot:
+          title: Screenshot
+        details_slot:
+          title: Details
+        cta_slot:
+          title: CTA
+  68899a6eeb7feb98:
+    settings:
+      prop_field_definitions: {  }
+    fallback_metadata:
+      slot_definitions:
+        screenshot_slot:
+          title: Screenshot
+          description: 'The template screenshot or preview.'
+        details_slot:
+          title: Details
+          description: 'The title, price and any other details shown under the screenshot.'
+label: 'Site template card container'
+id: sdc.drupalorg_theme.card-site-template-container
+provider: drupalorg_theme
+source: sdc
+source_local_id: 'drupalorg_theme:card-site-template-container'

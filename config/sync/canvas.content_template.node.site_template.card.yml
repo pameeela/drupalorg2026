@@ -5,6 +5,7 @@ dependencies:
   config:
     - canvas.component.sdc.drupalorg_theme.badge
     - canvas.component.sdc.drupalorg_theme.button
+    - canvas.component.sdc.drupalorg_theme.card-site-template-container
     - canvas.component.sdc.drupalorg_theme.group
     - canvas.component.sdc.drupalorg_theme.heading
     - canvas.component.sdc.drupalorg_theme.plain-text
@@ -38,24 +39,31 @@ component_tree:
       flex_align: start
       radius: sm
       stretch: false
-  '0:group_slot:0:35ba6b15-815a-427d-9586-23deeda7694d':
+  '0:group_slot:0:36f88f1e-b382-4b8b-b0fe-4b9cca80234c':
     parent_uuid: 829d667a-9904-41a7-b62a-5495e23f7241
     slot: group_slot
-    uuid: 35ba6b15-815a-427d-9586-23deeda7694d
-    component_id: sdc.drupalorg_theme.site-template-preview
-    component_version: 11ebb8d130e6cd65
+    uuid: 36f88f1e-b382-4b8b-b0fe-4b9cca80234c
+    component_id: sdc.drupalorg_theme.card-site-template-container
+    component_version: caaf4d35781e4c5b
+    inputs: {  }
+  '0:group_slot:0:cta_slot:0:76fa0163-099d-43d8-9f84-3f41c618e4a2':
+    parent_uuid: 36f88f1e-b382-4b8b-b0fe-4b9cca80234c
+    slot: cta_slot
+    uuid: 76fa0163-099d-43d8-9f84-3f41c618e4a2
+    component_id: sdc.drupalorg_theme.button
+    component_version: caf080cde37b41e3
     inputs:
-      media:
-        sourceType: entity-field
-        expression: 'ℹ︎␜entity:node:site_template␝field_featured_screenshot␞␟entity␜␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}'
-      chrome_url: byte.preview.drupal.org
-      mode: hover
-      size: card
-      show_chrome: false
-      caption: 'Tap to scroll'
-  '0:group_slot:1:d0a61fec-a1ad-401c-a8ae-a2299c6936ae':
-    parent_uuid: 829d667a-9904-41a7-b62a-5495e23f7241
-    slot: group_slot
+      variant: navy-link
+      label: 'View template'
+      href:
+        sourceType: host-entity-url
+        absolute: false
+      icon: arrow-right
+      disabled: false
+      full_width: false
+  '0:group_slot:0:details_slot:0:d0a61fec-a1ad-401c-a8ae-a2299c6936ae':
+    parent_uuid: 36f88f1e-b382-4b8b-b0fe-4b9cca80234c
+    slot: details_slot
     uuid: d0a61fec-a1ad-401c-a8ae-a2299c6936ae
     component_id: sdc.drupalorg_theme.group
     component_version: d1ce9ddf35db63e0
@@ -66,7 +74,7 @@ component_tree:
       flex_align: start
       radius: sm
       stretch: false
-  '0:group_slot:1:group_slot:0:6f852470-6bd3-4d4b-a984-ae7dbf14985f':
+  '0:group_slot:0:details_slot:0:group_slot:0:6f852470-6bd3-4d4b-a984-ae7dbf14985f':
     parent_uuid: d0a61fec-a1ad-401c-a8ae-a2299c6936ae
     slot: group_slot
     uuid: 6f852470-6bd3-4d4b-a984-ae7dbf14985f
@@ -79,7 +87,7 @@ component_tree:
       flex_align: start
       radius: sm
       stretch: false
-  '0:group_slot:1:group_slot:0:group_slot:0:df8d2ac0-ce38-4483-9f8c-260429f1c560':
+  '0:group_slot:0:details_slot:0:group_slot:0:group_slot:0:df8d2ac0-ce38-4483-9f8c-260429f1c560':
     parent_uuid: 6f852470-6bd3-4d4b-a984-ae7dbf14985f
     slot: group_slot
     uuid: df8d2ac0-ce38-4483-9f8c-260429f1c560
@@ -96,18 +104,18 @@ component_tree:
       url:
         sourceType: host-entity-url
         absolute: false
-  '0:group_slot:1:group_slot:0:group_slot:1:cde68e48-f6ec-457d-a062-329f23481110':
+  '0:group_slot:0:details_slot:0:group_slot:0:group_slot:1:cde68e48-f6ec-457d-a062-329f23481110':
     parent_uuid: 6f852470-6bd3-4d4b-a984-ae7dbf14985f
     slot: group_slot
     uuid: cde68e48-f6ec-457d-a062-329f23481110
     component_id: sdc.drupalorg_theme.badge
-    component_version: cf658701f300b03b
+    component_version: 835aefeb7ca5d41a
     inputs:
       label:
         sourceType: entity-field
         expression: 'ℹ︎␜entity:node:site_template␝field_price␞␟value'
       style: light-blue
-  '0:group_slot:1:group_slot:1:379f06f4-aa07-46b4-b6f1-1769d306cbd4':
+  '0:group_slot:0:details_slot:0:group_slot:1:379f06f4-aa07-46b4-b6f1-1769d306cbd4':
     parent_uuid: d0a61fec-a1ad-401c-a8ae-a2299c6936ae
     slot: group_slot
     uuid: 379f06f4-aa07-46b4-b6f1-1769d306cbd4
@@ -117,18 +125,19 @@ component_tree:
       text:
         sourceType: entity-field
         expression: 'ℹ︎␜entity:node:site_template␝field_short_description␞␟value'
-  '0:group_slot:1:group_slot:2:76fa0163-099d-43d8-9f84-3f41c618e4a2':
-    parent_uuid: d0a61fec-a1ad-401c-a8ae-a2299c6936ae
-    slot: group_slot
-    uuid: 76fa0163-099d-43d8-9f84-3f41c618e4a2
-    component_id: sdc.drupalorg_theme.button
-    component_version: 1c40a1a84181621a
+  '0:group_slot:0:screenshot_slot:0:35ba6b15-815a-427d-9586-23deeda7694d':
+    parent_uuid: 36f88f1e-b382-4b8b-b0fe-4b9cca80234c
+    slot: screenshot_slot
+    uuid: 35ba6b15-815a-427d-9586-23deeda7694d
+    component_id: sdc.drupalorg_theme.site-template-preview
+    component_version: 11ebb8d130e6cd65
     inputs:
-      variant: navy-link
-      label: 'View template'
-      href:
-        sourceType: host-entity-url
-        absolute: false
-      icon: arrow-right
-      disabled: false
+      media:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:site_template␝field_featured_screenshot␞␟entity␜␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}'
+      chrome_url: byte.preview.drupal.org
+      mode: hover
+      size: card
+      show_chrome: false
+      caption: 'Tap to scroll'
 exposed_slots: {  }
