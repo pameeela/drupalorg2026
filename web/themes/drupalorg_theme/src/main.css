@@ -6,19 +6,24 @@
 @import "../components/site-template-preview/site-template-preview.tailwind.css";
 @import "../components/code-command/code-command.tailwind.css";
 @theme inline {
-  --color-darkest-blue: var(--drupal-darkest-blue);
-  --color-navy: var(--drupal-navy);
+  --color-darkest-blue: var(--darkest-blue);
+  --color-navy: var(--navy);
   --color-drupal-blue: var(--drupal-blue);
-  --color-dark-blue: var(--drupal-dark-blue);
-  --color-light-blue: var(--drupal-light-blue);
+  --color-dark-blue: var(--dark-blue);
+  --color-light-blue: var(--light-blue);
   --color-light-purple: var(--light-purple);
-  --color-lightest-blue: var(--drupal-lightest-blue);
+  --color-lightest-blue: var(--lightest-blue);
   --color-lightest-gray: var(--lightest-gray);
   --color-light-gray: var(--light-gray);
   --color-dark-gray: var(--dark-gray);
   --color-medium-gray: var(--medium-gray);
   --color-darkest-gray: var(--darkest-gray);
   --color-white: var(--white);
+  --color-navy-lightened: var(--navy-lightened);
+  --color-drupal-blue-lightened: var(--drupal-blue-lightened);
+  --color-dark-blue-lightened: var(--dark-blue-lightened);
+  --color-light-blue-darkened: var(--light-blue-darkened);
+  --color-light-purple-lightened: var(--light-purple-lightened);
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
@@ -178,6 +183,15 @@
   .view-display-id-articles_featured,
   .view-display-id-articles_featured .view-content {
     height: 100%;
+  }
+
+  .view-site-templates .views-row {
+    display: flex;
+    flex-direction: column;
+
+    > * {
+      flex: 1;
+    }
   }
 
   .view-display-id-articles_hero {

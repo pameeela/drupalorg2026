@@ -11,20 +11,32 @@
  */
 
 :root {
-  /* ===== Brand tokens ===== */
-  --drupal-darkest-blue: #0a1a3a;
-  --drupal-navy: #12285f;
+  /* Brand colors */
+  --darkest-blue: #0a1a3a;
+  --navy: #12285f;
   --drupal-blue: #009cde;
-  --drupal-dark-blue: #006aa9;
-  --drupal-light-blue: #ccedf9;
-  --drupal-lightest-blue: #e6f6fc;
-  --light-purple: #CCBAF4;
+  --dark-blue: #006aa9;
+  --light-blue: #ccedf9;
+  --lightest-blue: #e6f6fc;
+  --light-purple: #ccbaf4;
+  --white: #ffffff;
+
+  /* Extra colors for grays, accent and hover states */
+  /* color-mix() blends two colors in a specified color space. */
+  /* Syntax: color-mix(in <colorspace>, <color1> <percentage>, <color2>) */
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/color-mix */
+  --navy-lightened: color-mix(in oklch, var(--navy) 80%, white);
+  --drupal-blue-lightened: color-mix(in oklch, var(--drupal-blue) 80%, white);
+  --dark-blue-lightened: color-mix(in oklch, var(--dark-blue) 80%, white);
+  --light-purple-lightened: color-mix(in oklch, var(--light-purple) 80%, white);
+  --light-blue-darkened: color-mix(in oklch, var(--lightest-blue) 100%, black 2%);
+
   --lightest-gray: #f9fafb;
   --light-gray: #e8e6e6;
+  --gray: #d0cfcf;
   --medium-gray: #9e9c9c;
   --dark-gray: #646675;
   --darkest-gray: #1f2937;
-  --white: #ffffff;
 
   --font-heading: "ZTGatha", "Helvetica Neue", Arial, Helvetica, sans-serif;
   --font-sans: "Noto Sans", Arial, Helvetica, sans-serif;
