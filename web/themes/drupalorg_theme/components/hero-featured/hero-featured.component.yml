@@ -14,12 +14,35 @@ props:
     body:
       type: string
       title: Body text
+      pattern: "(.|\\r?\\n)*"
       examples:
         - "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     background_video:
       $ref: json-schema-definitions://canvas.module/video
       title: Background video
       type: object
+    background_color:
+      type: string
+      title: Background color
+      description: Used when no background video is provided.
+      enum:
+        - dark
+        - light-grey
+        - light-blue
+        - drupal-blue
+        - light-blue-gradient
+        - dark-blue-gradient
+        - darkest-blue
+        - character-stream
+      meta:enum:
+        dark: Navy blue
+        light-grey: Light grey
+        light-blue: Light blue
+        drupal-blue: Drupal blue
+        light-blue-gradient: Light blue gradient
+        dark-blue-gradient: Dark blue gradient
+        darkest-blue: Darkest blue
+        character-stream: Character stream
     image:
       $ref: json-schema-definitions://canvas.module/image
       title: Screenshot image

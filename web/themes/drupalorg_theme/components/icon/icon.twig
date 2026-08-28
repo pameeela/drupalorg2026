@@ -8,7 +8,7 @@ Icon component using SVG icons from the Phosphor icon pack.
 #}
 
 {% set icon_parts = icon|split(':') %}
-{% set icon_pack = icon_parts|length > 1 ? icon_parts|first : 'phosphor' %}
+{% set icon_pack = (icon_parts|length) > 1 ? icon_parts|first : 'phosphor' %}
 {% set icon_name = icon_parts|last %}
 
 {% set size_map = {
@@ -33,14 +33,14 @@ Icon component using SVG icons from the Phosphor icon pack.
 
 <div class="min-w:{{ resolved_size }}">
   {{
-  icon(
-    icon_pack,
-    icon_name,
-    {
-      size: resolved_size,
-      color: resolved_color,
-      alt: alt|default('')
-    }
-  )
+    icon(
+      icon_pack,
+      icon_name,
+      {
+        size: resolved_size,
+        color: resolved_color,
+        alt: alt|default('')
+      }
+    )
   }}
 </div>

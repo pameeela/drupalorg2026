@@ -4,17 +4,85 @@
   {% set additional_classes = additional_classes|join(' ') %}
 {% endif %}
 
+{% set has_background_video = background_video.src is not empty %}
+
+{# A video takes precedence, so the color choice is ignored when one is set. #}
+{% set active_background = has_background_video ? '' : background_color|default('') %}
+
+{# Mirrors the background colors offered by the section component. #}
+{% set background =
+  html_cva(
+    base: ['pointer-events-none absolute inset-0'],
+    variants: {
+      backgroundColor: {
+        dark: 'bg-navy',
+        'light-grey': 'bg-lightest-gray',
+        'light-blue': 'bg-lightest-blue',
+        'drupal-blue': 'bg-drupal-blue',
+        'light-blue-gradient': 'bg-linear-to-b from-lightest-blue to-gray-50',
+        'dark-blue-gradient': 'bg-linear-to-b from-darkest-blue to-drupal-blue',
+        'darkest-blue': 'bg-darkest-blue',
+        'character-stream': 'overflow-hidden bg-darkest-blue',
+        noColor: 'bg-none'
+      }
+    }
+  )
+%}
+
+{% set background_classes =
+  background.apply({
+    backgroundColor: active_background|default('noColor')
+  })
+%}
+
+{#
+  The heading inherits its color, so setting it on the content column carries it
+  through to both the heading and the body text.
+#}
+{% set content =
+  html_cva(
+    base: ['flex flex-col items-center gap-6 pt-20 pb-14 text-center md:gap-8 md:pt-28 xl:pt-[168px] xl:pb-16'],
+    variants: {
+      backgroundColor: {
+        dark: 'text-white',
+        'light-grey': '',
+        'light-blue': 'text-navy',
+        'drupal-blue': 'text-navy',
+        'light-blue-gradient': 'text-navy',
+        'dark-blue-gradient': 'text-white',
+        'darkest-blue': 'text-white',
+        'character-stream': 'text-white',
+        noColor: ''
+      }
+    }
+  )
+%}
+
+{% set content_classes =
+  content.apply({
+    backgroundColor: active_background|default('noColor')
+  })
+%}
+
 <section class="cq-full relative {{ additional_classes }}">
-  {% if background_video.src is not empty %}
+  {% if has_background_video %}
     <div class="pointer-events-none absolute inset-0" aria-hidden="true" inert>
       <video src="{{ background_video.src }}" autoplay muted loop playsinline tabindex="-1" class="h-full w-full object-cover"></video>
+    </div>
+  {% elseif active_background is not empty %}
+    <div class="{{ background_classes }}" aria-hidden="true" inert>
+      {% if active_background == 'character-stream' %}
+        <character-stream scrim="off" intensity="0.5"></character-stream>
+        {# The custom element is defined by the section component's script. #}
+        {{ attach_library('core/components.drupalorg_theme--section') }}
+      {% endif %}
     </div>
   {% endif %}
 
   {# Content sticks at top while image scrolls into view from below #}
   <div class="sticky top-0 overflow-hidden">
     <div class="relative z-10 container mx-auto px-4 lg:px-12">
-      <div class="flex flex-col items-center gap-6 pt-20 pb-14 text-center md:gap-8 md:pt-28 xl:pt-[168px] xl:pb-16">
+      <div class="{{ content_classes }}">
         {% if heading %}
           {{
             include(
