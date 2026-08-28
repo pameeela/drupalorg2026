@@ -41,7 +41,7 @@
 #}
 {% set content =
   html_cva(
-    base: ['flex flex-col items-center gap-6 pt-20 pb-14 text-center md:gap-8 md:pt-28 xl:pt-[168px] xl:pb-16'],
+    base: ['relative flex flex-col items-center gap-4 pt-20 pb-14 text-center md:gap-6 md:pt-28 xl:pt-[150px] xl:pb-14'],
     variants: {
       backgroundColor: {
         dark: 'text-white',
@@ -83,6 +83,25 @@
   <div class="sticky top-0 overflow-hidden">
     <div class="relative z-10 container mx-auto px-4 lg:px-12">
       <div class="{{ content_classes }}">
+        {% set badge_content %}
+          {% block badge %}
+
+          {% endblock %}
+        {% endset %}
+
+        {#
+          The badge is laid over the space the top padding already reserves, so
+          adding one leaves the heading and everything below it where it was. The
+          heights mirror that padding, which lands the foot of this box on the top
+          edge of the heading, and the bottom padding matches the column gap so the
+          badge sits as far above the heading as the body text sits below it.
+        #}
+        {% if badge_content|trim is not empty %}
+          <div class="absolute inset-x-0 top-0 flex h-20 items-end justify-center pb-6 md:h-28 md:pb-8 xl:h-[150px]">
+            {{ badge_content }}
+          </div>
+        {% endif %}
+
         {% if heading %}
           {{
             include(
@@ -94,7 +113,7 @@
                 text_color: 'default',
                 url: '',
                 text_size: 'heading-responsive-7xl',
-                heading_classes: 'tracking-[-0.04em] max-w-3xl'
+                heading_classes: 'tracking-[-0.04em] max-w-3xl md:max-w-4xl'
               },
               with_context: false
             )
@@ -121,7 +140,7 @@
   {# Screenshot scrolls up from below the sticky content #}
   {% if image.src is not empty %}
     <div class="relative z-10 container mx-auto px-4 lg:px-12">
-      <div class="mx-auto w-full max-w-4xl pb-12 md:pb-15 xl:max-w-6xl">
+      <div class="mx-auto w-full max-w-4xl pb-12 md:pb-14 xl:max-w-6xl">
         <div class="overflow-hidden rounded-xl bg-white shadow-[0px_12px_24px_-4px_rgba(18,26,38,0.12),0px_4px_8px_-4px_rgba(18,26,38,0.05)]">
           {% include 'canvas:image' ignore missing with {
             src: image.src,

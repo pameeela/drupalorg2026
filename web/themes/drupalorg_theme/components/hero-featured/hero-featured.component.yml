@@ -54,5 +54,8 @@ props:
           height: 662
 
 slots:
+  badge:
+    title: Badge
+    description: Sits above the heading, in the space the hero already leaves at the top.
   actions:
     title: Buttons
